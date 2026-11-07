@@ -1,0 +1,79 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Global Safety Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+    function incoming() {
+      return request.resource.data;
+    }
+    function existing() {
+      return resource.data;
+    }
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidWellness(data) {
+      return data.studentId is string
+        && data.studentId.size() <= 128
+        && data.mood is int
+        && data.mood >= 1
+        && data.mood <= 5
+        && data.sleepHours is number
+        && data.sleepHours >= 0.0
+        && data.sleepHours <= 24.0
+        && data.sleepQuality is string
+        && data.sleepQuality.size() <= 64
+        && (data.notes == null || (data.notes is string && data.notes.size() <= 2000))
+        && (data.studentName == null || (data.studentName is string && data.studentName.size() <= 200))
+        && (data.attentionSnapshot == null || (data.attentionSnapshot is string && data.attentionSnapshot.size() <= 32));
+    }
+
+    function isValidDistressSignal(data) {
+      return data.studentId is string
+        && data.studentId.size() <= 128
+        && data.studentName is string
+        && data.studentName.size() <= 200
+        && data.message is string
+        && data.message.size() <= 1000
+        && (data.attentionSnapshot == null || (data.attentionSnapshot is string && data.attentionSnapshot.size() <= 32))
+        && (data.stressSnapshot == null || (data.stressSnapshot is string && data.stressSnapshot.size() <= 32))
+        && (data.heartRateSnapshot == null || (data.heartRateSnapshot is number && data.heartRateSnapshot >= 0.0 && data.heartRateSnapshot <= 300.0));
+    }
+
+    match /wellness_check_ins/{checkInId} {
+      allow get, create, delete: if isSignedIn() 
+        && isValidId(checkInId)
+        && (request.method == 'create' ? (isValidWellness(incoming()) && isOwner(incoming().studentId) && incoming().createdAt == request.time) : isOwner(existing().studentId));
+      
+      allow update: if isSignedIn()
+        && isValidId(checkInId)
+        && isValidWellness(incoming())
+        && isOwner(existing().studentId)
+        && isOwner(incoming().studentId)
+        && incoming().createdAt == existing().createdAt;
+
+      allow list: if isSignedIn()
+        && resource.data.studentId == request.auth.uid;
+    }
+
+    match /distress_signals/{signalId} {
+      allow create: if isSignedIn()
+        && isValidId(signalId)
+        && isValidDistressSignal(incoming())
+        && isOwner(incoming().studentId)
+        && incoming().createdAt == request.time;
+
+      allow read, list: if isSignedIn();
+    }
+  }
+}

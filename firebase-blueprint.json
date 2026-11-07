@@ -1,0 +1,115 @@
+{
+  "entities": {
+    "WellnessCheckIn": {
+      "title": "WellnessCheckIn",
+      "description": "Daily wellness report submitted by a student regarding their mood and sleep quality.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the check-in doc."
+        },
+        "studentId": {
+          "type": "string",
+          "description": "The UID of the student submitting the check-in."
+        },
+        "studentName": {
+          "type": "string",
+          "description": "The display name of the student."
+        },
+        "mood": {
+          "type": "integer",
+          "description": "Mood rating from 1 (very low) to 5 (excellent)."
+        },
+        "moodLabel": {
+          "type": "string",
+          "description": "Textual label of the mood, e.g., Relaxed, Stressed, Energized, Tired, Focused."
+        },
+        "sleepHours": {
+          "type": "number",
+          "description": "Hours of sleep reported for the previous night."
+        },
+        "sleepQuality": {
+          "type": "string",
+          "description": "Quality of sleep, e.g., Poor, Fair, Good, Excellent."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Optional notes or personal feeling diary."
+        },
+        "attentionSnapshot": {
+          "type": "string",
+          "description": "Snapshot of the attention level during check-in, e.g., Low, Moderate, High."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of when the check-in occurred."
+        }
+      },
+      "required": [
+        "studentId",
+        "mood",
+        "sleepHours",
+        "sleepQuality",
+        "createdAt"
+      ]
+    },
+    "DistressSignal": {
+      "title": "DistressSignal",
+      "description": "Simulated emergency distress signal manually triggered by the student.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the distress signal."
+        },
+        "studentId": {
+          "type": "string",
+          "description": "The UID of the student triggering the signal."
+        },
+        "studentName": {
+          "type": "string",
+          "description": "Name of the student."
+        },
+        "message": {
+          "type": "string",
+          "description": "Distress message or alert status detail."
+        },
+        "attentionSnapshot": {
+          "type": "string",
+          "description": "EEG Attention attentionSnapshot state at trigger time."
+        },
+        "stressSnapshot": {
+          "type": "string",
+          "description": "EEG stressSnapshot state at trigger time."
+        },
+        "heartRateSnapshot": {
+          "type": "number",
+          "description": "Headband-measured heart rate snapshot."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when distress alert was triggered."
+        }
+      },
+      "required": [
+        "studentId",
+        "studentName",
+        "message",
+        "createdAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/wellness_check_ins/{checkInId}": {
+      "schema": "WellnessCheckIn",
+      "description": "Collection of student daily wellness self-reports."
+    },
+    "/distress_signals/{signalId}": {
+      "schema": "DistressSignal",
+      "description": "Collection of emergency distress alerts filed by students for parent and teacher reviews."
+    }
+  }
+}
