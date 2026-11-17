@@ -91,7 +91,7 @@ export default function CognitiveTrendAnalytics() {
         <div>
           <div className="flex items-center space-x-2">
             <Database className="h-5 w-5 text-indigo-400" />
-            <h3 className="text-sm font-black text-slate-100 uppercase tracking-tight">Cerebral Log & Trend Telemetry</h3>
+            <h3 className="text-sm font-black text-slate-100 uppercase tracking-tight">Histórico cerebral e tendências</h3>
           </div>
           <p className="text-[11px] text-slate-400 mt-1 leading-relaxed">
             Real-time biometric data-lake mapping. Aggregates live user interactions, biofeedback scores, and stress events.
@@ -111,7 +111,7 @@ export default function CognitiveTrendAnalytics() {
       {logs.length === 0 ? (
         <div className="bg-slate-950 border border-dashed border-slate-800 py-10 text-center rounded-xl space-y-2">
           <BadgeInfo className="h-7 w-7 text-indigo-400 mx-auto animate-pulse" />
-          <span className="text-xs font-bold text-slate-350 block">No Active session telemetry in data leak yet</span>
+          <span className="text-xs font-bold text-slate-350 block">Nenhum dado de telemetria registrado na sessão</span>
           <p className="text-[10px] text-slate-500 max-w-sm mx-auto leading-relaxed">
             Ask questions to the Adaptive Tutor, trigger Wellness Coaching routines, or play the Focus Calibration Assay to stream live data.
           </p>
@@ -166,7 +166,7 @@ export default function CognitiveTrendAnalytics() {
                           <div className="bg-slate-900 border border-slate-800 p-2.5 rounded-lg shadow-xl text-[10px] space-y-1">
                             <p className="font-bold text-slate-350">{dataPoint.time}</p>
                             <div className="flex items-center justify-between gap-4">
-                              <span className="text-slate-400">Trigger:</span>
+                              <span className="text-slate-400">Acionador:</span>
                               <span className="font-bold text-indigo-400 uppercase tracking-tight">{dataPoint.service}</span>
                             </div>
                             <div className="flex items-center justify-between gap-4">
@@ -174,15 +174,15 @@ export default function CognitiveTrendAnalytics() {
                               <span className="font-mono text-sky-450 text-sky-400 font-bold">{dataPoint.gsr} µS</span>
                             </div>
                             <div className="flex items-center justify-between gap-4">
-                              <span className="text-slate-400">Heart Rate:</span>
+                              <span className="text-slate-400">Frequência cardíaca:</span>
                               <span className="font-mono text-rose-450 text-rose-400 font-bold">{dataPoint.heartRate} BPM</span>
                             </div>
                             <div className="flex items-center justify-between gap-4">
-                              <span className="text-slate-400">HRV State:</span>
+                              <span className="text-slate-400">Estado da VFC:</span>
                               <span className="font-mono text-emerald-450 text-emerald-400 font-bold">{dataPoint.hrv} ms</span>
                             </div>
                             <div className="flex items-center justify-between gap-4 border-t border-slate-800 pt-1 mt-1">
-                              <span className="text-slate-400">Stress:</span>
+                              <span className="text-slate-400">Estresse:</span>
                               <span className={`font-bold ${dataPoint.stress === 'High' ? 'text-red-400' : 'text-slate-300'}`}>{dataPoint.stress}</span>
                             </div>
                           </div>
@@ -240,7 +240,7 @@ export default function CognitiveTrendAnalytics() {
           {/* Table list of matching events */}
           <div className="space-y-2 max-h-72 overflow-y-auto scrollbar-thin rounded-xl border border-slate-850 p-2.5 bg-slate-950">
             {filteredLogs.length === 0 ? (
-              <div className="text-center py-4 text-xs text-slate-550 font-mono text-slate-500">No telemetry matches this query criteria.</div>
+              <div className="text-center py-4 text-xs text-slate-550 font-mono text-slate-500">Nenhum dado de telemetria corresponde aos filtros.</div>
             ) : (
               filteredLogs.map(log => (
                 <div
@@ -274,7 +274,7 @@ export default function CognitiveTrendAnalytics() {
 
                   <div className="grid grid-cols-4 gap-2 mt-2 pt-2 border-t border-slate-900/60 text-[9.5px] font-mono text-slate-500">
                     <div>
-                      Stress: <strong className={log.cognitive_snapshot.stress === 'High' ? 'text-rose-400 font-bold' : 'text-slate-300'}>{log.cognitive_snapshot.stress}</strong>
+                      Estresse: <strong className={log.cognitive_snapshot.stress === 'High' ? 'text-rose-400 font-bold' : 'text-slate-300'}>{log.cognitive_snapshot.stress}</strong>
                     </div>
                     <div>
                       Attention: <strong className="text-slate-300">{log.cognitive_snapshot.attention}</strong>
@@ -283,7 +283,7 @@ export default function CognitiveTrendAnalytics() {
                       GSR: <strong className="text-sky-400">{log.biometrics_snapshot?.gsr || 2.4} µS</strong>
                     </div>
                     <div>
-                      Heart Rate: <strong className="text-slate-400">{log.biometrics_snapshot?.heartRate || 70} BPM</strong>
+                      Frequência cardíaca: <strong className="text-slate-400">{log.biometrics_snapshot?.heartRate || 70} BPM</strong>
                     </div>
                   </div>
                 </div>
