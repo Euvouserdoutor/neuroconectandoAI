@@ -9,7 +9,7 @@ export default function CloudAndVertex() {
   const [temperature, setTemperature] = useState(0.7);
   const [topP, setTopP] = useState(0.9);
   const [maxTokens, setMaxTokens] = useState(1024);
-  const [prompt, setPrompt] = useState('Analyse biometric telemetry: Heart Rate 92, HRV 45, GSR 4.2. Output immediate cognitive fatigue mitigation advice.');
+  const [prompt, setPrompt] = useState('Analise a telemetria simulada: frequência cardíaca 92 bpm, VFC 45 ms, GSR 4,2 µS. Sugira uma pausa adequada para o estudo.');
   const [isQuerying, setIsQuerying] = useState(false);
   const [responseOutput, setResponseOutput] = useState<string | null>(null);
 
@@ -18,12 +18,12 @@ export default function CloudAndVertex() {
     setTimeout(() => {
       setResponseOutput(JSON.stringify({
         telemetryAnalysis: {
-          physioActivation: "High cardiovascular engagement with depressed parasympathetic tone (low HRV). Elevated GSR indicates sweat gland activity (sympathetic spike).",
+          physioActivation: "Maior atividade cardiovascular com VFC reduzida. A GSR elevada indica maior atividade das glândulas sudoríparas no exemplo simulado.",
           fatigueRisk: "82% Burnout warning threshold breached.",
           recommendedIntervention: {
-            coherencePacing: "Initiate 4-second box-breathing cycle to increase vagal nerve stimulation.",
-            sensoryAdjustment: "Adjust lighting to cool color spectrum; decrease white-noise volume.",
-            academicPacing: "Pause high-density problem solving; engage in visual mind mapping for 5 minutes."
+            coherencePacing: "Faça um exercício de respiração quadrada em ritmo confortável.",
+            sensoryAdjustment: "Ajuste a iluminação e reduza o volume de ruídos de fundo.",
+            academicPacing: "Faça uma pausa em tarefas exigentes e experimente um mapa mental por cinco minutos."
           }
         }
       }, null, 2));
