@@ -337,7 +337,7 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
             </div>
             <div>
               <h4 className="text-sm font-bold flex items-center gap-2">
-                {isHighStress ? 'State-Adaptive Wellness Priority Layout' : isLowAttention ? 'State-Adaptive Cognitive Stimulus Layout' : 'Standard Baseline Learning Layout'}
+                {isHighStress ? 'Layout adaptativo com prioridade ao bem-estar' : isLowAttention ? 'Layout adaptativo de estímulo cognitivo' : 'Layout padrão de aprendizagem'}
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-950/50 text-slate-400 uppercase font-black">
                   Cranial Adaptive Grid
                 </span>
@@ -356,7 +356,7 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
               <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${isHighStress ? 'bg-purple-400' : isLowAttention ? 'bg-amber-400' : 'bg-emerald-400'}`}></span>
               <span className={`relative inline-flex rounded-full h-2 w-2 ${isHighStress ? 'bg-purple-500' : isLowAttention ? 'bg-amber-500' : 'bg-emerald-500'}`}></span>
             </span>
-            <span className="text-slate-450">AUTO-GRID: ACTIVE</span>
+            <span className="text-slate-450">GRADE AUTOMÁTICA: ATIVA</span>
           </div>
         </div>
       </div>
@@ -384,7 +384,7 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
           Sensory Signal Simulator
         </h2>
         <p className="text-xs text-slate-400 mb-5">
-          Wearer: <strong className="text-sky-400">Alex Mercer</strong> (ID: Student-0046). Slide dials to mock student physical/brain signals.
+          Usuário: <strong className="text-sky-400">Alex Mercer</strong> (ID: Student-0046). Slide dials to mock student physical/brain signals.
         </p>
 
         <div className="space-y-4">
@@ -485,37 +485,37 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
               onChange={(e) => setBiometric(p => ({ ...p, headMovement: e.target.value as any }))}
               className="w-full bg-slate-800 border border-slate-700 text-slate-100 rounded text-xs p-1.5 focus:outline-none focus:border-sky-500"
             >
-              <option value="Stable">Stable Alignment (Proper posture)</option>
-              <option value="Moderate">Moderate Tilt</option>
-              <option value="High">High Wobbling</option>
-              <option value="Erratic">Erratic Jerking (Distracted/Micro-naps)</option>
+              <option value="Stable">Alinhamento estável (boa postura)</option>
+              <option value="Moderate">Inclinação moderada</option>
+              <option value="High">Movimento intenso</option>
+              <option value="Erratic">Movimentos irregulares (distração/sonolência)</option>
             </select>
           </div>
           
           <div className="pt-3 border-t border-slate-800">
-            <h3 className="text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Wearable Sensor Status</h3>
+            <h3 className="text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Estado dos sensores vestíveis</h3>
             <div className="grid grid-cols-2 gap-2 text-[11px] bg-slate-950/50 p-3 rounded-xl border border-slate-850">
               <div>
-                <span className="text-slate-500 block">EEG Signal Strength</span>
+                <span className="text-slate-500 block">Intensidade do sinal EEG</span>
                 <div className="text-emerald-400 font-medium flex items-center gap-1.5 mt-0.5">
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
-                  <span>Excellent (Active)</span>
+                  <span>Excelente (ativo)</span>
                 </div>
               </div>
               <div>
-                <span className="text-slate-500 block">Battery Level</span>
-                <div className="text-slate-350 font-bold mt-0.5">85% (Nominal)</div>
+                <span className="text-slate-500 block">Nível da bateria</span>
+                <div className="text-slate-350 font-bold mt-0.5">85% (normal)</div>
               </div>
               <div>
-                <span className="text-slate-500 block">Attention Focus</span>
+                <span className="text-slate-500 block">Concentração</span>
                 <div className="text-sky-400 font-bold mt-0.5">
                   {cognitive.attention === 'High' ? '92% (High)' : cognitive.attention === 'Moderate' ? '81% (Flow)' : '35% (Wandering)'}
                 </div>
               </div>
               <div>
-                <span className="text-slate-500 block">Active Safety Alerts</span>
+                <span className="text-slate-500 block">Alertas de segurança ativos</span>
                 <div className={`font-bold mt-0.5 ${cognitive.stress === 'High' ? 'text-rose-450' : 'text-slate-400'}`}>
-                  {cognitive.stress === 'High' ? 'Stress Warning' : 'None detected'}
+                  {cognitive.stress === 'High' ? 'Alerta de estresse' : 'Nenhum detectado'}
                 </div>
               </div>
             </div>
@@ -537,7 +537,7 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
           {/* Beta Waves */}
           <div className="bg-slate-950 p-3 rounded-lg border border-slate-850">
             <div className="flex justify-between items-center mb-1 text-[11px]">
-              <span className="font-bold text-orange-400">Beta (12-30 Hz) — Analytical Focus</span>
+              <span className="font-bold text-orange-400">Beta (12–30 Hz) — foco analítico</span>
               <span className="font-mono bg-orange-950 text-orange-400 px-1.5 py-0.2 rounded font-bold">{brainwaves.beta} µV</span>
             </div>
             <svg className="w-full h-12 text-orange-500 overflow-visible" viewBox="0 0 320 50">
@@ -548,7 +548,7 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
           {/* Alpha Waves */}
           <div className="bg-slate-950 p-3 rounded-lg border border-slate-850">
             <div className="flex justify-between items-center mb-1 text-[11px]">
-              <span className="font-bold text-sky-400">Alpha (8-12 Hz) — Calm Guard / Gating</span>
+              <span className="font-bold text-sky-400">Alfa (8–12 Hz) — relaxamento e modulação</span>
               <span className="font-mono bg-sky-950 text-sky-400 px-1.5 py-0.2 rounded font-bold">{brainwaves.alpha} µV</span>
             </div>
             <svg className="w-full h-12 text-sky-500 overflow-visible" viewBox="0 0 320 50">
@@ -559,7 +559,7 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
           {/* Theta Waves */}
           <div className="bg-slate-950 p-3 rounded-lg border border-slate-850">
             <div className="flex justify-between items-center mb-1 text-[11px]">
-              <span className="font-bold text-purple-400">Theta (4-8 Hz) — Daydreaming / Fatigue</span>
+              <span className="font-bold text-purple-400">Teta (4–8 Hz) — devaneio e fadiga</span>
               <span className="font-mono bg-purple-950 text-purple-400 px-1.5 py-0.2 rounded font-bold">{brainwaves.theta} µV</span>
             </div>
             <svg className="w-full h-12 text-purple-500 overflow-visible" viewBox="0 0 320 50">
@@ -570,14 +570,14 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
           {/* GSR & HRV Sensors */}
           <div className="grid grid-cols-2 gap-2 text-xs">
             <div className="bg-slate-950 p-2.5 rounded border border-slate-850">
-              <span className="text-slate-400 block text-[10px]">GSR Sensor (Stress)</span>
+              <span className="text-slate-400 block text-[10px]">Sensor GSR (estresse)</span>
               <span className="text-red-400 font-mono font-bold text-sm">{biometric.gsr} µS</span>
-              <span className="text-[9px] text-slate-500 block">Baseline: 3.5 - 5 µS</span>
+              <span className="text-[9px] text-slate-500 block">Referência: 3,5–5 µS</span>
             </div>
             <div className="bg-slate-950 p-2.5 rounded border border-slate-850">
-              <span className="text-slate-400 block text-[10px]">HRV Interval (Calm)</span>
+              <span className="text-slate-400 block text-[10px]">Intervalo de VFC (relaxamento)</span>
               <span className="text-emerald-400 font-mono font-bold text-sm">{biometric.hrv} ms</span>
-              <span className="text-[9px] text-slate-500 block">Goal: &gt; 60 ms</span>
+              <span className="text-[9px] text-slate-500 block">Meta: &gt; 60 ms</span>
             </div>
           </div>
 
@@ -601,17 +601,17 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
 
             <div className="grid grid-cols-2 gap-2 text-[10px] font-mono pt-1">
               <div className="bg-slate-950 p-2 rounded border border-slate-900/80">
-                <span className="text-slate-500 block text-[8px] uppercase">5s HR Avg</span>
+                <span className="text-slate-500 block text-[8px] uppercase">Média da FC em 5 s</span>
                 <strong className="text-pink-400 text-xs">{biometric.movingAvg5s ?? biometric.heartRate} BPM</strong>
               </div>
               <div className="bg-slate-950 p-2 rounded border border-slate-900/80">
-                <span className="text-slate-500 block text-[8px] uppercase">Rolling Baseline</span>
+                <span className="text-slate-500 block text-[8px] uppercase">Referência móvel</span>
                 <strong className="text-slate-300 text-xs">{(biometric.dailyBaseline ?? 72.0).toFixed(1)} BPM</strong>
               </div>
             </div>
 
             <div className="text-[10px] flex justify-between items-center pt-1.5 border-t border-slate-900/80">
-              <span className="text-slate-400 font-sans">Baseline Offset:</span>
+              <span className="text-slate-400 font-sans">Desvio da referência:</span>
               <span className={`font-mono font-extrabold ${
                 Math.abs((biometric.movingAvg5s ?? biometric.heartRate) - (biometric.dailyBaseline ?? 72)) >= 8
                   ? 'text-rose-450'
@@ -637,13 +637,13 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
           <div className="flex items-center space-x-2">
             <BookOpen className="h-5 w-5 text-sky-400" />
             <div>
-              <span className="text-xs text-slate-400 block">Selected Adaptive Subject Module</span>
+              <span className="text-xs text-slate-400 block">Módulo de estudo selecionado</span>
               <strong className="text-slate-200 text-sm">{activeTopic}</strong>
             </div>
           </div>
 
           <div className="flex items-center gap-1.5">
-            {['Neuro-Plasticity & Learning', 'Deep Neural Networks', 'Quantum Computing Principles'].map(topic => (
+            {['Neuro-Plasticity & Learning', 'Redes neurais profundas', 'Princípios da computação quântica'].map(topic => (
               <button
                 key={topic}
                 onClick={() => {
@@ -664,11 +664,11 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
         <div className="flex md:grid overflow-x-auto md:grid-cols-3 lg:grid-cols-6 gap-2 bg-slate-950 p-1.5 rounded-2xl border border-slate-855 scrollbar-none" id="student_workspace_tab_bar_interactive">
           {[
             { id: 'chats', val: 'Study Assist Chats', icon: Sparkles },
-            { id: 'mindmap', val: 'Adaptive Mindmap', icon: Network },
+            { id: 'mindmap', val: 'Mapa mental adaptativo', icon: Network },
             { id: 'games', val: 'Focus Calibration', icon: Target },
-            { id: 'coherence', val: 'Coherence Breather', icon: Heart },
+            { id: 'coherence', val: 'Exercício de respiração', icon: Heart },
             { id: 'gnn', val: 'GNN Cognitive Lab', icon: GitBranch },
-            { id: 'biometrics', val: 'Biometric Health Log', icon: Activity }
+            { id: 'biometrics', val: 'Histórico biométrico', icon: Activity }
           ].map(tab => {
             const Icon = tab.icon;
             const isTabActive = activeSubTab === tab.id;
@@ -699,8 +699,8 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
                 <div className="flex items-center space-x-2.5">
                   <div className="h-2.5 w-2.5 rounded-full bg-blue-500"></div>
                   <div>
-                    <h3 className="font-bold text-slate-100 text-sm">Gemini Cognitive Tutor</h3>
-                    <p className="text-[10px] text-slate-400">Generates content targeted at <span className="text-sky-300">{cognitive.attention} Attention</span> style</p>
+                    <h3 className="font-bold text-slate-100 text-sm">Tutor cognitivo Gemini</h3>
+                    <p className="text-[10px] text-slate-400">Gera conteúdo adaptado ao <span className="text-sky-300">{cognitive.attention} Attention</span> estilo</p>
                   </div>
                 </div>
                 <Sparkles className="h-4 w-4 text-blue-400 animate-pulse" />
@@ -740,7 +740,7 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
                 {isTutorLoading && (
                   <div className="flex items-center space-x-2 bg-slate-950 p-3 rounded-lg text-xs text-slate-450 animate-pulse border border-slate-850 w-3/4">
                     <RefreshCw className="h-3 w-3 animate-spin text-sky-400" />
-                    <span>Gemini is adjusting instructional depth for you...</span>
+                    <span>O Gemini está adaptando a profundidade da explicação...</span>
                   </div>
                 )}
               </div>
@@ -773,8 +773,8 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
                 <div className="flex items-center space-x-2.5">
                   <div className="h-2.5 w-2.5 rounded-full bg-emerald-500"></div>
                   <div>
-                    <h3 className="font-bold text-slate-100 text-sm">Emotional Wellness Coach</h3>
-                    <p className="text-[10px] text-slate-400">Bio-feedback loop responding to skin conduction and HRV</p>
+                    <h3 className="font-bold text-slate-100 text-sm">Orientador de bem-estar emocional</h3>
+                    <p className="text-[10px] text-slate-400">Biofeedback baseado na condutância da pele e na VFC</p>
                   </div>
                 </div>
                 <Smile className="h-4 w-4 text-emerald-400" />
@@ -790,9 +790,9 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
                         : 'bg-slate-950 text-slate-300 rounded-bl-none border border-slate-850'
                     }`}>
                       {chat.role === 'user' ? (
-                        <span className="font-bold text-[10px] text-emerald-200 block mb-1">Alex (Student)</span>
+                        <span className="font-bold text-[10px] text-emerald-200 block mb-1">Alex (estudante)</span>
                       ) : (
-                        <span className="font-bold text-[10px] text-emerald-400 block mb-1">Coach Athena</span>
+                        <span className="font-bold text-[10px] text-emerald-400 block mb-1">Orientadora Athena</span>
                       )}
                       <span className="whitespace-pre-wrap">{chat.text}</span>
                     </div>
@@ -801,7 +801,7 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
                 {isCoachLoading && (
                   <div className="flex items-center space-x-2 bg-slate-950 p-3 rounded-lg text-xs text-slate-450 animate-pulse border border-slate-850 w-3/4">
                     <RefreshCw className="h-3 w-3 animate-spin text-emerald-400" />
-                    <span>Athena is formulating a calming reset strategy...</span>
+                    <span>Athena está preparando uma estratégia de relaxamento...</span>
                   </div>
                 )}
               </div>
@@ -921,7 +921,7 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
               ) : (
                 <>
                   <Sparkles className="h-3.5 w-3.5" />
-                  Generate Adapted Quiz
+                  Gerar quiz adaptativo
                 </>
               )}
             </button>
@@ -989,7 +989,7 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
 
                 {submittedQuiz && (
                   <div className="bg-slate-955 border border-slate-850 rounded-lg p-3.5 mt-4 text-xs">
-                    <strong className="text-emerald-400 block mb-1">Adaptive Feedback Insights:</strong>
+                    <strong className="text-emerald-400 block mb-1">Orientações adaptativas:</strong>
                     <p className="text-slate-300">{quizQuestions[activeQuizStep].explanation}</p>
                   </div>
                 )}
@@ -1034,7 +1034,7 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
           ) : (
             <div className="text-center py-10 bg-slate-950 rounded-lg border border-slate-850 text-slate-500 text-xs">
               <Compass className="h-8 w-8 text-slate-700 mx-auto mb-2 animate-bounce" />
-              <p>Click "Generate Adapted Quiz" to test yourself on <strong>{activeTopic}</strong> dynamically written by Gemini tailored to your attention levels.</p>
+              <p>Clique em "Gerar quiz adaptativo" para testar seus conhecimentos em <strong>{activeTopic}</strong> com questões elaboradas pelo Gemini conforme seu nível de atenção.</p>
             </div>
           )}
         </div>
