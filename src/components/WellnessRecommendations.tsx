@@ -357,20 +357,20 @@ export default function WellnessRecommendations({
                   <div className="flex items-center gap-2">
                     <span className="text-lg font-black text-indigo-400 font-mono">{groundingStep}</span>
                     <span className="text-[10px] font-bold text-white uppercase tracking-wider">
-                      {groundingStep === 5 && 'Sights to acknowledge'}
-                      {groundingStep === 4 && 'Physical textures to feel'}
-                      {groundingStep === 3 && 'Acoustic sounds to listen for'}
-                      {groundingStep === 2 && 'Subtle scents to identify'}
-                      {groundingStep === 1 && 'Faint tastes to notice'}
+                      {groundingStep === 5 && 'Elementos para observar'}
+                      {groundingStep === 4 && 'Texturas para perceber'}
+                      {groundingStep === 3 && 'Sons para escutar'}
+                      {groundingStep === 2 && 'Aromas para identificar'}
+                      {groundingStep === 1 && 'Sabores para perceber'}
                     </span>
                   </div>
 
                   <p className="text-[9px] text-slate-450 leading-relaxed">
-                    {groundingStep === 5 && 'Slowly scan the workspace area and explicitly notice five separate items. Let your focus dwell on their shapes, colors, or materials for a second.'}
-                    {groundingStep === 4 && 'Touch nearby surfaces like your clothes, the desk, keyboard, or arms. Observe the physical texture, density, heat, or texture variation.'}
-                    {groundingStep === 3 && 'Close your eyes for a moment. Identify three distinct sounds from your environment (fan noise, typing, distant chatter, traffic).'}
-                    {groundingStep === 2 && 'Inhale gently and seek out two scents in your room (essential oils, wood, coffee, tea, or paper notes).'}
-                    {groundingStep === 1 && 'Recognize one lingering taste in your mouth, or note the neutral, clean taste of a quick sip of water.'}
+                    {groundingStep === 5 && 'Observe o ambiente ao redor e identifique cinco objetos. Preste atenção às formas, às cores ou aos materiais.'}
+                    {groundingStep === 4 && 'Toque superfícies próximas, como a roupa, a mesa ou o teclado. Perceba diferenças de textura e temperatura.'}
+                    {groundingStep === 3 && 'Se for confortável, feche os olhos por um instante e identifique três sons do ambiente.'}
+                    {groundingStep === 2 && 'Perceba dois aromas presentes no ambiente, como madeira, café ou chá.'}
+                    {groundingStep === 1 && 'Identifique um sabor na boca ou perceba o gosto da água.'}
                   </p>
                 </div>
 
@@ -388,7 +388,7 @@ export default function WellnessRecommendations({
                     onClick={handleNextGrounding}
                     className="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-1.5 rounded text-[8.5px] uppercase tracking-wider flex items-center justify-center gap-1 cursor-pointer"
                   >
-                    <span>{groundingStep === 1 ? 'Complete Session' : 'I Acknowledge'}</span>
+                    <span>{groundingStep === 1 ? 'Concluir sessão' : 'I Acknowledge'}</span>
                     <ChevronRight className="h-3 w-3" />
                   </button>
                 </div>
