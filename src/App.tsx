@@ -151,7 +151,7 @@ export default function App() {
       const type = currentState === 'Estresse elevado' ? 'stress' : 'attention';
       const message = currentState === 'Estresse elevado'
         ? "Alex Mercer's neural sensors indicate sustained High Stress level for over 10 seconds. Recommending a breathing break."
-        : "Low Attention span detected for over 10 seconds. Try launching a gamified quiz module to regain focus alignment.";
+        : "Baixa atenção detectada por mais de 10 segundos. Experimente um quiz interativo para retomar a concentração.";
       
       setPulseToast({
         message,
@@ -198,7 +198,7 @@ export default function App() {
 
   // Emergency help distress states
   const [isEmergencyModalOpen, setIsEmergencyModalOpen] = useState(false);
-  const [emergencyMessage, setEmergencyMessage] = useState('Elevated fatigue / stress threshold limit crossed during intensive research block. Seeking advisor assistance.');
+  const [emergencyMessage, setEmergencyMessage] = useState('O nível simulado de fadiga ou estresse ultrapassou o limite durante a atividade. Orientação solicitada.');
   const [customEmergencyText, setCustomEmergencyText] = useState('');
   const [isSendingEmergency, setIsSendingEmergency] = useState(false);
   const [emergencySuccess, setEmergencySuccess] = useState<string | null>(null);
@@ -239,7 +239,7 @@ export default function App() {
   let themeContainerClass = "bg-slate-950 text-slate-100 transition-colors duration-1000";
   let themeBadgeText = "Tema escuro padrão";
   let themeBadgeColor = "text-emerald-450 bg-emerald-950/25 border-emerald-900/40 text-emerald-400";
-  let themeDescription = "Cranial parameters baseline neutral. Default dark layout active.";
+  let themeDescription = "Parâmetros simulados dentro da referência. Tema escuro padrão ativado.";
   let themeAccentText = "text-emerald-400";
   let themeIconComponent = <Sparkles className="h-4 w-4 text-emerald-400" />;
   
@@ -247,14 +247,14 @@ export default function App() {
     themeContainerClass = "bg-gradient-to-b from-[#060410] via-[#090b20] to-[#0e0719] text-indigo-50 transition-colors duration-1000 selection:bg-purple-900 selection:text-white";
     themeBadgeText = "Tema relaxante lilás e índigo";
     themeBadgeColor = "text-purple-400 bg-purple-950/40 border-purple-900/60 font-bold animate-pulse";
-    themeDescription = "EEG telemetry indicates high stress. Calming deep lavender/indigo tones applied to induce systemic relaxation & lower cognitive load.";
+    themeDescription = "A telemetria simulada indica estresse elevado. Cores lilás e índigo foram aplicadas para favorecer uma experiência mais tranquila.";
     themeAccentText = "text-purple-400";
     themeIconComponent = <Heart className="h-4 w-4 text-purple-400 animate-pulse" />;
   } else if (isLowAttention) {
     themeContainerClass = "bg-gradient-to-tr from-[#0a0a09] via-[#241304] to-[#0d0701] text-amber-50 transition-colors duration-1000 selection:bg-amber-900 selection:text-white border-t-2 border-amber-600/45";
     themeBadgeText = "Tema de estimulação cognitiva";
     themeBadgeColor = "text-amber-400 bg-amber-955/50 border-amber-950/60 font-black animate-pulse";
-    themeDescription = "EEG telemetry indicates low focus. High-contrast energetic orange/gold highlights applied to stimulate wearer alertness.";
+    themeDescription = "A telemetria simulada indica baixa atenção. Cores de alto contraste foram aplicadas para destacar os recursos de estudo.";
     themeAccentText = "text-amber-400";
     themeIconComponent = <Zap className="h-4 w-4 text-amber-400 animate-bounce" />;
   }
@@ -844,9 +844,9 @@ export default function App() {
                 <label className="text-[11px] font-bold text-slate-400 block">Selecione um modelo de alerta simulado:</label>
                 <div className="grid grid-cols-1 gap-1.5">
                   {[
-                    'Elevated fatigue / stress threshold limit crossed during intensive research block. Seeking advisor assistance.',
-                    'Panic and cognitive overload triggered during computed logic exam tasks. Immediate remediation coaching requested.',
-                    'Biometric sensors indicate prolonged hyperarousal states. Heart Rate spikes above normal resting threshold.'
+                    'O nível simulado de fadiga ou estresse ultrapassou o limite durante a atividade. Orientação solicitada.',
+                    'Sobrecarga cognitiva durante o exercício de lógica. Solicita-se orientação de apoio.',
+                    'Os sensores simulados indicam ativação prolongada e frequência cardíaca acima da referência.'
                   ].map((tpl) => (
                     <button
                       type="button"
@@ -879,7 +879,7 @@ export default function App() {
                     setEmergencyError(null);
                   }}
                   className="w-full bg-slate-950 border border-slate-800 focus:border-red-900 focus:outline-none p-3 rounded-lg text-xs text-slate-200 placeholder-slate-600 resize-none h-16 font-sans leading-relaxed"
-                  placeholder="Type a custom simulated distress alert status report... (e.g. Anxiety elevated due to high cognitive strain under continuous tests)"
+                  placeholder="Descreva a situação simulada (ex.: estresse elevado após uma sequência de exercícios)"
                 />
               </div>
 
@@ -1334,7 +1334,7 @@ export default function App() {
                   <h4 className={`text-[11px] font-black tracking-wider uppercase ${
                     pulseToast.type === 'stress' ? 'text-red-400' : 'text-amber-400'
                   }`}>
-                    {pulseToast.type === 'stress' ? 'Neural Stress Spike' : 'Sustained Focus Overload'}
+                    {pulseToast.type === 'stress' ? 'Pico de estresse neural' : 'Sobrecarga prolongada de atenção'}
                   </h4>
                   <p className="text-[9px] text-slate-500 font-mono">Telemetry Time: {pulseToast.timestamp}</p>
                 </div>
