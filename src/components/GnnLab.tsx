@@ -374,10 +374,10 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
               <span>Laboratório de engenharia acadêmica</span>
             </span>
             <h2 className="text-xl font-bold text-slate-100 font-sans tracking-tight">
-              In-Depth Graph Neural Network (GNN) Play Ground
+              Laboratório avançado de redes neurais em grafos (GNN)
             </h2>
             <p className="text-xs text-slate-400 max-w-2xl">
-              Unlike classical neural networks treating data as flat grids (images or lists), GNNs directly compute over complex geometric structure. By utilizing continuous <strong>Algoritmos de passagem de mensagens</strong>, they map topological neural associations directly into low-dimensional cognitive embedding spaces.
+              Diferentemente de modelos que processam imagens ou listas, as GNNs operam sobre estruturas com nós e conexões. Por meio de <strong>Algoritmos de passagem de mensagens</strong>, elas representam relações topológicas em espaços vetoriais de menor dimensão.
             </p>
           </div>
           
@@ -444,7 +444,7 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
                   h_i^(l+1) = σ ( Σ_j ( 1 / √(D_ii * D_jj) ) * W * h_j^(l) )
                 </code>
                 <p className="text-[10px] text-slate-400 leading-relaxed font-sans">
-                  Symmetric spatial normalization using adjacency degrees. Prevents features from scaling exponentially as neighbor counts increase.
+                  Normalização espacial simétrica pelo grau dos nós, que evita crescimento excessivo dos atributos conforme aumenta o número de vizinhos.
                 </p>
               </div>
             )}
@@ -454,7 +454,7 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
                   h_i^(l+1) = σ ( Σ_j α_ij * W * h_j^(l) ) &nbsp;[α_ij = Attention Coefficient]
                 </code>
                 <p className="text-[10px] text-slate-400 leading-relaxed font-sans">
-                  Anisotropic aggregation using dynamic attention values computed by continuous comparative soft-max pairings of node vectors.
+                  Agregação anisotrópica por pesos dinâmicos de atenção calculados a partir dos vetores dos nós.
                 </p>
               </div>
             )}
@@ -464,7 +464,7 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
                   h_i^(l+1) = σ ( W * [ h_i^(l) || Mean_(j∈N)( h_j^(l) ) ] )
                 </code>
                 <p className="text-[10px] text-slate-400 leading-relaxed font-sans">
-                  GraphSAGE (Sample and Aggregate) extracts uniform neighborhood subsets, concatenates self features, and computes linear projection.
+                  O GraphSAGE amostra subconjuntos de vizinhos, combina seus atributos com os do nó e calcula a projeção linear.
                 </p>
               </div>
             )}
@@ -744,7 +744,7 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
               </div>
             ) : (
               <p className="text-xs text-slate-500 text-center p-3 border border-dashed border-slate-800 rounded">
-                Click a visual Node on the Workbench stage to tweak parameters.
+                Clique em um nó da área interativa para ajustar seus parâmetros.
               </p>
             )}
           </div>
