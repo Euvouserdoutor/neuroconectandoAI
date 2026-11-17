@@ -268,7 +268,7 @@ export default function ModelAccuracyTable() {
           <div className="space-y-2">
             <span className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full bg-emerald-950/40 border border-emerald-800/60 text-[9px] font-mono font-bold text-emerald-400 uppercase tracking-wider">
               <Sparkles className="h-3 w-3" />
-              <span>Validation & Quality Assurance</span>
+              <span>Validação e garantia de qualidade</span>
             </span>
             <h2 className="text-xl font-bold text-slate-100 font-sans tracking-tight">
               Ecosystem AI Model Accuracy & Benchmarking
@@ -289,7 +289,7 @@ export default function ModelAccuracyTable() {
               }`}
             >
               <BookOpen className="h-4 w-4" />
-              <span>Academic Publication (IEEE)</span>
+              <span>Publicação acadêmica (IEEE)</span>
             </button>
             <button
               type="button"
@@ -301,7 +301,7 @@ export default function ModelAccuracyTable() {
               }`}
             >
               <Sliders className="h-4 w-4" />
-              <span>Interactive Sandbox</span>
+              <span>Ambiente de simulação interativo</span>
             </button>
           </div>
         </div>
@@ -314,7 +314,7 @@ export default function ModelAccuracyTable() {
           <div className="bg-slate-950 border border-slate-850 p-6 rounded-2xl shadow-xl space-y-4">
             <div className="flex items-center gap-2.5 text-[10px] font-mono font-bold text-indigo-400 uppercase tracking-widest">
               <FileText className="h-4 w-4 text-indigo-400" />
-              <span>IEEE Transactions on Learning Technologies / Research Article</span>
+              <span>IEEE Transactions on Learning Technologies / Artigo de pesquisa</span>
             </div>
             
             <div className="space-y-2">
@@ -322,9 +322,9 @@ export default function ModelAccuracyTable() {
                 Physiological-Driven Cognitive State Estimation and Adaptive Learning Personalization in Collaborative Smart Classrooms
               </h3>
               <div className="text-[11px] text-slate-400 font-sans flex flex-wrap gap-x-4 gap-y-1">
-                <span><strong>Authors:</strong> NeuroLearn AI Core Engineering Team</span>
+                <span><strong>Autores:</strong> Equipe de engenharia do NeuroLearn AI</span>
                 <span className="text-slate-600">|</span>
-                <span><strong>Platform:</strong> ESP32 Edge Core + Node.js Express + React Core</span>
+                <span><strong>Plataforma:</strong> ESP32 local + Node.js Express + React</span>
               </div>
             </div>
 
@@ -339,7 +339,7 @@ export default function ModelAccuracyTable() {
             {/* TABLE II */}
             <div className="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl flex flex-col justify-between">
               <div className="space-y-1.5 pb-4 border-b border-slate-850">
-                <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest font-extrabold block">TABLE II</span>
+                <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest font-extrabold block">TABELA II</span>
                 <h4 className="font-extrabold text-slate-200 text-xs uppercase tracking-wide">
                   COGNITIVE STATE CLASSIFICATION PERFORMANCE
                 </h4>
@@ -352,25 +352,25 @@ export default function ModelAccuracyTable() {
                 <table className="w-full text-left text-xs border-collapse font-sans">
                   <thead>
                     <tr className="bg-slate-950/70 border-b border-slate-850 text-[10px] uppercase font-mono tracking-wider text-slate-450">
-                      <th className="py-2.5 px-4 font-bold">Metric Class</th>
-                      <th className="py-2.5 px-4 font-bold text-center">Value (%)</th>
+                      <th className="py-2.5 px-4 font-bold">Categoria da métrica</th>
+                      <th className="py-2.5 px-4 font-bold text-center">Valor (%)</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="border-b border-slate-850/50 hover:bg-slate-850/20 transition-all">
-                      <td className="py-3 px-4 font-semibold text-slate-300">Accuracy</td>
+                      <td className="py-3 px-4 font-semibold text-slate-300">Acurácia</td>
                       <td className="py-3 px-4 text-center font-mono font-black text-emerald-400 text-sm">92.4%</td>
                     </tr>
                     <tr className="border-b border-slate-850/50 hover:bg-slate-850/20 transition-all">
-                      <td className="py-3 px-4 font-semibold text-slate-300">Precision</td>
+                      <td className="py-3 px-4 font-semibold text-slate-300">Precisão</td>
                       <td className="py-3 px-4 text-center font-mono font-black text-indigo-400 text-sm">91.1%</td>
                     </tr>
                     <tr className="border-b border-slate-850/50 hover:bg-slate-850/20 transition-all">
-                      <td className="py-3 px-4 font-semibold text-slate-300">Recall</td>
+                      <td className="py-3 px-4 font-semibold text-slate-300">Sensibilidade</td>
                       <td className="py-3 px-4 text-center font-mono font-black text-amber-400 text-sm">90.5%</td>
                     </tr>
                     <tr className="hover:bg-slate-850/20 transition-all">
-                      <td className="py-3 px-4 font-semibold text-slate-300">F1-Score</td>
+                      <td className="py-3 px-4 font-semibold text-slate-300">Escore F1</td>
                       <td className="py-3 px-4 text-center font-mono font-black text-teal-400 text-sm">90.8%</td>
                     </tr>
                   </tbody>
@@ -380,7 +380,7 @@ export default function ModelAccuracyTable() {
               <div className="p-3 bg-emerald-950/20 border border-emerald-900/35 rounded-lg text-[10px] text-emerald-450 text-emerald-400 flex items-start gap-2">
                 <CheckCircle2 className="h-4 w-4 shrink-0 mt-0.5" />
                 <span>
-                  The classification engine successfully models student attention and stress levels with <strong>92.4% accuracy</strong>, allowing low-latency fatigue forecasting before critical exhaustion sets in.
+                  The classification engine successfully models student attention and stress levels with <strong>92,4% de acurácia</strong>, allowing low-latency fatigue forecasting before critical exhaustion sets in.
                 </span>
               </div>
             </div>
@@ -388,7 +388,7 @@ export default function ModelAccuracyTable() {
             {/* TABLE III */}
             <div className="lg:col-span-7 bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl flex flex-col justify-between">
               <div className="space-y-1.5 pb-4 border-b border-slate-850">
-                <span className="text-[10px] font-mono text-indigo-400 uppercase tracking-widest font-extrabold block">TABLE III</span>
+                <span className="text-[10px] font-mono text-indigo-400 uppercase tracking-widest font-extrabold block">TABELA III</span>
                 <h4 className="font-extrabold text-slate-200 text-xs uppercase tracking-wide">
                   ADAPTIVE LEARNING PERFORMANCE
                 </h4>
@@ -401,33 +401,33 @@ export default function ModelAccuracyTable() {
                 <table className="w-full text-left text-xs border-collapse font-sans">
                   <thead>
                     <tr className="bg-slate-950/70 border-b border-slate-850 text-[10px] uppercase font-mono tracking-wider text-slate-450">
-                      <th className="py-2.5 px-4 font-bold">Academic Metric</th>
-                      <th className="py-2.5 px-4 font-bold text-center">Baseline (%)</th>
+                      <th className="py-2.5 px-4 font-bold">Métrica acadêmica</th>
+                      <th className="py-2.5 px-4 font-bold text-center">Referência (%)</th>
                       <th className="py-2.5 px-4 font-bold text-center">NeuroLearn AI (%)</th>
-                      <th className="py-2.5 px-4 font-bold text-center">Relative Delta</th>
+                      <th className="py-2.5 px-4 font-bold text-center">Variação relativa</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="border-b border-slate-850/50 hover:bg-slate-850/20 transition-all">
-                      <td className="py-2.5 px-4 font-semibold text-slate-300">Engagement Score</td>
+                      <td className="py-2.5 px-4 font-semibold text-slate-300">Índice de engajamento</td>
                       <td className="py-2.5 px-4 text-center font-mono text-slate-450 text-slate-400">72.3%</td>
                       <td className="py-2.5 px-4 text-center font-mono font-bold text-emerald-400">88.6%</td>
                       <td className="py-2.5 px-4 text-center"><span className="px-1.5 py-0.5 rounded bg-emerald-950/50 text-emerald-400 text-[10px] font-bold font-mono">+16.3%</span></td>
                     </tr>
                     <tr className="border-b border-slate-850/50 hover:bg-slate-850/20 transition-all">
-                      <td className="py-2.5 px-4 font-semibold text-slate-300">Concept Retention</td>
+                      <td className="py-2.5 px-4 font-semibold text-slate-300">Retenção de conceitos</td>
                       <td className="py-2.5 px-4 text-center font-mono text-slate-450 text-slate-400">65.1%</td>
                       <td className="py-2.5 px-4 text-center font-mono font-bold text-emerald-400">81.7%</td>
                       <td className="py-2.5 px-4 text-center"><span className="px-1.5 py-0.5 rounded bg-emerald-950/50 text-emerald-400 text-[10px] font-bold font-mono">+16.6%</span></td>
                     </tr>
                     <tr className="border-b border-slate-850/50 hover:bg-slate-850/20 transition-all">
-                      <td className="py-2.5 px-4 font-semibold text-slate-300">Quiz Performance</td>
+                      <td className="py-2.5 px-4 font-semibold text-slate-300">Desempenho nos quizzes</td>
                       <td className="py-2.5 px-4 text-center font-mono text-slate-450 text-slate-400">69.5%</td>
                       <td className="py-2.5 px-4 text-center font-mono font-bold text-emerald-400">84.2%</td>
                       <td className="py-2.5 px-4 text-center"><span className="px-1.5 py-0.5 rounded bg-emerald-950/50 text-emerald-400 text-[10px] font-bold font-mono">+14.7%</span></td>
                     </tr>
                     <tr className="hover:bg-slate-850/20 transition-all">
-                      <td className="py-2.5 px-4 font-semibold text-slate-300">Completion Rate</td>
+                      <td className="py-2.5 px-4 font-semibold text-slate-300">Taxa de conclusão</td>
                       <td className="py-2.5 px-4 text-center font-mono text-slate-450 text-slate-400">74.8%</td>
                       <td className="py-2.5 px-4 text-center font-mono font-bold text-emerald-400">91.3%</td>
                       <td className="py-2.5 px-4 text-center"><span className="px-1.5 py-0.5 rounded bg-emerald-950/50 text-emerald-400 text-[10px] font-bold font-mono">+16.5%</span></td>
@@ -439,7 +439,7 @@ export default function ModelAccuracyTable() {
               <div className="p-3 bg-indigo-950/20 border border-indigo-900/35 rounded-lg text-[10px] text-indigo-400 flex items-start gap-2">
                 <TrendingUp className="h-4 w-4 shrink-0 mt-0.5" />
                 <span>
-                  By using multi-modal bio-fused scheduling breaks, classroom engagement surged by <strong>+16.3%</strong> and core academic retention jumped by <strong>+16.6%</strong> above static structures.
+                  By using multi-modal bio-fused scheduling breaks, classroom engagement surged by <strong>+16.3%</strong> e a retenção de conteúdo aumentou em <strong>+16.6%</strong> above static structures.
                 </span>
               </div>
             </div>
@@ -504,10 +504,10 @@ export default function ModelAccuracyTable() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             
             <div className="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-md space-y-2.5 relative overflow-hidden">
-              <div className="absolute -bottom-8 -right-8 h-24 w-24 rounded-full bg-emerald-500/5 flex items-center justify-center font-mono font-bold text-xl text-emerald-500/10">SDG 3</div>
+              <div className="absolute -bottom-8 -right-8 h-24 w-24 rounded-full bg-emerald-500/5 flex items-center justify-center font-mono font-bold text-xl text-emerald-500/10">ODS 3</div>
               <div className="flex items-center gap-2">
                 <div className="h-7 w-7 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-xs">3</div>
-                <h5 className="font-bold text-slate-200 text-xs uppercase tracking-wider">UN SDG 3: Good Health & Well-Being</h5>
+                <h5 className="font-bold text-slate-200 text-xs uppercase tracking-wider">ODS 3 da ONU: Saúde e bem-estar</h5>
               </div>
               <p className="text-[11px] text-slate-400 leading-relaxed">
                 By non-invasively tracking Heart Rate Variability and brainwaves, the platform intelligently routes soothing acoustics and breathing pacing sequences to prevent physical cognitive exhaustion.
@@ -515,10 +515,10 @@ export default function ModelAccuracyTable() {
             </div>
 
             <div className="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-md space-y-2.5 relative overflow-hidden">
-              <div className="absolute -bottom-8 -right-8 h-24 w-24 rounded-full bg-indigo-500/5 flex items-center justify-center font-mono font-bold text-xl text-indigo-500/10">SDG 4</div>
+              <div className="absolute -bottom-8 -right-8 h-24 w-24 rounded-full bg-indigo-500/5 flex items-center justify-center font-mono font-bold text-xl text-indigo-500/10">ODS 4</div>
               <div className="flex items-center gap-2">
                 <div className="h-7 w-7 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 font-bold text-xs">4</div>
-                <h5 className="font-bold text-slate-200 text-xs uppercase tracking-wider">UN SDG 4: Quality Education</h5>
+                <h5 className="font-bold text-slate-200 text-xs uppercase tracking-wider">ODS 4 da ONU: Educação de qualidade</h5>
               </div>
               <p className="text-[11px] text-slate-400 leading-relaxed">
                 Supports inclusive, adaptive learning paths customized to real-time cognitive absorption capacity, helping slow learners recover attention spans and fast learners avoid over-fatigue.
@@ -538,14 +538,14 @@ export default function ModelAccuracyTable() {
             <div className="md:col-span-5 bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl space-y-5">
               <div className="flex items-center space-x-2 border-b border-slate-850 pb-3">
                 <Sliders className="h-4.5 w-4.5 text-indigo-400" />
-                <h3 className="font-bold text-slate-200 text-sm">Simulation Parameters</h3>
+                <h3 className="font-bold text-slate-200 text-sm">Parâmetros da simulação</h3>
               </div>
 
               <div className="space-y-4">
                 {/* Student dataset size */}
                 <div className="space-y-2">
                   <div className="flex justify-between items-center text-xs font-mono">
-                    <span className="text-slate-400 font-bold uppercase tracking-wider">Evaluation Dataset Size</span>
+                    <span className="text-slate-400 font-bold uppercase tracking-wider">Tamanho do conjunto de avaliação</span>
                     <span className="text-indigo-400 font-extrabold text-[12px]">{datasetSize} Student Nodes</span>
                   </div>
                   <input 
@@ -563,16 +563,16 @@ export default function ModelAccuracyTable() {
                     className="w-full accent-indigo-500 cursor-pointer h-1.5 bg-slate-950 rounded-lg"
                   />
                   <div className="flex justify-between text-[8px] font-mono text-slate-500">
-                    <span>12 (Single Class)</span>
-                    <span>240 (Grade Cohort)</span>
-                    <span>500 (District Sample)</span>
+                    <span>12 (uma turma)</span>
+                    <span>240 (série escolar)</span>
+                    <span>500 (amostra regional)</span>
                   </div>
                 </div>
 
                 {/* Sensor noise simulator */}
                 <div className="space-y-2">
                   <div className="flex justify-between items-center text-xs font-mono">
-                    <span className="text-slate-400 font-bold uppercase tracking-wider">Wearable Sensor Noise (PPG/GSR)</span>
+                    <span className="text-slate-400 font-bold uppercase tracking-wider">Ruído do sensor vestível (PPG/GSR)</span>
                     <span className={`font-extrabold text-[12px] ${sensorNoise > 30 ? 'text-rose-400 animate-pulse' : sensorNoise > 15 ? 'text-amber-400' : 'text-emerald-400'}`}>
                       {sensorNoise}% Noise Level
                     </span>
@@ -592,9 +592,9 @@ export default function ModelAccuracyTable() {
                     className="w-full accent-emerald-500 cursor-pointer h-1.5 bg-slate-950 rounded-lg"
                   />
                   <div className="flex justify-between text-[8px] font-mono text-slate-500">
-                    <span>0% (Clean Signal - Paper Standard)</span>
-                    <span>25% (Mild Jerks / Loose Band)</span>
-                    <span>50% (High Sweat / Heavy Running)</span>
+                    <span>0% (sinal limpo — padrão de referência)</span>
+                    <span>25% (movimentos leves / pulseira solta)</span>
+                    <span>50% (sudorese intensa / corrida)</span>
                   </div>
                 </div>
               </div>
@@ -602,7 +602,7 @@ export default function ModelAccuracyTable() {
               <div className="p-3 bg-slate-950/60 border border-slate-850/70 rounded-lg space-y-1.5 text-xs text-slate-400">
                 <div className="flex items-center gap-1 text-amber-400 text-[10px] font-mono font-bold uppercase">
                   <AlertTriangle className="h-3.5 w-3.5" />
-                  <span>Interference Penalty Alert</span>
+                  <span>Alerta de interferência</span>
                 </div>
                 <p className="leading-relaxed text-[11px]">
                   Shallow linear models suffer severe accuracy degradation under high signal noise. Modern Relational GNNs (GAT, GraphSAGE) utilize topological neighborhood smoothing to preserve classifier precision despite local sensor anomalies.
@@ -657,15 +657,15 @@ export default function ModelAccuracyTable() {
               <table className="w-full text-left text-xs text-slate-300 border-collapse" id="models-accuracy-comparison-table-element">
                 <thead>
                   <tr className="border-b border-slate-850 text-slate-400 text-[10px] uppercase font-mono tracking-wider bg-slate-950/45">
-                    <th className="py-3 px-4 font-bold">Model Identification</th>
-                    <th className="py-3 px-3 font-bold text-center">Accuracy</th>
-                    <th className="py-3 px-3 font-bold text-center">F1-Score</th>
-                    <th className="py-3 px-3 font-bold text-center">Precision</th>
-                    <th className="py-3 px-3 font-bold text-center">Recall</th>
-                    <th className="py-3 px-3 font-bold text-center">MAE</th>
-                    <th className="py-3 px-3 font-bold text-center">Latency</th>
-                    <th className="py-3 px-3 font-bold">Computational Scope</th>
-                    <th className="py-3 px-4">Status / Security</th>
+                    <th className="py-3 px-4 font-bold">Identificação do modelo</th>
+                    <th className="py-3 px-3 font-bold text-center">Acurácia</th>
+                    <th className="py-3 px-3 font-bold text-center">Escore F1</th>
+                    <th className="py-3 px-3 font-bold text-center">Precisão</th>
+                    <th className="py-3 px-3 font-bold text-center">Sensibilidade</th>
+                    <th className="py-3 px-3 font-bold text-center">Erro absoluto médio (MAE)</th>
+                    <th className="py-3 px-3 font-bold text-center">Latência</th>
+                    <th className="py-3 px-3 font-bold">Escopo computacional</th>
+                    <th className="py-3 px-4">Status / Segurança</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -757,7 +757,7 @@ export default function ModelAccuracyTable() {
 
             {/* Brief description text block */}
             <div className="bg-slate-950/50 p-4 rounded-xl border border-slate-850 mt-5 space-y-3">
-              <h4 className="text-[10.5px] font-mono uppercase tracking-widest text-slate-400 font-bold">Model Implementation Overview</h4>
+              <h4 className="text-[10.5px] font-mono uppercase tracking-widest text-slate-400 font-bold">Visão geral da implementação do modelo</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-[11px] text-slate-400 leading-relaxed">
                 {dynamicData.map(m => (
                   <div key={m.id} className="p-3 bg-slate-900/40 rounded-lg border border-slate-850/50 space-y-1">
@@ -862,7 +862,7 @@ export default function ModelAccuracyTable() {
                       />
                       <Bar dataKey="Accuracy" name="Accuracy" fill="#6366f1" radius={[3, 3, 0, 0]} />
                       <Bar dataKey="F1" name="F1-Score" fill="#10b981" radius={[3, 3, 0, 0]} />
-                      <Bar dataKey="Precision" name="Precision" fill="#38bdf8" radius={[3, 3, 0, 0]} />
+                      <Bar dataKey="Precisão" name="Precisão" fill="#38bdf8" radius={[3, 3, 0, 0]} />
                       <Bar dataKey="Recall" name="Recall" fill="#f59e0b" radius={[3, 3, 0, 0]} />
                     </BarChart>
                   ) : (
