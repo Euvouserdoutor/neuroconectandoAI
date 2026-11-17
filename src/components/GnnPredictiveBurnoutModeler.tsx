@@ -118,7 +118,7 @@ export default function GnnPredictiveBurnoutModeler() {
   const [isComputing, setIsComputing] = useState<boolean>(false);
   const [simulationLogs, setSimulationLogs] = useState<string[]>([
     'Academic Relational GNN Kernel ready.',
-    'Model loaded with 12 wearable node entities and 14 communication edges.',
+    'Modelo carregado com 12 nós de sensores vestíveis e 14 conexões.',
     'Click "Calibrar GNN preditiva" to forecast group-wide burnout thresholds.'
   ]);
 
@@ -285,7 +285,7 @@ export default function GnnPredictiveBurnoutModeler() {
   const handleAddNewEdge = (e: React.FormEvent) => {
     e.preventDefault();
     if (newEdgeForm.from === newEdgeForm.to) {
-      addSimLog('Cannot assemble recursive edge: Source and Target match.');
+      addSimLog('Não é possível conectar um nó a ele mesmo.');
       return;
     }
 
@@ -358,7 +358,7 @@ export default function GnnPredictiveBurnoutModeler() {
         },
         body: JSON.stringify({
           message: promptText,
-          topic: "Relational Seating Chart Reorganization for Stress Contagion Mitigation",
+          topic: "Reorganização da disposição de assentos para reduzir a propagação de estresse",
           cognitiveState: { attention: 'High', stress: 'Low', fatigue: 'Low' }
         })
       });
@@ -397,8 +397,8 @@ export default function GnnPredictiveBurnoutModeler() {
 
   // Prepare Radar data
   const radarData = selectedStudentData ? [
-    { subject: 'Raw Fatigue', A: Math.round(selectedStudentData.rawFeatures[0] * 100), fullMark: 100 },
-    { subject: 'Raw Stress', A: Math.round(selectedStudentData.rawFeatures[1] * 100), fullMark: 100 },
+    { subject: 'Fadiga bruta', A: Math.round(selectedStudentData.rawFeatures[0] * 100), fullMark: 100 },
+    { subject: 'Estresse bruto', A: Math.round(selectedStudentData.rawFeatures[1] * 100), fullMark: 100 },
     { subject: 'Entrada ativa', A: Math.round(selectedStudentData.rawFeatures[2] * 100), fullMark: 100 },
     { subject: 'Burnout Risk', A: Math.round(selectedStudentOutput.burnoutRisk * 100), fullMark: 100 },
     { subject: 'Nível de engajamento', A: Math.round(selectedStudentOutput.engagement * 100), fullMark: 100 },
@@ -484,7 +484,7 @@ export default function GnnPredictiveBurnoutModeler() {
                 value={modelIterations}
                 onChange={(e) => setModelIterations(Number(e.target.value))}
                 className="w-full accent-indigo-505 accent-indigo-505 focus:outline-none"
-                title="Model Iterations"
+                title="Iterações do modelo"
               />
               <p className="text-[7.5px] text-slate-500 leading-normal">
                 *Increasing GNN layers simulates deeper stress diffusion cascade steps across multi-hop peer nodes.
@@ -505,7 +505,7 @@ export default function GnnPredictiveBurnoutModeler() {
                 value={sessionLoadCoeff}
                 onChange={(e) => setSessionLoadCoeff(Number(e.target.value))}
                 className="w-full accent-emerald-500 focus:outline-none"
-                title="Session Intensity Multiplier"
+                title="Multiplicador de intensidade da sessão"
               />
             </div>
 
@@ -727,7 +727,7 @@ export default function GnnPredictiveBurnoutModeler() {
 
                     {activeResultsTab === 'table' ? (
                       <div className="space-y-2 text-xs font-mono">
-                        {/* Raw Fatigue */}
+                        {/* Fadiga bruta */}
                         <div className="space-y-0.5">
                           <div className="flex justify-between text-slate-400 text-[9px]">
                             <span>Índice bruto de fadiga</span>
@@ -738,7 +738,7 @@ export default function GnnPredictiveBurnoutModeler() {
                           </div>
                         </div>
 
-                        {/* Raw Stress */}
+                        {/* Estresse bruto */}
                         <div className="space-y-0.5">
                           <div className="flex justify-between text-slate-400 text-[9px]">
                             <span>Estresse simpático bruto</span>
