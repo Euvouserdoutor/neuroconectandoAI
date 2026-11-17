@@ -119,7 +119,7 @@ export default function GnnPredictiveBurnoutModeler() {
   const [simulationLogs, setSimulationLogs] = useState<string[]>([
     'Academic Relational GNN Kernel ready.',
     'Model loaded with 12 wearable node entities and 14 communication edges.',
-    'Click "Calibrate Predictive GNN" to forecast group-wide burnout thresholds.'
+    'Click "Calibrar GNN preditiva" to forecast group-wide burnout thresholds.'
   ]);
 
   // Advisor States
@@ -399,9 +399,9 @@ export default function GnnPredictiveBurnoutModeler() {
   const radarData = selectedStudentData ? [
     { subject: 'Raw Fatigue', A: Math.round(selectedStudentData.rawFeatures[0] * 100), fullMark: 100 },
     { subject: 'Raw Stress', A: Math.round(selectedStudentData.rawFeatures[1] * 100), fullMark: 100 },
-    { subject: 'Active input', A: Math.round(selectedStudentData.rawFeatures[2] * 100), fullMark: 100 },
+    { subject: 'Entrada ativa', A: Math.round(selectedStudentData.rawFeatures[2] * 100), fullMark: 100 },
     { subject: 'Burnout Risk', A: Math.round(selectedStudentOutput.burnoutRisk * 100), fullMark: 100 },
-    { subject: 'Engagement Level', A: Math.round(selectedStudentOutput.engagement * 100), fullMark: 100 },
+    { subject: 'Nível de engajamento', A: Math.round(selectedStudentOutput.engagement * 100), fullMark: 100 },
     { subject: 'Spillover Force', A: Math.round(selectedStudentOutput.spilloverForce * 100), fullMark: 100 },
   ] : [];
 
@@ -432,13 +432,13 @@ export default function GnnPredictiveBurnoutModeler() {
         {/* METERS OVERVIEW */}
         <div className="flex gap-3 shrink-0">
           <div className="bg-slate-950 px-4 py-2.5 rounded-xl border border-slate-850 text-center font-mono space-y-0.5">
-            <span className="text-[8px] text-slate-500 font-black uppercase block">Class Burnout Average</span>
+            <span className="text-[8px] text-slate-500 font-black uppercase block">Média de esgotamento da turma</span>
             <strong className={`text-xl font-black block ${overallBurnoutTrend > 50 ? 'text-rose-500' : 'text-emerald-400'}`}>
               {overallBurnoutTrend}%
             </strong>
           </div>
           <div className="bg-slate-950 px-4 py-2.5 rounded-xl border border-slate-850 text-center font-mono space-y-0.5">
-            <span className="text-[8px] text-slate-500 font-black uppercase block">Burnout Spreader Threat</span>
+            <span className="text-[8px] text-slate-500 font-black uppercase block">Risco de propagação do esgotamento</span>
             <strong className="text-[10.5px] font-black text-rose-455 text-rose-400 block pt-1.5">
               {highestThreatSource}
             </strong>
@@ -459,22 +459,22 @@ export default function GnnPredictiveBurnoutModeler() {
 
             {/* Neural Net Kernel */}
             <div className="space-y-1.5 text-xs">
-              <label className="text-[9.5px] font-mono text-slate-400 block font-bold uppercase">GNN Network Architecture</label>
+              <label className="text-[9.5px] font-mono text-slate-400 block font-bold uppercase">Arquitetura da rede neural em grafos</label>
               <select
                 value={gnnKernel}
                 onChange={(e) => setGnnKernel(e.target.value as any)}
                 className="w-full bg-slate-900 border border-slate-800 text-slate-200 text-[11px] p-2.5 rounded focus:outline-none focus:border-indigo-500 font-mono"
               >
-                <option value="gat_attention">GAT (Graph Attention Network)</option>
-                <option value="gcn_diffusion">GCN (Graph Convolutional Net)</option>
-                <option value="sage_mean">GraphSAGE (Mean Neighborhood Agg)</option>
+                <option value="gat_attention">GAT (rede de atenção em grafos)</option>
+                <option value="gcn_diffusion">GCN (rede convolucional em grafos)</option>
+                <option value="sage_mean">GraphSAGE (agregação média da vizinhança)</option>
               </select>
             </div>
 
             {/* Iterations Layers Slider */}
             <div className="space-y-1.5 text-xs font-mono">
               <div className="flex justify-between text-slate-400 font-bold">
-                <span>Inference Steps (Layers)</span>
+                <span>Etapas de inferência (camadas)</span>
                 <span className="text-indigo-400">{modelIterations} layers</span>
               </div>
               <input
@@ -494,7 +494,7 @@ export default function GnnPredictiveBurnoutModeler() {
             {/* Session Intensity Slider */}
             <div className="space-y-1.5 text-xs font-mono">
               <div className="flex justify-between text-slate-400 font-bold">
-                <span>Task Session load (Coeff)</span>
+                <span>Carga da sessão (coeficiente)</span>
                 <span className="text-emerald-400">x{sessionLoadCoeff.toFixed(1)}</span>
               </div>
               <input
@@ -512,7 +512,7 @@ export default function GnnPredictiveBurnoutModeler() {
             {/* Contagion multiplier */}
             <div className="space-y-1.5 text-xs font-mono">
               <div className="flex justify-between text-slate-400 font-bold">
-                <span>Contagion Spillover Gain</span>
+                <span>Fator de propagação</span>
                 <span className="text-rose-455 text-rose-400">{Math.round(contagionMultiplier * 100)}%</span>
               </div>
               <input
@@ -533,13 +533,13 @@ export default function GnnPredictiveBurnoutModeler() {
               className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-mono font-bold text-[10.5px] py-2.5 rounded-lg border border-indigo-750 transition-all flex items-center justify-center gap-1.5 cursor-pointer"
             >
               <RefreshCw className={`h-3.5 w-3.5 ${isComputing ? 'animate-spin' : ''}`} />
-              <span>Calibrate Predictive GNN</span>
+              <span>Calibrar GNN preditiva</span>
             </button>
           </div>
 
           {/* TELEMETRY MODELING LOGS CHASSIS */}
           <div className="bg-slate-950 p-4 rounded-xl border border-slate-850 space-y-2">
-            <span className="text-[8.5px] text-slate-500 font-mono font-bold block uppercase tracking-wider">Topological inference feedback</span>
+            <span className="text-[8.5px] text-slate-500 font-mono font-bold block uppercase tracking-wider">Resultado da inferência topológica</span>
             <div className="bg-slate-900 border border-slate-850 p-2.5 rounded-lg h-32 overflow-y-auto font-mono text-[8.5px] text-slate-400 space-y-1 scrollbar-thin">
               {simulationLogs.map((log, ix) => (
                 <div key={ix} className="line-clamp-2 leading-relaxed">
@@ -590,7 +590,7 @@ export default function GnnPredictiveBurnoutModeler() {
                         <span className={`text-[10px] font-black ${danger ? 'text-rose-400' : 'text-emerald-400'}`}>
                           {Math.round(outStatus.burnoutRisk * 100)}% 🔥
                         </span>
-                        <span className="text-[7.5px] text-slate-500 block">burnout risk</span>
+                        <span className="text-[7.5px] text-slate-500 block">risco de esgotamento</span>
                       </div>
                     </div>
                   );
@@ -632,7 +632,7 @@ export default function GnnPredictiveBurnoutModeler() {
                         <span className={`text-[10px] font-black ${danger ? 'text-rose-400' : 'text-emerald-400'}`}>
                           {Math.round(outStatus.burnoutRisk * 100)}% 🔥
                         </span>
-                        <span className="text-[7.5px] text-slate-500 block">burnout risk</span>
+                        <span className="text-[7.5px] text-slate-500 block">risco de esgotamento</span>
                       </div>
                     </div>
                   );
@@ -674,7 +674,7 @@ export default function GnnPredictiveBurnoutModeler() {
                         <span className={`text-[10px] font-black ${danger ? 'text-rose-450' : 'text-emerald-400'}`}>
                           {Math.round(outStatus.burnoutRisk * 100)}% 🔥
                         </span>
-                        <span className="text-[7.5px] text-slate-500 block">burnout risk</span>
+                        <span className="text-[7.5px] text-slate-500 block">risco de esgotamento</span>
                       </div>
                     </div>
                   );
@@ -730,7 +730,7 @@ export default function GnnPredictiveBurnoutModeler() {
                         {/* Raw Fatigue */}
                         <div className="space-y-0.5">
                           <div className="flex justify-between text-slate-400 text-[9px]">
-                            <span>Raw Fatigue Index</span>
+                            <span>Índice bruto de fadiga</span>
                             <span>{Math.round(selectedStudentData.rawFeatures[0]*100)}%</span>
                           </div>
                           <div className="h-1.5 w-full bg-slate-900 rounded-full overflow-hidden">
@@ -741,7 +741,7 @@ export default function GnnPredictiveBurnoutModeler() {
                         {/* Raw Stress */}
                         <div className="space-y-0.5">
                           <div className="flex justify-between text-slate-400 text-[9px]">
-                            <span>Raw Sympathetic Stress</span>
+                            <span>Estresse simpático bruto</span>
                             <span>{Math.round(selectedStudentData.rawFeatures[1]*100)}%</span>
                           </div>
                           <div className="h-1.5 w-full bg-slate-900 rounded-full overflow-hidden">
@@ -752,13 +752,13 @@ export default function GnnPredictiveBurnoutModeler() {
                         {/* predicted risk */}
                         <div className="p-2.5 bg-slate-900 rounded border border-slate-850/60 grid grid-cols-2 gap-2 text-center text-[10px]">
                           <div className="space-y-0.5 border-r border-slate-850">
-                            <span className="text-slate-500 text-[8.5px] uppercase block">PREDICTED BURNOUT</span>
+                            <span className="text-slate-500 text-[8.5px] uppercase block">ESGOTAMENTO PREVISTO</span>
                             <span className={`text-sm font-black ${selectedStudentOutput.burnoutRisk > 0.5 ? 'text-rose-455 text-rose-400' : 'text-emerald-450 text-emerald-400'}`}>
                               {Math.round(selectedStudentOutput.burnoutRisk * 100)}%
                             </span>
                           </div>
                           <div className="space-y-0.5">
-                            <span className="text-slate-500 text-[8.5px] uppercase block">ENGAGEMENT INTENSITY</span>
+                            <span className="text-slate-500 text-[8.5px] uppercase block">INTENSIDADE DE ENGAJAMENTO</span>
                             <span className="text-sm font-black text-indigo-400">
                               {Math.round(selectedStudentOutput.engagement * 100)}%
                             </span>
@@ -779,7 +779,7 @@ export default function GnnPredictiveBurnoutModeler() {
                     )}
                   </div>
                 ) : (
-                  <p className="text-xs text-slate-500 text-center py-6 italic font-mono">Select a student core node on any Table above to track detailed prediction arrays.</p>
+                  <p className="text-xs text-slate-500 text-center py-6 italic font-mono">Selecione um estudante nas tabelas acima para consultar as previsões detalhadas.</p>
                 )}
               </div>
 
@@ -805,7 +805,7 @@ export default function GnnPredictiveBurnoutModeler() {
                 <form onSubmit={handleAddNewEdge} className="space-y-3 font-mono text-[10px]">
                   <div className="grid grid-cols-2 gap-2">
                     <div>
-                      <label className="text-slate-500 block mb-0.5 font-bold uppercase">Node From</label>
+                      <label className="text-slate-500 block mb-0.5 font-bold uppercase">Nó de origem</label>
                       <select
                         value={newEdgeForm.from}
                         onChange={(e) => setNewEdgeForm(prev => ({ ...prev, from: e.target.value }))}
@@ -818,7 +818,7 @@ export default function GnnPredictiveBurnoutModeler() {
                     </div>
 
                     <div>
-                      <label className="text-slate-500 block mb-0.5 font-bold uppercase">Node To (Recip)</label>
+                      <label className="text-slate-500 block mb-0.5 font-bold uppercase">Nó de destino (receptor)</label>
                       <select
                         value={newEdgeForm.to}
                         onChange={(e) => setNewEdgeForm(prev => ({ ...prev, to: e.target.value }))}
@@ -833,7 +833,7 @@ export default function GnnPredictiveBurnoutModeler() {
 
                   <div className="grid grid-cols-2 gap-2">
                     <div>
-                      <label className="text-slate-500 block mb-0.5 font-bold uppercase font-sans">Intensity (1-10)</label>
+                      <label className="text-slate-500 block mb-0.5 font-bold uppercase font-sans">Intensidade (1–10)</label>
                       <input
                         type="number"
                         min="1"
@@ -845,15 +845,15 @@ export default function GnnPredictiveBurnoutModeler() {
                     </div>
 
                     <div>
-                      <label className="text-slate-500 block mb-0.5 font-bold uppercase">Affinity Mode</label>
+                      <label className="text-slate-500 block mb-0.5 font-bold uppercase">Tipo de afinidade</label>
                       <select
                         value={newEdgeForm.type}
                         onChange={(e) => setNewEdgeForm(prev => ({ ...prev, type: e.target.value as any }))}
                         className="w-full bg-slate-900 border border-slate-800 text-slate-200 text-[9.5px] p-2 rounded focus:outline-none focus:border-indigo-500"
                       >
-                        <option value="mentoring">Mentoring help</option>
-                        <option value="cooperative">Active team-collab</option>
-                        <option value="passive">Passive workspace sitting</option>
+                        <option value="mentoring">Ajuda de mentoria</option>
+                        <option value="cooperative">Colaboração ativa da equipe</option>
+                        <option value="passive">Proximidade no ambiente</option>
                       </select>
                     </div>
                   </div>
@@ -942,7 +942,7 @@ export default function GnnPredictiveBurnoutModeler() {
           <div>
             <div className="flex items-center justify-between border-b border-slate-900 pb-2 mb-3">
               <div>
-                <span className="text-[9px] text-slate-500 font-mono font-bold uppercase block">Bio-Adaptive Seating Coach</span>
+                <span className="text-[9px] text-slate-500 font-mono font-bold uppercase block">Orientador bioadaptativo de disposição da turma</span>
                 <h3 className="font-extrabold text-slate-205 text-slate-200 text-xs flex items-center gap-1.5">
                   <Sparkles className="h-4 w-4 text-indigo-400 animate-pulse" />
                   Gemini Dynamic Seating Advisor
@@ -974,12 +974,12 @@ export default function GnnPredictiveBurnoutModeler() {
             ) : isAdvisorLoading ? (
               <div className="h-44 bg-slate-900/40 border border-slate-850 rounded-lg flex flex-col items-center justify-center font-mono text-[10px] text-indigo-400 gap-2">
                 <RefreshCw className="h-5 w-5 animate-spin" />
-                <span>Formulating seating topology graph, consulting neural layout matrices...</span>
+                <span>Gerando o grafo de disposição dos assentos e analisando as matrizes...</span>
               </div>
             ) : (
               <div className="h-44 bg-slate-900/2 0 border border-slate-850/45 rounded-lg flex flex-col items-center justify-center text-center p-4 text-[9px] font-mono text-slate-500 space-y-1">
                 <Network className="h-8 w-8 text-slate-800 animate-pulse" />
-                <span>Academic Seating Optimization Advice is idle.</span>
+                <span>Nenhuma orientação de distribuição dos assentos foi gerada.</span>
                 <p className="text-[8px] text-slate-600 max-w-sm">
                   Click the recommendation generator button below to draft an optimized HIPAA Safe Harbor seating re-layout.
                 </p>
