@@ -304,11 +304,11 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
           <div className="flex items-center space-x-3">
             <Volume2 className="h-5 w-5 animate-bounce" />
             <div>
-              <strong className="text-sm block">Broadcast Sent: Adaptive Focus Break Enforced!</strong>
-              <p className="text-xs text-sky-200">Enforcing a 60-second breathing overlay and posture alignment screen on all student platforms.</p>
+              <strong className="text-sm block">Aviso enviado: pausa adaptativa aplicada!</strong>
+              <p className="text-xs text-sky-200">Uma pausa guiada de respiração e postura de 60 segundos foi solicitada aos estudantes.</p>
             </div>
           </div>
-          <span className="text-xs bg-sky-950 font-semibold px-2 py-1 rounded">Activating...</span>
+          <span className="text-xs bg-sky-950 font-semibold px-2 py-1 rounded">Ativando...</span>
         </div>
       )}
 
@@ -325,7 +325,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
             }`}
           >
             <LayoutGrid className="h-4 w-4" />
-            <span>Classroom Live Monitor</span>
+            <span>Monitoramento da turma em tempo real</span>
           </button>
           
           <button
@@ -338,13 +338,13 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
             }`}
           >
             <GitBranch className="h-4 w-4 animate-pulse text-rose-400" />
-            <span>Collaborative GNN Network Lab</span>
+            <span>Laboratório colaborativo de redes neurais em grafos</span>
           </button>
         </div>
 
         <div className="flex items-center space-x-2 text-[10px] text-slate-400 mr-2">
           <Network className="h-3.5 w-3.5 text-indigo-405 text-indigo-400 animate-spin" />
-          <span className="font-mono uppercase tracking-wider font-bold">Relational brainwave modeler : ONLINE</span>
+          <span className="font-mono uppercase tracking-wider font-bold">Simulador relacional de ondas cerebrais: ATIVO</span>
         </div>
       </div>
 
@@ -356,9 +356,9 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
             <Users className="h-5 w-5" />
           </div>
           <div>
-            <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">Class Roster</span>
-            <strong className="text-2xl text-slate-100 font-bold">12 Students</strong>
-            <p className="text-[10px] text-emerald-400">100% sensors online</p>
+            <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">Lista de estudantes</span>
+            <strong className="text-2xl text-slate-100 font-bold">12 estudantes</strong>
+            <p className="text-[10px] text-emerald-400">100% dos sensores conectados</p>
           </div>
         </div>
 
@@ -368,9 +368,9 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
             <Activity className="h-5 w-5" />
           </div>
           <div>
-            <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">Cognitive Focus</span>
+            <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">Concentração cognitiva</span>
             <strong className="text-2xl text-slate-100 font-bold">{averageAttentionIndex}%</strong>
-            <p className="text-[10px] text-slate-400">Optimal flow limits</p>
+            <p className="text-[10px] text-slate-400">Faixa de desempenho ideal</p>
           </div>
         </div>
 
@@ -380,9 +380,9 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
             <ShieldAlert className="h-5 w-5 animate-pulse" />
           </div>
           <div>
-            <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">Active Burnout Risks</span>
+            <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">Riscos de esgotamento identificados</span>
             <strong className="text-2xl text-red-400 font-bold">{highStressCount} Students</strong>
-            <p className="text-[10px] text-rose-300">Requires offline detox</p>
+            <p className="text-[10px] text-rose-300">Recomenda-se uma pausa de tela</p>
           </div>
         </div>
 
@@ -392,9 +392,9 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
             <Zap className="h-5 w-5" />
           </div>
           <div>
-            <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">High Fatigue</span>
+            <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">Fadiga elevada</span>
             <strong className="text-2xl text-slate-100 font-bold">{highFatigueCount} Students</strong>
-            <p className="text-[10px] text-yellow-400">Theta brainwaves elevated</p>
+            <p className="text-[10px] text-yellow-400">Atividade teta elevada</p>
           </div>
         </div>
       </div>
@@ -418,9 +418,9 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
               </div>
               {/* Quick Map Legend */}
               <div className="flex items-center space-x-2 text-[9px] text-slate-400 self-start md:self-auto font-mono">
-                <span className="flex items-center"><span className="h-2 w-2 bg-emerald-500 rounded-full mr-1 animate-pulse"></span> Focus</span>
-                <span className="flex items-center"><span className="h-2 w-2 bg-yellow-500 rounded-full mr-1 animate-pulse"></span> Tired</span>
-                <span className="flex items-center"><span className="h-2 w-2 bg-rose-500 rounded-full mr-1 animate-pulse"></span> Stress</span>
+                <span className="flex items-center"><span className="h-2 w-2 bg-emerald-500 rounded-full mr-1 animate-pulse"></span> Foco</span>
+                <span className="flex items-center"><span className="h-2 w-2 bg-yellow-500 rounded-full mr-1 animate-pulse"></span> Cansado</span>
+                <span className="flex items-center"><span className="h-2 w-2 bg-rose-500 rounded-full mr-1 animate-pulse"></span> Estresse</span>
               </div>
             </div>
 
@@ -450,7 +450,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                     statusFilter === 'focus' ? 'bg-emerald-950/60 text-emerald-450 border border-emerald-900/40' : 'text-slate-500 hover:text-slate-300'
                   }`}
                 >
-                  Focus
+                  Foco
                 </button>
                 <button
                   type="button"
@@ -459,7 +459,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                     statusFilter === 'stressed' ? 'bg-rose-950/60 text-rose-450 border border-rose-900/40' : 'text-slate-500 hover:text-slate-300'
                   }`}
                 >
-                  Stress
+                  Estresse
                 </button>
                 <button
                   type="button"
@@ -468,7 +468,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                     statusFilter === 'fatigued' ? 'bg-amber-950/60 text-yellow-450 border border-amber-900/40' : 'text-slate-500 hover:text-slate-300'
                   }`}
                 >
-                  Tired
+                  Cansado
                 </button>
               </div>
             </div>
@@ -530,24 +530,24 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                 <div className="flex items-center justify-between w-full">
                   <div>
                     <strong className="text-sm text-slate-200 block">{activeHoveredStudent.name}</strong>
-                    <span className="text-[10px] text-slate-500 uppercase tracking-wide">Dynamic Wearable Telemetry</span>
+                    <span className="text-[10px] text-slate-500 uppercase tracking-wide">Telemetria dinâmica dos dispositivos</span>
                     <div className="grid grid-cols-3 gap-4 mt-2">
                       <div>
-                        <span className="text-[9px] text-slate-500 block">Attention Index</span>
+                        <span className="text-[9px] text-slate-500 block">Índice de atenção</span>
                         <strong className="text-xs text-emerald-400 font-semibold">{activeHoveredStudent.attention}</strong>
                       </div>
                       <div>
-                        <span className="text-[9px] text-slate-500 block">Posture Angle</span>
+                        <span className="text-[9px] text-slate-500 block">Ângulo postural</span>
                         <strong className="text-xs text-sky-400 font-semibold">{activeHoveredStudent.posture}</strong>
                       </div>
                       <div>
-                        <span className="text-[9px] text-slate-500 block">Stress Indicator (GSR)</span>
+                        <span className="text-[9px] text-slate-500 block">Indicador de estresse (GSR)</span>
                         <strong className="text-xs text-rose-400 font-bold">{activeHoveredStudent.gsr} µS</strong>
                       </div>
                     </div>
                   </div>
                   <div className="p-3 bg-slate-900 rounded-lg border border-slate-800 text-right">
-                    <span className="text-[9px] text-slate-400 block font-mono">HR / HRV</span>
+                    <span className="text-[9px] text-slate-400 block font-mono">FC / VFC</span>
                     <strong className="text-sm text-slate-200 mt-1 font-bold block">{activeHoveredStudent.id === '1' && biometric ? biometric.heartRate : 78} BPM</strong>
                     <span className="text-[9px] text-slate-500 font-mono block">SDNN: {activeHoveredStudent.hrv} ms</span>
                   </div>
@@ -557,10 +557,10 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                   <div className="mt-3 pt-3 border-t border-slate-900 text-[10px] text-slate-400 flex items-center md:justify-between flex-wrap gap-2">
                     <span className="flex items-center gap-1">
                       <Heart className="h-3.5 w-3.5 text-pink-500 animate-pulse" />
-                      <span>Firebase Daily Reported State: <strong className="text-pink-400">{latestCheckin.moodLabel}</strong> (Mood: {latestCheckin.mood}/5)</span>
+                      <span>Registro diário no Firebase: <strong className="text-pink-400">{latestCheckin.moodLabel}</strong> (Mood: {latestCheckin.mood}/5)</span>
                     </span>
                     <span className="bg-indigo-950 text-indigo-400 px-2 py-0.5 rounded border border-indigo-900/60">
-                      Sleep: <strong>{latestCheckin.sleepHours} hrs</strong> ({latestCheckin.sleepQuality})
+                      Sono: <strong>{latestCheckin.sleepHours} hrs</strong> ({latestCheckin.sleepQuality})
                     </span>
                   </div>
                 )}
@@ -703,7 +703,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                       stroke="#ef4444" 
                       strokeDasharray="3 3" 
                       label={{ 
-                        value: 'Burnout Threshold', 
+                        value: 'Limite de esgotamento', 
                         fill: '#ef4444', 
                         fontSize: 8, 
                         position: 'top',
@@ -780,15 +780,15 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                 <div className="flex items-center space-x-2.5 text-[9px] text-slate-400">
                   <span className="flex items-center gap-1">
                     <span className="h-1.5 w-1.5 rounded-sm bg-indigo-500"></span>
-                    <span>High Strain (&gt;80%)</span>
+                    <span>Sobrecarga alta (&gt;80%)</span>
                   </span>
                   <span className="flex items-center gap-1">
                     <span className="h-1.5 w-1.5 rounded-sm bg-emerald-500"></span>
-                    <span>Optimal Flow (50-80%)</span>
+                    <span>Fluxo ideal (50–80%)</span>
                   </span>
                   <span className="flex items-center gap-1">
                     <span className="h-1.5 w-1.5 rounded-sm bg-amber-500"></span>
-                    <span>Low Focus (&lt;50%)</span>
+                    <span>Foco baixo (&lt;50%)</span>
                   </span>
                 </div>
               </div>
@@ -826,15 +826,15 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                                 {dataPoint.label} Distribution
                               </p>
                               <div className="flex items-center justify-between gap-4">
-                                <span className="text-indigo-400 font-semibold">High Strain:</span>
+                                <span className="text-indigo-400 font-semibold">Sobrecarga alta:</span>
                                 <span className="font-mono font-bold text-slate-100">{dataPoint.highStrainCount} students</span>
                               </div>
                               <div className="flex items-center justify-between gap-4">
-                                <span className="text-emerald-400 font-semibold">Optimal Flow:</span>
+                                <span className="text-emerald-400 font-semibold">Fluxo ideal:</span>
                                 <span className="font-mono font-bold text-slate-100">{dataPoint.optimalFlowCount} students</span>
                               </div>
                               <div className="flex items-center justify-between gap-4">
-                                <span className="text-amber-400 font-semibold">Low Focus:</span>
+                                <span className="text-amber-400 font-semibold">Foco baixo:</span>
                                 <span className="font-mono font-bold text-slate-100">{dataPoint.lowFocusCount} students</span>
                               </div>
                               <p className="text-[10px] text-slate-500 pt-1 border-t border-slate-900 font-mono text-center">
@@ -856,19 +856,19 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                     
                     <Bar 
                       dataKey="highStrainCount" 
-                      name="High Strain" 
+                      name="Sobrecarga alta" 
                       stackId="classStack" 
                       fill="#6366f1" 
                     />
                     <Bar 
                       dataKey="optimalFlowCount" 
-                      name="Optimal Flow" 
+                      name="Fluxo ideal" 
                       stackId="classStack" 
                       fill="#10b981" 
                     />
                     <Bar 
                       dataKey="lowFocusCount" 
-                      name="Low Focus" 
+                      name="Foco baixo" 
                       stackId="classStack" 
                       fill="#f59e0b" 
                       radius={[4, 4, 0, 0]} 
@@ -906,7 +906,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                         studentName: 'Alex Mercer',
                         type: 'Active Sympathetic Strain Surge',
                         severity: 'CRITICAL',
-                        timestamp: 'Just now',
+                        timestamp: 'Agora mesmo',
                         details: `Live wearable band reports biometric values out of safe zone: GSR is elevated to ${biometric ? biometric.gsr : 8.5} µS, and Heart Rate Variability has collapsed to ${biometric ? biometric.hrv : 38}ms. High alpha/theta load indicating cognitive burnout risk.`,
                         recom: 'Instruct Alex to pause study module, take deep breathing block, and complete an emotional refresh.'
                       });
@@ -918,7 +918,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                         studentName: 'Alex Mercer',
                         type: 'Sustained Fatigue Detected',
                         severity: 'HIGH',
-                        timestamp: 'Just now',
+                        timestamp: 'Agora mesmo',
                         details: `Wearable band metrics suggest fatigue levels have crossed safe threshold limits. Alpha activity decreased while slow-theta waveforms rose by 32%.`,
                         recom: 'Broadcast adaptive focus break, or prompt quick physical posture stretch.'
                       });
@@ -934,8 +934,8 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                         studentName: ds.studentName,
                         type: 'MANUAL DISTRESS / RESCUE SIGNAL',
                         severity: 'CRITICAL',
-                        timestamp: ds.createdAt ? new Date(ds.createdAt).toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'}) : 'Just now',
-                        details: `Student manually pressed 'Emergency Help' on headband console. Message details: "${ds.message}". Biometric Context -> Stress: ${ds.stressSnapshot || 'N/A'}, Attention Focus: ${ds.attentionSnapshot || 'N/A'}, Heart Rate: ${ds.heartRateSnapshot ? ds.heartRateSnapshot + ' BPM' : 'N/A'}.`,
+                        timestamp: ds.createdAt ? new Date(ds.createdAt).toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'}) : 'Agora mesmo',
+                        details: `Student manually pressed 'Ajuda de emergência' on headband console. Message details: "${ds.message}". Biometric Context -> Stress: ${ds.stressSnapshot || 'N/A'}, Attention Focus: ${ds.attentionSnapshot || 'N/A'}, Heart Rate: ${ds.heartRateSnapshot ? ds.heartRateSnapshot + ' BPM' : 'N/A'}.`,
                         recom: 'Deploy Immediate Intervention. Initiate active dialogue link or quiet desk check-in.'
                       });
                     }
@@ -983,7 +983,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
 
             {/* Quick intervention broad cast panel */}
             <div className="pt-5 border-t border-slate-850 mt-5">
-              <h4 className="text-xs font-bold text-slate-200 mb-2">Classroom Intervention Broadcaster</h4>
+              <h4 className="text-xs font-bold text-slate-200 mb-2">Ferramenta de intervenção em sala</h4>
               <p className="text-[10px] text-slate-400 mb-3.5 leading-relaxed">
                 Notice general attention fading or post-exam burnout? Enforce a calming physical rest session on all client screens instantly.
               </p>
@@ -1008,7 +1008,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                 </span>
               </h4>
               {isLogsLoading ? (
-                <div className="text-[11px] text-slate-500 animate-pulse text-center py-2">Loading logs...</div>
+                <div className="text-[11px] text-slate-500 animate-pulse text-center py-2">Carregando registros...</div>
               ) : wellnessLogs.length > 0 ? (
                 <div className="space-y-2 max-h-[160px] overflow-y-auto scrollbar-thin">
                   {wellnessLogs.slice(0, 2).map((log, index) => (
@@ -1017,7 +1017,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                         <span className="font-bold">{log.moodLabel} (Score: {log.mood}/5)</span>
                         <span className="text-slate-500 text-[8px]">{log.createdAt ? new Date(log.createdAt).toLocaleDateString() : 'Today'}</span>
                       </div>
-                      <p className="text-slate-400 text-[10px]">Sleep: <strong className="text-indigo-400">{log.sleepHours}h</strong> ({log.sleepQuality})</p>
+                      <p className="text-slate-400 text-[10px]">Sono: <strong className="text-indigo-400">{log.sleepHours}h</strong> ({log.sleepQuality})</p>
                       {log.notes && (
                         <p className="border-l-2 border-indigo-500/40 pl-1.5 text-slate-400 italic text-[9.5px]">
                           "{log.notes}"
@@ -1027,7 +1027,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                   ))}
                 </div>
               ) : (
-                <p className="text-slate-500 text-[11px] text-center py-3 border border-dashed border-slate-800 rounded">No self-reports yet.</p>
+                <p className="text-slate-500 text-[11px] text-center py-3 border border-dashed border-slate-800 rounded">Ainda não há autorrelatos.</p>
               )}
             </div>
 
@@ -1043,15 +1043,15 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                 </span>
               </h4>
               {isDistressLoading ? (
-                <div className="text-[11px] text-slate-500 animate-pulse text-center py-2">Loading distress signals...</div>
+                <div className="text-[11px] text-slate-500 animate-pulse text-center py-2">Carregando alertas...</div>
               ) : distressSignals.length > 0 ? (
                 <div className="space-y-2 max-h-[160px] overflow-y-auto scrollbar-thin">
                   {distressSignals.slice(0, 3).map((sig, index) => (
                     <div key={index} className="bg-red-950/15 p-2.5 rounded border border-red-900/30 text-[10px] space-y-1">
                       <div className="flex justify-between items-center text-rose-400 font-bold">
-                        <span>Incident Signal Triggered</span>
+                        <span>Alerta registrado</span>
                         <span className="text-slate-500 text-[8px] font-mono">
-                          {sig.createdAt ? new Date(sig.createdAt).toLocaleTimeString() : 'Just now'}
+                          {sig.createdAt ? new Date(sig.createdAt).toLocaleTimeString() : 'Agora mesmo'}
                         </span>
                       </div>
                       <p className="text-slate-250 italic">"{sig.message}"</p>
@@ -1064,7 +1064,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                   ))}
                 </div>
               ) : (
-                <p className="text-slate-500 text-[11px] text-center py-3 border border-dashed border-slate-800 rounded">No emergency alerts logged.</p>
+                <p className="text-slate-500 text-[11px] text-center py-3 border border-dashed border-slate-800 rounded">Nenhum alerta registrado.</p>
               )}
             </div>
 
@@ -1093,7 +1093,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
               }`}
             >
               <GitBranch className="h-4 w-4 text-rose-400 animate-pulse" />
-              <span>Predictive Burnout Modeler</span>
+              <span>Simulador preditivo de esgotamento</span>
             </button>
             <button
               type="button"
@@ -1105,7 +1105,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
               }`}
             >
               <Network className="h-4 w-4 text-indigo-400" />
-              <span>Physical Resonance Lab</span>
+              <span>Laboratório de ressonância física</span>
             </button>
             <button
               type="button"
@@ -1117,7 +1117,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
               }`}
             >
               <Award className="h-4 w-4 text-emerald-400" />
-              <span>Model Accuracies</span>
+              <span>Desempenho dos modelos</span>
             </button>
           </div>
 
