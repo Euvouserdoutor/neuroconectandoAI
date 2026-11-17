@@ -1280,7 +1280,7 @@ export default function BiometricHealthLog() {
                 <span className="text-slate-400 font-mono">REGULAÇÃO AUTONÔMICA</span>
               </div>
               <p className="text-[9.5px] text-slate-400 leading-relaxed">
-                Your parasympathetic restorative recovery slots represent <span className="text-blue-400 font-mono font-bold">{statePercentages.rest}%</span>. However, stressful overload peaks cover <span className="text-rose-400 font-mono font-bold">{statePercentages.stress}%</span> of your PM study sessions. Activating physical pacing and rhythmic diaphragmatic breathing offsets these stressors.
+                Your parasympathetic restorative recovery slots represent <span className="text-blue-400 font-mono font-bold">{statePercentages.rest}%</span>. Entretanto, picos de sobrecarga ocupam <span className="text-rose-400 font-mono font-bold">{statePercentages.stress}%</span> of your PM study sessions. Activating physical pacing and rhythmic diaphragmatic breathing offsets these stressors.
               </p>
             </div>
           </div>
@@ -1300,13 +1300,13 @@ export default function BiometricHealthLog() {
           
           {activeDashboardTab === 'timeline' && (
             <p>
-              When cognitive loads surge during afternoon (PM) review runs, average Heart Rate elevates toward <span className="text-rose-400 font-bold font-mono">{stats.heartRate.max} BPM</span>, while HRV drops to <span className="text-emerald-400 font-bold font-mono">{stats.hrv.min} ms</span>. This demonstrates sympathetic branch dominance under active academic strain.
+              When cognitive loads surge during afternoon (PM) review runs, average Heart Rate elevates toward <span className="text-rose-400 font-bold font-mono">{stats.heartRate.max} BPM</span>, enquanto a VFC cai para <span className="text-emerald-400 font-bold font-mono">{stats.hrv.min} ms</span>. This demonstrates sympathetic branch dominance under active academic strain.
             </p>
           )}
 
           {activeDashboardTab === 'scatter' && (
             <p>
-              The scatter distribution identifies high density in the <span className="text-emerald-400 font-bold">Faixa de concentração tranquila</span> (low heart rates, high loads). However, afternoon slots occasionally drift into the <span className="text-rose-400 font-bold">Quadrante de sobrecarga de estresse</span>. We recommend pairing heavy learning runs with the **Coherence Breather** to sustain flow.
+              The scatter distribution identifies high density in the <span className="text-emerald-400 font-bold">Faixa de concentração tranquila</span> (frequência cardíaca baixa e carga elevada). Entretanto, algumas tardes apresentam valores na faixa de <span className="text-rose-400 font-bold">Quadrante de sobrecarga de estresse</span>. We recommend pairing heavy learning runs with the **Coherence Breather** to sustain flow.
             </p>
           )}
 
