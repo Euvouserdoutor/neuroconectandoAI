@@ -168,7 +168,7 @@ export default function DailyWellnessCheckin({ cognitive }: DailyWellnessCheckin
             {/* 1. Mood Selection Selector */}
             <div>
               <label className="block text-[10.5px] font-bold text-slate-400 uppercase tracking-wider mb-2">
-                1. What is your emotional mood rating today?
+                1. Como está seu humor hoje?
               </label>
               <div className="grid grid-cols-5 gap-1.5">
                 {moodOptions.map((opt) => {
@@ -199,7 +199,7 @@ export default function DailyWellnessCheckin({ cognitive }: DailyWellnessCheckin
               <div>
                 <div className="flex justify-between items-center text-xs mb-2">
                   <span className="text-[10.5px] text-slate-300 font-bold uppercase tracking-wider flex items-center">
-                    <Clock className="h-3.5 w-3.5 text-sky-400 mr-1" /> 2. Sleep Duration
+                    <Clock className="h-3.5 w-3.5 text-sky-400 mr-1" /> 2. Duração do sono
                   </span>
                   <span className="font-mono bg-sky-950/80 text-sky-305 text-sky-400 font-bold px-2 py-0.5 rounded border border-sky-900 text-[11px]">
                     {sleepHours.toFixed(1)} Hours
@@ -226,7 +226,7 @@ export default function DailyWellnessCheckin({ cognitive }: DailyWellnessCheckin
               {/* Sleep Quality Options Selection */}
               <div>
                 <label className="block text-[10.5px] font-bold text-slate-350 uppercase tracking-wider mb-2 flex items-center">
-                  <Moon className="h-3.5 w-3.5 text-indigo-455 mr-1" /> 3. Sleep Quality
+                  <Moon className="h-3.5 w-3.5 text-indigo-455 mr-1" /> 3. Qualidade do sono
                 </label>
                 <div className="grid grid-cols-2 gap-1.5">
                   {sleepQualityOptions.map((qual) => {
@@ -254,7 +254,7 @@ export default function DailyWellnessCheckin({ cognitive }: DailyWellnessCheckin
             {/* 3. Personal Notes Text Box */}
             <div>
               <label className="block text-[10.5px] font-bold text-slate-350 uppercase tracking-wider mb-2 flex items-center">
-                <BookOpen className="h-3.5 w-3.5 text-purple-400 mr-1" /> 4. Feeling Diary / Notes (Optional)
+                <BookOpen className="h-3.5 w-3.5 text-purple-400 mr-1" /> 4. Diário de sentimentos / Observações (opcional)
               </label>
               <textarea
                 value={notes}
@@ -279,7 +279,7 @@ export default function DailyWellnessCheckin({ cognitive }: DailyWellnessCheckin
 
         <div className="pt-4 border-t border-slate-850 mt-4 flex flex-col gap-3">
           <p className="text-[10px] text-slate-400 leading-normal">
-            Logs instantly to secure database for real-time parent & teacher insights.
+            Os registros podem ser compartilhados com responsáveis e professores autorizados quando a sincronização estiver configurada.
           </p>
           <button
             onClick={handleSubmit}
