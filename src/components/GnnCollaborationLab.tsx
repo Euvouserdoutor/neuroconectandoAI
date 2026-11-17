@@ -119,9 +119,9 @@ export default function GnnCollaborationLab() {
   
   // Custom execution logs
   const [telemetryLogs, setTelemetryLogs] = useState<string[]>([
-    'Topological Collaborative Session modeling initialized.',
-    'System loaded 12 wearers classified into 3 group-wise subgraphs: Alpha, Beta, & Gamma.',
-    'Select a modeling architecture below and execute "Aggregate Collaborative Signals" to map stress contagion trends.'
+    'Simulação da sessão colaborativa iniciada.',
+    'O sistema carregou 12 participantes distribuídos em três subgrafos: Alfa, Beta e Gama.',
+    'Selecione uma arquitetura abaixo e execute "Aggregate Collaborative Signals" para mapear tendências de propagação do estresse.'
   ]);
 
   // Active status variables predicted by GNN
@@ -262,7 +262,7 @@ export default function GnnCollaborationLab() {
   const handleAddEdge = (e: React.FormEvent) => {
     e.preventDefault();
     if (edgeForm.from === edgeForm.to) {
-      addLog("Cannot connect a student to themselves.");
+      addLog("Um estudante não pode ser conectado a si mesmo.");
       return;
     }
 
@@ -369,7 +369,7 @@ export default function GnnCollaborationLab() {
         },
         body: JSON.stringify({
           message: promptMessage,
-          topic: "Classroom Collaborative GNN Topology, Stress Diffusion cascades, and Dynamic Seating Optimizations",
+          topic: "Topologia colaborativa GNN da turma, propagação de estresse e otimização dinâmica da disposição dos assentos",
           cognitiveState: { attention: 'High', stress: 'Low', fatigue: 'Low' }
         })
       });
@@ -384,7 +384,7 @@ export default function GnnCollaborationLab() {
     } catch (err: any) {
       console.error(err);
       setAdvisorAdvice(`AI Group optimization metrics summary: \n\n• **Direct Intervention Recommended**: Transfer Alex Mercer (N1 - Alpha group mentor) to Group Beta to buffer the high-stress cascade between Zack Ward and Abby Williams. Encourage short, cooperative breathing breaks for Group Beta to break thermal contagion cycles. \n• **Isolation Warning**: Jack Peterson (Group Alpha) has high predicted stress; isolate heavy mentoring loops for 15 minutes to let individual cognitive indices cool down.`);
-      addLog("GNN advisor blueprint placeholder compiled due to server delay.");
+      addLog("Uma orientação de exemplo foi exibida porque o servidor não respondeu.");
     } finally {
       setIsAdvisorLoading(false);
     }
@@ -397,19 +397,19 @@ export default function GnnCollaborationLab() {
     
     if (contribution >= 60 && attentionVal <= 55) {
       return {
-        category: 'High Engagement / Low Focus' as const,
+        category: 'Alto engajamento / baixa concentração' as const,
         label: 'Energy Explorer',
         color: 'text-amber-400 bg-amber-950/40 border-amber-905/30 border-amber-900/60',
         dotColor: 'bg-amber-500',
-        description: 'High energy; benefits from structured focus anchors.'
+        description: 'Alta energia; beneficia-se de atividades com objetivos definidos.'
       };
     } else if (attentionVal >= 65 && contribution <= 50) {
       return {
-        category: 'High Focus / Low Engagement' as const,
+        category: 'Alta concentração / baixo engajamento' as const,
         label: 'Laser Observer',
         color: 'text-sky-400 bg-sky-950/40 border-sky-905/30 border-sky-900/60',
         dotColor: 'bg-sky-500',
-        description: 'Attentive listener; ready for dynamic collaborative prompts.'
+        description: 'Escuta atenta; preparado para atividades colaborativas.'
       };
     } else if (attentionVal >= 65 && contribution >= 50) {
       return {
@@ -417,7 +417,7 @@ export default function GnnCollaborationLab() {
         label: 'Flow Mentor',
         color: 'text-emerald-450 bg-emerald-950/40 border-emerald-905/30 border-emerald-900/60 text-emerald-400',
         dotColor: 'bg-emerald-500',
-        description: 'Maintains attention and input; acts as table anchor.'
+        description: 'Mantém a atenção e contribui como referência da equipe.'
       };
     } else {
       return {
@@ -425,7 +425,7 @@ export default function GnnCollaborationLab() {
         label: 'Vulnerable learner',
         color: 'text-rose-404 bg-rose-950/40 border-rose-905/30 border-rose-900/60 text-rose-400',
         dotColor: 'bg-rose-500',
-        description: 'Stressed fatigue and low focus; needs supportive mentoring dyads.'
+        description: 'Fadiga e baixa atenção; pode se beneficiar de apoio entre colegas.'
       };
     }
   };
@@ -486,8 +486,8 @@ export default function GnnCollaborationLab() {
 
     groupNodes.forEach(n => {
       const prof = getCognitiveProfile(n);
-      if (prof.category === 'High Engagement / Low Focus') explorers++;
-      else if (prof.category === 'High Focus / Low Engagement') lasers++;
+      if (prof.category === 'Alto engajamento / baixa concentração') explorers++;
+      else if (prof.category === 'Alta concentração / baixo engajamento') lasers++;
       else if (prof.category === 'Balanced Anchor / Mentor') anchors++;
       else strained++;
     });
@@ -514,8 +514,8 @@ export default function GnnCollaborationLab() {
     
     grps.forEach(g => {
       const list = suggestedGroupings[g];
-      const explorers = list.filter(s => getCognitiveProfile(s).category === 'High Engagement / Low Focus');
-      const lasers = list.filter(s => getCognitiveProfile(s).category === 'High Focus / Low Engagement');
+      const explorers = list.filter(s => getCognitiveProfile(s).category === 'Alto engajamento / baixa concentração');
+      const lasers = list.filter(s => getCognitiveProfile(s).category === 'Alta concentração / baixo engajamento');
       const anchors = list.filter(s => getCognitiveProfile(s).category === 'Balanced Anchor / Mentor');
       const strained = list.filter(s => getCognitiveProfile(s).category === 'Strained Learner');
 
@@ -524,7 +524,7 @@ export default function GnnCollaborationLab() {
         bridges.push({
           studentA: explorers[i],
           studentB: lasers[i],
-          type: 'Energy ⚡ Focus Coherence',
+          type: 'Coerência entre energia e concentração',
           desc: `Stabilizes ${explorers[i].name}'s active pacing with ${lasers[i].name}'s sustained attention.`
         });
         i++;
@@ -576,12 +576,12 @@ export default function GnnCollaborationLab() {
     });
     
     setStudents(updatedStudents);
-    addLog("Updating physics matrices. All 12 student nodes successfully clustered around balanced centers.");
+    addLog("Matrizes físicas atualizadas. Os 12 estudantes foram agrupados em centros equilibrados.");
     setTimeout(() => runCollabPropagation(), 120);
   };
 
   const injectPeerBridges = () => {
-    addLog("Injecting all suggested complementary tutoring links to foster classroom balance.");
+    addLog("Adicionando conexões de tutoria sugeridas para equilibrar a turma.");
     const tutoringBridges = getTutoringBridges();
     const cleanEdges = edges.filter(e => e.weight > 4);
     const newEdges = [...cleanEdges];
@@ -604,7 +604,7 @@ export default function GnnCollaborationLab() {
     });
 
     setEdges(newEdges);
-    addLog("Topology linkages updated. Running GNN calculations on structural stress mitigation...");
+    addLog("Conexões atualizadas. Executando cálculos GNN para simular redução de estresse na estrutura.");
     setTimeout(() => runCollabPropagation(), 120);
   };
 
@@ -683,7 +683,7 @@ export default function GnnCollaborationLab() {
           type="button"
           onClick={() => {
             setSubLayout('propagation');
-            addLog("Toggled GNN visualization: Relational GNN Stress Contagion Heatmap Grid.");
+            addLog("Visualização GNN alternada para mapa de calor de propagação relacional do estresse.");
           }}
           className={`flex-1 py-2 px-4 rounded-xl flex items-center justify-center gap-2 transition-all cursor-pointer ${
             subLayout === 'propagation'
@@ -1163,8 +1163,8 @@ export default function GnnCollaborationLab() {
             <span className="font-mono text-[9px] text-slate-500 font-bold block mb-0.5">ANÁLISE DE OBSERVAÇÃO TOPOLÓGICA</span>
             <span className="text-slate-350">
               {intensity > 7 
-                ? 'Critically intense collaborative factors logged. Team Beta displays elevated burnout cascades. Instruct team coaches to mitigate fatigue spillover immediately.' 
-                : 'Cognitive load levels remain inside balanced parameters. Group Alpha mentoring channels are functioning within optimal stress-resilient margins.'}
+                ? 'Fatores intensos de colaboração registrados. Na simulação, a equipe Beta apresenta maior propagação de fadiga; recomenda-se apoio e pausa.' 
+                : 'A carga cognitiva simulada está equilibrada. As conexões de mentoria da equipe Alfa permanecem dentro dos limites definidos.'}
             </span>
           </div>
         </div>
@@ -1205,7 +1205,7 @@ export default function GnnCollaborationLab() {
           <div className="border-t border-slate-900 pt-3 mt-4 flex items-center justify-between flex-wrap gap-2">
             <button
               onClick={() => {
-                setTelemetryLogs(['Simulation logs initialized.']);
+                setTelemetryLogs(['Registros de simulação iniciados.']);
                 addLog("Execution telemetry successfully cleaned.");
               }}
               className="text-[10px] text-slate-500 hover:text-slate-300 underline bg-transparent border-none cursor-pointer"
