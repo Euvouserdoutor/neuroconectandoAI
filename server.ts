@@ -16,7 +16,7 @@ function getAI(): GoogleGenAI {
   if (!aiClient) {
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
-      console.warn("WARNING: GEMINI_API_KEY environment variable is not defined. AI interactions will fail.");
+      console.warn("WARNING: GEMINI_API_KEY environment variable is not defined. as interações com a IA não funcionarão.");
     }
     aiClient = new GoogleGenAI({
       apiKey: apiKey || '',
@@ -64,7 +64,7 @@ app.post('/api/gemini/tutor', async (req, res) => {
       adaptiveGuideline = 'The student is highly focused and receptive. Provide advanced concepts, stimulate critical thinking with open-ended prompt challenges, and provide thorough, high-fidelity engineering/scientific breakdowns.';
     }
 
-    const systemInstruction = `You are NeuroLearn AI's Brain-Adaptive Tutor.
+    const systemInstruction = `Responda sempre em português brasileiro, inclusive explicações, questões, alternativas e campos textuais do JSON. Preserve apenas os nomes técnicos, as chaves do JSON e o formato exigido.\nYou are NeuroLearn AI's Brain-Adaptive Tutor.
 Current Topic: ${topic}.
 Current Cognitive State of Student: Attention: ${attentionStr}, Stress: ${stressStr}, Fatigue: ${fatigueStr}.
 Adaptive Directive: ${adaptiveGuideline}
@@ -108,7 +108,7 @@ Keep your tone educational, deeply supportive, and exciting. Format answers usin
     });
   } catch (error: any) {
     console.error('Error in AI Tutor Route:', error);
-    res.status(500).json({ error: error.message || 'Error executing AI Tutor request.' });
+    res.status(500).json({ error: error.message || 'Erro ao consultar o tutor com IA.' });
   }
 });
 
@@ -130,7 +130,7 @@ app.post('/api/gemini/coach', async (req, res) => {
       coachingFocus = 'The student is stable. Help them set a mindful daily learning micro-goal or offer positive reinforcement.';
     }
 
-    const systemInstruction = `You are NeuroLearn AI's Focus Recovery & Student Wellness Coach.
+    const systemInstruction = `Responda sempre em português brasileiro, inclusive explicações, questões, alternativas e campos textuais do JSON. Preserve apenas os nomes técnicos, as chaves do JSON e o formato exigido.\nYou are NeuroLearn AI's Focus Recovery & Student Wellness Coach.
 Your objective is to optimize learning performance by assisting the student with emotional self-regulation, mindfulness, and physical posture resets.
 Current Biometrics: Heart Rate Variability (HRV): ${hrv} ms, Galvanic Skin Response (GSR): ${gsr} µS, Head Motion: ${movement}.
 Coaching Directive: ${coachingFocus}
@@ -152,7 +152,7 @@ Write with authentic empathy, calmness, and practical clarity. Keep replies conc
     });
   } catch (error: any) {
     console.error('Error in AI Coach Route:', error);
-    res.status(500).json({ error: error.message || 'Error executing AI Coach request.' });
+    res.status(500).json({ error: error.message || 'Erro ao consultar o orientador de bem-estar.' });
   }
 });
 
@@ -165,7 +165,7 @@ app.post('/api/gemini/quiz', async (req, res) => {
 The target difficulty is ${difficulty}, adapted for a student whose focus is ${cognitiveState.attention}.
 Return a strict JSON array representing the questions.`;
 
-    const systemInstruction = `You are NeuroLearn AI's Interactive Adaptive Quiz Generator. 
+    const systemInstruction = `Responda sempre em português brasileiro, inclusive explicações, questões, alternativas e campos textuais do JSON. Preserve apenas os nomes técnicos, as chaves do JSON e o formato exigido.\nYou are NeuroLearn AI's Interactive Adaptive Quiz Generator. 
 You must output a strict JSON array. Each element in the array must be an object with the following fields:
 1. "id" (number)
 2. "question" (string)
@@ -204,7 +204,7 @@ Do NOT wrap the output in markdown block. Return raw JSON string only. No leadin
   } catch (error: any) {
     console.error('Error in Quiz Generator:', error);
     res.status(500).json({
-      error: error.message || 'Error generating quiz.',
+      error: error.message || 'Erro ao gerar o quiz.',
       // fallback mock questions to prevent UI failure
       questions: [
         {
@@ -255,7 +255,7 @@ The nodes should explain "${topic}" in depth.
 Apply the following adaptation: ${mapDirective}.
 Generate strict raw JSON representing this mindmap.`;
 
-    const systemInstruction = `You are NeuroLearn AI's Academic Mindmap & Cognitive Architect.
+    const systemInstruction = `Responda sempre em português brasileiro, inclusive explicações, questões, alternativas e campos textuais do JSON. Preserve apenas os nomes técnicos, as chaves do JSON e o formato exigido.\nYou are NeuroLearn AI's Academic Mindmap & Cognitive Architect.
 You must return a raw JSON object with exactly these fields:
 1. "topic" (string matching the input topic)
 2. "nodes" (array of exactly 5 elements representing a mental cognitive map)
@@ -400,7 +400,7 @@ Your task: Consolidate their pleasant state.
 - Offer 1 mindful tip for retaining focus over longer intervals, or lead a soft focus breathing check-in to anchor mental rhythm.`;
     }
 
-    const systemInstruction = `You are "Soma", NeuroLearn AI's dedicated Wellness Companion.
+    const systemInstruction = `Responda sempre em português brasileiro, inclusive explicações, questões, alternativas e campos textuais do JSON. Preserve apenas os nomes técnicos, as chaves do JSON e o formato exigido.\nYou are "Soma", NeuroLearn AI's dedicated Wellness Companion.
 Your primary directive is to act as a supportive, compassionate, and highly intelligent neural biofeedback guide. 
 You offer personalized, real-time stress relief advice, customized breathing exercise prompts, and cognitive-wellbeing tips customized explicitly to the user's live EEG stress metrics, heart rate, and brain state telemetry.
 
@@ -476,7 +476,7 @@ app.post('/api/gemini/academic-synthesis', async (req, res) => {
 - Marker: ${log.marker || 'None'}`;
     }).join('\n\n');
 
-    const systemInstruction = `You are the "Soma Academic Synthesis Writer", a Senior Neuroscientist & Cognitive Biofeedback Researcher.
+    const systemInstruction = `Responda sempre em português brasileiro, inclusive explicações, questões, alternativas e campos textuais do JSON. Preserve apenas os nomes técnicos, as chaves do JSON e o formato exigido.\nYou are the "Soma Academic Synthesis Writer", a Senior Neuroscientist & Cognitive Biofeedback Researcher.
 You specialize in analyzing quantitative EEG (qEEG) datasets, heart rate variability, galvanic skin response, and event-related potentials (ERPs).
 Your objective is to review a sequence of time-series neuro-telemetry logs logged during an active student trial and output a pristine, peer-review-ready peer-draft Academic Abstract and Case Study Analysis.
 
@@ -518,7 +518,7 @@ Generate the scientific case study paper draft in raw markdown.`;
 
   } catch (error: any) {
     console.error('Error in Academic Synthesis Route:', error);
-    res.status(500).json({ error: error.message || 'Error executing Academic Synthesis report formulation.' });
+    res.status(500).json({ error: error.message || 'Erro ao produzir a síntese acadêmica.' });
   }
 });
 
