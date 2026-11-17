@@ -127,7 +127,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
         setWellnessLogs(logs);
         setDistressSignals(signals);
       } catch (err) {
-        console.error("Failed to load data in Teacher Dashboard", err);
+        console.error("Não foi possível carregar os dados do painel do professor", err);
       } finally {
         setIsLogsLoading(false);
         setIsDistressLoading(false);
@@ -262,17 +262,17 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
       type: 'Burnout Warning',
       severity: 'CRITICAL',
       timestamp: '2 mins ago',
-      details: 'GSR score of 9.8 µS sustained with theta brainwaves dominating for 40 mins. High risk of immediate cognitive exhaustion.',
-      recom: 'Trigger 5-minute offline screen detoxification and breathing exercises immediately.'
+      details: 'Condutância GSR simulada de 9,8 µS e predominância de ondas teta por 40 minutos; possível fadiga elevada.',
+      recom: 'Sugira uma pausa de tela de cinco minutos e exercícios leves de respiração.'
     },
     {
       id: 'alert_2',
       studentName: 'Abby Williams',
-      type: 'Cognitive Stress Spillover',
+      type: 'Propagação de estresse cognitivo',
       severity: 'HIGH',
       timestamp: '5 mins ago',
-      details: 'Heart rate variability falling steadily to 44ms (suggests sympathetic nervous strain). Posture reveals erratic jerking.',
-      recom: 'Instruct Abby to explore the Wellness Athena Coach page for shoulder posture shrugging.'
+      details: 'A VFC simulada caiu para 44 ms, com movimentos posturais irregulares.',
+      recom: 'Sugira que Abby acesse a orientadora Athena para exercícios leves de postura.'
     },
     {
       id: 'alert_3',
@@ -280,7 +280,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
       type: 'Prolonged Attention Fade',
       severity: 'MODERATE',
       timestamp: '15 mins ago',
-      details: 'Attentional indices sitting inside Low focus category. Alpha/Beta amplitude has degraded. Theta surges suggest drowsiness.',
+      details: 'Os índices de atenção simulados estão baixos e há sinais de sonolência nos dados de exemplo.',
       recom: 'Present an interactive gaming micro-challenge rather than another long explanation.'
     }
   ]);
@@ -428,7 +428,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
               <input
                 type="text"
-                placeholder="🔍 Search student name..."
+                placeholder="🔍 Buscar estudante..."
                 value={filterQuery}
                 onChange={(e) => setFilterQuery(e.target.value)}
                 className="bg-slate-950 border border-slate-850 text-xs text-slate-200 px-3 py-1.5 rounded-lg focus:outline-none focus:border-indigo-500 placeholder-slate-600 font-sans"
@@ -726,7 +726,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                     {(chartView === 'individual' || chartView === 'comparison') && (
                       <Area
                         type="monotone"
-                        name="Alex Mercer Stress Level"
+                        name="Nível de estresse de Alex Mercer"
                         dataKey="alexStress"
                         stroke="#ef4444"
                         strokeWidth={2}
@@ -750,7 +750,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                     {(chartView === 'class' || chartView === 'comparison') && (
                       <Area
                         type="monotone"
-                        name="Class Stress average"
+                        name="Média de estresse da turma"
                         dataKey="classAvgStress"
                         stroke="#f43f5e"
                         strokeWidth={1.5}
@@ -908,7 +908,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                         severity: 'CRITICAL',
                         timestamp: 'Agora mesmo',
                         details: `Live wearable band reports biometric values out of safe zone: GSR is elevated to ${biometric ? biometric.gsr : 8.5} µS, and Heart Rate Variability has collapsed to ${biometric ? biometric.hrv : 38}ms. High alpha/theta load indicating cognitive burnout risk.`,
-                        recom: 'Instruct Alex to pause study module, take deep breathing block, and complete an emotional refresh.'
+                        recom: 'Sugira que Alex pause os estudos, respire com tranquilidade e descanse brevemente.'
                       });
                     }
                   } else if (cognitive && cognitive.fatigue === 'High') {
@@ -916,11 +916,11 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                       activeAlerts.unshift({
                         id: 'mercer_fatigue',
                         studentName: 'Alex Mercer',
-                        type: 'Sustained Fatigue Detected',
+                        type: 'Fadiga persistente detectada',
                         severity: 'HIGH',
                         timestamp: 'Agora mesmo',
                         details: `Wearable band metrics suggest fatigue levels have crossed safe threshold limits. Alpha activity decreased while slow-theta waveforms rose by 32%.`,
-                        recom: 'Broadcast adaptive focus break, or prompt quick physical posture stretch.'
+                        recom: 'Envie uma sugestão de pausa adaptativa ou de alongamento leve.'
                       });
                     }
                   }
