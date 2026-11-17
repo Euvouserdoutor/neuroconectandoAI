@@ -413,7 +413,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                   Live Seating Engagement Heatmap ({totalStudents} Desks)
                 </h3>
                 <p className="text-[11px] text-slate-400">
-                  Physical seating topology. Hover on any desk to probe deep wearable sensory streams.
+                  Mapa de assentos. Passe o cursor sobre uma mesa para visualizar os dados simulados dos sensores.
                 </p>
               </div>
               {/* Quick Map Legend */}
@@ -568,7 +568,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
             );
           })() : (
             <div className="bg-slate-950 border border-slate-900 p-4 mt-5 rounded-lg text-center text-xs text-slate-500">
-              Hover over student tiles in the workspace layout above to inspect high-frequency EEG data channels.
+              Passe o cursor sobre os estudantes acima para consultar os canais de EEG simulados.
             </div>
           )}
 
@@ -578,10 +578,10 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
               <div>
                 <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wide flex items-center gap-1.5">
                   <Layers className="h-4.5 w-4.5 text-sky-450 text-sky-400" />
-                  Historical Cognitive & Stress Trends (7-Day Analytics)
+                  Tendências de cognição e estresse (últimos 7 dias)
                 </h4>
                 <p className="text-[11px] text-slate-400 mt-1">
-                  Bi-hemispheric signal synchronization and telemetry loaded directly from Firestore.
+                  Sincronização de sinais entre hemisférios e telemetria carregada do Firestore.
                 </p>
               </div>
 
@@ -603,7 +603,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                     chartView === 'class' ? 'bg-indigo-600 text-slate-100' : 'text-slate-400 hover:text-slate-200'
                   }`}
                 >
-                  Class Average
+                  Média da turma
                 </button>
                 <button
                   type="button"
@@ -612,7 +612,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                     chartView === 'comparison' ? 'bg-indigo-600 text-slate-100' : 'text-slate-400 hover:text-slate-200'
                   }`}
                 >
-                  Dual View
+                  Visão comparativa
                 </button>
               </div>
             </div>
@@ -770,10 +770,10 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                 <div>
                   <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
                     <TrendingUp className="h-4 w-4 text-emerald-400" />
-                    Class-Wide Cognitive Load Distribution (Past Week)
+                    Distribuição da carga cognitiva da turma (semana anterior)
                   </h4>
                   <p className="text-[11px] text-slate-400 mt-1">
-                    Daily headcount breakdown of student clusters categorized by objective biometric cognitive load levels.
+                    Distribuição diária dos estudantes por níveis simulados de carga cognitiva.
                   </p>
                 </div>
                 {/* Visual Legend indicator */}
@@ -838,7 +838,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                                 <span className="font-mono font-bold text-slate-100">{dataPoint.lowFocusCount} students</span>
                               </div>
                               <p className="text-[10px] text-slate-500 pt-1 border-t border-slate-900 font-mono text-center">
-                                Total Class size: 12 active
+                                Turma: 12 estudantes ativos
                               </p>
                             </div>
                           );
@@ -890,10 +890,10 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
             <div>
               <h3 className="font-bold text-slate-200 text-sm flex items-center mb-1">
                 <AlertTriangle className="h-4.5 w-4.5 text-rose-500 mr-2" />
-                Live Burnout Alerts Feed
+                Alertas de esgotamento em tempo real
               </h3>
               <p className="text-xs text-slate-400 mb-4 pb-2 border-b border-slate-850">
-                Continuous edge processing triggers real-time educational interventions.
+                Processamento local contínuo para orientar intervenções educacionais simuladas.
               </p>
 
               <div className="space-y-3">
@@ -970,7 +970,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                       {selectedAlert === al.id && (
                         <div className="mt-3.5 pt-3 border-t border-slate-850 bg-slate-950/80 p-2.5 rounded text-[11px]">
                           <strong className="text-emerald-400 flex items-center gap-1 mb-1">
-                            <Sparkles className="h-3.5 w-3.5 text-yellow-400" /> RECOMMENDED REMEDIAL ACTION:
+                            <Sparkles className="h-3.5 w-3.5 text-yellow-400" /> AÇÃO DE APOIO RECOMENDADA:
                           </strong>
                           <p className="text-slate-300 font-medium leading-relaxed">{al.recom}</p>
                         </div>
@@ -985,14 +985,14 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
             <div className="pt-5 border-t border-slate-850 mt-5">
               <h4 className="text-xs font-bold text-slate-200 mb-2">Ferramenta de intervenção em sala</h4>
               <p className="text-[10px] text-slate-400 mb-3.5 leading-relaxed">
-                Notice general attention fading or post-exam burnout? Enforce a calming physical rest session on all client screens instantly.
+                Percebeu queda de atenção ou cansaço após a prova? Sugira uma pausa breve para todos os estudantes.
               </p>
               <button
                 onClick={triggerClassroomFocusBreak}
                 className="w-full bg-slate-850 hover:bg-slate-850 cursor-pointer text-sky-400 border border-sky-900 hover:border-sky-500 text-xs font-semibold py-2 px-3 rounded-lg transition-all flex items-center justify-center gap-1.5"
               >
                 <Volume2 className="h-4 w-4" />
-                BroadCast Calming Focus Break
+                Enviar sugestão de pausa
               </button>
             </div>
 
@@ -1001,10 +1001,10 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
               <h4 className="text-xs font-bold text-slate-250 mb-2.5 flex items-center gap-1.5 justify-between">
                 <span className="flex items-center gap-1.5">
                   <Heart className="h-3.5 w-3.5 text-pink-500 animate-pulse" />
-                  Alex's Real-time Self-Report Stream
+                  Autorrelatos de Alex em tempo real
                 </span>
                 <span className="text-[9px] font-mono text-pink-400 bg-pink-950/40 border border-pink-900/60 px-1.5 py-0.2 rounded font-bold uppercase">
-                  Firebase Stream
+                  Dados do Firebase
                 </span>
               </h4>
               {isLogsLoading ? (
@@ -1036,10 +1036,10 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
               <h4 className="text-xs font-bold text-slate-250 mb-2.5 flex items-center gap-1.5 justify-between">
                 <span className="flex items-center gap-1.5 text-rose-500">
                   <ShieldAlert className="h-4 w-4 animate-pulse text-red-500" />
-                  Alex's Incident / Distress Stream
+                  Registro de alertas de Alex
                 </span>
                 <span className="text-[9px] font-mono text-red-400 bg-red-950/40 border border-red-900/60 px-1.5 py-0.2 rounded font-bold uppercase">
-                  Firestore Stream
+                  Dados do Firestore
                 </span>
               </h4>
               {isDistressLoading ? (
