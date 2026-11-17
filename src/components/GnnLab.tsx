@@ -371,13 +371,13 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
           <div className="space-y-2">
             <span className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full bg-indigo-950/40 border border-indigo-800/60 text-[9px] font-mono font-bold text-indigo-400 uppercase tracking-wider">
               <Sparkles className="h-3 w-3" />
-              <span>Academic Engineering Lab</span>
+              <span>Laboratório de engenharia acadêmica</span>
             </span>
             <h2 className="text-xl font-bold text-slate-100 font-sans tracking-tight">
               In-Depth Graph Neural Network (GNN) Play Ground
             </h2>
             <p className="text-xs text-slate-400 max-w-2xl">
-              Unlike classical neural networks treating data as flat grids (images or lists), GNNs directly compute over complex geometric structure. By utilizing continuous <strong>Message Passing Algorithms</strong>, they map topological neural associations directly into low-dimensional cognitive embedding spaces.
+              Unlike classical neural networks treating data as flat grids (images or lists), GNNs directly compute over complex geometric structure. By utilizing continuous <strong>Algoritmos de passagem de mensagens</strong>, they map topological neural associations directly into low-dimensional cognitive embedding spaces.
             </p>
           </div>
           
@@ -407,7 +407,7 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
           {/* Header Panel */}
           <div className="flex items-center justify-between border-b border-slate-850 pb-3 flex-wrap gap-2">
             <div className="space-y-1">
-              <span className="text-[10px] text-slate-400 font-mono font-bold uppercase tracking-wider">Interactive Workbench</span>
+              <span className="text-[10px] text-slate-400 font-mono font-bold uppercase tracking-wider">Área de experimentação interativa</span>
               <h3 className="font-extrabold text-slate-200 text-sm flex items-center gap-2">
                 <Sliders className="h-4 w-4 text-indigo-400" />
                 Geometric Message passing Simulator
@@ -437,7 +437,7 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
 
           {/* Dynamic Interactive Schema Formula */}
           <div className="bg-slate-950/80 p-3 rounded-lg border border-slate-850/60 my-3 text-xs">
-            <span className="text-[9px] font-mono tracking-widest text-slate-500 font-bold block mb-1">CURRENT PROPAGATION FORMULA</span>
+            <span className="text-[9px] font-mono tracking-widest text-slate-500 font-bold block mb-1">FÓRMULA ATUAL DE PROPAGAÇÃO</span>
             {architecture === 'gcn' && (
               <div className="space-y-1">
                 <code className="text-indigo-400 font-mono block text-sm">
@@ -583,7 +583,7 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
               <div className="absolute inset-0 bg-slate-950/40 backdrop-blur-[1px] flex flex-col items-center justify-center space-y-2">
                 <div className="flex items-center space-x-2 bg-slate-900/95 border border-slate-800 text-xs px-4 py-2.5 rounded-lg shadow-xl font-mono text-indigo-400">
                   <Activity className="h-4 w-4 animate-spin shrink-0" />
-                  <span>Computing topological message transforms...</span>
+                  <span>Calculando transformações das mensagens na rede...</span>
                 </div>
               </div>
             )}
@@ -597,7 +597,7 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
               className="flex items-center justify-center gap-1.5 bg-indigo-650 hover:bg-indigo-600 disabled:bg-slate-850 disabled:text-slate-600 font-bold text-xs py-2 px-3 rounded-lg text-slate-200 transition-colors cursor-pointer"
             >
               <Play className="h-3.5 w-3.5" />
-              <span>1. Aggregate Neighbors</span>
+              <span>1. Agregar vizinhos</span>
             </button>
 
             <button
@@ -606,7 +606,7 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
               className="flex items-center justify-center gap-1.5 bg-emerald-650 hover:bg-emerald-600 disabled:bg-slate-850 disabled:text-slate-600 font-bold text-xs py-2 px-3 rounded-lg text-slate-200 transition-colors cursor-pointer"
             >
               <Sparkles className="h-3.5 w-3.5" />
-              <span>2. Transform & Activate (W)</span>
+              <span>2. Transformar e ativar (W)</span>
             </button>
 
             <button
@@ -614,7 +614,7 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
               className="flex items-center justify-center gap-1.5 bg-slate-950 border border-slate-850 hover:border-slate-8a px-3 py-2 text-slate-350 hover:text-slate-200 text-xs rounded-lg transition-colors cursor-pointer"
             >
               <RotateCcw className="h-3.5 w-3.5" />
-              <span>Reset State</span>
+              <span>Redefinir estado</span>
             </button>
           </div>
 
@@ -625,15 +625,15 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
           
           {/* Node Feature and Weights Manipulator */}
           <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl">
-            <span className="text-[10px] text-slate-400 font-mono font-bold uppercase tracking-wider block">GNN Layer Parametrization</span>
-            <h3 className="font-bold text-slate-200 text-sm mb-3">Node Attributes & Weights W</h3>
+            <span className="text-[10px] text-slate-400 font-mono font-bold uppercase tracking-wider block">Configuração das camadas GNN</span>
+            <h3 className="font-bold text-slate-200 text-sm mb-3">Atributos dos nós e pesos W</h3>
 
             {/* Matrix Weights Grid */}
             <div className="bg-slate-950 p-3 rounded-lg border border-slate-850 mb-4">
-              <span className="text-[9px] font-mono tracking-widest text-slate-500 font-bold block mb-1">PROJECTION WEIGHTS MATRIX (W_2x2)</span>
+              <span className="text-[9px] font-mono tracking-widest text-slate-500 font-bold block mb-1">MATRIZ DE PESOS DE PROJEÇÃO (W_2x2)</span>
               <div className="grid grid-cols-2 gap-3 mb-2">
                 <div>
-                  <label className="text-[8px] font-mono text-slate-500 block mb-0.5">W[0][0] (Scale Attn)</label>
+                  <label className="text-[8px] font-mono text-slate-500 block mb-0.5">W[0][0] (escala de atenção)</label>
                   <input 
                     type="range" min="-1.5" max="1.5" step="0.1" 
                     value={weightMatrix[0][0]} 
@@ -643,7 +643,7 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
                   <span className="text-[10px] font-mono text-indigo-300 block text-right font-bold mt-0.5">{weightMatrix[0][0]}</span>
                 </div>
                 <div>
-                  <label className="text-[8px] font-mono text-slate-500 block mb-0.5">W[0][1] (Mix Stress)</label>
+                  <label className="text-[8px] font-mono text-slate-500 block mb-0.5">W[0][1] (mistura de estresse)</label>
                   <input 
                     type="range" min="-1.5" max="1.5" step="0.1" 
                     value={weightMatrix[0][1]} 
@@ -653,7 +653,7 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
                   <span className="text-[10px] font-mono text-indigo-300 block text-right font-bold mt-0.5">{weightMatrix[0][1]}</span>
                 </div>
                 <div>
-                  <label className="text-[8px] font-mono text-slate-500 block mb-0.5">W[1][0] (Mix Attn)</label>
+                  <label className="text-[8px] font-mono text-slate-500 block mb-0.5">W[1][0] (mistura de atenção)</label>
                   <input 
                     type="range" min="-1.5" max="1.5" step="0.1" 
                     value={weightMatrix[1][0]} 
@@ -663,7 +663,7 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
                   <span className="text-[10px] font-mono text-indigo-300 block text-right font-bold mt-0.5">{weightMatrix[1][0]}</span>
                 </div>
                 <div>
-                  <label className="text-[8px] font-mono text-slate-500 block mb-0.5">W[1][1] (Scale Stress)</label>
+                  <label className="text-[8px] font-mono text-slate-500 block mb-0.5">W[1][1] (escala de estresse)</label>
                   <input 
                     type="range" min="-1.5" max="1.5" step="0.1" 
                     value={weightMatrix[1][1]} 
@@ -679,7 +679,7 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
             {selectedNode ? (
               <div className="bg-slate-950 p-3 rounded-lg border border-slate-855">
                 <span className="text-[9px] font-mono tracking-widest text-slate-400 font-bold flex items-center justify-between mb-2">
-                  <span>SELECTED NODE SCOPES</span>
+                  <span>PARÂMETROS DO NÓ SELECIONADO</span>
                   <span className="text-indigo-400">Node #{selectedNode.id}</span>
                 </span>
                 
@@ -688,7 +688,7 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
                 <div className="space-y-3">
                   <div>
                     <div className="flex justify-between text-[10px] mb-1 font-mono text-slate-350">
-                      <span>Baseline Feature Index 0 (Attention Level)</span>
+                      <span>Atributo inicial 0 (nível de atenção)</span>
                       <span className="text-sky-300 font-bold">{selectedNode.features[0].toFixed(2)}</span>
                     </div>
                     <input 
@@ -702,7 +702,7 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
 
                   <div>
                     <div className="flex justify-between text-[10px] mb-1 font-mono text-slate-350">
-                      <span>Baseline Feature Index 1 (Stress Vulnerability)</span>
+                      <span>Atributo inicial 1 (vulnerabilidade ao estresse)</span>
                       <span className="text-emerald-300 font-bold">{selectedNode.features[1].toFixed(2)}</span>
                     </div>
                     <input 
@@ -716,7 +716,7 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
 
                   {/* Embedding State Output Vector */}
                   <div className="bg-slate-900 border border-slate-800 rounded p-2 text-[10.5px]">
-                    <span className="text-[8px] font-mono text-slate-500 block mb-0.5 uppercase tracking-wide">Represented Layer Output Embedding</span>
+                    <span className="text-[8px] font-mono text-slate-500 block mb-0.5 uppercase tracking-wide">Representação de saída da camada</span>
                     {step === 'activated' ? (
                       <div className="flex items-center space-x-1.5">
                         <span className="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
@@ -785,7 +785,7 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
           <div>
             <div className="flex items-center justify-between border-b border-slate-850 pb-3 mb-4">
               <div>
-                <span className="text-[10px] text-slate-400 font-mono font-bold uppercase tracking-wider block">Cognitive Calibration</span>
+                <span className="text-[10px] text-slate-400 font-mono font-bold uppercase tracking-wider block">Calibração cognitiva</span>
                 <h3 className="font-extrabold text-slate-200 text-sm flex items-center gap-2">
                   <Award className="h-4 w-4 text-emerald-400" />
                   Graph Neural Networks Concept Check
@@ -846,7 +846,7 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
                   {quizScore}/{gnnQuizzes.length}
                 </div>
                 <div className="space-y-1">
-                  <h4 className="font-bold text-slate-200 text-sm">GNN Assessment Completed</h4>
+                  <h4 className="font-bold text-slate-200 text-sm">Avaliação GNN concluída</h4>
                   <p className="text-xs text-slate-400">
                     {quizScore === gnnQuizzes.length 
                       ? 'Incredible mastery of deep topological representations! You matched the optimal cognitive benchmark.' 
@@ -897,7 +897,7 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
             {/* Header */}
             <div className="flex items-center justify-between border-b border-slate-850 pb-2 mb-3">
               <div>
-                <span className="text-[10px] text-slate-400 font-mono font-bold uppercase tracking-wider block">Bio-Adaptive Tutor Instance</span>
+                <span className="text-[10px] text-slate-400 font-mono font-bold uppercase tracking-wider block">Instância de tutor bioadaptativo</span>
                 <h3 className="font-extrabold text-slate-200 text-sm flex items-center gap-2">
                   <Brain className="h-4 w-4 text-indigo-400" />
                   Cognitive GNN Deep-Dive AI Assistant
@@ -923,7 +923,7 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
               {isGnnChatLoading && (
                 <div className="flex items-center space-x-2 bg-slate-950 p-2.5 rounded-lg border border-slate-850 text-xs text-slate-400 animate-pulse">
                   <div className="h-1.5 w-1.5 bg-indigo-500 rounded-full animate-ping"></div>
-                  <span>Gemini is customizing instructional architecture...</span>
+                  <span>O Gemini está personalizando a estrutura da explicação...</span>
                 </div>
               )}
             </div>
