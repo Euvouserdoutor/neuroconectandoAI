@@ -11,7 +11,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
   const sdgGoals = [
     {
       number: "3",
-      title: "Health & Well-Being",
+      title: "Saúde e bem-estar",
       desc: "Acompanha indicadores simulados de fadiga e sugere pausas respiratórias e ajustes de postura.",
       color: "from-emerald-500 to-teal-600",
       bg: "bg-slate-900/60"
@@ -25,7 +25,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
     },
     {
       number: "9",
-      title: "Industry & Innovation",
+      title: "Indústria e inovação",
       desc: "Apresenta uma pulseira ESP32-S3 de baixo custo e processamento local de IA quantizada.",
       color: "from-amber-500 to-yellow-600",
       bg: "bg-slate-900/60"
@@ -53,11 +53,11 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           </span>
           
           <h2 className="text-2xl md:text-4xl font-black tracking-tight leading-tight text-slate-100 font-sans max-w-xl">
-            Adaptive Mentorship Powered by <span className="bg-gradient-to-r from-indigo-400 via-sky-400 to-emerald-400 bg-clip-text text-transparent">Ondas cerebrais em tempo real</span>
+            Orientação adaptativa baseada em <span className="bg-gradient-to-r from-indigo-400 via-sky-400 to-emerald-400 bg-clip-text text-transparent">Ondas cerebrais em tempo real</span>
           </h2>
           
           <p className="text-slate-400 text-xs md:text-sm leading-relaxed max-w-lg">
-            NeuroLearn AI is an accessible, offline-first neuro-educational ecosystem. By parsing frontal differential EEG waves, heart rate variability, and skin response, it customizes tutoring pacing in real time while optimizing student wellness.
+            O NeuroLearn AI é um ecossistema de aprendizagem e bem-estar, projetado para funcionar também sem conexão. A partir de sinais simulados de EEG, variabilidade da frequência cardíaca e resposta da pele, adapta o ritmo das atividades de estudo.
           </p>
 
           <div className="flex flex-wrap gap-2.5 pt-1">
@@ -65,14 +65,14 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               onClick={() => onNavigate('student')}
               className="bg-indigo-600 hover:bg-indigo-500 text-slate-100 font-bold text-xs px-5 py-2.5 rounded-lg duration-150 cursor-pointer flex items-center gap-1.5 shadow-md shadow-indigo-600/10"
             >
-              Launch Student Workspace
+              Abrir área do estudante
               <ChevronRight className="h-3.5 w-3.5" />
             </button>
             <button
               onClick={() => onNavigate('teacher')}
               className="bg-slate-900 hover:bg-slate-800 text-slate-350 font-bold text-xs px-5 py-2.5 rounded-lg duration-150 cursor-pointer border border-slate-800 flex items-center gap-1.5"
             >
-              Open Teacher Heatmap
+              Abrir painel do professor
             </button>
           </div>
         </div>
@@ -82,7 +82,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           <div className="flex justify-between items-center text-[9px] text-slate-500 font-mono font-bold uppercase tracking-wider">
             <span>Diferencial FP1/FP2</span>
             <span className="text-emerald-400 flex items-center gap-1 animate-pulse">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500"></span> Live EEG
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500"></span> EEG em tempo real
             </span>
           </div>
 
@@ -108,13 +108,13 @@ export default function HomePage({ onNavigate }: HomePageProps) {
         <div className="space-y-3">
           <h3 className="text-xs uppercase font-bold tracking-widest text-indigo-400 flex items-center gap-1.5">
             <Shield className="h-4 w-4 text-indigo-400" />
-            Cognitive Diagnostics
+            Indicadores cognitivos
           </h3>
           <h4 className="text-xl font-bold text-slate-100 font-sans tracking-tight">
-            Traditional software tracks progress blindly. NeuroLearn parses real-time stress signals.
+            Enquanto ferramentas tradicionais analisam apenas o progresso, o NeuroLearn explora sinais relacionados à atenção e ao estresse.
           </h4>
           <p className="text-slate-400 text-xs leading-relaxed">
-            When students wrestle with dense topics, their brain state fluctuates. Rather than rushing ahead, NeuroLearn intercepts theta fatigue or skin stress spikes to recommend gentle mind breaks.
+            Durante atividades exigentes, os indicadores de atenção e fadiga podem variar. O NeuroLearn apresenta simulações dessas mudanças e recomenda pausas de estudo.
           </p>
         </div>
 
@@ -122,25 +122,25 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           <div className="bg-slate-950 p-3.5 rounded-lg border border-slate-800">
             <span className="text-[10px] text-indigo-400 font-bold uppercase tracking-wider block mb-1">Queda de atenção</span>
             <p className="text-slate-400 text-xs leading-relaxed">
-              Spots distracted states before students drift off-task.
+              Identifica padrões simulados de distração durante as tarefas.
             </p>
           </div>
           <div className="bg-slate-950 p-3.5 rounded-lg border border-slate-800">
             <span className="text-[10px] text-yellow-400 font-bold uppercase tracking-wider block mb-1">Picos de estresse</span>
             <p className="text-slate-400 text-xs leading-relaxed">
-              Detects performance pressure on tough lessons early.
+              Apresenta indicadores simulados de pressão durante atividades exigentes.
             </p>
           </div>
           <div className="bg-slate-950 p-3.5 rounded-lg border border-slate-800">
             <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider block mb-1">Acúmulo de fadiga</span>
             <p className="text-slate-400 text-xs leading-relaxed">
-              Enforces quiet screen detoxes and relaxation breaks.
+              Sugere pausas de tela e exercícios de relaxamento.
             </p>
           </div>
           <div className="bg-slate-950 p-3.5 rounded-lg border border-slate-800">
             <span className="text-[10px] text-sky-400 font-bold uppercase tracking-wider block mb-1">Análise de esgotamento</span>
             <p className="text-slate-400 text-xs leading-relaxed">
-              Helps teachers build gentle, personalized intervention plans.
+              Ajuda professores a explorar intervenções educacionais personalizadas.
             </p>
           </div>
         </div>
@@ -151,7 +151,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
         <div className="text-center space-y-0.5">
           <h3 className="text-xs uppercase font-bold tracking-widest text-sky-400 flex justify-center items-center gap-1">
             <Globe className="h-4 w-4 text-sky-400" />
-            Sustainable Development Goals
+            Objetivos de desenvolvimento sustentável
           </h3>
           <h4 className="text-xl font-bold text-slate-100 font-sans tracking-tight">Foco na equidade social</h4>
         </div>
@@ -161,7 +161,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             <div key={index} className={`${sdg.bg} border border-slate-800 rounded-xl p-4.5 flex flex-col justify-between h-42 hover:border-slate-700 transition-colors`}>
               <div>
                 <span className={`inline-flex items-center justify-center h-6 w-16 rounded bg-gradient-to-r ${sdg.color} text-white font-mono text-[9px] font-bold`}>
-                  SDG {sdg.number}
+                  ODS {sdg.number}
                 </span>
                 <strong className="text-xs font-bold text-slate-200 block mt-3 leading-tight">{sdg.title}</strong>
               </div>
@@ -179,7 +179,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             <p className="text-xs text-slate-400">Arquitetura integrada de segurança entre dispositivo e nuvem</p>
           </div>
           <span className="text-[10px] bg-indigo-950 text-indigo-400 font-mono px-2 py-0.5 rounded border border-indigo-900/40">
-            System Infrastructure Secured
+            Infraestrutura de sistema protegida
           </span>
         </div>
 
@@ -187,21 +187,21 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           <div className="bg-slate-950 p-4 rounded-xl border border-slate-800">
             <span className="text-sky-400 font-bold block mb-1">Tutoria adaptativa (Gemini)</span>
             <p className="text-slate-400 text-xs leading-relaxed">
-              Express servers route session biometrics directly to the Gemini API, adjusting instructional content pacing instantly.
+              O servidor Express encaminha solicitações educacionais à API Gemini para adaptar as explicações ao contexto dos estudos.
             </p>
           </div>
 
           <div className="bg-slate-950 p-4 rounded-xl border border-slate-800">
             <span className="text-indigo-400 font-bold block mb-1">Pipelines do Vertex AI</span>
             <p className="text-slate-400 text-xs leading-relaxed">
-              Cognitive logs sync with BigQuery datasets to evaluate continuous attention metrics and improve evaluation.
+              Os registros cognitivos podem ser integrados ao BigQuery para análises de indicadores e resultados acadêmicos.
             </p>
           </div>
 
           <div className="bg-slate-950 p-4 rounded-xl border border-slate-800">
             <span className="text-emerald-400 font-bold block mb-1">Persistência no Firebase</span>
             <p className="text-slate-400 text-xs leading-relaxed">
-              Secure Firestore structures capture student reports, wellness analytics, and active support requests reliably.
+              O Firestore pode armazenar registros de estudantes, análises de bem-estar e solicitações de suporte mediante configuração e autorização adequadas.
             </p>
           </div>
         </div>
@@ -212,19 +212,19 @@ export default function HomePage({ onNavigate }: HomePageProps) {
         <div className="lg:col-span-5 space-y-3.5">
           <h3 className="text-xs uppercase font-bold tracking-widest text-yellow-500 flex items-center gap-1.5">
             <Cpu className="h-4 w-4 text-yellow-500" />
-            Hardware & Edge Specs
+            Hardware e processamento local
           </h3>
           <h4 className="text-xl font-bold text-slate-100 font-sans tracking-tight">
-            Designed for rural schools. Build cost: $32.
+            Proposta para escolas rurais. Custo estimado: US$ 32.
           </h4>
           <p className="text-slate-400 text-xs leading-relaxed">
-            By avoiding costly components, we utilize custom injection-molded silicone band casings connected to standard ESP32 dual-core processors. Real-time digital signal processing happens entirely offline to protect student privacy.
+            O projeto propõe uma pulseira de silicone com processador ESP32 de dois núcleos. O processamento digital local visa reduzir a necessidade de transmitir dados sensíveis à nuvem.
           </p>
 
           <div className="pt-1 select-none">
             <span className="inline-flex items-center gap-1.5 bg-yellow-950/30 text-yellow-500 border border-yellow-900/40 text-[9.5px] font-mono font-bold px-2.5 py-1 rounded-lg">
               <span className="h-1.5 w-1.5 rounded-full bg-yellow-500 animate-pulse" />
-              100% Offline Signal Processing
+              Processamento local dos sinais
             </span>
           </div>
         </div>
