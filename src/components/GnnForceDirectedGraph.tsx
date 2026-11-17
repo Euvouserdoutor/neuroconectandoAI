@@ -433,12 +433,12 @@ export default function GnnForceDirectedGraph({
   const triggerPhaseSynchronizer = () => {
     if (phaseSyncActive) {
       setPhaseSyncActive(false);
-      writeLog("Phase coherence stabilizer deactivated. Student networks returning to dynamic flow parameters.");
+      writeLog("Estabilizador de coerência desativado. As redes de estudantes retornaram aos parâmetros dinâmicos.");
     } else {
       setPhaseSyncActive(true);
       // Bring all edges to a high resonance coherence
       setEdges(prev => prev.map(e => ({ ...e, weight: Math.min(10, e.weight + 2) })));
-      writeLog("STIMULATED FLOW ALIGNMENT COHERENCE: Aligning classroom brainwaves to 10.5Hz Alpha-Frequency. Nodes cluster tightly.");
+      writeLog("SIMULAÇÃO DE COERÊNCIA: alinhamento dos nós à frequência alfa de 10,5 Hz na visualização.");
       
       // Briefly trigger ripple on selected node
       if (selectedNode) {
@@ -492,14 +492,14 @@ export default function GnnForceDirectedGraph({
       };
     });
     setEdges(updated);
-    writeLog("TEAM COLLABORATIVE CHANNELS SHUFFLED: Interactive chat logs and shared whiteboards updated.");
+    writeLog("CONEXÕES DA TURMA REORGANIZADAS: canais de colaboração e quadros compartilhados atualizados.");
   };
 
   const handleResetForceDirectedLayout = () => {
     setNodes(initialStudents);
     setEdges(initialEdges);
     setPhaseSyncActive(false);
-    writeLog("Restored GNN node coordinates and relational weights to default layout arrays.");
+    writeLog("Coordenadas dos nós GNN e pesos relacionais restaurados aos valores iniciais.");
   };
 
   const simulateClusterCollapse = (groupName: 'Alpha' | 'Beta' | 'Gamma') => {
@@ -665,7 +665,7 @@ export default function GnnForceDirectedGraph({
                 ? 'bg-rose-950/40 border border-rose-900/40 text-rose-400 hover:bg-rose-900/30' 
                 : 'bg-emerald-950/40 border border-emerald-900/40 text-emerald-400 hover:bg-emerald-900/30'
             }`}
-            title={isPlaying ? 'Pause simulation frames' : 'Resume simulation physics'}
+            title={isPlaying ? 'Pausar animação da simulação' : 'Retomar física da simulação'}
           >
             {isPlaying ? <Pause className="h-3 w-3" /> : <Play className="h-3 w-3" />}
             <span>{isPlaying ? 'PAUSE' : 'RESUME'}</span>
@@ -674,7 +674,7 @@ export default function GnnForceDirectedGraph({
           <button
             onClick={handleResetForceDirectedLayout}
             className="p-1.5 text-slate-400 hover:text-slate-100 transition-colors ml-1"
-            title="Reset topological arrays"
+            title="Redefinir matrizes topológicas"
           >
             <RotateCcw className="h-3.5 w-3.5" />
           </button>
@@ -1629,7 +1629,7 @@ export default function GnnForceDirectedGraph({
                 onClick={() => {
                   setResonanceThreshold(5.5);
                   setEngagementThreshold(60);
-                  writeLog("Reset telemetry thresholds to default system baselines (Resonance: 5.5, Engagement: 60%).");
+                  writeLog("Restaurar limites da telemetria aos valores padrão (ressonância: 5,5; engajamento: 60%).");
                 }}
                 className="flex-1 py-2 text-xs font-bold text-slate-400 bg-slate-950 hover:bg-slate-900 border border-slate-850 hover:text-slate-200 rounded-xl transition-all cursor-pointer text-center"
                 type="button"
