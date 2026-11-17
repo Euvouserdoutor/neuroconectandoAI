@@ -484,7 +484,7 @@ export default function BiometricHealthLog() {
 
       // Plot the 4 cognitive quadrants
       renderQuadrantBG(55, 78, 50, 100, '#10b981', 'CALM FLOW STATE');
-      renderQuadrantBG(78, 105, 50, 100, '#f43f5e', 'STRESS COGNITIVE OVERLOAD');
+      renderQuadrantBG(78, 105, 50, 100, '#f43f5e', 'SOBRECARGA COGNITIVA');
       renderQuadrantBG(55, 78, 0, 50, '#3b82f6', 'PASSIVE RESTORATION');
       renderQuadrantBG(78, 105, 0, 50, '#f59e0b', 'ANXIOUS ACTIVATION');
 
@@ -672,7 +672,7 @@ export default function BiometricHealthLog() {
 
       const labelsMap: Record<string, string> = {
         cognitiveLoad: 'Potencial de concentração',
-        stressIndex: 'Stress Level',
+        stressIndex: 'Nível de estresse',
         hrv: 'HRV (ms)',
       };
 
@@ -783,7 +783,7 @@ export default function BiometricHealthLog() {
           onClick={handleSimulateUpdate}
           disabled={isSimulating}
           className="w-full sm:w-auto flex items-center justify-center gap-1.5 px-3 py-1.5 bg-slate-950 border border-slate-850 hover:border-slate-700 hover:bg-slate-900 text-[10px] font-bold text-slate-300 hover:text-white rounded-lg transition-all cursor-pointer select-none disabled:opacity-50"
-          title="Simulate stressful quiz and heavy cognitive studies to feed logs with active telemetry data"
+          title="Simular quiz intenso e tarefas cognitivas para atualizar os registros de telemetria"
           id="trigger-biometric-stressor-button"
         >
           <RefreshCw className={`h-3 w-3 ${isSimulating ? 'animate-spin text-rose-400' : 'text-slate-400'}`} />
@@ -1172,7 +1172,7 @@ export default function BiometricHealthLog() {
             <span>
               {activeDashboardTab === 'timeline' && '7-Day Longitudinal Series'}
               {activeDashboardTab === 'scatter' && 'Cognitive Arousal Quadrant'}
-              {activeDashboardTab === 'chronotype' && 'Circadian Performance Grouping'}
+              {activeDashboardTab === 'chronotype' && 'Agrupamento do desempenho ao longo do dia'}
             </span>
           </div>
         </div>
@@ -1293,9 +1293,9 @@ export default function BiometricHealthLog() {
         <div className="space-y-0.5">
           <strong className="text-slate-200 uppercase font-black tracking-wide block text-[8px]">
             {activeDashboardTab === 'timeline' && 'NEURAL-CARDIOVASCULAR INTEGRATION REPORT'}
-            {activeDashboardTab === 'scatter' && 'COGNITIVE STRESS QUADRANT DIAGNOSTIC'}
+            {activeDashboardTab === 'scatter' && 'ANÁLISE DOS QUADRANTES DE ESTRESSE COGNITIVO'}
             {activeDashboardTab === 'chronotype' && 'CIRCADIAN EFFICIENCY & INTELLECTUAL OPTIMIZATION'}
-            {activeDashboardTab === 'states' && 'AUTONOMIC ADAPTABILITY & WELLNESS ACTION PLAN'}
+            {activeDashboardTab === 'states' && 'PLANO DE ADAPTAÇÃO AUTONÔMICA E BEM-ESTAR'}
           </strong>
           
           {activeDashboardTab === 'timeline' && (
