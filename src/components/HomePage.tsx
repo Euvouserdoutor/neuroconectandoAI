@@ -12,28 +12,28 @@ export default function HomePage({ onNavigate }: HomePageProps) {
     {
       number: "3",
       title: "Health & Well-Being",
-      desc: "Monitors cognitive fatigue and recommends quick breathing exercises and posture adjustments.",
+      desc: "Acompanha indicadores simulados de fadiga e sugere pausas respiratórias e ajustes de postura.",
       color: "from-emerald-500 to-teal-600",
       bg: "bg-slate-900/60"
     },
     {
       number: "4",
       title: "Educação de qualidade",
-      desc: "Delivers responsive tutoring content and customized review sessions mapped directly to focus levels.",
+      desc: "Oferece tutoria adaptativa e revisões personalizadas conforme os níveis de concentração.",
       color: "from-red-500 to-rose-600",
       bg: "bg-slate-900/60"
     },
     {
       number: "9",
       title: "Industry & Innovation",
-      desc: "Leverages an ultra-low-cost, offline-capable ESP32-S3 band running quantized edge AI intelligence.",
+      desc: "Apresenta uma pulseira ESP32-S3 de baixo custo e processamento local de IA quantizada.",
       color: "from-amber-500 to-yellow-600",
       bg: "bg-slate-900/60"
     },
     {
       number: "10",
       title: "Redução das desigualdades",
-      desc: "Empowers rural and underserved centers via fully subsidized hardware grants funded by premium school tiers.",
+      desc: "Propõe ampliar o acesso de centros rurais e regiões com poucos recursos por meio de subsídios ao equipamento.",
       color: "from-indigo-500 to-blue-600",
       bg: "bg-slate-900/60"
     }
