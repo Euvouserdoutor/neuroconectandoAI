@@ -22,7 +22,7 @@ export default function NeuroAcoustics({ cognitive }: NeuroAcousticsProps) {
 
   // Status metrics
   const [activeFrequency, setActiveFrequency] = useState(10); // Current active differential frequency in Hz
-  const [feedbackMessage, setFeedbackMessage] = useState('Autopilot is reading biometric signals...');
+  const [feedbackMessage, setFeedbackMessage] = useState('O modo automático está analisando os sinais simulados...');
 
   useEffect(() => {
     // Determine target differential frequency based on selection and cognitive profile
@@ -32,34 +32,34 @@ export default function NeuroAcoustics({ cognitive }: NeuroAcousticsProps) {
     if (selectedBeat === 'adaptive') {
       if (cognitive.stress === 'High') {
         freq = 7.5; // High Theta / Low Alpha calm
-        msg = 'Dampening Stress: Emitting soothing Alpha-Theta (7.5 Hz) to tranquilize stress nodes.';
+        msg = 'Modo relaxante: áudio na faixa alfa-teta (7,5 Hz) selecionado.';
       } else if (cognitive.attention === 'Low') {
         freq = 18.0; // Focused Beta
-        msg = 'Compensating wandering focus: Transmitting alert Beta (18 Hz) waves to recruit frontal lobe focus.';
+        msg = 'Modo de concentração: áudio na faixa beta (18 Hz) selecionado.';
       } else if (cognitive.fatigue === 'High') {
         freq = 40.0; // cognitive binder Gamma
-        msg = 'Overriding academic fatigue: Delivering high-cognitive Gamma (40 Hz) waves to trigger fresh mental stamina.';
+        msg = 'Modo de alta frequência: áudio de 40 Hz selecionado.';
       } else {
         freq = 10.0; // Ideal Alpha
-        msg = 'Optimal State: Harmonizing resting alert Alpha (10 Hz) waves for consistent learning flow.';
+        msg = 'Estado ideal: áudio alfa de 10 Hz selecionado.';
       }
     } else {
       switch (selectedBeat) {
         case 'theta':
           freq = 6.0;
-          msg = 'Therapeutic Theta (6.0 Hz): Best for deep visualization, retrieval, and mental relaxation.';
+          msg = 'Teta (6,0 Hz): opção sonora para exercícios de relaxamento.';
           break;
         case 'alpha':
           freq = 10.0;
-          msg = 'Calmed Alpha (10.0 Hz): Ideal for anxiety prevention, memorization, and comfortable learning.';
+          msg = 'Alfa (10,0 Hz): opção sonora para sessões tranquilas de estudo.';
           break;
         case 'beta':
           freq = 16.0;
-          msg = 'Analytical Beta (16.0 Hz): Promotes analytical processing, hyper-focus, and logical problem solving.';
+          msg = 'Beta (16,0 Hz): opção sonora para exercícios de concentração.';
           break;
         case 'gamma':
           freq = 40.0;
-          msg = 'Integration Gamma (40.0 Hz): Encourages cross-hemisphere synthesis and supreme memory consolidation.';
+          msg = 'Gama (40,0 Hz): opção sonora de alta frequência.';
           break;
       }
     }
@@ -141,7 +141,7 @@ export default function NeuroAcoustics({ cognitive }: NeuroAcousticsProps) {
       rightOscRef.current = rightOsc;
       setIsPlaying(true);
     } catch (error) {
-      console.error('Failed to boot neuro-acoustics audio generator', error);
+      console.error('Não foi possível iniciar o gerador de áudio.', error);
     }
   };
 
