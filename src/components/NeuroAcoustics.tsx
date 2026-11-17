@@ -257,7 +257,7 @@ export default function NeuroAcoustics({ cognitive }: NeuroAcousticsProps) {
         </div>
 
         <div className="text-[10px] bg-slate-900/60 p-1.5 rounded border border-slate-800 text-slate-350 leading-relaxed font-sans relative z-10">
-          <span className="font-bold text-[9px] uppercase tracking-wider text-sky-400 block mb-0.5">Live Diagnostic Directives:</span>
+          <span className="font-bold text-[9px] uppercase tracking-wider text-sky-400 block mb-0.5">Orientações de diagnóstico em tempo real:</span>
           {feedbackMessage}
         </div>
       </div>
@@ -278,7 +278,7 @@ export default function NeuroAcoustics({ cognitive }: NeuroAcousticsProps) {
               }`}
             >
               <Sparkles className="h-3 w-3 mb-0.5 text-indigo-400" />
-              <span>Auto</span>
+              <span>Automático</span>
             </button>
             <button
               onClick={() => setSelectedBeat('theta')}
@@ -288,7 +288,7 @@ export default function NeuroAcoustics({ cognitive }: NeuroAcousticsProps) {
                   : 'bg-slate-850 hover:bg-slate-800 text-slate-400 border-transparent'
               }`}
             >
-              <span className="text-[9px] uppercase font-bold tracking-tighter">Theta</span>
+              <span className="text-[9px] uppercase font-bold tracking-tighter">Teta</span>
               <span>6Hz</span>
             </button>
             <button
@@ -299,7 +299,7 @@ export default function NeuroAcoustics({ cognitive }: NeuroAcousticsProps) {
                   : 'bg-slate-850 hover:bg-slate-800 text-slate-400 border-transparent'
               }`}
             >
-              <span className="text-[9px] uppercase font-bold tracking-tighter">Alpha</span>
+              <span className="text-[9px] uppercase font-bold tracking-tighter">Alfa</span>
               <span>10Hz</span>
             </button>
             <button
@@ -321,7 +321,7 @@ export default function NeuroAcoustics({ cognitive }: NeuroAcousticsProps) {
                   : 'bg-slate-850 hover:bg-slate-800 text-slate-400 border-transparent'
               }`}
             >
-              <span className="text-[9px] uppercase font-bold tracking-tighter">Gamma</span>
+              <span className="text-[9px] uppercase font-bold tracking-tighter">Gama</span>
               <span>40Hz</span>
             </button>
           </div>
@@ -331,7 +331,7 @@ export default function NeuroAcoustics({ cognitive }: NeuroAcousticsProps) {
         <div className="grid grid-cols-2 gap-3.5 pt-1">
           <div>
             <div className="flex justify-between items-center text-[10px] mb-1">
-              <span className="text-slate-400 font-semibold uppercase tracking-wider">Base Carrier Pitch</span>
+              <span className="text-slate-400 font-semibold uppercase tracking-wider">Frequência portadora de base</span>
               <span className="text-sky-400 font-mono font-bold">{carrierFreq} Hz</span>
             </div>
             <input
@@ -347,7 +347,7 @@ export default function NeuroAcoustics({ cognitive }: NeuroAcousticsProps) {
 
           <div>
             <div className="flex justify-between items-center text-[10px] mb-1">
-              <span className="text-slate-400 font-semibold uppercase tracking-wider">Therapy Volume</span>
+              <span className="text-slate-400 font-semibold uppercase tracking-wider">Volume do áudio</span>
               <span className="text-emerald-400 font-mono font-bold">{Math.round(volume * 100)}%</span>
             </div>
             <div className="flex items-center gap-1.5">
