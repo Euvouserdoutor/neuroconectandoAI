@@ -322,7 +322,7 @@ export default function DailyWellnessCheckin({ cognitive }: DailyWellnessCheckin
           ) : history.length > 0 ? (
             history.map((log) => {
               const dateString = log.createdAt 
-                ? new Date(log.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })
+                ? new Date(log.createdAt).toLocaleDateString('pt-BR', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })
                 : 'Recent';
 
               return (
