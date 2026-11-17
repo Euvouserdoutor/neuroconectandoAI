@@ -123,7 +123,7 @@ export default function App() {
 
   const [highStressCount, setHighStressCount] = useState(0);
 
-  // Tracks switches from 'Optimal' to either 'High Stress' or 'Low Attention' for more than 10 seconds
+  // Tracks switches from 'Optimal' to either 'Estresse elevado' or 'Baixa atenção' for more than 10 seconds
   const [pulseToast, setPulseToast] = useState<{
     message: string;
     type: 'stress' | 'attention';
@@ -138,7 +138,7 @@ export default function App() {
   }, [cognitive.stress]);
 
   useEffect(() => {
-    const currentState = cognitive.stress === 'High' ? 'High Stress' : cognitive.attention === 'Low' ? 'Low Attention' : 'Optimal';
+    const currentState = cognitive.stress === 'High' ? 'Estresse elevado' : cognitive.attention === 'Low' ? 'Baixa atenção' : 'Optimal';
 
     if (currentState === 'Optimal') {
       // Switched back to Optimal - automatically dismiss the warning toast
@@ -148,8 +148,8 @@ export default function App() {
 
     // Set a timer for 10 seconds (10000ms) to trigger a warning toast
     const timer = setTimeout(() => {
-      const type = currentState === 'High Stress' ? 'stress' : 'attention';
-      const message = currentState === 'High Stress'
+      const type = currentState === 'Estresse elevado' ? 'stress' : 'attention';
+      const message = currentState === 'Estresse elevado'
         ? "Alex Mercer's neural sensors indicate sustained High Stress level for over 10 seconds. Recommending a breathing break."
         : "Low Attention span detected for over 10 seconds. Try launching a gamified quiz module to regain focus alignment.";
       
@@ -222,11 +222,11 @@ export default function App() {
 
     try {
       await sendDistressSignal(signal);
-      setEmergencySuccess("Incident signal successfully broadcasted to Cloud DB!");
+      setEmergencySuccess("Alerta enviado com sucesso ao banco de dados!");
       setCustomEmergencyText('');
     } catch (err) {
       console.error(err);
-      setEmergencyError("Network latency or offline status detected. Signal preserved in offline core safely.");
+      setEmergencyError("Problema de conexão detectado. O alerta foi preservado localmente.");
     } finally {
       setIsSendingEmergency(false);
     }
@@ -237,7 +237,7 @@ export default function App() {
   const isLowAttention = cognitive.attention === 'Low';
 
   let themeContainerClass = "bg-slate-950 text-slate-100 transition-colors duration-1000";
-  let themeBadgeText = "Standard Slate Mode";
+  let themeBadgeText = "Tema escuro padrão";
   let themeBadgeColor = "text-emerald-450 bg-emerald-950/25 border-emerald-900/40 text-emerald-400";
   let themeDescription = "Cranial parameters baseline neutral. Default dark layout active.";
   let themeAccentText = "text-emerald-400";
@@ -245,14 +245,14 @@ export default function App() {
   
   if (isHighStress) {
     themeContainerClass = "bg-gradient-to-b from-[#060410] via-[#090b20] to-[#0e0719] text-indigo-50 transition-colors duration-1000 selection:bg-purple-900 selection:text-white";
-    themeBadgeText = "Calming Lavender-Indigo Mode";
+    themeBadgeText = "Tema relaxante lilás e índigo";
     themeBadgeColor = "text-purple-400 bg-purple-950/40 border-purple-900/60 font-bold animate-pulse";
     themeDescription = "EEG telemetry indicates high stress. Calming deep lavender/indigo tones applied to induce systemic relaxation & lower cognitive load.";
     themeAccentText = "text-purple-400";
     themeIconComponent = <Heart className="h-4 w-4 text-purple-400 animate-pulse" />;
   } else if (isLowAttention) {
     themeContainerClass = "bg-gradient-to-tr from-[#0a0a09] via-[#241304] to-[#0d0701] text-amber-50 transition-colors duration-1000 selection:bg-amber-900 selection:text-white border-t-2 border-amber-600/45";
-    themeBadgeText = "Vibrant Neuro-Stimulus Mode";
+    themeBadgeText = "Tema de estimulação cognitiva";
     themeBadgeColor = "text-amber-400 bg-amber-955/50 border-amber-950/60 font-black animate-pulse";
     themeDescription = "EEG telemetry indicates low focus. High-contrast energetic orange/gold highlights applied to stimulate wearer alertness.";
     themeAccentText = "text-amber-400";
@@ -262,7 +262,7 @@ export default function App() {
   let pulseColorClass = 'text-emerald-400';
   let pulseBgClass = 'bg-emerald-400';
   let pulseBorderClass = 'border-emerald-500/30';
-  let pulseStatusText = 'Cognitive Pulse';
+  let pulseStatusText = 'Pulso cognitivo';
   let graphColor = '#10b981'; // emerald
   let pingBgClass = 'bg-emerald-400';
   
@@ -270,14 +270,14 @@ export default function App() {
     pulseColorClass = 'text-red-400';
     pulseBgClass = 'bg-red-400';
     pulseBorderClass = 'border-red-500/30';
-    pulseStatusText = 'Pulse: High Stress';
+    pulseStatusText = 'Pulso: estresse elevado';
     graphColor = '#f43f5e'; // rose/red
     pingBgClass = 'bg-red-400';
   } else if (isLowAttention) {
     pulseColorClass = 'text-amber-400';
     pulseBgClass = 'bg-amber-400';
     pulseBorderClass = 'border-amber-500/30';
-    pulseStatusText = 'Pulse: Low Focus';
+    pulseStatusText = 'Pulso: baixa concentração';
     graphColor = '#f59e0b'; // amber
     pingBgClass = 'bg-amber-400';
   }
@@ -292,10 +292,10 @@ export default function App() {
   let thresholdStatusText = 'Optimal (68%)';
   if (currentIntensity > optimalMax) {
     thresholdLineColor = '#f43f5e'; // warning rose/red for high hyperactive spikes
-    thresholdStatusText = 'High Stress Alert';
+    thresholdStatusText = 'Alerta de estresse elevado';
   } else if (currentIntensity < optimalMin) {
     thresholdLineColor = '#f59e0b'; // warning amber/yellow for low-focus drop-offs
-    thresholdStatusText = 'Low Focus Alert';
+    thresholdStatusText = 'Alerta de baixa concentração';
   }
 
   return (
@@ -313,9 +313,9 @@ export default function App() {
               </div>
               <div>
                 <h1 className="text-lg font-black text-slate-100 tracking-tight flex items-center gap-1.5 uppercase font-sans">
-                  NEUROLEARN AI
+                  NEUROLEARN IA
                 </h1>
-                <p className="text-[10px] text-slate-400 font-medium tracking-wide">Brain-Adaptive Learning & Wellness Ecosystem</p>
+                <p className="text-[10px] text-slate-400 font-medium tracking-wide">Ecossistema de aprendizagem adaptativa e bem-estar</p>
               </div>
             </div>
 
@@ -327,7 +327,7 @@ export default function App() {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75 animate-duration-1000"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
                   </span>
-                  <span>Wearer: <strong className="text-slate-200">Alex Mercer</strong></span>
+                  <span>Usuário: <strong className="text-slate-200">Alex Mercer</strong></span>
                 </div>
                 <div className="h-3 w-px bg-slate-800" />
                 <button
@@ -335,7 +335,7 @@ export default function App() {
                   onClick={() => {
                     setIsPulseModalOpen(true);
                   }}
-                  title={`Click to view 60s Pulse Telemetry history (${isHighStress ? 'High Stress' : isLowAttention ? 'Low Attention' : 'Optimal'})`}
+                  title={`Click to view 60s Pulse Telemetry history (${isHighStress ? 'Estresse elevado' : isLowAttention ? 'Baixa atenção' : 'Optimal'})`}
                   className={`flex items-center gap-2 hover:bg-slate-900 px-2 py-0.5 rounded cursor-pointer transition-all border border-transparent hover:border-slate-800/80 text-[10px] ${
                     isHighStress
                       ? 'bg-red-950/20'
@@ -384,7 +384,7 @@ export default function App() {
                 id="emergency-trigger-header-button"
               >
                 <LifeBuoy className="h-3.5 w-3.5 text-red-500" />
-                <span>Emergency Help</span>
+                <span>Ajuda de emergência</span>
               </button>
             </div>
           </div>
@@ -403,7 +403,7 @@ export default function App() {
                 }`}
               >
                 <Home className="h-3.5 w-3.5" />
-                <span>Home</span>
+                <span>Início</span>
                 {activeTab === 'home' && (
                   <motion.span
                     layoutId="activeTabUnderline"
@@ -422,7 +422,7 @@ export default function App() {
                 }`}
               >
                 <Brain className="h-3.5 w-3.5" />
-                <span>Student Workspace</span>
+                <span>Área do estudante</span>
                 {activeTab === 'student' && (
                   <motion.span
                     layoutId="activeTabUnderline"
@@ -441,7 +441,7 @@ export default function App() {
                 }`}
               >
                 <Users className="h-3.5 w-3.5" />
-                <span>Teacher Panel</span>
+                <span>Painel do professor</span>
                 {activeTab === 'teacher' && (
                   <motion.span
                     layoutId="activeTabUnderline"
@@ -460,7 +460,7 @@ export default function App() {
                 }`}
               >
                 <Heart className="h-3.5 w-3.5" />
-                <span>Parent Hub</span>
+                <span>Área dos responsáveis</span>
                 {activeTab === 'parent' && (
                   <motion.span
                     layoutId="activeTabUnderline"
@@ -481,7 +481,7 @@ export default function App() {
                     }`}
                   >
                     <Cpu className="h-3.5 w-3.5 text-yellow-500" />
-                    <span>Hardware Specs</span>
+                    <span>Especificações de hardware</span>
                     {activeTab === 'arch' && (
                       <motion.span
                         layoutId="activeTabUnderline"
@@ -500,7 +500,7 @@ export default function App() {
                     }`}
                   >
                     <Database className="h-3.5 w-3.5 text-indigo-400" />
-                    <span>Cloud Spec</span>
+                    <span>Infraestrutura em nuvem</span>
                     {activeTab === 'cloud' && (
                       <motion.span
                         layoutId="activeTabUnderline"
@@ -519,7 +519,7 @@ export default function App() {
                     }`}
                   >
                     <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
-                    <span>Ethical AI</span>
+                    <span>IA ética</span>
                     {activeTab === 'ethics' && (
                       <motion.span
                         layoutId="activeTabUnderline"
@@ -538,7 +538,7 @@ export default function App() {
                     }`}
                   >
                     <FlaskConical className="h-3.5 w-3.5 text-pink-500" />
-                    <span>Academic Sandbox</span>
+                    <span>Laboratório acadêmico</span>
                     {activeTab === 'research' && (
                       <motion.span
                         layoutId="activeTabUnderline"
@@ -552,7 +552,7 @@ export default function App() {
             </div>
 
             <div className="flex items-center space-x-2 pl-4 pr-1.5 ml-auto border-l border-slate-800 shrink-0">
-              <span className="text-[9px] font-mono text-slate-500 uppercase tracking-widest font-black select-none">Dev Mode</span>
+              <span className="text-[9px] font-mono text-slate-500 uppercase tracking-widest font-black select-none">Modo de desenvolvimento</span>
               <button
                 onClick={() => {
                   const nextDevMode = !devMode;
@@ -561,7 +561,7 @@ export default function App() {
                     setActiveTab('home');
                   }
                 }}
-                title="Toggle Developer & Technical Spec Views"
+                title="Alternar visualização de desenvolvimento e detalhes técnicos"
                 className={`w-9 h-5 rounded-full p-0.5 transition-colors duration-200 focus:outline-none cursor-pointer flex items-center ${
                   devMode ? 'bg-indigo-600' : 'bg-slate-800'
                 }`}
@@ -600,7 +600,7 @@ export default function App() {
 
             <div className="space-y-1">
               <div className="flex items-center flex-wrap gap-2">
-                <span className="text-[10px] uppercase font-bold tracking-widest text-slate-500 font-mono">Neural Biofeedback Theme Engine</span>
+                <span className="text-[10px] uppercase font-bold tracking-widest text-slate-500 font-mono">Mecanismo visual de biofeedback neural</span>
                 <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-extrabold border ${themeBadgeColor}`}>
                   {themeBadgeText}
                 </span>
@@ -613,7 +613,7 @@ export default function App() {
 
           {/* Quick Simulation triggers to make validation instant and satisfying */}
           <div className="flex flex-wrap items-center gap-2 bg-slate-950/50 p-2 rounded-xl border border-slate-900 font-mono text-[9px] w-full md:w-auto justify-end">
-            <span className="text-slate-500 uppercase font-black tracking-wider px-1.5">Simulation Overrides</span>
+            <span className="text-slate-500 uppercase font-black tracking-wider px-1.5">Controles da simulação</span>
             <button
               onClick={() => {
                 setCognitive(prev => ({ ...prev, stress: 'High', attention: 'High' }));
@@ -624,10 +624,10 @@ export default function App() {
                   ? 'bg-purple-950 text-purple-400 border-purple-800' 
                   : 'bg-slate-900 text-slate-400 border-slate-800 hover:text-slate-200'
               }`}
-              title="Simulate High Stress"
+              title="Simular estresse elevado"
               type="button"
             >
-              High Stress
+              Estresse elevado
             </button>
             <button
               onClick={() => {
@@ -639,10 +639,10 @@ export default function App() {
                   ? 'bg-amber-950 text-amber-400 border-amber-800' 
                   : 'bg-slate-900 text-slate-400 border-slate-800 hover:text-slate-200'
               }`}
-              title="Simulate Low Attention"
+              title="Simular baixa atenção"
               type="button"
             >
-              Low Attention
+              Baixa atenção
             </button>
             <button
               onClick={() => {
@@ -654,7 +654,7 @@ export default function App() {
                   ? 'bg-emerald-950 text-emerald-400 border-emerald-800/80' 
                   : 'bg-slate-900 text-slate-400 border-slate-800 hover:text-slate-100'
               }`}
-              title="Force Optimal State"
+              title="Restaurar estado ideal"
               type="button"
             >
               Optimal State
@@ -728,17 +728,17 @@ export default function App() {
               <div className="bg-indigo-600/10 p-1.5 rounded-lg border border-indigo-500/20">
                 <Brain className="h-4 w-4 text-indigo-400" />
               </div>
-              <span className="font-mono text-xs font-black text-slate-350 tracking-wider">NEUROLEARN AI</span>
-              <span className="bg-indigo-950 text-indigo-400 font-mono text-[9px] px-2 py-0.5 rounded-full border border-indigo-900/40">POC v3.2.0</span>
+              <span className="font-mono text-xs font-black text-slate-350 tracking-wider">NEUROLEARN IA</span>
+              <span className="bg-indigo-950 text-indigo-400 font-mono text-[9px] px-2 py-0.5 rounded-full border border-indigo-900/40">Protótipo v3.2.0</span>
             </div>
             <p className="text-slate-400 leading-relaxed max-w-xl">
-              <strong>NeuroLearn AI Applet Proof-of-concept</strong>. Developed for standard evaluation with active post-training quantized edge routines, BigQuery analytics warehouses, and premium Gemini learning assistants.
+              <strong>Prova de conceito NeuroLearn AI</strong>. Developed for standard evaluation with active post-training quantized edge routines, BigQuery analytics warehouses, and premium Gemini learning assistants.
             </p>
           </div>
 
           {/* SDG Micro Badges list */}
           <div className="md:col-span-3 flex flex-col items-center justify-center space-y-2.5">
-            <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 font-bold">SDG Target Frameworks</span>
+            <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 font-bold">Objetivos de desenvolvimento sustentável</span>
             <div className="flex flex-wrap gap-1.5 justify-center">
               {['SDG 3', 'SDG 4', 'SDG 9', 'SDG 10'].map((sdg) => (
                 <span key={sdg} className="px-2 py-0.5 bg-slate-900 border border-slate-800 text-slate-400 text-[9.5px] font-mono font-extrabold rounded-md hover:border-slate-750 transition-all hover:text-slate-200">
@@ -752,7 +752,7 @@ export default function App() {
           <div className="md:col-span-3 text-center md:text-right space-y-2 sm:space-y-1.5 font-mono">
             <div className="inline-flex items-center gap-1.5 bg-rose-950/25 border border-rose-900/30 px-2.5 py-1 rounded-lg text-rose-400 text-[9.5px] font-bold">
               <ShieldCheck className="h-3 w-3 animate-pulse text-rose-500" />
-              <span>AES-256 GCM SECURED</span>
+              <span>PROTEGIDO COM AES-256 GCM</span>
             </div>
             <p className="text-[9.5px] text-slate-500 leading-relaxed">
               Protected under dual AES-256 GCM encrypted channels.<br />
@@ -768,14 +768,14 @@ export default function App() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
             </span>
-            <span>Edge Routines: Quantized INT8</span>
+            <span>Rotinas locais: quantização INT8</span>
           </div>
           <div>
-            <span>Data Source: BigQuery Analytics Warehouse</span>
+            <span>Fonte de dados: BigQuery Analytics Warehouse</span>
           </div>
           <div className="flex items-center gap-1">
             <Sparkles className="h-3 w-3 text-indigo-400 animate-pulse" />
-            <span>AI Provider: Gemini 2.5 Flash</span>
+            <span>Provedor de IA: Gemini 2.5 Flash</span>
           </div>
         </div>
       </footer>
@@ -807,8 +807,8 @@ export default function App() {
                     <LifeBuoy className="h-6 w-6 text-red-500 animate-spin-slow" />
                   </div>
                   <div>
-                    <h3 className="text-base font-black tracking-tight text-slate-200 uppercase">Trigger Distress Signal Alert</h3>
-                    <p className="text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Live Wearable Bio-Sensor Telemetry Broadcast</p>
+                    <h3 className="text-base font-black tracking-tight text-slate-200 uppercase">Enviar alerta de emergência</h3>
+                    <p className="text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Transmissão de dados dos sensores vestíveis</p>
                   </div>
                 </div>
                 <button
@@ -822,18 +822,18 @@ export default function App() {
 
               {/* Bio snapshot box */}
               <div className="bg-slate-950 p-3 rounded-lg border border-slate-800 space-y-2 text-slate-400">
-                <span className="text-[9px] uppercase font-bold text-slate-500 tracking-wider block font-mono">Current Alex Mercer Snapshot</span>
+                <span className="text-[9px] uppercase font-bold text-slate-500 tracking-wider block font-mono">Resumo atual de Alex Mercer</span>
                 <div className="grid grid-cols-3 gap-2.5">
                   <div className="bg-slate-900/40 p-2 rounded-md border border-slate-800 text-center">
-                    <span className="text-[8px] text-slate-500 block">EEG Stress State</span>
+                    <span className="text-[8px] text-slate-500 block">Nível de estresse (EEG)</span>
                     <strong className="text-red-400 text-xs font-black">{cognitive.stress}</strong>
                   </div>
                   <div className="bg-slate-900/40 p-2 rounded-md border border-slate-800 text-center">
-                    <span className="text-[8px] text-slate-500 block">EEG Attention</span>
+                    <span className="text-[8px] text-slate-500 block">Atenção (EEG)</span>
                     <strong className="text-emerald-400 text-xs font-black">{cognitive.attention}</strong>
                   </div>
                   <div className="bg-slate-900/40 p-2 rounded-md border border-slate-800 text-center">
-                    <span className="text-[8px] text-slate-500 block">Heart Rate</span>
+                    <span className="text-[8px] text-slate-500 block">Frequência cardíaca</span>
                     <strong className="text-pink-400 text-xs font-black font-mono">{biometric.heartRate} BPM</strong>
                   </div>
                 </div>
@@ -841,7 +841,7 @@ export default function App() {
 
               {/* Suggestions */}
               <div className="space-y-2">
-                <label className="text-[11px] font-bold text-slate-400 block">Select Simulated Distress Alert Payload Template:</label>
+                <label className="text-[11px] font-bold text-slate-400 block">Selecione um modelo de alerta simulado:</label>
                 <div className="grid grid-cols-1 gap-1.5">
                   {[
                     'Elevated fatigue / stress threshold limit crossed during intensive research block. Seeking advisor assistance.',
@@ -870,7 +870,7 @@ export default function App() {
 
               {/* Custom message box */}
               <div className="space-y-1.5">
-                <label className="text-[11px] font-bold text-slate-400 block">Or Customize Distress Message / Situation:</label>
+                <label className="text-[11px] font-bold text-slate-400 block">Ou personalize a mensagem e a situação:</label>
                 <textarea
                   value={customEmergencyText}
                   onChange={(e) => {
@@ -921,7 +921,7 @@ export default function App() {
                   ) : (
                     <>
                       <LifeBuoy className="h-4 w-4 animate-pulse" />
-                      <span>Trigger Distress Call</span>
+                      <span>Enviar alerta</span>
                     </>
                   )}
                 </button>
@@ -957,8 +957,8 @@ export default function App() {
                     <Activity className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-black tracking-tight text-white uppercase">Cognitive Pulse History</h3>
-                    <p className="text-[9px] text-slate-400 uppercase tracking-wider font-semibold">Continuous High-Frequency Telemetry Feed</p>
+                    <h3 className="text-sm font-black tracking-tight text-white uppercase">Histórico do pulso cognitivo</h3>
+                    <p className="text-[9px] text-slate-400 uppercase tracking-wider font-semibold">Monitoramento contínuo de alta frequência</p>
                   </div>
                 </div>
                 <button
@@ -1009,7 +1009,7 @@ export default function App() {
                           : 'border-slate-800/80'
                       }`}>
                         <div className="flex items-center justify-center gap-1.5 mb-0.5">
-                          <span className="text-[8px] text-slate-500 font-bold uppercase tracking-wider">Live Score</span>
+                          <span className="text-[8px] text-slate-500 font-bold uppercase tracking-wider">Pontuação atual</span>
                           {isPulseTrendThresholdCrossed && (
                             <span className={`relative flex h-1.5 w-1.5`}>
                               <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${pulseDeviationPercent > 0 ? 'bg-red-400' : 'bg-amber-400'}`}></span>
@@ -1028,13 +1028,13 @@ export default function App() {
                             : 'border-amber-500/30 bg-amber-955/5'
                           : 'border-slate-800/80'
                       }`}>
-                        <span className="text-[8px] text-slate-500 font-bold uppercase tracking-wider block mb-0.5">60s Average</span>
+                        <span className="text-[8px] text-slate-500 font-bold uppercase tracking-wider block mb-0.5">Média de 60 s</span>
                         <strong className="text-slate-200 text-sm font-black font-mono">
                           {Math.round(pulseHistory.reduce((sum, item) => sum + item.intensity, 0) / pulseHistory.length)}%
                         </strong>
                       </div>
                       <div className="bg-slate-950 p-2.5 rounded-xl border border-slate-800/80 text-center">
-                        <span className="text-[8px] text-slate-500 font-bold uppercase tracking-wider block mb-0.5">Peak Intensity</span>
+                        <span className="text-[8px] text-slate-500 font-bold uppercase tracking-wider block mb-0.5">Intensidade máxima</span>
                         <strong className="text-indigo-400 text-sm font-black font-mono animate-pulse">
                           {Math.max(...pulseHistory.map(item => item.intensity))}%
                         </strong>
@@ -1050,7 +1050,7 @@ export default function App() {
                       }`} id="pulse-modal-trend-alert">
                         <span className="flex items-center gap-1 uppercase tracking-wider font-extrabold text-[8px] shrink-0">
                           <TrendingUp className={`h-3 w-3 ${pulseDeviationPercent > 0 ? 'text-red-400 animate-bounce' : 'text-amber-400 animate-pulse'}`} />
-                          <span>Emerging Trend</span>
+                          <span>Tendência atual</span>
                         </span>
                         <span className="font-sans text-right ml-2 leading-tight">
                           10s Moving Average (<strong className="font-extrabold">{latest10sMA}%</strong>) is {pulseDeviationPercent > 0 ? 'elevated' : 'depressed'} by <strong className="font-black">{Math.abs(pulseDeviationPercent)}%</strong> from baseline ({pulseBaselineVal}%)
@@ -1061,7 +1061,7 @@ export default function App() {
               {/* Recharts Area Plot */}
               <div className="bg-slate-950 rounded-xl p-3 border border-slate-850/80">
                 <div className="flex justify-between items-center mb-1 text-[9px] text-slate-400 font-mono">
-                  <span>Spectral Power Density</span>
+                  <span>Densidade espectral de potência</span>
                   <div className="flex items-center gap-3">
                     <button
                       type="button"
@@ -1077,7 +1077,7 @@ export default function App() {
                     </button>
                     <span className="flex items-center gap-1">
                       <span className={`h-1.5 w-1.5 rounded-full ${pingBgClass} animate-ping`}></span>
-                      <span>60s Live Window</span>
+                      <span>Janela de 60 s</span>
                     </span>
                   </div>
                 </div>
@@ -1158,33 +1158,33 @@ export default function App() {
                             if (diff > 0.1) {
                               trendArrow = "↑";
                               trendColor = "text-rose-450 text-red-400 bg-red-950/20 border-red-900/30";
-                              trendText = "Rising Stress";
+                              trendText = "Estresse aumentando";
                             } else if (diff < -0.1) {
                               trendArrow = "↓";
                               trendColor = "text-emerald-400 bg-emerald-950/20 border-emerald-900/30";
-                              trendText = "Calming Down";
+                              trendText = "Estresse diminuindo";
                             }
                             
                             return (
                               <div className="bg-slate-950 border border-slate-800/80 p-2 rounded-xl text-[10px] font-sans shadow-xl min-w-[150px] space-y-1.5 backdrop-blur-md">
                                 <div className="flex justify-between items-center text-slate-450 border-b border-slate-900 pb-1 flex-wrap gap-1">
                                   <span className="font-semibold text-slate-400">Time: {dataPoint.time}</span>
-                                  <span className="text-[8px] px-1 py-0.2 bg-slate-900 rounded-md font-mono text-slate-500">2s Interval</span>
+                                  <span className="text-[8px] px-1 py-0.2 bg-slate-900 rounded-md font-mono text-slate-500">Intervalo de 2 s</span>
                                 </div>
                                 <div className="flex justify-between items-center">
-                                  <span className="text-slate-500">Last 2s Data:</span>
+                                  <span className="text-slate-500">Dados dos últimos 2 s:</span>
                                   <span className={`font-black font-mono ${pulseColorClass}`}>
                                     {dataPoint.intensity}%
                                   </span>
                                 </div>
                                 <div className="flex justify-between items-center">
-                                  <span className="text-slate-505 text-slate-500">10s Average:</span>
+                                  <span className="text-slate-505 text-slate-500">Média de 10 s:</span>
                                   <span className="font-black font-mono text-slate-300">
                                     {tenSecondAvg}%
                                   </span>
                                 </div>
                                 <div className={`flex items-center justify-between border border-transparent p-1 px-1.5 rounded-lg text-[9px] font-bold ${trendColor}`}>
-                                  <span>Trend:</span>
+                                  <span>Tendência:</span>
                                   <span className="flex items-center gap-1">
                                     <span className="text-xs font-black">{trendArrow}</span>
                                     <span>{trendText}</span>
@@ -1199,7 +1199,7 @@ export default function App() {
                       />
                       <Area
                         type="monotone"
-                        name="Pulse Intensity"
+                        name="Intensidade do pulso"
                         dataKey="intensity"
                         stroke={graphColor}
                         strokeWidth={2}
@@ -1209,7 +1209,7 @@ export default function App() {
                       {showPulseTrends && (
                         <Line
                           type="monotone"
-                          name="10s Moving Average"
+                          name="Média móvel de 10 s"
                           dataKey="trendMA"
                           stroke="#38bdf8"
                           strokeWidth={2}
@@ -1243,7 +1243,7 @@ export default function App() {
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-red-500"></span>
                     </span>
-                    <span>Session Stress Events: <strong className="text-white font-mono">{highStressCount}</strong></span>
+                    <span>Eventos de estresse na sessão: <strong className="text-white font-mono">{highStressCount}</strong></span>
                   </div>
                   <button
                     type="button"
@@ -1259,7 +1259,7 @@ export default function App() {
               <div className="flex justify-between items-center text-[10px] bg-slate-950/60 p-2.5 rounded-lg border border-slate-800/80">
                 <div className="flex items-center gap-1.5 text-slate-400">
                   <Clock className="h-3.5 w-3.5 text-slate-500" />
-                  <span>Epoch Rate: 0.5Hz • Wearable v2.1</span>
+                  <span>Frequência de amostragem: 0,5 Hz • Vestível v2.1</span>
                 </div>
                 <button
                   type="button"
@@ -1273,12 +1273,12 @@ export default function App() {
                   {isStreamPaused ? (
                     <>
                       <Play className="h-2.5 w-2.5" />
-                      <span>Resume</span>
+                      <span>Retomar</span>
                     </>
                   ) : (
                     <>
                       <Pause className="h-2.5 w-2.5" />
-                      <span>Pause Feed</span>
+                      <span>Pausar transmissão</span>
                     </>
                   )}
                 </button>
