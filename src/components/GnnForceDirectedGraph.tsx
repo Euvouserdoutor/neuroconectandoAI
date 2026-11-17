@@ -636,7 +636,7 @@ export default function GnnForceDirectedGraph({
         <div>
           <span className="inline-flex items-center space-x-1.5 px-2.5 py-0.5 rounded-full bg-indigo-950/50 border border-indigo-800/55 text-[9px] font-mono font-extrabold text-indigo-400 uppercase tracking-widest">
             <Radio className="h-3 w-3 text-indigo-400 animate-pulse" />
-            <span>Interactive Node Physics</span>
+            <span>Física interativa dos nós</span>
           </span>
           <h3 className="text-sm font-black text-slate-100 font-sans tracking-tight uppercase flex items-center gap-2 mt-1">
             Student Cognitive Resonance Force-Directed Graph
@@ -655,7 +655,7 @@ export default function GnnForceDirectedGraph({
             id="gnn-open-config-btn"
           >
             <Sliders className="h-3 w-3" />
-            <span>CONFIG</span>
+            <span>CONFIGURAÇÃO</span>
           </button>
 
           <button
@@ -694,9 +694,9 @@ export default function GnnForceDirectedGraph({
             </div>
             
             <div className="flex gap-4 text-[9px] text-slate-500 font-mono">
-              <span className="flex items-center gap-1"><span className="h-1.5 w-1.5 rounded-full bg-indigo-500" /> Alpha</span>
+              <span className="flex items-center gap-1"><span className="h-1.5 w-1.5 rounded-full bg-indigo-500" /> Alfa</span>
               <span className="flex items-center gap-1"><span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> Beta</span>
-              <span className="flex items-center gap-1"><span className="h-1.5 w-1.5 rounded-full bg-amber-500" /> Gamma</span>
+              <span className="flex items-center gap-1"><span className="h-1.5 w-1.5 rounded-full bg-amber-500" /> Gama</span>
             </div>
           </div>
 
@@ -1042,7 +1042,7 @@ export default function GnnForceDirectedGraph({
                   <div className="grid grid-cols-2 gap-2 mb-2 text-[10.5px]">
                     {/* Attention */}
                     <div className="bg-slate-950/50 border border-slate-850/60 rounded-lg p-1.5 text-center">
-                      <span className="text-[8px] text-slate-500 font-mono block uppercase">Attention</span>
+                      <span className="text-[8px] text-slate-500 font-mono block uppercase">Atenção</span>
                       <div className="flex items-center justify-center gap-1 mt-0.5">
                         <span className={`h-1.5 w-1.5 rounded-full ${pNode.attention === 'High' ? 'bg-emerald-500 animate-pulse' : pNode.attention === 'Moderate' ? 'bg-amber-500' : 'bg-rose-500 animate-ping'}`} />
                         <strong className={`font-bold ${pNode.attention === 'High' ? 'text-emerald-400' : pNode.attention === 'Moderate' ? 'text-amber-400' : 'text-rose-400'}`}>
@@ -1053,7 +1053,7 @@ export default function GnnForceDirectedGraph({
 
                     {/* Stress */}
                     <div className="bg-slate-950/50 border border-slate-850/60 rounded-lg p-1.5 text-center">
-                      <span className="text-[8px] text-slate-500 font-mono block uppercase">Stress</span>
+                      <span className="text-[8px] text-slate-500 font-mono block uppercase">Estresse</span>
                       <div className="flex items-center justify-center gap-1 mt-0.5">
                         <span className={`h-1.5 w-1.5 rounded-full ${pNode.stress === 'Low' ? 'bg-emerald-500' : pNode.stress === 'Moderate' ? 'bg-amber-500' : 'bg-rose-500 animate-pulse'}`} />
                         <strong className={`font-bold ${pNode.stress === 'Low' ? 'text-emerald-400' : pNode.stress === 'Moderate' ? 'text-amber-400' : 'text-rose-400'}`}>
@@ -1066,7 +1066,7 @@ export default function GnnForceDirectedGraph({
                   {/* Academic Regression trend */}
                   <div className="bg-slate-950/80 p-2 rounded-lg border border-slate-850">
                     <div className="flex justify-between items-center text-[8px] text-slate-500 uppercase tracking-wider font-mono mb-1">
-                      <span>Academic Progress</span>
+                      <span>Progresso acadêmico</span>
                       <span className={`font-bold ${isUpwardTrend ? "text-emerald-400" : "text-rose-400"}`}>
                         {isUpwardTrend ? '📈 Upward' : '📉 Decline'} ({scores[scores.length - 1]}%)
                       </span>
@@ -1115,7 +1115,7 @@ export default function GnnForceDirectedGraph({
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-slate-900 pt-3 text-[10px] text-slate-400">
             <div>
               <div className="flex justify-between items-center mb-0.5">
-                <span>Charge (Repelling)</span>
+                <span>Carga (repulsão)</span>
                 <span className="text-slate-300 font-bold">{repulsion}</span>
               </div>
               <input
@@ -1130,7 +1130,7 @@ export default function GnnForceDirectedGraph({
 
             <div>
               <div className="flex justify-between items-center mb-0.5">
-                <span>Spring Tension</span>
+                <span>Tensão da mola</span>
                 <span className="text-slate-300 font-bold">{(linkForce).toFixed(2)}</span>
               </div>
               <input
@@ -1146,7 +1146,7 @@ export default function GnnForceDirectedGraph({
 
             <div>
               <div className="flex justify-between items-center mb-0.5">
-                <span>Central Pull</span>
+                <span>Atração central</span>
                 <span className="text-slate-300 font-bold">{(gravity).toFixed(2)}</span>
               </div>
               <input
@@ -1162,7 +1162,7 @@ export default function GnnForceDirectedGraph({
 
             <div>
               <div className="flex justify-between items-center mb-0.5">
-                <span>Viscous Friction</span>
+                <span>Atrito viscoso</span>
                 <span className="text-slate-300 font-bold">{(damping).toFixed(2)}</span>
               </div>
               <input
@@ -1191,19 +1191,19 @@ export default function GnnForceDirectedGraph({
 
             <div className="grid grid-cols-2 gap-3 mb-3">
               <div className="bg-slate-900/40 border border-slate-850 p-2.5 rounded-lg text-center">
-                <span className="text-[9px] text-slate-500 block uppercase font-mono font-bold">Resonance</span>
+                <span className="text-[9px] text-slate-500 block uppercase font-mono font-bold">Ressonância</span>
                 <strong className={`text-lg font-bold font-mono ${stats.resonance > 65 ? 'text-emerald-400' : 'text-amber-400'}`}>
                   {stats.resonance}%
                 </strong>
-                <span className="text-[8px] text-slate-400 block mt-0.5">Group alignment</span>
+                <span className="text-[8px] text-slate-400 block mt-0.5">Alinhamento do grupo</span>
               </div>
 
               <div className="bg-slate-900/40 border border-slate-850 p-2.5 rounded-lg text-center">
-                <span className="text-[9px] text-slate-500 block uppercase font-mono font-bold">Coherence</span>
+                <span className="text-[9px] text-slate-500 block uppercase font-mono font-bold">Coerência</span>
                 <strong className="text-lg font-bold font-mono text-indigo-400">
                   {stats.alignment}%
                 </strong>
-                <span className="text-[8px] text-slate-400 block mt-0.5">Focus levels</span>
+                <span className="text-[8px] text-slate-400 block mt-0.5">Níveis de concentração</span>
               </div>
             </div>
 
@@ -1211,11 +1211,11 @@ export default function GnnForceDirectedGraph({
             <div className="bg-emerald-950/20 border border-emerald-900/45 p-2 rounded-lg text-[10.5px] text-slate-450 text-slate-300 leading-normal">
               {stats.isOptimal ? (
                 <p>
-                  🚀 <strong>High Resonance Detected:</strong> Dynamic clusters show students in highly aligned cognitive alignment (typical of productive co-learning). Keep active parameters constant.
+                  🚀 <strong>Ressonância elevada detectada:</strong> Dynamic clusters show students in highly aligned cognitive alignment (typical of productive co-learning). Keep active parameters constant.
                 </p>
               ) : (
                 <p>
-                  ⚠️ <strong>Resonance Bottlenecks:</strong> Certain student pairs have low alignment coherence indices. Execute <em>Phase Synchronization</em> or seating updates to restore engagement.
+                  ⚠️ <strong>Gargalos de ressonância:</strong> Algumas duplas apresentam baixa coerência de alinhamento. Execute <em>Sincronização de fase</em> or seating updates to restore engagement.
                 </p>
               )}
             </div>
@@ -1255,7 +1255,7 @@ export default function GnnForceDirectedGraph({
                     </p>
 
                     <div className="text-[10px] text-emerald-400 bg-emerald-950/20 px-2.5 py-2 rounded border border-emerald-900/30 leading-snug mb-2.5">
-                      <strong>Solution:</strong> {alert.recommendation}
+                      <strong>Solução:</strong> {alert.recommendation}
                     </div>
 
                     {/* Quick action resolve button */}
@@ -1296,7 +1296,7 @@ export default function GnnForceDirectedGraph({
                 <div className="p-3.5 bg-slate-900/40 border border-slate-850 rounded-lg text-center">
                   <div className="flex items-center justify-center space-x-1.5 text-emerald-400 text-[10.5px] font-bold font-mono">
                     <CheckCircle2 className="h-4 w-4 text-emerald-400 animate-pulse" />
-                    <span>ALL CLUSTERS BELOW THRESHOLDS</span>
+                    <span>TODOS OS GRUPOS ABAIXO DOS LIMITES</span>
                   </div>
                   <p className="text-[9.5px] text-slate-500 mt-1 leading-normal">
                     No active student groups showing rapid drop in learning engagement or cognitive mismatch.
@@ -1305,7 +1305,7 @@ export default function GnnForceDirectedGraph({
 
                 {/* Simulation block */}
                 <div className="pt-2.5 border-t border-slate-900">
-                  <span className="text-[9px] font-mono text-slate-500 block uppercase mb-1.5">Test Alert Triggers:</span>
+                  <span className="text-[9px] font-mono text-slate-500 block uppercase mb-1.5">Testar alertas:</span>
                   <div className="grid grid-cols-3 gap-1.5 text-[9px] font-mono">
                     <button
                       type="button"
@@ -1338,7 +1338,7 @@ export default function GnnForceDirectedGraph({
           <div className="bg-slate-950 border border-slate-850 p-4 rounded-xl flex-1 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between pb-2 border-b border-slate-900 mb-3 text-[10px]">
-                <span className="font-mono font-bold uppercase text-slate-400">Active Node Portal</span>
+                <span className="font-mono font-bold uppercase text-slate-400">Painel do nó ativo</span>
                 {selectedNode && (
                   <span className="bg-indigo-950 text-indigo-400 px-1.5 py-0.2 rounded font-mono">
                     ID #{selectedNode.id}
@@ -1364,7 +1364,7 @@ export default function GnnForceDirectedGraph({
                   <div className="space-y-2 text-[10px] text-slate-450">
                     <div>
                       <div className="flex justify-between items-center text-[9px] text-slate-500 uppercase font-mono tracking-wider mb-1">
-                        <span>Anxiety Level</span>
+                        <span>Nível de ansiedade</span>
                         <strong className={selectedNode.features[1] > 0.7 ? 'text-rose-450 text-rose-400' : 'text-indigo-400'}>
                           {(selectedNode.features[1] * 100).toFixed(0)}%
                         </strong>
@@ -1379,7 +1379,7 @@ export default function GnnForceDirectedGraph({
 
                     <div>
                       <div className="flex justify-between items-center text-[9px] text-slate-500 uppercase font-mono tracking-wider mb-1">
-                        <span>Active Collaboration Contribution</span>
+                        <span>Contribuição ativa para colaboração</span>
                         <strong className="text-emerald-455 text-emerald-400">
                           {(selectedNode.features[2] * 100).toFixed(0)}%
                         </strong>
@@ -1395,7 +1395,7 @@ export default function GnnForceDirectedGraph({
 
                   {/* Node Wave visualization mock */}
                   <div className="bg-slate-900/40 border border-slate-850 p-2 rounded-lg relative overflow-hidden">
-                    <span className="text-[8px] font-mono text-slate-500 block uppercase mb-1">Brainwave synchronization alignment frequency</span>
+                    <span className="text-[8px] font-mono text-slate-500 block uppercase mb-1">Frequência de alinhamento das ondas cerebrais</span>
                     <div className="h-10 flex items-center justify-center">
                       <svg viewBox="0 0 100 40" className="w-full h-full stroke-indigo-450 stroke-indigo-400 fill-none">
                         <path 
@@ -1420,7 +1420,7 @@ export default function GnnForceDirectedGraph({
                       className="py-1.5 bg-rose-955 bg-rose-950/40 border border-rose-900/50 text-rose-400 rounded-lg font-bold hover:bg-rose-900/30 transition-colors cursor-pointer flex items-center justify-center gap-1 leading-none"
                     >
                       <Flame className="h-3.5 w-3.5" />
-                      <span>Inject Stressor</span>
+                      <span>Simular fator de estresse</span>
                     </button>
 
                     <button
@@ -1437,7 +1437,7 @@ export default function GnnForceDirectedGraph({
                       className="py-1.5 bg-indigo-950/40 border border-indigo-900/50 text-indigo-400 rounded-lg font-bold hover:bg-indigo-900/30 transition-colors cursor-pointer flex items-center justify-center gap-1 leading-none"
                     >
                       <RotateCcw className="h-3.5 w-3.5" />
-                      <span>Cool Down Portal</span>
+                      <span>Painel de recuperação</span>
                     </button>
                   </div>
                 </div>
@@ -1480,7 +1480,7 @@ export default function GnnForceDirectedGraph({
       <div className="bg-slate-950 border border-slate-855 rounded-xl p-3 mt-4 text-[11px]">
         <div className="flex items-center space-x-2 border-b border-slate-900 pb-2 mb-2">
           <div className="h-1.5 w-1.5 rounded-full bg-indigo-500 animate-ping"></div>
-          <span className="font-mono text-slate-450 uppercase font-bold text-[9px] tracking-wide">Relational Physics Telemetry Stream</span>
+          <span className="font-mono text-slate-450 uppercase font-bold text-[9px] tracking-wide">Telemetria da física relacional</span>
         </div>
 
         <div className="font-mono text-[9px] space-y-1 bg-slate-900/50 p-2 rounded max-h-[100px] overflow-y-auto scrollbar-thin scrollbar-thumb-slate-800">
@@ -1512,8 +1512,8 @@ export default function GnnForceDirectedGraph({
                 <Sliders className="h-5 w-5" />
               </div>
               <div>
-                <h4 className="text-sm font-black text-slate-100 uppercase tracking-tight font-sans">Critical Thresholds Manager</h4>
-                <p className="text-[11px] text-slate-400">Define GNN telemetry cutoffs for real-time risk classification.</p>
+                <h4 className="text-sm font-black text-slate-100 uppercase tracking-tight font-sans">Gerenciador de limites críticos</h4>
+                <p className="text-[11px] text-slate-400">Defina os limites da telemetria GNN para classificação de risco em tempo real.</p>
               </div>
             </div>
 
@@ -1587,7 +1587,7 @@ export default function GnnForceDirectedGraph({
 
               {/* Quick Preset Actions */}
               <div className="bg-slate-950 border border-slate-855 p-3 rounded-xl">
-                <span className="text-[10px] font-mono font-bold text-slate-400 block uppercase tracking-wide mb-2">Simulate Active Drops to Test Alerts</span>
+                <span className="text-[10px] font-mono font-bold text-slate-400 block uppercase tracking-wide mb-2">Simular quedas para testar alertas</span>
                 <div className="grid grid-cols-3 gap-2">
                   <button
                     onClick={() => {
