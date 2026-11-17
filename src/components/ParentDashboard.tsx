@@ -147,10 +147,10 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
           <div>
             <h3 className="font-bold text-slate-200 text-sm flex items-center mb-1">
               <ClipboardList className="h-4.5 w-4.5 text-sky-400 mr-2" />
-              Recent Home Learning Activity
+              Atividades recentes de estudo em casa
             </h3>
             <p className="text-[11px] text-slate-400 mb-4">
-              Real-time synchronization of home classroom accomplishments and biometrics.
+              Sincronização das atividades e métricas biométricas simuladas.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -175,16 +175,16 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
             <h4 className="text-xs font-bold text-slate-350 uppercase tracking-wider mb-3 flex items-center justify-between">
               <span className="flex items-center gap-1.5">
                 <Heart className="h-4 w-4 text-pink-500" />
-                Student Daily Wellness Logs
+                Registros diários de bem-estar do estudante
               </span>
               <span className="text-[8px] font-mono text-indigo-400 bg-indigo-950/40 border border-indigo-900/60 px-1.5 py-0.5 rounded uppercase font-bold">
-                Synced Stream
+                Dados sincronizados
               </span>
             </h4>
             
             {isLogsLoading ? (
               <div className="text-center py-4 text-xs text-slate-500 animate-pulse">
-                Fetching wellness logs...
+                Carregando registros de bem-estar...
               </div>
             ) : wellnessLogs.length > 0 ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -214,7 +214,7 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
               </div>
             ) : (
               <div className="bg-slate-950 p-4 border border-slate-800 rounded-lg text-center text-slate-500 text-xs text-slate-400">
-                No self-reported logs found. App is using active simulator settings.
+                Nenhum autorrelato encontrado. O aplicativo está usando dados de simulação.
               </div>
             )}
           </div>
@@ -224,16 +224,16 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
             <h4 className="text-xs font-bold text-slate-350 uppercase tracking-wider mb-3 flex items-center justify-between">
               <span className="flex items-center gap-1.5 text-rose-400">
                 <AlertCircle className="h-4 w-4 animate-pulse text-red-500" />
-                Active Custom distress Alerts
+                Alertas de apoio ativos
               </span>
               <span className="text-[8px] font-mono text-red-400 bg-red-950/30 border border-red-900/50 px-1.5 py-0.5 rounded uppercase font-bold">
-                Firestore Stream
+                Dados do Firestore
               </span>
             </h4>
             
             {isDistressLoading ? (
               <div className="text-center py-4 text-xs text-slate-500 animate-pulse">
-                Fetching alert triggers...
+                Carregando alertas...
               </div>
             ) : distressSignals.length > 0 ? (
               <div className="space-y-2.5">
@@ -242,7 +242,7 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
                     <div className="flex justify-between items-center">
                       <span className="font-bold text-rose-400 flex items-center gap-1 text-[10px]">
                         <span className="h-1.5 w-1.5 rounded-full bg-red-500 animate-ping"></span>
-                        Emergency Signal Alert
+                        Alerta de emergência
                       </span>
                       <span className="text-slate-505 font-mono text-[9px] text-slate-400">
                         {signal.createdAt ? new Date(signal.createdAt).toLocaleTimeString('pt-BR', {hour: '2-digit', minute: '2-digit'}) : 'Agora mesmo'}
@@ -254,17 +254,17 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
                     <div className="flex items-center gap-1.5 mt-1 flex-wrap text-[9px] font-mono">
                       {signal.stressSnapshot && (
                         <span className="bg-red-950/40 border border-red-900/40 text-red-400 px-2 py-0.5 rounded">
-                          Stress: <strong>{signal.stressSnapshot}</strong>
+                          Estresse: <strong>{signal.stressSnapshot}</strong>
                         </span>
                       )}
                       {signal.attentionSnapshot && (
                         <span className="bg-slate-900 border border-slate-800 text-sky-400 px-2 py-0.5 rounded">
-                          Attention: <strong>{signal.attentionSnapshot}</strong>
+                          Atenção: <strong>{signal.attentionSnapshot}</strong>
                         </span>
                       )}
                       {signal.heartRateSnapshot && (
                         <span className="bg-slate-900 border border-slate-800 text-pink-400 px-2 py-0.5 rounded">
-                          pulse: <strong>{signal.heartRateSnapshot} BPM</strong>
+                          pulso: <strong>{signal.heartRateSnapshot} BPM</strong>
                         </span>
                       )}
                     </div>
@@ -273,7 +273,7 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
               </div>
             ) : (
               <div className="bg-slate-950 p-3 border border-slate-850 rounded-lg text-center text-slate-500 text-xs">
-                No active simulated emergency signals on file. Workspace state is within safe ranges.
+                Nenhum alerta ativo registrado na simulação.
               </div>
             )}
           </div>
@@ -282,11 +282,11 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
           <div className="border-t border-slate-800 pt-5">
             <h4 className="text-xs font-bold text-slate-350 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
               <Star className="h-4 w-4 text-purple-400" />
-              Nocturnal Sleep Wave Profile
+              Perfil de ondas cerebrais durante o sono
             </h4>
             <div className="bg-slate-950 p-4 border border-slate-800 rounded-lg">
               <p className="text-[11px] text-slate-400 leading-relaxed mb-3">
-                Delta wave density (0.5 - 4 Hz) collected through our headband indicates healthy deep sleep indices.
+                O gráfico ilustra a faixa delta (0,5–4 Hz) em um exemplo de sono profundo.
               </p>
               <div className="space-y-2">
                 <div>
@@ -320,10 +320,10 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
             <div className="pb-3 border-b border-slate-800">
               <h3 className="font-bold text-slate-200 text-sm flex items-center">
                 <Shield className="h-4.5 w-4.5 text-emerald-450 text-emerald-400 mr-2" />
-                Athena Support Assistant
+                Assistente de apoio Athena
               </h3>
               <p className="text-xs text-slate-400 mt-1">
-                Neuroscience-backed tips for reinforcing student mental endurance at home.
+                Sugestões de apoio à rotina de estudos e bem-estar em casa.
               </p>
             </div>
 
@@ -335,13 +335,13 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
                   onClick={() => handleAskAdvice("Por que Alex fica cansado às 15h?")}
                   className="w-full text-xs text-left p-2 rounded bg-slate-950 border border-slate-800 hover:border-slate-700 text-slate-300 transition-all cursor-pointer"
                 >
-                  💤 Why does Alex get fatigued at 3PM?
+                  💤 Por que Alex fica cansado às 15h?
                 </button>
                 <button
                   onClick={() => handleAskAdvice("Como ajustar as configurações de estresse?")}
                   className="w-full text-xs text-left p-2 rounded bg-slate-950 border border-slate-800 hover:border-slate-700 text-slate-300 transition-all cursor-pointer"
                 >
-                  🌀 Adjusting parameters for high exam stress?
+                  🌀 Como ajustar os parâmetros durante o estresse das provas?
                 </button>
               </div>
             </div>
@@ -349,7 +349,7 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
             {/* Response area */}
             {isAdviceLoading && (
               <div className="bg-slate-950 border border-slate-800 p-3.5 rounded-lg text-slate-400 text-xs animate-pulse">
-                Consulting metrics database...
+                Consultando dados...
               </div>
             )}
 
@@ -364,7 +364,7 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
           <div className="pt-4 border-t border-slate-800 mt-5 space-y-2.5">
             <h4 className="text-xs font-bold text-slate-205">Limites de segurança dos responsáveis</h4>
             <p className="text-[10px] text-slate-400 leading-relaxed">
-              Enable hardware automatic cut-offs to guarantee healthy screen-detox balances.
+              Ative limites de uso para ajudar a equilibrar os períodos de estudo e descanso.
             </p>
             <div className="space-y-1.5 text-xs text-slate-305 text-slate-400">
               <label className="flex items-center space-x-2.5 cursor-pointer">
