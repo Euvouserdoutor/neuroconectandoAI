@@ -100,7 +100,7 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
             <Brain className="h-4.5 w-4.5" />
           </div>
           <div>
-            <span className="text-[10px] text-slate-400 uppercase font-semibold block">Focus Efficiency</span>
+            <span className="text-[10px] text-slate-400 uppercase font-semibold block">Eficiência de concentração</span>
             <strong className="text-lg text-slate-100 font-bold">{studentMetrics.weeklyFocusAvg}%</strong>
           </div>
         </div>
@@ -111,7 +111,7 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
             <Heart className="h-4.5 w-4.5" />
           </div>
           <div>
-            <span className="text-[10px] text-slate-400 uppercase font-semibold block">Emotional Rest</span>
+            <span className="text-[10px] text-slate-400 uppercase font-semibold block">Equilíbrio emocional</span>
             <strong className="text-lg text-slate-100 font-bold">{studentMetrics.stressLevelWeekly}</strong>
           </div>
         </div>
@@ -122,7 +122,7 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
             <Compass className="h-4.5 w-4.5" />
           </div>
           <div>
-            <span className="text-[10px] text-slate-400 uppercase font-semibold block">Posture Compliance</span>
+            <span className="text-[10px] text-slate-400 uppercase font-semibold block">Adequação postural</span>
             <strong className="text-lg text-slate-100 font-bold">{studentMetrics.postureCompliance}%</strong>
           </div>
         </div>
@@ -133,7 +133,7 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
             <Smile className="h-4.5 w-4.5" />
           </div>
           <div>
-            <span className="text-[10px] text-slate-400 uppercase font-semibold block">Deep Sleep (EEG)</span>
+            <span className="text-[10px] text-slate-400 uppercase font-semibold block">Sono profundo (EEG)</span>
             <strong className="text-lg text-slate-100 font-bold">{studentMetrics.sleepEfficiency}%</strong>
           </div>
         </div>
@@ -162,7 +162,7 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
                     <span className="text-[10px] text-sky-400 block font-normal mt-0.5">💡 {act.state}</span>
                   </div>
                   <div className="text-right">
-                    <span className="text-[8px] text-slate-500 block">Score</span>
+                    <span className="text-[8px] text-slate-500 block">Pontuação</span>
                     <span className="text-xs font-bold text-emerald-400">{act.score}</span>
                   </div>
                 </div>
@@ -198,7 +198,7 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
                     </div>
                     <div className="flex items-center space-x-2 text-[10px]">
                       <span className="bg-indigo-950/40 text-indigo-455 text-indigo-400 px-1.5 py-0.5 rounded border border-indigo-900/60 flex items-center gap-1">
-                        <Moon className="h-2.5 w-2.5" /> Sleep: <strong>{log.sleepHours}h</strong>
+                        <Moon className="h-2.5 w-2.5" /> Sono: <strong>{log.sleepHours}h</strong>
                       </span>
                       <span className="bg-purple-950/40 text-purple-455 text-purple-400 px-1.5 py-0.5 rounded border border-purple-900/60">
                         {log.sleepQuality}
@@ -245,7 +245,7 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
                         Emergency Signal Alert
                       </span>
                       <span className="text-slate-505 font-mono text-[9px] text-slate-400">
-                        {signal.createdAt ? new Date(signal.createdAt).toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'}) : 'Just now'}
+                        {signal.createdAt ? new Date(signal.createdAt).toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'}) : 'Agora mesmo'}
                       </span>
                     </div>
                     <p className="text-slate-205 text-xs font-medium pl-2.5 border-l-2 border-red-500">
@@ -291,7 +291,7 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
               <div className="space-y-2">
                 <div>
                   <div className="flex justify-between text-[10px] text-slate-500 mb-1">
-                    <span>Deep Slow-Wave Sleep (Delta Peak)</span>
+                    <span>Sono profundo de ondas lentas (pico delta)</span>
                     <span className="text-purple-400 font-bold">58%</span>
                   </div>
                   <div className="w-full h-1 bg-slate-900 rounded-full overflow-hidden">
@@ -300,7 +300,7 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
                 </div>
                 <div>
                   <div className="flex justify-between text-[10px] text-slate-500 mb-1">
-                    <span>Light REM Rest (Theta active)</span>
+                    <span>Sono REM leve (atividade teta)</span>
                     <span className="text-sky-400 font-bold">30%</span>
                   </div>
                   <div className="w-full h-1 bg-slate-900 rounded-full overflow-hidden">
@@ -329,16 +329,16 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
 
             {/* Quick pre-designed questions */}
             <div>
-              <span className="text-[10px] text-slate-500 uppercase tracking-wider block font-semibold mb-2">Common Inquiries</span>
+              <span className="text-[10px] text-slate-500 uppercase tracking-wider block font-semibold mb-2">Perguntas frequentes</span>
               <div className="space-y-1.5">
                 <button
-                  onClick={() => handleAskAdvice("Why is Alex fatigued at 3PM?")}
+                  onClick={() => handleAskAdvice("Por que Alex fica cansado às 15h?")}
                   className="w-full text-xs text-left p-2 rounded bg-slate-950 border border-slate-800 hover:border-slate-700 text-slate-300 transition-all cursor-pointer"
                 >
                   💤 Why does Alex get fatigued at 3PM?
                 </button>
                 <button
-                  onClick={() => handleAskAdvice("How to adjust stress settings?")}
+                  onClick={() => handleAskAdvice("Como ajustar as configurações de estresse?")}
                   className="w-full text-xs text-left p-2 rounded bg-slate-950 border border-slate-800 hover:border-slate-700 text-slate-300 transition-all cursor-pointer"
                 >
                   🌀 Adjusting parameters for high exam stress?
@@ -355,25 +355,25 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
 
             {adviceResponse && (
               <div className="bg-slate-950 border border-slate-800 p-3.5 rounded-lg text-xs leading-relaxed font-sans">
-                <strong className="text-sky-305 text-sky-400 block mb-1">Athena Advisor Response:</strong>
+                <strong className="text-sky-305 text-sky-400 block mb-1">Resposta da orientadora Athena:</strong>
                 <p className="text-slate-300 text-slate-400">{adviceResponse}</p>
               </div>
             )}
           </div>
 
           <div className="pt-4 border-t border-slate-800 mt-5 space-y-2.5">
-            <h4 className="text-xs font-bold text-slate-205">Parental Safety Caps</h4>
+            <h4 className="text-xs font-bold text-slate-205">Limites de segurança dos responsáveis</h4>
             <p className="text-[10px] text-slate-400 leading-relaxed">
               Enable hardware automatic cut-offs to guarantee healthy screen-detox balances.
             </p>
             <div className="space-y-1.5 text-xs text-slate-305 text-slate-400">
               <label className="flex items-center space-x-2.5 cursor-pointer">
                 <input type="checkbox" defaultChecked className="rounded border-slate-800 bg-slate-950 text-indigo-505 text-indigo-650 cursor-pointer" />
-                <span>Auto-lock screen if pupil fatigue exceeds 80%</span>
+                <span>Bloquear a tela se a fadiga superar 80%</span>
               </label>
               <label className="flex items-center space-x-2.5 cursor-pointer">
                 <input type="checkbox" defaultChecked className="rounded border-slate-800 bg-slate-950 text-indigo-505 text-indigo-650 cursor-pointer" />
-                <span>Force 4-7-8 breathing on rapid stress spikes</span>
+                <span>Sugerir respiração 4-7-8 em picos de estresse</span>
               </label>
             </div>
           </div>
