@@ -81,7 +81,7 @@ export default function SystemArchitecture() {
             >
               <div className="flex items-center gap-2">
                 <Radio className="h-4 w-4" />
-                <span>1. Analog Biosensors</span>
+                <span>1. Biossensores analógicos</span>
               </div>
               <ChevronRight className="h-3 w-3" />
             </button>
@@ -96,7 +96,7 @@ export default function SystemArchitecture() {
             >
               <div className="flex items-center gap-2">
                 <Sliders className="h-4 w-4" />
-                <span>2. Local DSP Filtration</span>
+                <span>2. Filtragem digital local</span>
               </div>
               <ChevronRight className="h-3 w-3" />
             </button>
@@ -111,7 +111,7 @@ export default function SystemArchitecture() {
             >
               <div className="flex items-center gap-2">
                 <Cpu className="h-4 w-4" />
-                <span>3. ESP32 CPU Module</span>
+                <span>3. Módulo de processamento ESP32</span>
               </div>
               <ChevronRight className="h-3 w-3" />
             </button>
@@ -126,7 +126,7 @@ export default function SystemArchitecture() {
             >
               <div className="flex items-center gap-2">
                 <Database className="h-4 w-4" />
-                <span>4. Encrypted Sync Bridge</span>
+                <span>4. Sincronização criptografada</span>
               </div>
               <ChevronRight className="h-3 w-3" />
             </button>
@@ -135,7 +135,7 @@ export default function SystemArchitecture() {
           <div className="p-3 bg-yellow-950/20 border border-yellow-900/40 rounded-lg space-y-1">
             <div className="flex items-center gap-1.5 text-[9px] font-bold text-yellow-400 uppercase">
               <Zap className="h-3 w-3 text-yellow-500 animate-bounce" />
-              <span>Low-Cost Fabrication Target</span>
+              <span>Meta de fabricação de baixo custo</span>
             </div>
             <p className="text-[9px] text-slate-400 leading-normal">
               Designed for budget-constrained schools. Total estimated material cost (BOM) is under $12 per device.
@@ -175,7 +175,7 @@ export default function SystemArchitecture() {
           {/* Interactive hardware signal visualizer mockup */}
           <div className="bg-slate-900/40 p-3 rounded-lg border border-slate-850/60 space-y-2">
             <div className="flex justify-between items-center text-[8px] font-mono text-slate-500">
-              <span>LIVE SIGNAL DE-NOISING TEST (SIMULATED)</span>
+              <span>TESTE DE FILTRAGEM DE SINAL (SIMULADO)</span>
               <span className="text-emerald-500 flex items-center gap-1">
                 <span className="h-1.5 w-1.5 bg-emerald-500 rounded-full animate-pulse" />
                 FILTER OK (SNR: +28dB)
@@ -202,9 +202,9 @@ export default function SystemArchitecture() {
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-slate-950/20 to-slate-950 pointer-events-none" />
             </div>
             <div className="flex justify-between text-[7px] text-slate-500 font-mono">
-              <span>0ms (RAW)</span>
-              <span>250ms (BUTTERWORTH 0.5-4Hz)</span>
-              <span>500ms (FILTERED OUTFLOW)</span>
+              <span>0 ms (BRUTO)</span>
+              <span>250 ms (BUTTERWORTH 0,5–4 Hz)</span>
+              <span>500 ms (SAÍDA FILTRADA)</span>
             </div>
           </div>
         </div>
