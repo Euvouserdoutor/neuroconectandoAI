@@ -210,10 +210,10 @@ export async function getWellnessCheckIns(studentId: string): Promise<WellnessDa
       studentId,
       studentName: "Alex Mercer",
       mood: 4,
-      moodLabel: "Energized",
+      moodLabel: "Animado",
       sleepHours: 7.2,
-      sleepQuality: "Excellent",
-      notes: "Had a great resting cycle. Ready to study computing concepts!",
+      sleepQuality: "Excelente",
+      notes: "Dormiu bem e está pronto para os estudos!",
       attentionSnapshot: "High",
       createdAt: new Date(Date.now() - 24 * 3600 * 1000).toISOString()
     },
@@ -222,10 +222,10 @@ export async function getWellnessCheckIns(studentId: string): Promise<WellnessDa
       studentId,
       studentName: "Alex Mercer",
       mood: 2,
-      moodLabel: "Exhausted",
+      moodLabel: "Exausto",
       sleepHours: 5.0,
-      sleepQuality: "Tossing & Turning",
-      notes: "Anxious about exam preparation. Alpha-waves were heavily suppressed.",
+      sleepQuality: "Sono agitado",
+      notes: "Ansioso com a preparação para a prova; dados simulados de atividade alfa.",
       attentionSnapshot: "Low",
       createdAt: new Date(Date.now() - 2 * 24 * 3600 * 1000).toISOString()
     }
