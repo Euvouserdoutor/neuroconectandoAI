@@ -271,10 +271,10 @@ export default function ModelAccuracyTable() {
               <span>Validação e garantia de qualidade</span>
             </span>
             <h2 className="text-xl font-bold text-slate-100 font-sans tracking-tight">
-              Ecosystem AI Model Accuracy & Benchmarking
+              Precisão e avaliação comparativa dos modelos de IA
             </h2>
             <p className="text-xs text-slate-400 max-w-2xl">
-              Examine the verified peer-reviewed academic publication metrics or simulate real-time sensor noise degradation inside our active graph neural network (GNN) sandbox.
+              Explore métricas acadêmicas apresentadas no protótipo ou simule alterações de ruído em sensores no laboratório GNN. Os resultados exibidos são demonstrativos, não validações independentes.
             </p>
           </div>
 
@@ -319,7 +319,7 @@ export default function ModelAccuracyTable() {
             
             <div className="space-y-2">
               <h3 className="text-lg md:text-xl font-extrabold text-slate-200 font-sans leading-tight">
-                Physiological-Driven Cognitive State Estimation and Adaptive Learning Personalization in Collaborative Smart Classrooms
+                Estimativa de estados cognitivos a partir de sinais fisiológicos e personalização da aprendizagem em salas colaborativas
               </h3>
               <div className="text-[11px] text-slate-400 font-sans flex flex-wrap gap-x-4 gap-y-1">
                 <span><strong>Autores:</strong> Equipe de engenharia do NeuroLearn AI</span>
@@ -341,10 +341,10 @@ export default function ModelAccuracyTable() {
               <div className="space-y-1.5 pb-4 border-b border-slate-850">
                 <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest font-extrabold block">TABELA II</span>
                 <h4 className="font-extrabold text-slate-200 text-xs uppercase tracking-wide">
-                  COGNITIVE STATE CLASSIFICATION PERFORMANCE
+                  DESEMPENHO DE CLASSIFICAÇÃO DOS ESTADOS COGNITIVOS
                 </h4>
                 <p className="text-[10px] text-slate-400 font-sans">
-                  Validation of the proposed machine learning classifier based on EEG, HRV, and GSR edge feeds.
+                  Avaliação simulada do classificador proposto com sinais EEG, VFC e GSR.
                 </p>
               </div>
 
@@ -380,7 +380,7 @@ export default function ModelAccuracyTable() {
               <div className="p-3 bg-emerald-950/20 border border-emerald-900/35 rounded-lg text-[10px] text-emerald-450 text-emerald-400 flex items-start gap-2">
                 <CheckCircle2 className="h-4 w-4 shrink-0 mt-0.5" />
                 <span>
-                  The classification engine successfully models student attention and stress levels with <strong>92,4% de acurácia</strong>, allowing low-latency fatigue forecasting before critical exhaustion sets in.
+                  O classificador proposto apresenta, na simulação, os níveis de atenção e estresse com <strong>92,4% de acurácia</strong>, permitindo explorar estimativas de fadiga em baixa latência.
                 </span>
               </div>
             </div>
@@ -390,10 +390,10 @@ export default function ModelAccuracyTable() {
               <div className="space-y-1.5 pb-4 border-b border-slate-850">
                 <span className="text-[10px] font-mono text-indigo-400 uppercase tracking-widest font-extrabold block">TABELA III</span>
                 <h4 className="font-extrabold text-slate-200 text-xs uppercase tracking-wide">
-                  ADAPTIVE LEARNING PERFORMANCE
+                  DESEMPENHO DE APRENDIZAGEM ADAPTATIVA
                 </h4>
                 <p className="text-[10px] text-slate-400 font-sans">
-                  Empirical outcomes comparing static learning curves vs. the NeuroLearn AI closed-loop framework.
+                  Comparação demonstrativa entre aprendizagem convencional e o modelo adaptativo do NeuroLearn AI.
                 </p>
               </div>
 
@@ -451,10 +451,10 @@ export default function ModelAccuracyTable() {
             <div className="border-b border-slate-850 pb-3 mb-4">
               <h3 className="font-bold text-slate-200 text-sm flex items-center gap-1.5">
                 <Activity className="h-4.5 w-4.5 text-indigo-400" />
-                Adaptive Learning Performance: Published Baseline vs. NeuroLearn AI
+                Aprendizagem adaptativa: referência comparativa e NeuroLearn AI
               </h3>
               <p className="text-[11px] text-slate-400">
-                Visualizing the clear statistical improvement in students' conceptual development and classroom engagement metrics.
+                Visualização comparativa de métricas de aprendizado e engajamento dos estudantes.
               </p>
             </div>
 
@@ -510,7 +510,7 @@ export default function ModelAccuracyTable() {
                 <h5 className="font-bold text-slate-200 text-xs uppercase tracking-wider">ODS 3 da ONU: Saúde e bem-estar</h5>
               </div>
               <p className="text-[11px] text-slate-400 leading-relaxed">
-                By non-invasively tracking Heart Rate Variability and brainwaves, the platform intelligently routes soothing acoustics and breathing pacing sequences to prevent physical cognitive exhaustion.
+                O protótipo explora sinais simulados de VFC e EEG para oferecer atividades de pausa e recursos sonoros.
               </p>
             </div>
 
@@ -521,7 +521,7 @@ export default function ModelAccuracyTable() {
                 <h5 className="font-bold text-slate-200 text-xs uppercase tracking-wider">ODS 4 da ONU: Educação de qualidade</h5>
               </div>
               <p className="text-[11px] text-slate-400 leading-relaxed">
-                Supports inclusive, adaptive learning paths customized to real-time cognitive absorption capacity, helping slow learners recover attention spans and fast learners avoid over-fatigue.
+                Apresenta trajetórias adaptativas de aprendizagem com diferentes ritmos e formas de acompanhamento.
               </p>
             </div>
 
@@ -775,10 +775,10 @@ export default function ModelAccuracyTable() {
               <div>
                 <h3 className="font-bold text-slate-200 text-sm flex items-center gap-1.5">
                   <Activity className="h-4.5 w-4.5 text-indigo-400" />
-                  Dynamic Model Metric Comparison Visualizer
+                  Comparador dinâmico de métricas dos modelos
                 </h3>
                 <p className="text-[11px] text-slate-400">
-                  Interactive plotting of metrics showing accuracy, F1-score, precision, and recall ratios under current sensor degradation coefficients.
+                  Gráficos interativos de acurácia, escore F1, precisão e sensibilidade, considerando diferentes níveis simulados de ruído.
                 </p>
               </div>
 
