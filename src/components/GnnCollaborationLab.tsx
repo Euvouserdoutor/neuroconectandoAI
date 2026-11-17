@@ -346,7 +346,7 @@ export default function GnnCollaborationLab() {
 
     const promptMessage = `We have active student collaborative study teams where raw biometric indices of fatigue and anxiety are propagating across relational networks.
     
-    Current Session Intensity Index: ${intensity}/10.
+    Atual Session Intensity Index: ${intensity}/10.
     
     Active Student Profiles across Topological Subgraphs:
     ${studentProfiles}
@@ -623,7 +623,7 @@ export default function GnnCollaborationLab() {
             <span>Monitor de esgotamento na rede</span>
           </span>
           <h2 className="text-lg font-extrabold text-slate-100 font-sans tracking-tight">
-            Collaborative Group Dynamics GNN Modeler
+            Simulador GNN da dinâmica colaborativa de grupos
           </h2>
           <p className="text-xs text-slate-400 max-w-2xl">
             Model physical and interaction relationships between students in collaborative workspaces. This Graph Neural Network (GNN) simulates relational pathways to forecast stress cascades, peer-to-peer fatigue contagion, and overall group engagement collapse.
@@ -876,7 +876,7 @@ export default function GnnCollaborationLab() {
               <div className="flex justify-between items-center text-xs mb-1.5">
                 <span className="text-slate-400 font-medium flex items-center gap-1">
                   <Sliders className="h-3.5 w-3.5 text-rose-500" />
-                  Collaborative Session Fatigue Load
+                  Carga de fadiga da sessão colaborativa
                 </span>
                 <span className="text-rose-400 font-bold px-1.5 py-0.2 rounded bg-rose-950/30 border border-rose-900/40 text-[10.5px]">
                   {intensity} / 10
@@ -892,7 +892,7 @@ export default function GnnCollaborationLab() {
                 className="w-full accent-rose-500 h-1.5 bg-slate-900 rounded cursor-pointer"
               />
               <span className="text-[9px] text-slate-500 block leading-relaxed mt-1">
-                Increasing load escalates stress propagation contagion across adjoining student vectors.
+                Aumentar a carga amplia a propagação de estresse entre nós conectados na simulação.
               </span>
             </div>
 
@@ -1042,7 +1042,7 @@ export default function GnnCollaborationLab() {
                 );
               })() : (
                 <p className="text-xs text-slate-500 text-center py-8">
-                  Click on an interactive student circle in the classroom workspace layout to track detailed biological burdens.
+                  Clique em um estudante no mapa para consultar os indicadores simulados.
                 </p>
               )}
             </div>
@@ -1135,7 +1135,7 @@ export default function GnnCollaborationLab() {
               Sub-Team Aggregated Predictions
             </h4>
             <p className="text-[10.5px] text-slate-450 text-slate-450 text-slate-400 leading-normal mb-4">
-              Cumulative group-wide indices predicted based on topological interaction densities among member nodes.
+              Índices agregados previstos com base na densidade das conexões entre os nós do grupo.
             </p>
           </div>
 
@@ -1194,7 +1194,7 @@ export default function GnnCollaborationLab() {
                   <div className="space-y-1">
                     <h5 className="text-xs text-slate-300 font-bold">Avaliar redes das equipes</h5>
                     <p className="text-[10px] text-slate-500 max-w-sm mx-auto leading-relaxed">
-                      Launch an AI analytical evaluation of student relationships to insulate at-risk students, contain stress cascades, and establish optimal break schedules.
+                      Inicie uma análise simulada com IA das relações entre estudantes para explorar sugestões de agrupamento e pausas.
                     </p>
                   </div>
                 </div>
@@ -1296,14 +1296,14 @@ export default function GnnCollaborationLab() {
             <div className="lg:col-span-7 space-y-4">
               <div className="flex items-center justify-between">
                 <h4 className="text-xs font-bold uppercase font-mono text-slate-300">
-                  Target Table Group Assemblies (Balanced to size 4)
+                  Distribuição sugerida de equipes (quatro estudantes)
                 </h4>
                 <div className="flex gap-4 text-[9.5px] font-mono text-slate-500">
                   <span className="flex items-center gap-1">
                     <span className="h-2 w-2 rounded-full bg-emerald-500" /> Suggested Synergy
                   </span>
                   <span className="flex items-center gap-1">
-                    <span className="h-2 w-2 rounded-full border border-slate-700 bg-slate-900" /> Current
+                    <span className="h-2 w-2 rounded-full border border-slate-700 bg-slate-900" /> Atual
                   </span>
                 </div>
               </div>
@@ -1327,7 +1327,7 @@ export default function GnnCollaborationLab() {
 
                       {/* Score Comparison Badge */}
                       <div className="flex items-center space-x-2 text-xs">
-                        {/* Current Score */}
+                        {/* Atual Score */}
                         <div className="bg-slate-900 px-2 py-0.5 rounded border border-slate-800 text-[9.5px] text-slate-400 flex items-center gap-1 font-mono">
                           <span>Equilíbrio atual:</span>
                           <span className="font-bold text-slate-300">{currScore}%</span>
@@ -1376,7 +1376,7 @@ export default function GnnCollaborationLab() {
                             <div className="flex items-center justify-between text-[9px] border-t border-slate-850/60 pt-1 text-slate-400">
                               <span className="flex items-center gap-1">
                                 <Brain className="h-2.5 w-2.5 text-indigo-400" />
-                                Attention: <strong className="text-slate-300">{student.attention}</strong>
+                                Atenção: <strong className="text-slate-300">{student.attention}</strong>
                               </span>
                               <span className="flex items-center gap-1">
                                 <Activity className="h-2.5 w-2.5 text-sky-400" />
@@ -1456,7 +1456,7 @@ export default function GnnCollaborationLab() {
                           <div className="border-t border-slate-850/60 pt-1.5 mt-1 flex justify-end">
                             {exists ? (
                               <span className="text-[9px] text-emerald-400 font-bold flex items-center gap-1">
-                                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" /> Active Connection
+                                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" /> Conexão ativa
                               </span>
                             ) : (
                               <button
