@@ -209,19 +209,19 @@ Do NOT wrap the output in markdown block. Return raw JSON string only. No leadin
       questions: [
         {
           id: 1,
-          question: "Which EEG frequency band is classically associated with deep focus and cognitive problem solving?",
-          options: ["Delta waves (1-4 Hz)", "Theta waves (4-8 Hz)", "Beta waves (12-30 Hz)", "High Gamma waves (30-100 Hz)"],
-          correctAnswer: "Beta waves (12-30 Hz)",
-          explanation: "Beta bands reflect focused mental activity and analytical engagement, while theta reflects light sleep or relaxation.",
-          cognitiveMetric: "Attentional focus"
+          question: "Qual faixa de frequência do EEG costuma estar associada à atividade cognitiva ativa?",
+          options: ["Ondas delta (1–4 Hz)", "Ondas teta (4–8 Hz)", "Ondas beta (12–30 Hz)", "Ondas gama alta (30–100 Hz)"],
+          correctAnswer: "Ondas beta (12–30 Hz)",
+          explanation: "A atividade beta pode estar relacionada ao estado de vigília ativa, enquanto a teta também ocorre durante sonolência e relaxamento.",
+          cognitiveMetric: "Atenção"
         },
         {
           id: 2,
-          question: "How does elevated heart rate variability (HRV) typically relate to a student's cognitive stress resilience?",
-          options: ["Higher HRV indicates high psychological distress", "Higher HRV correlates with higher calm and emotional state stability", "HRV is purely a measure of physical exercise exhaustion", "HRV stays constant and doesn't change with stress"],
-          correctAnswer: "Higher HRV correlates with higher calm and emotional state stability",
-          explanation: "Higher heart rate variability represents high parasympathetic nervous network tone, which means better stress adjustment and mental clarity.",
-          cognitiveMetric: "Stress resilience"
+          question: "Como a variabilidade da frequência cardíaca (VFC) se relaciona, em geral, à adaptação fisiológica ao estresse?",
+          options: ["VFC elevada indica sofrimento psicológico intenso", "VFC mais alta pode estar associada a maior flexibilidade autonômica", "A VFC mede apenas cansaço após exercício físico", "A VFC é constante e não muda com o estresse"],
+          correctAnswer: "VFC mais alta pode estar associada a maior flexibilidade autonômica",
+          explanation: "A VFC pode refletir mecanismos de regulação autonômica, mas sua interpretação depende de contexto e não determina, isoladamente, o estado emocional.",
+          cognitiveMetric: "Resiliência ao estresse"
         }
       ]
     });
@@ -294,51 +294,51 @@ Do NOT write any markdown ticks or backticks. Return raw JSON text only. Ensure 
     });
   } catch (error: any) {
     console.error('Error in Mindmap Generator:', error);
-    const fallbackTopic = req.body?.topic || "Neuroscience Core Concept";
+    const fallbackTopic = req.body?.topic || "Conceito central de neurociência";
     res.status(500).json({
-      error: error.message || 'Error generating academic mindmap.',
+      error: error.message || 'Erro ao gerar o mapa mental acadêmico.',
       // High quality fallback mindmap so the app does not break on network errors
       mindmap: {
         topic: fallbackTopic,
         nodes: [
           {
             id: "node_1",
-            label: "Introduction to " + fallbackTopic,
-            description: "An overview of the central thesis. This serves as the structural foundation of the learning blueprint.",
-            recallCue: "Mnemonic: Think of an anchor holding down a grand logical vessel.",
-            suggestedBreakActivity: "Take 3 deep, slow breaths before exploring further.",
+            label: "Introdução a " + fallbackTopic,
+            description: "Visão geral do tema principal, que servirá de base para o mapa de aprendizagem.",
+            recallCue: "Dica de memorização: imagine uma âncora sustentando os conceitos fundamentais.",
+            suggestedBreakActivity: "Respire devagar e confortavelmente antes de continuar.",
             parentId: null
           },
           {
             id: "node_2",
-            label: "Critical Frameworks & Axioms",
-            description: "Diving deeper into the rules, processes, and core patterns governing this subject matter.",
-            recallCue: "Mnemonics: A gears-and-wheels diagram showing input-to-output conversions.",
-            suggestedBreakActivity: "Do a 10-second neck stretch to optimize cerebrovascular blood flow.",
+            label: "Fundamentos e conceitos principais",
+            description: "Explore as regras, os processos e os padrões fundamentais do tema.",
+            recallCue: "Dica de memorização: imagine engrenagens conectando entradas e resultados.",
+            suggestedBreakActivity: "Se for confortável, faça uma pausa breve e movimente o pescoço suavemente.",
             parentId: "node_1"
           },
           {
             id: "node_3",
-            label: "Practical Applications",
-            description: "Understanding where and how these theoretical elements operate inside real-world environments.",
-            recallCue: "Imagine applying this directly to your own research workspace to resolve an actual bottle-neck.",
-            suggestedBreakActivity: "Roll your shoulders back to expand chest capacity.",
+            label: "Aplicações práticas",
+            description: "Entenda onde e como os conceitos são aplicados em situações reais.",
+            recallCue: "Imagine aplicar os conceitos para resolver um problema de pesquisa.",
+            suggestedBreakActivity: "Movimente os ombros suavemente para relaxar a postura.",
             parentId: "node_1"
           },
           {
             id: "node_4",
-            label: "Potential Pitfalls & Fallacies",
-            description: "Being mindful of the common logical blindspots, misconceptions, and limits of standard approaches.",
-            recallCue: "Think of a lighthouse warning ships of jagged, submerged rocks.",
-            suggestedBreakActivity: "Gaze 20 feet away for 10 seconds to relax your focal muscles.",
+            label: "Limitações e erros comuns",
+            description: "Observe equívocos frequentes, limitações e pressupostos dos métodos tradicionais.",
+            recallCue: "Dica de memorização: imagine um farol sinalizando obstáculos.",
+            suggestedBreakActivity: "Olhe para um ponto distante por alguns segundos para descansar os olhos.",
             parentId: "node_2"
           },
           {
             id: "node_5",
-            label: "Supreme Memory Consolidation",
-            description: "Fusing all the nodes into a single, cohesive mental reference model for rapid subconscious retrieval.",
-            recallCue: "Visualize coding a clean key-value database mapping concepts directly to memory.",
-            suggestedBreakActivity: "Unmute the Neuro-Acoustic therapy for sustained alpha wave stimulation.",
+            label: "Consolidação do aprendizado",
+            description: "Reúna os conceitos em uma estrutura organizada para facilitar a revisão.",
+            recallCue: "Imagine um banco de dados que associa palavras-chave aos conceitos estudados.",
+            suggestedBreakActivity: "Se desejar, experimente os recursos de áudio como apoio à concentração.",
             parentId: "node_3"
           }
         ]
@@ -458,7 +458,7 @@ app.post('/api/gemini/academic-synthesis', async (req, res) => {
     const { trialMetadata = {}, logs = [] } = req.body;
 
     if (logs.length === 0) {
-      return res.status(400).json({ error: 'Cannot compile synthesis without active trial data logs. Please execute and record a trial run first.' });
+      return res.status(400).json({ error: 'Não é possível gerar a síntese sem registros da atividade. Execute e registre uma sessão primeiro.' });
     }
 
     const participantId = trialMetadata.participantId || 'SUBJ-082';
