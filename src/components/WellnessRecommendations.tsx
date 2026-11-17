@@ -192,14 +192,14 @@ export default function WellnessRecommendations({
           </div>
         </div>
         <span className="bg-red-500/15 text-red-400 border border-red-500/25 px-1.5 py-0.5 rounded text-[8px] font-bold tracking-wide uppercase font-mono animate-pulse">
-          Stress Relief Active
+          Exercício de relaxamento ativo
         </span>
       </div>
 
       {!isPracticing && !isCompleted && (
         <>
           <p className="text-[9px] text-slate-400 leading-relaxed">
-            Evidence-based somatic pacing techniques to stimulate the <strong>Nervo vago</strong>, activate parasympathetic pathways, and rapidly lower heart rate variability strain.
+            Exercícios respiratórios e de atenção corporal para explorar a regulação do <strong>Nervo vago</strong>, favorecendo uma pausa confortável durante os estudos.
           </p>
 
           {/* Sorter Selector tabs */}
@@ -248,7 +248,7 @@ export default function WellnessRecommendations({
                   <span className="text-slate-500 font-mono">Duração: ~60 s</span>
                 </div>
                 <p className="text-slate-400 leading-relaxed">
-                  Used by elite tactical units to suppress hyper-arousal responses. 4s inhale, 4s hold, 4s exhale, 4s hold out. Repeat for 4 cycles to stabilize metabolic stress levels.
+                  Respiração quadrada: inspire por 4 segundos, pause por 4, expire por 4 e pause por 4. Repita confortavelmente, sem forçar a respiração.
                 </p>
               </>
             )}
@@ -260,7 +260,7 @@ export default function WellnessRecommendations({
                   <span className="text-slate-500 font-mono">Duração: ~75 s</span>
                 </div>
                 <p className="text-slate-400 leading-relaxed">
-                  Developed by Dr. Andrew Weil. Acts as a natural nervous system tranquilizer. Inhale 4s, hold for 7s, exhale completely for 8s to calm cortisol spike loops.
+                  Respiração 4-7-8: exercício de ritmo respiratório. Ajuste os tempos se necessário e interrompa caso sinta desconforto.
                 </p>
               </>
             )}
@@ -272,7 +272,7 @@ export default function WellnessRecommendations({
                   <span className="text-slate-500 font-mono">Duração: no seu ritmo</span>
                 </div>
                 <p className="text-slate-400 leading-relaxed">
-                  A cognitive-behavioral practice to disrupt hyper-focused rumination. Progress through naming sights, tactile objects, sounds, scents, and tastes to recalibrate focus.
+                  Exercício de atenção ao ambiente: identifique elementos visuais, texturas, sons, aromas e sabores para redirecionar o foco.
                 </p>
               </>
             )}
@@ -407,7 +407,7 @@ export default function WellnessRecommendations({
           <div className="space-y-1">
             <h5 className="text-[10px] font-bold text-white uppercase tracking-wider">Equilíbrio estimulado</h5>
             <p className="text-[9px] text-emerald-400 leading-relaxed font-sans font-medium">
-              Vagal tonic stimulation active. Systemic bio-signals have been updated back to optimal homeostasis thresholds.
+              Exercício concluído. Os indicadores simulados foram atualizados para a referência.
             </p>
           </div>
 
