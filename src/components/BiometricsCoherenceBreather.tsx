@@ -135,7 +135,7 @@ export default function BiometricsCoherenceBreather({ cognitive, setCognitive, b
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center space-x-2">
           <Heart className="h-4.5 w-4.5 text-pink-500 animate-pulse" />
-          <h3 className="text-sm font-black text-slate-100 uppercase tracking-tight">Biometrics Coherence Breather</h3>
+          <h3 className="text-sm font-black text-slate-100 uppercase tracking-tight">Exercício de coerência respiratória</h3>
         </div>
         {isActive && (
           <span className="bg-emerald-950 text-emerald-400 border border-emerald-900/50 font-mono text-[9px] px-2.5 py-0.5 rounded font-black tracking-wider uppercase animate-pulse">
@@ -179,7 +179,7 @@ export default function BiometricsCoherenceBreather({ cognitive, setCognitive, b
 
           <div className="mt-6 text-center space-y-1.5 z-10 w-full px-2">
             {!isActive ? (
-              <span className="text-[11px] font-bold text-slate-400 font-mono uppercase tracking-wider block">Coherence Calibrator Ready</span>
+              <span className="text-[11px] font-bold text-slate-400 font-mono uppercase tracking-wider block">Calibrador de coerência pronto</span>
             ) : (
               <div className="space-y-1">
                 <span className={`text-[10px] tracking-widest font-black uppercase border px-3 py-1 rounded-full ${getPhaseColor()}`}>
@@ -200,18 +200,18 @@ export default function BiometricsCoherenceBreather({ cognitive, setCognitive, b
         <div className="md:col-span-7 space-y-4">
           <div className="bg-slate-950 p-4 rounded-xl border border-slate-850 grid grid-cols-2 gap-3.5">
             <div>
-              <span className="text-[8.5px] text-slate-500 block uppercase font-bold tracking-wider font-mono">Simulated Sympathetic Response</span>
+              <span className="text-[8.5px] text-slate-500 block uppercase font-bold tracking-wider font-mono">Resposta simpática simulada</span>
               <strong className="text-slate-200 text-lg font-mono font-black block mt-0.5">{biometric.heartRate} BPM</strong>
-              <p className="text-[9px] text-slate-500 mt-1">Stops spikes instantly.</p>
+              <p className="text-[9px] text-slate-500 mt-1">Simulação de redução de picos.</p>
             </div>
 
             <div>
-              <span className="text-[8.5px] text-slate-500 block uppercase font-bold tracking-wider font-mono">Cognitive HRV Coherence</span>
+              <span className="text-[8.5px] text-slate-500 block uppercase font-bold tracking-wider font-mono">Coerência cognitiva da VFC</span>
               <div className="flex items-baseline space-x-1 mt-0.5">
                 <strong className="text-indigo-400 text-lg font-mono font-black">{coherencePercentage}%</strong>
                 <span className="text-[9.5px] text-emerald-400 font-bold font-mono">({biometric.hrv} ms)</span>
               </div>
-              <p className="text-[9px] text-slate-500 mt-1">High coherence is optimal.</p>
+              <p className="text-[9px] text-slate-500 mt-1">A coerência elevada é desejável.</p>
             </div>
           </div>
 
@@ -222,7 +222,7 @@ export default function BiometricsCoherenceBreather({ cognitive, setCognitive, b
                 className="flex-1 bg-amber-900/30 hover:bg-amber-900/50 border border-amber-900 text-amber-300 font-bold text-[10px] uppercase tracking-wider py-2.5 rounded-xl transition-all cursor-pointer flex items-center justify-center gap-1.5"
               >
                 <Pause className="h-3.5 w-3.5" />
-                <span>Pause Session</span>
+                <span>Pausar sessão</span>
               </button>
             ) : (
               <button
@@ -230,7 +230,7 @@ export default function BiometricsCoherenceBreather({ cognitive, setCognitive, b
                 className="flex-1 bg-emerald-600 hover:bg-emerald-500 border border-transparent text-white font-extrabold text-[10px] uppercase tracking-wider py-2.5 rounded-xl transition-all cursor-pointer flex items-center justify-center gap-1.5 hover:scale-[1.01]"
               >
                 <Play className="h-3.5 w-3.5" />
-                <span>Initiate Breathing Coherence</span>
+                <span>Iniciar exercício de respiração</span>
               </button>
             )}
 
@@ -246,7 +246,7 @@ export default function BiometricsCoherenceBreather({ cognitive, setCognitive, b
           <div className="bg-slate-950/40 p-3 rounded-lg border border-slate-850 text-[10px] text-slate-400 flex items-start gap-2 leading-relaxed">
             <Zap className="h-4 w-4 text-yellow-400 shrink-0 mt-0.5 animate-bounce" />
             <span>
-              <strong>Parasympathetic Synaptic Impact:</strong> Every completed round triggers structural acetylcholine releases, bringing skin conductance triggers (GSR) safely into alpha-relaxed focus values.
+              <strong>Resposta parassimpática simulada:</strong> Every completed round triggers structural acetylcholine releases, bringing skin conductance triggers (GSR) safely into alpha-relaxed focus values.
             </span>
           </div>
         </div>
