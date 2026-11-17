@@ -61,7 +61,7 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
   const [selectedNode, setSelectedNode] = useState<GnnNode | null>(nodes[0]);
   const [step, setStep] = useState<'idle' | 'propagating' | 'aggregated' | 'activated'>('idle');
   const [logs, setLogs] = useState<string[]>([
-    'GNN Lab Initialized. Select an architecture and initiate message passing to transform raw network signals into high-dimension cognitive representations.'
+    'Laboratório GNN iniciado. Escolha uma arquitetura e execute a passagem de mensagens para transformar os sinais da rede em representações cognitivas.'
   ]);
 
   // Aggregated and updated feature values for visualization
@@ -92,7 +92,7 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
     setUpdatedFeatures({});
     setStep('idle');
     setActiveEdgeParticles(false);
-    addLog('Reparameterized graph state. Nodes loaded with raw signal features [Attention %, Stress %].');
+    addLog('Estado do grafo recalibrado. Nós carregados com atributos de sinal [atenção %, estresse %].');
   };
 
   // Custom simulation equations
@@ -237,18 +237,18 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
   const gnnQuizzes: QuizQuestion[] = [
     {
       id: 1,
-      question: "Which of the following spatial GNN architectures operates by explicit self-attention values between adjoining nodes to weigh edge messages?",
+      question: "Qual arquitetura GNN espacial utiliza mecanismos de atenção entre nós vizinhos para ponderar mensagens?",
       options: ["Graph Convolutional Networks (GCN)", "Graph Attention Networks (GAT)", "GraphSAGE (SAmple and AGGregate)", "Spectral CNN"],
       correctAnswer: "Graph Attention Networks (GAT)",
-      explanation: "Graph Attention Networks (GAT) introduce anisotropic attention coefficients computed over neighboring nodes, allowing the mechanism to learn unique weights for different edges rather than fixed symmetric weights like classic GCN."
+      explanation: "Redes de atenção em grafos (GAT) calculam coeficientes de atenção entre nós vizinhos, aprendendo pesos diferentes para cada conexão, ao contrário dos pesos fixos das GCN clássicas."
     },
     {
       id: 2,
-      question: "What is the primary visual symptom of the 'over-smoothing' phenomenon in multi-layer deep GNNs?",
+      question: "Qual é o principal sinal visual de 'over-smoothing' phenomenon in multi-layer deep GNNs?",
       options: [
-        "Network disconnect and loss of adjacent values",
+        "Desconexão da rede e perda de valores dos vizinhos",
         "Node embedding vector convergence where all nodes represent near-identical values",
-        "Complete computational crash due to memory scale issues",
+        "Falha de processamento por uso excessivo de memória",
         "Gradient explosion during initial epochs"
       ],
       correctAnswer: "Node embedding vector convergence where all nodes represent near-identical values",
@@ -256,15 +256,15 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
     },
     {
       id: 3,
-      question: "How does GraphSAGE address scale and memory issues inherent to global training of classical full-batch GCNs?",
+      question: "Como o GraphSAGE aborda os problemas de escala e memória do treinamento em lote completo das GCN clássicas?",
       options: [
-        "It removes edges with low weights prior to propagation",
-        "It trains exclusively on single, decoupled nodes with disconnected layers",
-        "It utilizes uniform neighbor sampling of fixed sizes to construct mini-batch computational subgraphs",
-        "It substitutes graphs with simple feed-forward neural networks"
+        "Remove conexões de baixo peso antes da propagação",
+        "Treina apenas nós independentes com camadas desconectadas",
+        "Usa amostragem de vizinhos em tamanhos fixos para construir subgrafos em minilotes",
+        "Substitui grafos por redes neurais diretas simples"
       ],
-      correctAnswer: "It utilizes uniform neighbor sampling of fixed sizes to construct mini-batch computational subgraphs",
-      explanation: "GraphSAGE introduces neighborhood sampling where rather than propagating across all neighbors, it uniformly samples a fixed size (e.g., k neighbors) per layer, enabling efficient mini-batch training on giant industrial graphs."
+      correctAnswer: "Usa amostragem de vizinhos em tamanhos fixos para construir subgrafos em minilotes",
+      explanation: "O GraphSAGE usa amostragem de vizinhos: em vez de percorrer todos, seleciona um número fixo por camada, permitindo treinamento eficiente em minilotes."
     }
   ];
 
@@ -334,7 +334,7 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
           message: `Regarding Graph Neural Networks (GNNs): ${promptToSend}`,
           history: gnnChatHistory,
           cognitiveState: cognitive,
-          topic: "Graph Neural Networks (GNN) Deep Technical Breakdowns, Layer Equations, SAGE models, and Cognitive Topology Map modeling"
+          topic: "Redes neurais em grafos (GNN): explicações técnicas, equações de camadas, modelos SAGE e mapas de topologia cognitiva"
         })
       });
 
@@ -383,13 +383,13 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
           
           <div className="flex flex-wrap gap-2">
             <button 
-              onClick={() => askGnnTutor("Can you explain GCN Layer formula step by step with dimensions?")}
+              onClick={() => askGnnTutor("Você pode explicar a fórmula de uma camada GCN passo a passo, com as dimensões?")}
               className="text-[10px] bg-slate-950 border border-slate-850 hover:border-slate-700 text-indigo-300 font-medium px-3 py-1.5 rounded-lg transition-colors cursor-pointer"
             >
               📐 GCN Formula Math
             </button>
             <button 
-              onClick={() => askGnnTutor("How do we model brainwave EEG channels as an active Graph structure?")}
+              onClick={() => askGnnTutor("Como modelar canais de EEG como um grafo ativo?")}
               className="text-[10px] bg-slate-950 border border-slate-850 hover:border-slate-700 text-emerald-300 font-medium px-3 py-1.5 rounded-lg transition-colors cursor-pointer"
             >
               🧠 EEG Topology GNN
@@ -757,7 +757,7 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
                 Topological Execution Logs
               </span>
               <button 
-                onClick={() => setLogs(['Simulation telemetry traces cleared.'])}
+                onClick={() => setLogs(['Registros de telemetria da simulação limpos.'])}
                 className="text-[9px] text-slate-500 hover:text-slate-350 cursor-pointer underline bg-transparent border-none"
               >
                 Clear
@@ -849,8 +849,8 @@ export default function GnnLab({ cognitive, setCognitive, biometric, setBiometri
                   <h4 className="font-bold text-slate-200 text-sm">Avaliação GNN concluída</h4>
                   <p className="text-xs text-slate-400">
                     {quizScore === gnnQuizzes.length 
-                      ? 'Incredible mastery of deep topological representations! You matched the optimal cognitive benchmark.' 
-                      : 'Excellent review session! Tweak simulator node characteristics and review aggregation formulas to secure perfect recall.'}
+                      ? 'Excelente domínio das representações topológicas! Você atingiu a referência cognitiva do exercício.' 
+                      : 'Boa revisão! Ajuste os atributos dos nós e revise as fórmulas de agregação para consolidar o aprendizado.'}
                   </p>
                 </div>
               </div>
