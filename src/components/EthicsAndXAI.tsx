@@ -46,7 +46,7 @@ export default function EthicsAndXAI() {
             <div className="p-3 bg-slate-900/50 rounded-lg border border-slate-850 flex gap-3">
               <EyeOff className="h-4.5 w-4.5 text-emerald-400 flex-shrink-0 mt-0.5" />
               <div className="space-y-1">
-                <h5 className="text-[10.5px] font-bold text-slate-200 uppercase tracking-tight">Biometric Data Sovereignty</h5>
+                <h5 className="text-[10.5px] font-bold text-slate-200 uppercase tracking-tight">Soberania dos dados biométricos</h5>
                 <p className="text-[9.5px] text-slate-400 leading-normal">
                   No Raw waveforms are stored on-disk. Signals are converted to micro-aggregates (mean HRV interval) on-device and aged-off the buffer immediately after the local feedback loop terminates.
                 </p>
@@ -56,7 +56,7 @@ export default function EthicsAndXAI() {
             <div className="p-3 bg-slate-900/50 rounded-lg border border-slate-850 flex gap-3">
               <Scale className="h-4.5 w-4.5 text-indigo-400 flex-shrink-0 mt-0.5" />
               <div className="space-y-1">
-                <h5 className="text-[10.5px] font-bold text-slate-200 uppercase tracking-tight">Bias Elimination in Burnout Predictors</h5>
+                <h5 className="text-[10.5px] font-bold text-slate-200 uppercase tracking-tight">Redução de vieses nos modelos de esgotamento</h5>
                 <p className="text-[9.5px] text-slate-400 leading-normal">
                   The GNN (Graph Neural Network) does not read socio-demographic features (race, gender, test scores). Inference maps nodes strictly by heart rate variability and response latency metrics.
                 </p>
@@ -66,7 +66,7 @@ export default function EthicsAndXAI() {
             <div className="p-3 bg-slate-900/50 rounded-lg border border-slate-850 flex gap-3">
               <HelpCircle className="h-4.5 w-4.5 text-amber-400 flex-shrink-0 mt-0.5" />
               <div className="space-y-1">
-                <h5 className="text-[10.5px] font-bold text-slate-200 uppercase tracking-tight">Explainable Interventions (XAI)</h5>
+                <h5 className="text-[10.5px] font-bold text-slate-200 uppercase tracking-tight">Intervenções explicáveis (XAI)</h5>
                 <p className="text-[9.5px] text-slate-400 leading-normal">
                   Every burnout notification explains the trigger causality. Rather than generating a black-box percentage, the interface highlights parameters (e.g. "Low respiratory high frequencies in PPG indicating persistent high sympathetic load over last 15 minutes").
                 </p>
@@ -86,7 +86,7 @@ export default function EthicsAndXAI() {
               onClick={() => toggleCheck('consent')}
               className="p-2.5 bg-slate-900/60 rounded-lg border border-slate-850/60 flex items-center justify-between cursor-pointer hover:bg-slate-900 hover:border-slate-800 transition-all select-none"
             >
-              <span className="text-[10px] text-slate-300 font-medium">Double-Consent Opt-in Active</span>
+              <span className="text-[10px] text-slate-300 font-medium">Consentimento duplo ativado</span>
               <div className={`h-4 w-4 rounded flex items-center justify-center border transition-all ${
                 checklist.consent ? 'bg-emerald-600 border-emerald-500 text-white' : 'border-slate-700 bg-slate-950'
               }`}>
@@ -98,7 +98,7 @@ export default function EthicsAndXAI() {
               onClick={() => toggleCheck('localDenoise')}
               className="p-2.5 bg-slate-900/60 rounded-lg border border-slate-850/60 flex items-center justify-between cursor-pointer hover:bg-slate-900 hover:border-slate-800 transition-all select-none"
             >
-              <span className="text-[10px] text-slate-300 font-medium">Local Denoising & Filtering</span>
+              <span className="text-[10px] text-slate-300 font-medium">Redução local de ruído e filtragem</span>
               <div className={`h-4 w-4 rounded flex items-center justify-center border transition-all ${
                 checklist.localDenoise ? 'bg-emerald-600 border-emerald-500 text-white' : 'border-slate-700 bg-slate-950'
               }`}>
@@ -110,7 +110,7 @@ export default function EthicsAndXAI() {
               onClick={() => toggleCheck('noFaceTracking')}
               className="p-2.5 bg-slate-900/60 rounded-lg border border-slate-850/60 flex items-center justify-between cursor-pointer hover:bg-slate-900 hover:border-slate-800 transition-all select-none"
             >
-              <span className="text-[10px] text-slate-300 font-medium">Zero-camera Facial Tracking</span>
+              <span className="text-[10px] text-slate-300 font-medium">Sem rastreamento facial por câmera</span>
               <div className={`h-4 w-4 rounded flex items-center justify-center border transition-all ${
                 checklist.noFaceTracking ? 'bg-emerald-600 border-emerald-500 text-white' : 'border-slate-700 bg-slate-950'
               }`}>
@@ -122,7 +122,7 @@ export default function EthicsAndXAI() {
               onClick={() => toggleCheck('teacherExplain')}
               className="p-2.5 bg-slate-900/60 rounded-lg border border-slate-850/60 flex items-center justify-between cursor-pointer hover:bg-slate-900 hover:border-slate-800 transition-all select-none"
             >
-              <span className="text-[10px] text-slate-300 font-medium">Causal Explanation for Teachers</span>
+              <span className="text-[10px] text-slate-300 font-medium">Explicações de causa para professores</span>
               <div className={`h-4 w-4 rounded flex items-center justify-center border transition-all ${
                 checklist.teacherExplain ? 'bg-emerald-600 border-emerald-500 text-white' : 'border-slate-700 bg-slate-950'
               }`}>
@@ -134,7 +134,7 @@ export default function EthicsAndXAI() {
               onClick={() => toggleCheck('dataOffload')}
               className="p-2.5 bg-slate-900/60 rounded-lg border border-slate-850/60 flex items-center justify-between cursor-pointer hover:bg-slate-900 hover:border-slate-800 transition-all select-none"
             >
-              <span className="text-[10px] text-slate-300 font-medium">Full raw sensor data export</span>
+              <span className="text-[10px] text-slate-300 font-medium">Exportação integral dos dados brutos dos sensores</span>
               <div className={`h-4 w-4 rounded flex items-center justify-center border transition-all ${
                 checklist.dataOffload ? 'bg-emerald-600 border-emerald-500 text-white' : 'border-slate-700 bg-slate-950'
               }`}>
