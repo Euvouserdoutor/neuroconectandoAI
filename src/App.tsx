@@ -657,7 +657,7 @@ export default function App() {
               title="Restaurar estado ideal"
               type="button"
             >
-              Optimal State
+              Estado ideal
             </button>
           </div>
         </div>
@@ -732,7 +732,7 @@ export default function App() {
               <span className="bg-indigo-950 text-indigo-400 font-mono text-[9px] px-2 py-0.5 rounded-full border border-indigo-900/40">Protótipo v3.2.0</span>
             </div>
             <p className="text-slate-400 leading-relaxed max-w-xl">
-              <strong>Prova de conceito NeuroLearn AI</strong>. Developed for standard evaluation with active post-training quantized edge routines, BigQuery analytics warehouses, and premium Gemini learning assistants.
+              <strong>Prova de conceito NeuroLearn AI</strong>. Desenvolvido como protótipo educacional com processamento local quantizado, análises BigQuery e recursos de aprendizagem com Gemini.
             </p>
           </div>
 
@@ -755,7 +755,7 @@ export default function App() {
               <span>PROTEGIDO COM AES-256 GCM</span>
             </div>
             <p className="text-[9.5px] text-slate-500 leading-relaxed">
-              Protected under dual AES-256 GCM encrypted channels.<br />
+              Proteção prevista por canais criptografados AES-256 GCM.<br />
               All rights reserved. © {new Date().getFullYear()} NeuroLearn.
             </p>
           </div>
@@ -904,7 +904,7 @@ export default function App() {
                   onClick={() => setIsEmergencyModalOpen(false)}
                   className="flex-1 bg-slate-850 hover:bg-slate-800 text-slate-300 border border-slate-800 hover:border-slate-700 text-xs font-bold py-2.5 rounded-xl transition-all cursor-pointer"
                 >
-                  Cancel / Close
+                  Cancelar / Fechar
                 </button>
                 <button
                   type="button"
@@ -916,7 +916,7 @@ export default function App() {
                   {isSendingEmergency ? (
                     <span className="flex items-center gap-2">
                       <span className="h-3 w-3 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
-                      Broadcast is active...
+                      Enviando alerta...
                     </span>
                   ) : (
                     <>
@@ -981,7 +981,7 @@ export default function App() {
                       : 'text-slate-500 hover:text-slate-300'
                   }`}
                 >
-                  Live 60s Pulse
+                  Pulso em tempo real (60 s)
                 </button>
                 <button
                   type="button"
@@ -992,7 +992,7 @@ export default function App() {
                       : 'text-slate-500 hover:text-slate-300'
                   }`}
                 >
-                  7-Day Biometric Log
+                  Histórico biométrico de 7 dias
                 </button>
               </div>
 
@@ -1053,7 +1053,7 @@ export default function App() {
                           <span>Tendência atual</span>
                         </span>
                         <span className="font-sans text-right ml-2 leading-tight">
-                          10s Moving Average (<strong className="font-extrabold">{latest10sMA}%</strong>) is {pulseDeviationPercent > 0 ? 'elevated' : 'depressed'} by <strong className="font-black">{Math.abs(pulseDeviationPercent)}%</strong> from baseline ({pulseBaselineVal}%)
+                          Média móvel de 10 s (<strong className="font-extrabold">{latest10sMA}%</strong>) is {pulseDeviationPercent > 0 ? 'elevated' : 'depressed'} by <strong className="font-black">{Math.abs(pulseDeviationPercent)}%</strong> from baseline ({pulseBaselineVal}%)
                         </span>
                       </div>
                     )}
@@ -1250,7 +1250,7 @@ export default function App() {
                     onClick={() => setHighStressCount(0)}
                     className="text-[9px] uppercase font-bold text-slate-400 hover:text-white px-2 py-0.5 rounded bg-slate-950 border border-slate-800 transition-colors cursor-pointer"
                   >
-                    Reset Count
+                    Zerar contagem
                   </button>
                 </div>
               )}
@@ -1296,7 +1296,7 @@ export default function App() {
                   onClick={() => setIsPulseModalOpen(false)}
                   className="w-full bg-slate-850 hover:bg-slate-850 text-slate-200 border border-slate-800 text-xs font-bold py-2 rounded-xl transition-all cursor-pointer text-center"
                 >
-                  Dismiss Telemetry Feed
+                  Fechar monitoramento
                 </button>
               </div>
             </motion.div>
@@ -1368,14 +1368,14 @@ export default function App() {
                   pulseToast.type === 'stress' ? 'border-red-900/40' : 'border-amber-900/40'
                 } transition-all cursor-pointer`}
               >
-                See Pulse Details
+                Ver detalhes do pulso
               </button>
               <button
                 type="button"
                 onClick={() => setPulseToast(null)}
                 className="text-[9px] text-slate-450 hover:text-white font-semibold flex items-center gap-1 cursor-pointer"
               >
-                Dismiss Alert
+                Dispensar alerta
               </button>
             </div>
           </motion.div>
