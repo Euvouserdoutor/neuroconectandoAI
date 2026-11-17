@@ -166,7 +166,7 @@ export default function FocusGame({ cognitive, setCognitive, biometric, setBiome
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center space-x-2">
           <Target className="h-4.5 w-4.5 text-indigo-400 animate-spin-slow" />
-          <h3 className="text-sm font-black text-slate-100 uppercase tracking-tight">Focus Calibration Challenge</h3>
+          <h3 className="text-sm font-black text-slate-100 uppercase tracking-tight">Desafio de calibração da atenção</h3>
         </div>
         {isPlaying && (
           <span className="font-mono text-xs bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-indigo-400 font-bold">
@@ -183,7 +183,7 @@ export default function FocusGame({ cognitive, setCognitive, biometric, setBiome
         <div className="bg-slate-950 rounded-xl p-5 border border-slate-850 text-center flex flex-col items-center justify-center space-y-3">
           <Zap className="h-7 w-7 text-indigo-400" />
           <div className="space-y-1">
-            <span className="text-xs font-bold text-slate-300 block">Stroop Cognitive Inhibition Test</span>
+            <span className="text-xs font-bold text-slate-300 block">Teste de inibição cognitiva de Stroop</span>
             <p className="text-[10px] text-slate-500 max-w-sm">
               Press match key if the semantic word value exactly corresponds to its printed text color.
             </p>
@@ -228,7 +228,7 @@ export default function FocusGame({ cognitive, setCognitive, biometric, setBiome
 
           {lastAnswerCorrect !== null && (
             <div className={`text-[10px] font-mono font-medium ${lastAnswerCorrect ? 'text-emerald-400' : 'text-rose-400'}`}>
-              {lastAnswerCorrect ? '✓ STREAK MAINTAINED' : '✗ DISCORD DETECTED'}
+              {lastAnswerCorrect ? '✓ SEQUÊNCIA MANTIDA' : '✗ INCONSISTÊNCIA DETECTADA'}
             </div>
           )}
         </div>
@@ -250,7 +250,7 @@ export default function FocusGame({ cognitive, setCognitive, biometric, setBiome
 
           <div className="space-y-1">
             <h3 className={`text-sm font-black uppercase ${gameResult === 'success' ? 'text-emerald-400' : 'text-rose-400'}`}>
-              {gameResult === 'success' ? 'Neural Calibration Passed!' : 'Performance Fatigue Alert'}
+              {gameResult === 'success' ? 'Calibração neural concluída!' : 'Alerta de fadiga durante o exercício'}
             </h3>
             <p className="text-[10px] text-slate-500 font-mono">
               Final Accuracy Score: {score}/100 | Target Threshold: 70%
@@ -259,8 +259,8 @@ export default function FocusGame({ cognitive, setCognitive, biometric, setBiome
 
           <p className="text-[10px] text-slate-300 leading-relaxed bg-slate-900 p-2.5 border border-slate-850 rounded-lg">
             {gameResult === 'success'
-              ? 'Excellent! Accuracy performance remains well within baseline optimal focus levels. Attention triggers have been automatically reset.'
-              : 'Attention focus levels dropped beneath target threshold. Initiating micro-conditioning sequence. Recommend unmuting binaural headphones.'}
+              ? 'Excelente! A precisão permanece na faixa ideal de atenção. Os indicadores foram redefinidos.'
+              : 'A concentração ficou abaixo da meta. Inicie uma breve pausa e, se desejar, use os recursos sonoros.'}
           </p>
 
           <button
