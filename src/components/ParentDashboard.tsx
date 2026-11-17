@@ -193,7 +193,7 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
                     <div className="flex justify-between items-center text-[10px]">
                       <span className="font-bold text-slate-205">{log.moodLabel} (Score: {log.mood}/5)</span>
                       <span className="text-slate-500 font-mono text-[9px]">
-                        {log.createdAt ? new Date(log.createdAt).toLocaleDateString('en-US', {month:'short', day:'numeric'}) : 'Today'}
+                        {log.createdAt ? new Date(log.createdAt).toLocaleDateString('pt-BR', {month:'short', day:'numeric'}) : 'Today'}
                       </span>
                     </div>
                     <div className="flex items-center space-x-2 text-[10px]">
@@ -245,7 +245,7 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
                         Emergency Signal Alert
                       </span>
                       <span className="text-slate-505 font-mono text-[9px] text-slate-400">
-                        {signal.createdAt ? new Date(signal.createdAt).toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'}) : 'Agora mesmo'}
+                        {signal.createdAt ? new Date(signal.createdAt).toLocaleTimeString('pt-BR', {hour: '2-digit', minute: '2-digit'}) : 'Agora mesmo'}
                       </span>
                     </div>
                     <p className="text-slate-205 text-xs font-medium pl-2.5 border-l-2 border-red-500">
