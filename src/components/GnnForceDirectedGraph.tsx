@@ -639,10 +639,10 @@ export default function GnnForceDirectedGraph({
             <span>Física interativa dos nós</span>
           </span>
           <h3 className="text-sm font-black text-slate-100 font-sans tracking-tight uppercase flex items-center gap-2 mt-1">
-            Student Cognitive Resonance Force-Directed Graph
+            Grafo de ressonância cognitiva dos estudantes
           </h3>
           <p className="text-[11px] text-slate-400 max-w-xl">
-            Spring lengths correspond to topological shared learning synchronizations. Grab, drag, and reorganize student nodes in real-time to adjust virtual collaboration physical models.
+            O comprimento das conexões representa relações simuladas entre estudantes. Arraste os nós para reorganizar os grupos e observar o modelo físico virtual.
           </p>
         </div>
 
@@ -1211,7 +1211,7 @@ export default function GnnForceDirectedGraph({
             <div className="bg-emerald-950/20 border border-emerald-900/45 p-2 rounded-lg text-[10.5px] text-slate-450 text-slate-300 leading-normal">
               {stats.isOptimal ? (
                 <p>
-                  🚀 <strong>Ressonância elevada detectada:</strong> Dynamic clusters show students in highly aligned cognitive alignment (typical of productive co-learning). Keep active parameters constant.
+                  🚀 <strong>Ressonância elevada detectada:</strong> Os grupos simulados representam estudantes com indicadores cognitivos próximos. Ajuste os parâmetros para explorar os resultados.
                 </p>
               ) : (
                 <p>
@@ -1299,7 +1299,7 @@ export default function GnnForceDirectedGraph({
                     <span>TODOS OS GRUPOS ABAIXO DOS LIMITES</span>
                   </div>
                   <p className="text-[9.5px] text-slate-500 mt-1 leading-normal">
-                    No active student groups showing rapid drop in learning engagement or cognitive mismatch.
+                    Nenhum grupo apresenta queda rápida simulada de engajamento ou divergência cognitiva.
                   </p>
                 </div>
 
@@ -1443,7 +1443,7 @@ export default function GnnForceDirectedGraph({
                 </div>
               ) : (
                 <p className="text-[11px] text-slate-500 text-center py-10">
-                  Select a student node on the graph canvas to trace live resonance metrics, view brainwaves, or inject simulation stressors.
+                  Selecione um estudante no grafo para consultar as métricas de ressonância, visualizar ondas cerebrais ou simular fatores de estresse.
                 </p>
               )}
 
@@ -1531,7 +1531,7 @@ export default function GnnForceDirectedGraph({
                   </span>
                 </div>
                 <p className="text-[10px] text-slate-450 leading-relaxed mb-2.5 text-slate-400">
-                  Triggers an alarm if cluster peer learning connections fall below this weighted Spring Force value (typical: 4.5 - 6.5).
+                  Gera um alerta se as conexões do grupo ficarem abaixo do limite de força definido (referência simulada: 4,5–6,5).
                 </p>
                 <div className="flex items-center gap-4">
                   <span className="text-[10px] font-mono text-slate-500">1.0</span>
@@ -1564,7 +1564,7 @@ export default function GnnForceDirectedGraph({
                   </span>
                 </div>
                 <p className="text-[10px] text-slate-450 leading-relaxed mb-2.5 text-slate-400">
-                  Triggers a warning if students' average actively-measured contribution percent falls below this level (typical: 50% - 70%).
+                  Gera um alerta se a contribuição média simulada dos estudantes ficar abaixo do limite escolhido (referência: 50%–70%).
                 </p>
                 <div className="flex items-center gap-4">
                   <span className="text-[10px] font-mono text-slate-500">20%</span>
@@ -1634,7 +1634,7 @@ export default function GnnForceDirectedGraph({
                 className="flex-1 py-2 text-xs font-bold text-slate-400 bg-slate-950 hover:bg-slate-900 border border-slate-850 hover:text-slate-200 rounded-xl transition-all cursor-pointer text-center"
                 type="button"
               >
-                Reset Default
+                Restaurar padrão
               </button>
               <button
                 onClick={() => setIsConfigModalOpen(false)}
