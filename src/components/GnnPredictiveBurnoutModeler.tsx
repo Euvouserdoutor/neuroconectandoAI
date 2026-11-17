@@ -487,7 +487,7 @@ export default function GnnPredictiveBurnoutModeler() {
                 title="Iterações do modelo"
               />
               <p className="text-[7.5px] text-slate-500 leading-normal">
-                *Increasing GNN layers simulates deeper stress diffusion cascade steps across multi-hop peer nodes.
+                *Adicionar camadas GNN simula etapas mais profundas de propagação de estresse entre nós conectados.
               </p>
             </div>
 
@@ -693,7 +693,7 @@ export default function GnnPredictiveBurnoutModeler() {
                 <div className="flex border-b border-slate-900 pb-2 mb-3 justify-between items-center text-xs">
                   <h4 className="font-extrabold text-slate-200 uppercase tracking-tight flex items-center gap-1.5">
                     <Brain className="h-4 w-4 text-indigo-400" />
-                    Student Node Burden Detail
+                    Detalhes da carga do estudante
                   </h4>
                   <div className="flex bg-slate-900 p-0.5 rounded text-[8.5px] font-mono border border-slate-850">
                     <button
@@ -786,10 +786,10 @@ export default function GnnPredictiveBurnoutModeler() {
               {/* Informative advice snippet */}
               <div className="bg-indigo-950/20 p-2.5 rounded-lg border border-indigo-900/30 font-mono text-[8.5px] text-slate-400 leading-relaxed mt-3">
                 <span className="text-indigo-400 font-extrabold uppercase flex items-center gap-1 mb-0.5">
-                  <Info className="h-3 w-3" /> Cascade Risk:
+                  <Info className="h-3 w-3" /> Risco de propagação:
                 </span>
                 <span>
-                  High predicted risk values are proportional to adjacent relationship strengths (weight matrices) mapped via active edge tables.
+                  Valores previstos de risco elevado são proporcionais aos pesos das conexões, conforme as matrizes da simulação.
                 </span>
               </div>
             </div>
@@ -912,7 +912,7 @@ export default function GnnPredictiveBurnoutModeler() {
               Table-by-Table Burnout Projections vs. Cohesion
             </h4>
             <p className="text-[10.5px] text-slate-400 leading-normal mb-3 font-sans">
-              Aggregated predicted indexes across Tables based on edge interaction density and fatigue indices. Note the pressure surge on Table 2.
+              Índices previstos agregados por equipe com base nas conexões e na fadiga simulada. Observe a elevação na equipe 2.
             </p>
           </div>
 
@@ -981,7 +981,7 @@ export default function GnnPredictiveBurnoutModeler() {
                 <Network className="h-8 w-8 text-slate-800 animate-pulse" />
                 <span>Nenhuma orientação de distribuição dos assentos foi gerada.</span>
                 <p className="text-[8px] text-slate-600 max-w-sm">
-                  Click the recommendation generator button below to draft an optimized HIPAA Safe Harbor seating re-layout.
+                  Clique no gerador de recomendações para sugerir uma nova disposição de assentos no protótipo.
                 </p>
               </div>
             )}
