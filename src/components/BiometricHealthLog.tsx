@@ -671,7 +671,7 @@ export default function BiometricHealthLog() {
       };
 
       const labelsMap: Record<string, string> = {
-        cognitiveLoad: 'Focus Power',
+        cognitiveLoad: 'Potencial de concentração',
         stressIndex: 'Stress Level',
         hrv: 'HRV (ms)',
       };
@@ -803,7 +803,7 @@ export default function BiometricHealthLog() {
           id="dashboard-tab-timeline"
         >
           <TrendingUp className="h-3 w-3" />
-          <span>Timeline Trends</span>
+          <span>Tendências ao longo do tempo</span>
         </button>
         <button
           onClick={() => {
@@ -819,7 +819,7 @@ export default function BiometricHealthLog() {
           id="dashboard-tab-scatter"
         >
           <Compass className="h-3 w-3" />
-          <span>Stress Matrix</span>
+          <span>Matriz de estresse</span>
         </button>
         <button
           onClick={() => {
@@ -835,7 +835,7 @@ export default function BiometricHealthLog() {
           id="dashboard-tab-chronotype"
         >
           <Clock className="h-3 w-3" />
-          <span>Focus Peaks</span>
+          <span>Picos de concentração</span>
         </button>
         <button
           onClick={() => {
@@ -851,7 +851,7 @@ export default function BiometricHealthLog() {
           id="dashboard-tab-states"
         >
           <Gauge className="h-3 w-3" />
-          <span>Autonomic Balance</span>
+          <span>Equilíbrio autonômico</span>
         </button>
       </div>
 
@@ -916,12 +916,12 @@ export default function BiometricHealthLog() {
           >
             <div className="bg-slate-950 p-3 rounded-xl border border-slate-850 space-y-1">
               <div className="flex justify-between items-center text-[8px] text-slate-500 font-black uppercase">
-                <span>Heart Rate</span>
+                <span>Frequência cardíaca</span>
                 <Heart className="h-3 w-3 text-rose-500" />
               </div>
               <div className="flex items-baseline gap-1">
                 <strong className="text-slate-100 text-sm font-black font-mono">{stats.heartRate.avg}</strong>
-                <span className="text-[7.5px] text-slate-500 font-mono">BPM AVG</span>
+                <span className="text-[7.5px] text-slate-500 font-mono">MÉDIA (BPM)</span>
               </div>
               <div className="flex justify-between text-[7px] text-slate-500 font-mono pt-1 border-t border-slate-900/60">
                 <span>Min: {stats.heartRate.min}</span>
@@ -931,12 +931,12 @@ export default function BiometricHealthLog() {
 
             <div className="bg-slate-950 p-3 rounded-xl border border-slate-850 space-y-1">
               <div className="flex justify-between items-center text-[8px] text-slate-500 font-black uppercase">
-                <span>HRV Balance</span>
+                <span>Equilíbrio da VFC</span>
                 <Activity className="h-3 w-3 text-emerald-500" />
               </div>
               <div className="flex items-baseline gap-1">
                 <strong className="text-slate-100 text-sm font-black font-mono">{stats.hrv.avg}</strong>
-                <span className="text-[7.5px] text-slate-500 font-mono">ms baseline</span>
+                <span className="text-[7.5px] text-slate-500 font-mono">ms de referência</span>
               </div>
               <div className="flex justify-between text-[7px] text-slate-500 font-mono pt-1 border-t border-slate-900/60">
                 <span>Min: {stats.hrv.min}</span>
@@ -946,12 +946,12 @@ export default function BiometricHealthLog() {
 
             <div className="bg-slate-950 p-3 rounded-xl border border-slate-850 space-y-1">
               <div className="flex justify-between items-center text-[8px] text-slate-500 font-black uppercase">
-                <span>GSR Conductance</span>
+                <span>Condutância GSR</span>
                 <Zap className="h-3 w-3 text-amber-500" />
               </div>
               <div className="flex items-baseline gap-1">
                 <strong className="text-slate-100 text-sm font-black font-mono">{stats.gsr.avg}</strong>
-                <span className="text-[7.5px] text-slate-500 font-mono">µS LEVEL</span>
+                <span className="text-[7.5px] text-slate-500 font-mono">NÍVEL EM µS</span>
               </div>
               <div className="flex justify-between text-[7px] text-slate-500 font-mono pt-1 border-t border-slate-900/60">
                 <span>Min: {stats.gsr.min}</span>
@@ -971,14 +971,14 @@ export default function BiometricHealthLog() {
           >
             <div className="bg-slate-950 p-3 rounded-xl border border-slate-850 space-y-1">
               <div className="flex justify-between items-center text-[8px] text-slate-500 font-black uppercase">
-                <span>Flow Ratio</span>
+                <span>Proporção de fluxo</span>
                 <Sparkles className="h-3 w-3 text-emerald-400" />
               </div>
               <div className="flex items-baseline gap-1">
                 <strong className="text-emerald-400 text-sm font-black font-mono">
                   {Math.round((data.filter(d => d.heartRate < 78 && d.cognitiveLoad >= 50).length / data.length) * 100)}%
                 </strong>
-                <span className="text-[7px] text-slate-500 font-mono uppercase font-bold">Flow state</span>
+                <span className="text-[7px] text-slate-500 font-mono uppercase font-bold">Estado de fluxo</span>
               </div>
               <div className="text-[7px] text-slate-400 font-sans leading-tight">
                 Points with calm heart rate & active mind
@@ -987,14 +987,14 @@ export default function BiometricHealthLog() {
 
             <div className="bg-slate-950 p-3 rounded-xl border border-slate-850 space-y-1">
               <div className="flex justify-between items-center text-[8px] text-slate-500 font-black uppercase">
-                <span>Overload alerts</span>
+                <span>Alertas de sobrecarga</span>
                 <ShieldAlert className="h-3 w-3 text-rose-500" />
               </div>
               <div className="flex items-baseline gap-1">
                 <strong className="text-rose-400 text-sm font-black font-mono">
                   {data.filter(d => d.heartRate >= 78 && d.cognitiveLoad >= 50).length}
                 </strong>
-                <span className="text-[7px] text-slate-500 font-mono uppercase font-bold">Sessions</span>
+                <span className="text-[7px] text-slate-500 font-mono uppercase font-bold">Sessões</span>
               </div>
               <div className="text-[7px] text-slate-400 font-sans leading-tight">
                 Risk parameters showing strain & tension
@@ -1003,14 +1003,14 @@ export default function BiometricHealthLog() {
 
             <div className="bg-slate-950 p-3 rounded-xl border border-slate-850 space-y-1">
               <div className="flex justify-between items-center text-[8px] text-slate-500 font-black uppercase">
-                <span>Rest Ratio</span>
+                <span>Proporção de descanso</span>
                 <CheckCircle2 className="h-3 w-3 text-blue-400" />
               </div>
               <div className="flex items-baseline gap-1">
                 <strong className="text-blue-400 text-sm font-black font-mono">
                   {Math.round((data.filter(d => d.heartRate < 78 && d.cognitiveLoad < 50).length / data.length) * 100)}%
                 </strong>
-                <span className="text-[7px] text-slate-500 font-mono">RESTORATIVE</span>
+                <span className="text-[7px] text-slate-500 font-mono">RECUPERAÇÃO</span>
               </div>
               <div className="text-[7px] text-slate-400 font-sans leading-tight">
                 Parasympathetic rest & neural recovery
@@ -1048,7 +1048,7 @@ export default function BiometricHealthLog() {
                   </div>
                   <div className="flex items-baseline gap-1">
                     <strong className="text-slate-100 text-sm font-black font-mono">{chrono.cognitiveLoad}%</strong>
-                    <span className="text-[7px] text-slate-500 font-mono">Focus Power</span>
+                    <span className="text-[7px] text-slate-500 font-mono">Potencial de concentração</span>
                   </div>
                   <div className="flex justify-between text-[7px] text-slate-500 font-mono pt-1 border-t border-slate-900/60">
                     <span>Stress Score: {chrono.stressIndex}%</span>
@@ -1067,7 +1067,7 @@ export default function BiometricHealthLog() {
           
           {/* Static Top-Left Telemetry Status Tag */}
           <div className="absolute top-3 left-3 bg-slate-950/90 border border-slate-800/80 px-2 py-1.5 rounded-lg text-[9px] font-mono pointer-events-none select-none z-10 space-y-0.5">
-            <div className="text-slate-500 font-black uppercase text-[7px]">SYSTEM TELEMETRY</div>
+            <div className="text-slate-500 font-black uppercase text-[7px]">TELEMETRIA DO SISTEMA</div>
             <div className="text-slate-400 font-bold flex items-center gap-1">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
               {hoveredPoint || hoveredBar ? 'Capturing Node Data' : 'Hover over chart plot'}
@@ -1124,11 +1124,11 @@ export default function BiometricHealthLog() {
                     <span className="text-amber-400 font-extrabold">{hoveredPoint.gsr} µS</span>
                   </div>
                   <div className="flex items-center justify-between pt-1.5 border-t border-slate-900 text-[8px]">
-                    <span className="text-slate-400">Cognitive Load:</span>
+                    <span className="text-slate-400">Carga cognitiva:</span>
                     <span className="text-indigo-400 font-black">{hoveredPoint.cognitiveLoad}%</span>
                   </div>
                   <div className="flex items-center justify-between text-[8px]">
-                    <span className="text-slate-400">Stress Index:</span>
+                    <span className="text-slate-400">Índice de estresse:</span>
                     <span className="text-rose-400 font-black">{getStressScore(hoveredPoint.heartRate, hoveredPoint.hrv)}%</span>
                   </div>
                 </div>
@@ -1200,8 +1200,8 @@ export default function BiometricHealthLog() {
           {/* Segmented Proportional Progress Bar */}
           <div className="space-y-1.5">
             <div className="flex justify-between text-[8px] font-mono font-bold text-slate-400 uppercase tracking-wide">
-              <span>Physiological State Distribution</span>
-              <span className="text-indigo-400">7-Day Aggregated Series</span>
+              <span>Distribuição dos estados fisiológicos</span>
+              <span className="text-indigo-400">Dados agregados de 7 dias</span>
             </div>
             
             <div className="h-4 w-full rounded-lg overflow-hidden flex border border-slate-900 shadow-inner">
@@ -1264,7 +1264,7 @@ export default function BiometricHealthLog() {
                   <Flame className="h-3.5 w-3.5 text-emerald-400" />
                   COGNITIVE EFFICIENCY SCORE
                 </span>
-                <span className="text-slate-400 font-mono">FLOW ACTIVE</span>
+                <span className="text-slate-400 font-mono">FLUXO ATIVO</span>
               </div>
               <p className="text-[9.5px] text-slate-400 leading-relaxed">
                 You registered <span className="text-emerald-400 font-mono font-bold">{statePercentages.flow + statePercentages.optimal}%</span> of studied slots inside optimal flow conditions. This correlates with moderate physiological activation combined with deep cognitive focus, enabling high-density knowledge retention with low relative stress.
@@ -1277,7 +1277,7 @@ export default function BiometricHealthLog() {
                   <ShieldAlert className="h-3.5 w-3.5 text-rose-400" />
                   STRESS COMPLIANCE INDEX
                 </span>
-                <span className="text-slate-400 font-mono">AUTONOMIC DAMPENING</span>
+                <span className="text-slate-400 font-mono">REGULAÇÃO AUTONÔMICA</span>
               </div>
               <p className="text-[9.5px] text-slate-400 leading-relaxed">
                 Your parasympathetic restorative recovery slots represent <span className="text-blue-400 font-mono font-bold">{statePercentages.rest}%</span>. However, stressful overload peaks cover <span className="text-rose-400 font-mono font-bold">{statePercentages.stress}%</span> of your PM study sessions. Activating physical pacing and rhythmic diaphragmatic breathing offsets these stressors.
@@ -1306,13 +1306,13 @@ export default function BiometricHealthLog() {
 
           {activeDashboardTab === 'scatter' && (
             <p>
-              The scatter distribution identifies high density in the <span className="text-emerald-400 font-bold">Calm Flow State Zone</span> (low heart rates, high loads). However, afternoon slots occasionally drift into the <span className="text-rose-400 font-bold">Stress Overload Quadrant</span>. We recommend pairing heavy learning runs with the **Coherence Breather** to sustain flow.
+              The scatter distribution identifies high density in the <span className="text-emerald-400 font-bold">Faixa de concentração tranquila</span> (low heart rates, high loads). However, afternoon slots occasionally drift into the <span className="text-rose-400 font-bold">Quadrante de sobrecarga de estresse</span>. We recommend pairing heavy learning runs with the **Coherence Breather** to sustain flow.
             </p>
           )}
 
           {activeDashboardTab === 'chronotype' && (
             <p>
-              Your peak intellectual output window occurs during the <span className="text-indigo-400 font-bold">Morning (AM) periods</span> with an optimal Focus Power of <span className="text-indigo-400 font-black font-mono">{chronotypeData[0].cognitiveLoad}%</span>, coupled with low physical stress. Schedule highly demanding conceptual subjects during AM, leaving EV for light revision.
+              Your peak intellectual output window occurs during the <span className="text-indigo-400 font-bold">Períodos da manhã</span> com potencial ideal de concentração de <span className="text-indigo-400 font-black font-mono">{chronotypeData[0].cognitiveLoad}%</span>, coupled with low physical stress. Schedule highly demanding conceptual subjects during AM, leaving EV for light revision.
             </p>
           )}
 
