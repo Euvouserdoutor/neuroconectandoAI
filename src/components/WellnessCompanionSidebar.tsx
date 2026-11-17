@@ -391,7 +391,7 @@ export default function WellnessCompanionSidebar({ cognitive, biometric }: Welln
                 <div className="px-4 py-2 bg-red-950/20 border-t border-b border-red-900/40 text-[10px] text-red-300 flex items-center gap-2 font-mono" id="stress-indicator-coaching-box">
                   <TrendingDown className="h-4 w-4 text-red-500 animate-pulse shrink-0" />
                   <span>
-                    <strong>Alerta de estresse:</strong> Your EEG signals are currently highly hyperactive. We strongly recommend launching an on-demand breathing cycle below.
+                    <strong>Alerta de estresse:</strong> Os sinais simulados de EEG indicam maior atividade. Se desejar, faça um exercício de respiração tranquilo.
                   </span>
                 </div>
               )}
@@ -399,7 +399,7 @@ export default function WellnessCompanionSidebar({ cognitive, biometric }: Welln
               {/* Quick action panel bar list */}
               <div className="p-3 bg-slate-900/40 border-t border-slate-900">
                 <span className="text-[8.5px] font-mono text-slate-500 block uppercase tracking-wider mb-2 font-extrabold uppercase">
-                  Quick Remedies customized to EEG State
+                  Sugestões rápidas conforme o estado simulado do EEG
                 </span>
                 <div className="grid grid-cols-3 gap-1.5">
                   <button
