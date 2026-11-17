@@ -176,7 +176,7 @@ export default function FocusGame({ cognitive, setCognitive, biometric, setBiome
       </div>
 
       <p className="text-[11px] text-slate-400 leading-relaxed mb-4">
-        Evaluates processing speed and cognitive inhibition through the Stroop Effect. Score above 70% to trigger real-time neural alignment.
+        Explore a velocidade de processamento e a inibição cognitiva no teste de Stroop. Alcance mais de 70% para concluir o desafio.
       </p>
 
       {!isPlaying && !gameResult && (
@@ -185,7 +185,7 @@ export default function FocusGame({ cognitive, setCognitive, biometric, setBiome
           <div className="space-y-1">
             <span className="text-xs font-bold text-slate-300 block">Teste de inibição cognitiva de Stroop</span>
             <p className="text-[10px] text-slate-500 max-w-sm">
-              Press match key if the semantic word value exactly corresponds to its printed text color.
+              Selecione a opção correspondente quando o significado da palavra for igual à cor em que ela aparece.
             </p>
           </div>
           <button
