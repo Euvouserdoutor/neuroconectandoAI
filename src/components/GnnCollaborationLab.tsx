@@ -323,7 +323,7 @@ export default function GnnCollaborationLab() {
     return Object.keys(groups).map(name => ({
       groupName: `Group ${name}`,
       'Burnout Risk': Math.round((groups[name].sumBurnout / Math.max(1, groups[name].count)) * 100),
-      'Engagement Level': Math.round((groups[name].sumEngagement / Math.max(1, groups[name].count)) * 100),
+      'Nível de engajamento': Math.round((groups[name].sumEngagement / Math.max(1, groups[name].count)) * 100),
       'Spillover Spill': Math.round((groups[name].sumSpillover / Math.max(1, groups[name].count)) * 100),
     }));
   };
@@ -620,7 +620,7 @@ export default function GnnCollaborationLab() {
         <div className="space-y-1">
           <span className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full bg-rose-950/40 border border-rose-900/60 text-[9px] font-mono font-bold text-rose-450 text-rose-400 uppercase tracking-wider">
             <Flame className="h-3.5 w-3.5 animate-pulse" />
-            <span>Topological Burnout Tracker</span>
+            <span>Monitor de esgotamento na rede</span>
           </span>
           <h2 className="text-lg font-extrabold text-slate-100 font-sans tracking-tight">
             Collaborative Group Dynamics GNN Modeler
@@ -657,7 +657,7 @@ export default function GnnCollaborationLab() {
             className="h-9 px-4 text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg transition-colors flex items-center justify-center gap-1.5 cursor-pointer disabled:bg-slate-800 disabled:text-slate-500"
           >
             <Play className={`h-3.5 w-3.5 ${propagationStep === 'aggregating' ? 'animate-spin' : ''}`} />
-            <span>Trigger GNN Propagate</span>
+            <span>Executar propagação GNN</span>
           </button>
         </div>
       </div>
@@ -677,7 +677,7 @@ export default function GnnCollaborationLab() {
           }`}
         >
           <Network className="h-4 w-4 text-indigo-400 animate-pulse" />
-          <span>Core Resonance Physics Graph</span>
+          <span>Grafo físico de ressonância</span>
         </button>
         <button
           type="button"
@@ -692,7 +692,7 @@ export default function GnnCollaborationLab() {
           }`}
         >
           <Flame className="h-4 w-4 text-rose-450 text-rose-400" />
-          <span>Burnout Contagion Heat Grid</span>
+          <span>Mapa de propagação do esgotamento</span>
         </button>
         <button
           type="button"
@@ -707,7 +707,7 @@ export default function GnnCollaborationLab() {
           }`}
         >
           <Users className="h-4 w-4 text-amber-500 animate-pulse" />
-          <span>AI Cognitive Group Optimizer</span>
+          <span>Otimizador de grupos com IA</span>
         </button>
       </div>
 
@@ -723,14 +723,14 @@ export default function GnnCollaborationLab() {
           <div className="flex justify-between items-center bg-slate-900/60 p-2.5 rounded-lg border border-slate-850/60 mb-3 text-xs">
             <div className="flex items-center gap-1.5">
               <span className="h-2 w-2 rounded-full bg-emerald-500 animate-ping"></span>
-              <span className="text-slate-300 font-mono font-bold text-[10.5px]">ACTIVE CLASS COLLABORATIVE SESSION MAP</span>
+              <span className="text-slate-300 font-mono font-bold text-[10.5px]">MAPA DE COLABORAÇÃO DA TURMA</span>
             </div>
             
             {/* Color keys */}
             <div className="hidden sm:flex gap-3 text-[9px] text-slate-400">
-              <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-emerald-500"></span> Flowing</span>
-              <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-amber-500"></span> Strained</span>
-              <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-rose-500"></span> Burnout risk</span>
+              <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-emerald-500"></span> Em fluxo</span>
+              <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-amber-500"></span> Sobrecarregado</span>
+              <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-rose-500"></span> Risco de esgotamento</span>
             </div>
           </div>
 
@@ -742,13 +742,13 @@ export default function GnnCollaborationLab() {
             
             {/* Team boundaries containers visual borders */}
             <div className="absolute top-4 left-6 border border-indigo-900/30 bg-indigo-950/5 rounded-2xl p-2 w-[220px] h-[190px] pointer-events-none z-0">
-              <span className="text-[8px] font-mono font-black text-indigo-500 tracking-wider">TEAM ALPHA SUBGRAPH</span>
+              <span className="text-[8px] font-mono font-black text-indigo-500 tracking-wider">SUBGRAFO DA EQUIPE ALFA</span>
             </div>
             <div className="absolute top-4 right-6 border border-emerald-900/30 bg-emerald-950/5 rounded-2xl p-2 w-[220px] h-[190px] pointer-events-none z-0">
-              <span className="text-[8px] font-mono font-black text-emerald-500 tracking-wider">TEAM BETA SUBGRAPH</span>
+              <span className="text-[8px] font-mono font-black text-emerald-500 tracking-wider">SUBGRAFO DA EQUIPE BETA</span>
             </div>
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 border border-amber-900/20 bg-amber-950/5 rounded-2xl p-2 w-[340px] h-[160px] pointer-events-none z-0">
-              <span className="text-[8px] font-mono font-black text-amber-500 tracking-wider text-center block">TEAM GAMMA SUBGRAPH</span>
+              <span className="text-[8px] font-mono font-black text-amber-500 tracking-wider text-center block">SUBGRAFO DA EQUIPE GAMA</span>
             </div>
 
             {/* SVG Edges Layer */}
@@ -857,7 +857,7 @@ export default function GnnCollaborationLab() {
                         <strong className="text-slate-100 text-[11px] block">{node.name}</strong>
                         <span className="text-[8px] bg-indigo-950 text-indigo-400 px-1 py-0.2 rounded font-mono uppercase">{node.group}</span>
                       </div>
-                      <span className="text-[10px] text-slate-400 block mt-0.5">Role: <strong className="text-indigo-300">{node.role}</strong></span>
+                      <span className="text-[10px] text-slate-400 block mt-0.5">Função: <strong className="text-indigo-300">{node.role}</strong></span>
                       <div className="grid grid-cols-2 gap-x-2 mt-1 border-t border-slate-900 pt-1 text-[9.5px]">
                         <span className="text-rose-400 font-bold">Burnout: {Math.round(pred.burnout*100)}%</span>
                         <span className="text-emerald-450 text-emerald-400 font-bold">Engagement: {Math.round(pred.engagement*100)}%</span>
@@ -897,20 +897,20 @@ export default function GnnCollaborationLab() {
             </div>
 
             <div className="bg-slate-900/50 p-2.5 rounded-lg border border-slate-850 flex flex-col justify-center text-[10px] text-slate-400">
-              <span className="font-mono text-slate-350 block mb-0.5 uppercase tracking-wide font-bold">GNN COGNITIVE HEURISTIC MATRIX</span>
+              <span className="font-mono text-slate-350 block mb-0.5 uppercase tracking-wide font-bold">MATRIZ HEURÍSTICA COGNITIVA GNN</span>
               {gnnModel === 'gat_burnout' && (
                 <p className="leading-snug">
-                  <strong>Anisotropic GAT:</strong> Model estimates GNN Attention coefficients scaled on neighbor fatigue disparities: <code className="text-rose-400">α = Softmax(W • [h_i || h_j])</code>.
+                  <strong>GAT anisotrópica:</strong> O modelo estima coeficientes de atenção da GNN a partir das diferenças de fadiga entre vizinhos: <code className="text-rose-400">α = Softmax(W • [h_i || h_j])</code>.
                 </p>
               )}
               {gnnModel === 'gcn_diffusion' && (
                 <p className="leading-snug">
-                  <strong>Normalized GCN:</strong> Models static team diffusion through symmetrical adjacency scaling: <code className="text-indigo-400">h = ReLU(Σ (1/√(deg_i • deg_j)) • W • h_j)</code>.
+                  <strong>GCN normalizada:</strong> Modela a propagação entre equipes por ponderação simétrica das conexões: <code className="text-indigo-400">h = ReLU(Σ (1/√(deg_i • deg_j)) • W • h_j)</code>.
                 </p>
               )}
               {gnnModel === 'sage_load' && (
                 <p className="leading-snug">
-                  <strong>GraphSAGE:</strong> Predicts node state by merging average surrounding features onto self-state: <code className="text-amber-400">h = σ(W • [h_self || Mean(h_neighbors)])</code>.
+                  <strong>GraphSAGE:</strong> Prevê o estado do nó combinando características médias dos vizinhos: <code className="text-amber-400">h = σ(W • [h_self || Mean(h_neighbors)])</code>.
                 </p>
               )}
             </div>
@@ -925,7 +925,7 @@ export default function GnnCollaborationLab() {
           <div className="bg-slate-950 border border-slate-855 rounded-xl p-4 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between pb-2 border-b border-slate-900 mb-3">
-                <span className="text-[10px] text-indigo-400 font-mono font-bold uppercase tracking-wider block">Student Vector Inspector</span>
+                <span className="text-[10px] text-indigo-400 font-mono font-bold uppercase tracking-wider block">Inspeção dos vetores do estudante</span>
                 {selectedStudent && (
                   <span className="text-[9.5px] bg-slate-900 text-slate-400 px-2 py-0.5 rounded border border-slate-800 font-mono">
                     ID #{selectedStudent.id}
@@ -952,12 +952,12 @@ export default function GnnCollaborationLab() {
                     {/* predicted gauges */}
                     <div className="grid grid-cols-2 gap-3.5 bg-slate-900 p-3 rounded-lg border border-slate-850">
                       <div>
-                        <span className="text-[9px] text-slate-550 text-slate-500 block font-mono uppercase tracking-wider">Burnout Index</span>
+                        <span className="text-[9px] text-slate-550 text-slate-500 block font-mono uppercase tracking-wider">Índice de esgotamento</span>
                         <div className="flex items-baseline space-x-1 mt-0.5">
                           <strong className={`text-xl font-bold font-mono ${pred.burnout > 0.65 ? 'text-red-400' : pred.burnout > 0.4 ? 'text-amber-400' : 'text-emerald-400'}`}>
                             {Math.round(pred.burnout * 100)}%
                           </strong>
-                          <span className="text-[9.5px] text-slate-500">Predicted</span>
+                          <span className="text-[9.5px] text-slate-500">Previsto</span>
                         </div>
                         <div className="w-full bg-slate-950 h-1.5 rounded-full overflow-hidden mt-1.5 check">
                           <div 
@@ -968,12 +968,12 @@ export default function GnnCollaborationLab() {
                       </div>
 
                       <div>
-                        <span className="text-[9px] text-slate-550 text-slate-500 block font-mono uppercase tracking-wider">Engagement Level</span>
+                        <span className="text-[9px] text-slate-550 text-slate-500 block font-mono uppercase tracking-wider">Nível de engajamento</span>
                         <div className="flex items-baseline space-x-1 mt-0.5">
                           <strong className="text-xl font-bold font-mono text-indigo-400">
                             {Math.round(pred.engagement * 100)}%
                           </strong>
-                          <span className="text-[9.5px] text-slate-500">Predicted</span>
+                          <span className="text-[9.5px] text-slate-500">Previsto</span>
                         </div>
                         <div className="w-full bg-slate-950 h-1.5 rounded-full overflow-hidden mt-1.5 check">
                           <div 
@@ -986,18 +986,18 @@ export default function GnnCollaborationLab() {
 
                     {/* Raw Biometric Attributes */}
                     <div className="space-y-2">
-                      <span className="text-[9px] text-slate-500 font-mono font-bold block uppercase tracking-wider mb-1.5">Baseline wear states input</span>
+                      <span className="text-[9px] text-slate-500 font-mono font-bold block uppercase tracking-wider mb-1.5">Dados iniciais dos sensores</span>
                       <div className="grid grid-cols-3 gap-2">
                         <div className="bg-slate-900/60 p-2 rounded border border-slate-850 text-center">
-                          <span className="text-[8px] text-slate-500 font-mono block uppercase">Fatigue index</span>
+                          <span className="text-[8px] text-slate-500 font-mono block uppercase">Índice de fadiga</span>
                           <strong className="text-xs text-sky-400 font-bold block mt-0.5">{(selectedStudent.features[0]*100).toFixed(0)}%</strong>
                         </div>
                         <div className="bg-slate-900/60 p-2 rounded border border-slate-850 text-center">
-                          <span className="text-[8px] text-slate-500 font-mono block uppercase">Anxiety state</span>
+                          <span className="text-[8px] text-slate-500 font-mono block uppercase">Estado de ansiedade</span>
                           <strong className="text-xs text-rose-400 font-bold block mt-0.5">{(selectedStudent.features[1]*100).toFixed(0)}%</strong>
                         </div>
                         <div className="bg-slate-900/60 p-2 rounded border border-slate-850 text-center">
-                          <span className="text-[8px] text-slate-500 font-mono block uppercase">Active input</span>
+                          <span className="text-[8px] text-slate-500 font-mono block uppercase">Entrada ativa</span>
                           <strong className="text-xs text-emerald-450 text-emerald-400 font-bold block mt-0.5">{(selectedStudent.features[2]*100).toFixed(0)}%</strong>
                         </div>
                       </div>
@@ -1005,12 +1005,12 @@ export default function GnnCollaborationLab() {
 
                     {/* Adjacent Connections List */}
                     <div className="space-y-1.5">
-                      <span className="text-[9px] text-slate-500 font-mono font-bold block uppercase tracking-wider">COLLABORATION EDGE MATRIX</span>
+                      <span className="text-[9px] text-slate-500 font-mono font-bold block uppercase tracking-wider">MATRIZ DE CONEXÕES COLABORATIVAS</span>
                       <div className="bg-slate-900 rounded-lg p-2 max-h-[110px] overflow-y-auto scrollbar-thin space-y-1.5">
                         {(() => {
                           const studentEdges = edges.filter(e => e.from === selectedStudent.id || e.to === selectedStudent.id);
                           if (studentEdges.length === 0) {
-                            return <p className="text-[10px] text-slate-500 text-center py-2 italic font-mono">No active collaborative edges found (Isolate node).</p>;
+                            return <p className="text-[10px] text-slate-500 text-center py-2 italic font-mono">Nenhuma conexão colaborativa ativa (nó isolado).</p>;
                           }
                           return studentEdges.map((e, index) => {
                             const partnerId = e.from === selectedStudent.id ? e.to : e.from;
@@ -1050,7 +1050,7 @@ export default function GnnCollaborationLab() {
 
           {/* Interactive Core Relationship Matrix Editor */}
           <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 shadow-xl">
-            <span className="text-[10px] text-slate-400 font-mono font-bold uppercase tracking-wider block">Topology modifier</span>
+            <span className="text-[10px] text-slate-400 font-mono font-bold uppercase tracking-wider block">Editor de topologia</span>
             <h3 className="font-bold text-slate-200 text-xs mb-3 flex items-center gap-1.5">
               <Plus className="h-4 w-4 text-indigo-400" />
               Build/Tweak Collaborative Relationships
@@ -1059,7 +1059,7 @@ export default function GnnCollaborationLab() {
             <form onSubmit={handleAddEdge} className="space-y-3.5">
               <div className="grid grid-cols-2 gap-2 text-xs">
                 <div>
-                  <label className="text-[9px] text-slate-500 font-mono block mb-1">Source Node</label>
+                  <label className="text-[9px] text-slate-500 font-mono block mb-1">Nó de origem</label>
                   <select
                     value={edgeForm.from}
                     onChange={(e) => setEdgeForm(prev => ({ ...prev, from: e.target.value }))}
@@ -1072,7 +1072,7 @@ export default function GnnCollaborationLab() {
                 </div>
 
                 <div>
-                  <label className="text-[9px] text-slate-500 font-mono block mb-1">Target Node (Collaborator)</label>
+                  <label className="text-[9px] text-slate-500 font-mono block mb-1">Nó de destino (colaborador)</label>
                   <select
                     value={edgeForm.to}
                     onChange={(e) => setEdgeForm(prev => ({ ...prev, to: e.target.value }))}
@@ -1087,7 +1087,7 @@ export default function GnnCollaborationLab() {
 
               <div className="grid grid-cols-2 gap-2 text-xs">
                 <div>
-                  <label className="text-[9px] text-slate-500 font-mono block mb-1">Edge Density (1-10)</label>
+                  <label className="text-[9px] text-slate-500 font-mono block mb-1">Intensidade da conexão (1–10)</label>
                   <input
                     type="number"
                     min="1"
@@ -1099,15 +1099,15 @@ export default function GnnCollaborationLab() {
                 </div>
 
                 <div>
-                  <label className="text-[9px] text-slate-500 font-mono block mb-1">Affinity type</label>
+                  <label className="text-[9px] text-slate-500 font-mono block mb-1">Tipo de afinidade</label>
                   <select
                     value={edgeForm.type}
                     onChange={(e) => setEdgeForm(prev => ({ ...prev, type: e.target.value as any }))}
                     className="w-full bg-slate-950 border border-slate-850 text-slate-200 text-[11px] p-2.5 rounded focus:outline-none focus:border-indigo-500"
                   >
-                    <option value="mentoring">Coaching / Peer tutoring</option>
-                    <option value="brainstorm">Active collaboration</option>
-                    <option value="passive">Passive proximity / Sitting alignment</option>
+                    <option value="mentoring">Orientação / tutoria entre colegas</option>
+                    <option value="brainstorm">Colaboração ativa</option>
+                    <option value="passive">Proximidade / posição dos assentos</option>
                   </select>
                 </div>
               </div>
@@ -1153,14 +1153,14 @@ export default function GnnCollaborationLab() {
                 />
                 <Legend iconSize={10} wrapperStyle={{ fontSize: '10px' }} />
                 <Bar dataKey="Burnout Risk" fill="#ef4444" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="Engagement Level" fill="#3b82f6" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="Nível de engajamento" fill="#3b82f6" radius={[4, 4, 0, 0]} />
                 <Bar dataKey="Spillover Spill" fill="#a855f7" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
 
           <div className="bg-slate-900 p-2.5 rounded-lg border border-slate-850 text-[10.5px] text-slate-400 mt-3 leading-relaxed">
-            <span className="font-mono text-[9px] text-slate-500 font-bold block mb-0.5">TOPOLOGICAL OBSERVATION ANALYSIS</span>
+            <span className="font-mono text-[9px] text-slate-500 font-bold block mb-0.5">ANÁLISE DE OBSERVAÇÃO TOPOLÓGICA</span>
             <span className="text-slate-350">
               {intensity > 7 
                 ? 'Critically intense collaborative factors logged. Team Beta displays elevated burnout cascades. Instruct team coaches to mitigate fatigue spillover immediately.' 
@@ -1174,7 +1174,7 @@ export default function GnnCollaborationLab() {
           <div>
             <div className="flex items-center justify-between border-b border-slate-900 pb-2 mb-3">
               <div>
-                <span className="text-[10px] text-slate-400 font-mono font-bold uppercase tracking-wider block">Bio-Adaptive Seating Coach</span>
+                <span className="text-[10px] text-slate-400 font-mono font-bold uppercase tracking-wider block">Orientador bioadaptativo de disposição da turma</span>
                 <h3 className="font-extrabold text-slate-100 text-xs flex items-center gap-1.5">
                   <Sparkles className="h-4 w-4 text-yellow-450 text-indigo-400" />
                   Gemini Team Topology Reorganization Advisor
@@ -1192,7 +1192,7 @@ export default function GnnCollaborationLab() {
                 <div className="text-center py-10 space-y-3">
                   <Brain className="h-10 w-10 text-slate-600 mx-auto stroke-[1.2] animate-pulse" />
                   <div className="space-y-1">
-                    <h5 className="text-xs text-slate-300 font-bold">Assess Team Networks</h5>
+                    <h5 className="text-xs text-slate-300 font-bold">Avaliar redes das equipes</h5>
                     <p className="text-[10px] text-slate-500 max-w-sm mx-auto leading-relaxed">
                       Launch an AI analytical evaluation of student relationships to insulate at-risk students, contain stress cascades, and establish optimal break schedules.
                     </p>
@@ -1221,12 +1221,12 @@ export default function GnnCollaborationLab() {
               {isAdvisorLoading ? (
                 <>
                   <RefreshCw className="h-3.5 w-3.5 animate-spin" />
-                  <span>Structuring charts...</span>
+                  <span>Organizando gráficos...</span>
                 </>
               ) : (
                 <>
                   <Sparkles className="h-3.5 w-3.5 text-yellow-400" />
-                  <span>Request Reorganization Advice</span>
+                  <span>Solicitar sugestão de reorganização</span>
                 </>
               )}
             </button>
@@ -1239,7 +1239,7 @@ export default function GnnCollaborationLab() {
       <div className="bg-slate-950 border border-slate-855 rounded-xl p-3.5 mt-4">
         <div className="flex items-center space-x-2 border-b border-slate-900 pb-2 mb-2.5">
           <div className="h-2 w-2 rounded-full bg-indigo-500 animate-pulse"></div>
-          <span className="text-[9.5px] text-slate-400 font-mono font-bold uppercase tracking-wider">Topological Simulation Telemetry Traces</span>
+          <span className="text-[9.5px] text-slate-400 font-mono font-bold uppercase tracking-wider">Registros da simulação topológica</span>
         </div>
         
         <div className="font-mono text-[9.5px] space-y-1 bg-slate-900/45 p-2 rounded max-h-[110px] overflow-y-auto scrollbar-thin select-text">
@@ -1258,7 +1258,7 @@ export default function GnnCollaborationLab() {
             <div className="space-y-1 relative z-10">
               <span className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full bg-amber-955/35 border border-amber-900/60 text-[9px] font-mono font-bold text-amber-400 uppercase tracking-wider">
                 <Sparkles className="h-3 w-3 text-amber-400" />
-                <span>Complementary Cognitive Clustering</span>
+                <span>Agrupamento cognitivo complementar</span>
               </span>
               <h3 className="text-sm font-bold text-slate-100 flex items-center gap-1.5 uppercase font-mono">
                 AI Cognitive Grouping & Seating Recommender
@@ -1274,7 +1274,7 @@ export default function GnnCollaborationLab() {
                 className="px-4 py-2 text-xs font-bold bg-amber-600 hover:bg-amber-500 text-slate-950 rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer border border-none"
               >
                 <Users className="h-3.5 w-3.5" />
-                <span>Apply Seating Assemblies</span>
+                <span>Aplicar distribuição de assentos</span>
               </button>
               <button
                 type="button"
@@ -1282,7 +1282,7 @@ export default function GnnCollaborationLab() {
                 className="px-4 py-2 text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer border border-none"
               >
                 <Zap className="h-3.5 w-3.5" />
-                <span>Establish All Tutoring Bridges</span>
+                <span>Criar conexões de tutoria</span>
               </button>
             </div>
             {/* Ambient subtle yellow glow */}
@@ -1322,19 +1322,19 @@ export default function GnnCollaborationLab() {
                         <span className="text-xs font-bold text-slate-100 font-sans">
                           Table {grp === 'Alpha' ? 'Alpha Table 1' : grp === 'Beta' ? 'Beta Table 2' : 'Gamma Table 3'}
                         </span>
-                        <span className="text-[9px] font-mono text-slate-500">(Suggested Assembly)</span>
+                        <span className="text-[9px] font-mono text-slate-500">(Distribuição sugerida)</span>
                       </div>
 
                       {/* Score Comparison Badge */}
                       <div className="flex items-center space-x-2 text-xs">
                         {/* Current Score */}
                         <div className="bg-slate-900 px-2 py-0.5 rounded border border-slate-800 text-[9.5px] text-slate-400 flex items-center gap-1 font-mono">
-                          <span>Current Balance:</span>
+                          <span>Equilíbrio atual:</span>
                           <span className="font-bold text-slate-300">{currScore}%</span>
                         </div>
                         {/* Suggested Score */}
                         <div className="bg-amber-950/20 px-2 py-0.5 rounded border border-amber-900/40 text-[9.5px] text-amber-400 flex items-center gap-1 font-mono">
-                          <span>Suggested Balance:</span>
+                          <span>Equilíbrio sugerido:</span>
                           <strong className="font-bold flex items-center gap-0.5">
                             {suggScore}%
                             <TrendingUp className="h-3 w-3 text-emerald-400" />
@@ -1386,13 +1386,13 @@ export default function GnnCollaborationLab() {
 
                             {/* Seating change log */}
                             <div className="flex justify-between items-center text-[8.5px] mt-1 text-slate-500">
-                              <span>Role: <strong className="text-slate-400">{student.role}</strong></span>
+                              <span>Função: <strong className="text-slate-400">{student.role}</strong></span>
                               {hasMoved ? (
                                 <span className="text-amber-400 font-semibold px-1 rounded bg-amber-950/20">
                                   Transfer from {currentSeat}
                                 </span>
                               ) : (
-                                <span className="text-slate-500">Stable</span>
+                                <span className="text-slate-500">Estável</span>
                               )}
                             </div>
                           </div>
@@ -1430,7 +1430,7 @@ export default function GnnCollaborationLab() {
                               {bridge.type}
                             </span>
                             <div className="flex items-center space-x-1 text-slate-4002 mt-0.5">
-                              <span className="text-[9px] text-slate-400 font-mono">Synergy Rating:</span>
+                              <span className="text-[9px] text-slate-400 font-mono">Índice de sinergia:</span>
                               <strong className="text-[10.5px] font-bold text-emerald-400 font-mono">92%</strong>
                             </div>
                           </div>
@@ -1485,7 +1485,7 @@ export default function GnnCollaborationLab() {
 
                 <div className="border-t border-slate-900 pt-3 mt-4">
                   <div className="bg-slate-900 p-2.5 rounded-lg border border-slate-850 text-[10px] text-slate-450 text-slate-400 space-y-1">
-                    <strong className="text-slate-300 block uppercase text-[8.5px] font-mono tracking-wider">TOPOLOGICAL GNN OPTIMIZATION MATRIX</strong>
+                    <strong className="text-slate-300 block uppercase text-[8.5px] font-mono tracking-wider">MATRIZ DE OTIMIZAÇÃO TOPOLÓGICA GNN</strong>
                     <p className="leading-snug">
                       Connecting cognitive dyads with high resonance weight (<code className="text-indigo-400">w_ij = 10</code>) forces GNN layers to aggregate buffering effects, balancing learning stress diffusion across adjacent nodes.
                     </p>
