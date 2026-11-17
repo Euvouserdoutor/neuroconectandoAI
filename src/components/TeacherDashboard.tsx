@@ -179,7 +179,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
       const d = new Date();
       d.setDate(d.getDate() - i);
       const dayName = daysOfWeek[d.getDay()];
-      const dateStr = d.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric' });
+      const dateStr = d.toLocaleDateString('pt-BR', { month: 'numeric', day: 'numeric' });
       
       // Look for a real matching wellness Check-in document from Firestore
       const matchingLog = wellnessLogs.find(log => {
@@ -934,7 +934,7 @@ export default function TeacherDashboard({ cognitive, biometric }: TeacherDashbo
                         studentName: ds.studentName,
                         type: 'MANUAL DISTRESS / RESCUE SIGNAL',
                         severity: 'CRITICAL',
-                        timestamp: ds.createdAt ? new Date(ds.createdAt).toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'}) : 'Agora mesmo',
+                        timestamp: ds.createdAt ? new Date(ds.createdAt).toLocaleTimeString('pt-BR', {hour: '2-digit', minute: '2-digit'}) : 'Agora mesmo',
                         details: `Student manually pressed 'Ajuda de emergência' on headband console. Message details: "${ds.message}". Biometric Context -> Stress: ${ds.stressSnapshot || 'N/A'}, Attention Focus: ${ds.attentionSnapshot || 'N/A'}, Heart Rate: ${ds.heartRateSnapshot ? ds.heartRateSnapshot + ' BPM' : 'N/A'}.`,
                         recom: 'Deploy Immediate Intervention. Initiate active dialogue link or quiet desk check-in.'
                       });
