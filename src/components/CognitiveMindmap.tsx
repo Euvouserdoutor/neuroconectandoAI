@@ -122,7 +122,7 @@ export default function CognitiveMindmap({ cognitive, setCognitive, biometric, s
       </div>
 
       <p className="text-[11px] text-slate-400 leading-relaxed">
-        Input any complex research query. Gemini translates the topic into a structured, custom memory hierarchy mapped directly against your live brainwave band receptive states.
+        Informe um tema de pesquisa. O Gemini organiza os conceitos em um mapa mental adaptado ao contexto de estudo.
       </p>
 
       {/* Inputs controls */}
@@ -234,7 +234,7 @@ export default function CognitiveMindmap({ cognitive, setCognitive, biometric, s
                     {/* Description */}
                     <div className="space-y-1">
                       <span className="text-[9px] font-bold text-indigo-400 uppercase tracking-wide flex items-center gap-1">
-                        <Eye className="h-3.5 w-3.5 text-indigo-400" /> Explanation Model
+                        <Eye className="h-3.5 w-3.5 text-indigo-400" /> Modelo de explicação
                       </span>
                       <p className="text-[11px] leading-relaxed text-slate-350">
                         {selectedNode.description}
@@ -254,15 +254,15 @@ export default function CognitiveMindmap({ cognitive, setCognitive, biometric, s
                     {/* suggested break */}
                     <div className="bg-pink-950/20 border border-pink-900/20 p-3 rounded-lg space-y-2">
                       <span className="text-[9.5px] font-bold text-pink-400 uppercase tracking-wide flex items-center gap-1">
-                        <Flame className="h-3.5 w-3.5 text-pink-500 animate-pulse" /> Live Brain-State Conditioner
+                        <Flame className="h-3.5 w-3.5 text-pink-500 animate-pulse" /> Indicadores cognitivos em tempo real
                       </span>
                       <p className="text-[10px] leading-relaxed text-slate-300">
-                        Wearable feedback suggests performing: <strong className="text-slate-100">{selectedNode.suggestedBreakActivity}</strong>. This relaxes focal tension back to resting flow coordinates.
+                        Wearable feedback suggests performing: <strong className="text-slate-100">{selectedNode.suggestedBreakActivity}</strong>. Faça uma pausa confortável antes de retomar a atividade.
                       </p>
 
                       {breakPerformed === selectedNode.id ? (
                         <div className="bg-emerald-950/40 border border-emerald-900/60 p-2 rounded text-center text-[9px] font-bold text-emerald-400 flex items-center justify-center gap-1">
-                          <CheckCircle className="h-3.5 w-3.5" /> STRETCH COMPLETED - STRESS RESET DETECTED
+                          <CheckCircle className="h-3.5 w-3.5" /> ALONGAMENTO CONCLUÍDO — EXERCÍCIO FINALIZADO
                         </div>
                       ) : (
                         <button
