@@ -291,8 +291,8 @@ export default function DailyAcademicGoal({ cognitive, biometric }: DailyAcademi
           <div className="flex items-center space-x-2">
             <BookMarked className="h-5 w-5 text-indigo-400" />
             <div>
-              <h3 className="font-bold text-slate-100 text-sm">Daily Academic Goal</h3>
-              <p className="text-[10px] text-slate-400">Log study progress against custom targets</p>
+              <h3 className="font-bold text-slate-100 text-sm">Meta diária de estudos</h3>
+              <p className="text-[10px] text-slate-400">Acompanhe seus estudos conforme metas personalizadas</p>
             </div>
           </div>
           <div className="flex items-center gap-2">
@@ -311,7 +311,7 @@ export default function DailyAcademicGoal({ cognitive, biometric }: DailyAcademi
               title="Optimize workload using biometric AI"
             >
               <Sparkles className="h-3 w-3 animate-pulse text-indigo-400" />
-              <span>AI Optimizer</span>
+              <span>Otimizador com IA</span>
               {isOptimizerExpanded ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
             </button>
           </div>
@@ -332,8 +332,8 @@ export default function DailyAcademicGoal({ cognitive, biometric }: DailyAcademi
                   <div className="flex items-center gap-2">
                     <Brain className="h-4 w-4 text-indigo-400 animate-pulse" />
                     <div>
-                      <h4 className="text-[10.5px] font-bold text-white uppercase tracking-wider">AI Workload & Pacing Optimizer</h4>
-                      <p className="text-[8px] text-indigo-300 font-mono">Real-Time EEG Biometric Adaptation</p>
+                      <h4 className="text-[10.5px] font-bold text-white uppercase tracking-wider">Otimizador de carga de estudos e ritmo com IA</h4>
+                      <p className="text-[8px] text-indigo-300 font-mono">Adaptação biométrica por EEG em tempo real</p>
                     </div>
                   </div>
                   <span className={`px-1.5 py-0.5 rounded text-[8px] font-mono font-bold uppercase ${
@@ -381,7 +381,7 @@ export default function DailyAcademicGoal({ cognitive, biometric }: DailyAcademi
                       className="w-full bg-indigo-650 hover:bg-indigo-550 text-white font-bold py-1.5 rounded-md flex items-center justify-center gap-1.5 transition-all text-[9.5px] uppercase cursor-pointer tracking-wider"
                     >
                       <RefreshCw className="h-3.5 w-3.5 animate-spin-slow" />
-                      <span>Calibrate Cognitive Workload</span>
+                      <span>Ajustar carga cognitiva</span>
                     </button>
                   </div>
                 )}
@@ -389,7 +389,7 @@ export default function DailyAcademicGoal({ cognitive, biometric }: DailyAcademi
                 {isOptimizing && (
                   <div className="py-6 flex flex-col items-center justify-center text-center space-y-2">
                     <RefreshCw className="h-6 w-6 text-indigo-400 animate-spin" />
-                    <span className="text-[10px] text-indigo-300 font-mono">Synthesizing brain metrics and study loads...</span>
+                    <span className="text-[10px] text-indigo-300 font-mono">Analisando métricas e carga de estudos...</span>
                   </div>
                 )}
 
@@ -398,18 +398,18 @@ export default function DailyAcademicGoal({ cognitive, biometric }: DailyAcademi
                     {/* Computed Stats HUD */}
                     <div className="bg-slate-950/60 p-2.5 rounded-lg border border-slate-850/70 space-y-2">
                       <div className="flex justify-between items-center text-[9.5px]">
-                        <span className="text-slate-400 font-semibold uppercase">AI Recommended Goal</span>
+                        <span className="text-slate-400 font-semibold uppercase">Meta recomendada pela IA</span>
                         <span className="text-indigo-400 font-bold font-mono">{optimizationResult.targetMins} Mins</span>
                       </div>
                       <div className="flex justify-between items-center text-[9.5px] border-t border-slate-900 pt-1.5">
-                        <span className="text-slate-400 font-semibold uppercase">Focus Topic</span>
+                        <span className="text-slate-400 font-semibold uppercase">Tema de estudo</span>
                         <span className="text-emerald-450 text-emerald-400 font-bold truncate max-w-[140px]">{optimizationResult.topicName}</span>
                       </div>
                     </div>
 
                     {/* Milestones Checklist */}
                     <div className="space-y-2">
-                      <span className="text-[8.5px] font-bold text-slate-500 uppercase tracking-widest block font-mono">Workload Pacing Milestones</span>
+                      <span className="text-[8.5px] font-bold text-slate-500 uppercase tracking-widest block font-mono">Etapas do plano de estudos</span>
                       <div className="space-y-1.5 max-h-36 overflow-y-auto pr-1 scrollbar-thin">
                         {optimizationResult.steps.map((step) => (
                           <div
@@ -458,7 +458,7 @@ export default function DailyAcademicGoal({ cognitive, biometric }: DailyAcademi
                         className="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-1.5 rounded-lg text-[9px] uppercase tracking-wider flex items-center justify-center gap-1 cursor-pointer animate-pulse"
                       >
                         <CheckCircle2 className="h-3 w-3" />
-                        <span>Apply to Timer</span>
+                        <span>Aplicar ao temporizador</span>
                       </button>
                     </div>
                   </div>
@@ -537,7 +537,7 @@ export default function DailyAcademicGoal({ cognitive, biometric }: DailyAcademi
                   className="flex items-center justify-center gap-1 bg-slate-950 border border-slate-800 text-slate-250 px-2 py-2 rounded-lg text-xs font-semibold hover:border-indigo-600 hover:bg-slate-900 disabled:opacity-30 disabled:pointer-events-none cursor-pointer transition-colors"
                 >
                   <Plus className="h-3 w-3 text-indigo-450" />
-                  <span>+5 Mins</span>
+                  <span>+5 min</span>
                 </button>
                 <button
                   type="button"
@@ -546,7 +546,7 @@ export default function DailyAcademicGoal({ cognitive, biometric }: DailyAcademi
                   className="flex items-center justify-center gap-1 bg-slate-950 border border-slate-800 text-slate-250 px-2 py-2 rounded-lg text-xs font-semibold hover:border-indigo-600 hover:bg-slate-900 disabled:opacity-30 disabled:pointer-events-none cursor-pointer transition-colors"
                 >
                   <Plus className="h-3.5 w-3.5 text-indigo-455" />
-                  <span>+15 Mins</span>
+                  <span>+15 min</span>
                 </button>
               </div>
               
@@ -558,7 +558,7 @@ export default function DailyAcademicGoal({ cognitive, biometric }: DailyAcademi
                   className="flex-1 flex items-center justify-center gap-1 bg-indigo-600 hover:bg-indigo-500 text-slate-100 px-2.5 py-2 rounded-lg text-xs font-bold disabled:opacity-30 disabled:pointer-events-none cursor-pointer transition-colors"
                 >
                   <CheckCircle2 className="h-3.5 w-3.5" />
-                  <span>Mark Complete</span>
+                  <span>Marcar como concluído</span>
                 </button>
                 <button
                   type="button"
@@ -611,7 +611,7 @@ export default function DailyAcademicGoal({ cognitive, biometric }: DailyAcademi
                 </svg>
 
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-                  <span className="text-[9px] text-slate-550 font-bold uppercase tracking-wider leading-none mb-0.5">Studied</span>
+                  <span className="text-[9px] text-slate-550 font-bold uppercase tracking-wider leading-none mb-0.5">Estudado</span>
                   <span className="text-lg font-bold text-slate-100 leading-none">
                     {studiedTime}m
                   </span>
