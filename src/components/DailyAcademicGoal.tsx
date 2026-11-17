@@ -149,7 +149,7 @@ export default function DailyAcademicGoal({ cognitive, biometric }: DailyAcademi
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           message: promptText,
-          topic: "Academic Workload Optimization & Bio-Pacing",
+          topic: "Otimização da carga de estudos e do ritmo",
           cognitiveState: { attention: att, stress: str, fatigue: fat }
         })
       });
@@ -188,7 +188,7 @@ export default function DailyAcademicGoal({ cognitive, biometric }: DailyAcademi
         // Ensure we have at least some steps or use high-quality adaptive fallbacks
         const finalSteps = steps.length >= 2 ? steps : [
           { id: 'opt-step-1', label: `Focused Study Interval on ${topic} (${Math.round(targetMins * 0.7)}m)`, checked: false, type: 'focus' },
-          { id: 'opt-step-2', label: 'Biometric Posture and Core Stretch (5m)', checked: false, type: 'break' },
+          { id: 'opt-step-2', label: 'Ajuste postural e alongamento (5 min)', checked: false, type: 'break' },
           { id: 'opt-step-3', label: 'Active Memory Retrieval Quiz Assessment (10m)', checked: false, type: 'focus' },
           { id: 'opt-step-4', label: 'Vagal Breathing Downregulation & Rest (5m)', checked: false, type: 'break' }
         ];
@@ -251,19 +251,19 @@ export default function DailyAcademicGoal({ cognitive, biometric }: DailyAcademi
   };
 
   // Dynamic feedback copy based on study progress level
-  let motivationText = "Time to lock in! Setup your goal above.";
+  let motivationText = "Defina sua meta de estudos acima para começar.";
   let statusColor = "text-indigo-400";
   if (percentage === 0) {
-    motivationText = "Set study goals & click +5m/+15m to track!";
+    motivationText = "Defina as metas e use +5 min/+15 min para acompanhar.";
     statusColor = "text-slate-400";
   } else if (percentage < 40) {
-    motivationText = "Getting started is the hardest part. You’ve got this!";
+    motivationText = "Começar é o primeiro passo. Siga seu ritmo!";
     statusColor = "text-sky-400";
   } else if (percentage < 75) {
-    motivationText = "Superb focus! You are in the optimal cognitive flow zone.";
+    motivationText = "Ótima concentração! Você está na faixa ideal do exercício.";
     statusColor = "text-emerald-400";
   } else if (percentage < 100) {
-    motivationText = "Almost there! One final push to complete your module goal.";
+    motivationText = "Falta pouco! Conclua a meta do módulo.";
     statusColor = "text-indigo-400";
   } else {
     motivationText = "Fantastic work! Daily Academic Goal successfully achieved! 🎯";
@@ -341,8 +341,8 @@ export default function DailyAcademicGoal({ cognitive, biometric }: DailyAcademi
                     isLowAttention ? 'bg-amber-950 border border-amber-800 text-amber-400' :
                     'bg-slate-950 border border-slate-850 text-slate-400'
                   }`}>
-                    {cognitive?.stress === 'High' ? 'Stress Adapt: ON' :
-                     cognitive?.attention === 'Low' ? 'Alertness Boost: ON' :
+                    {cognitive?.stress === 'High' ? 'Adaptação ao estresse: ATIVA' :
+                     cognitive?.attention === 'Low' ? 'Reforço de atenção: ATIVO' :
                      'Optimal Pacing'}
                   </span>
                 </div>
@@ -478,7 +478,7 @@ export default function DailyAcademicGoal({ cognitive, biometric }: DailyAcademi
               type="text"
               value={topic}
               onChange={(e) => setTopic(e.target.value)}
-              placeholder="e.g. Brain plasticity, Fourier Transforms..."
+              placeholder="Ex.: plasticidade cerebral, transformada de Fourier..."
               className="w-full bg-slate-950 border border-slate-850 focus:border-indigo-500 focus:outline-none px-3 py-2 rounded-lg text-xs text-slate-100 placeholder-slate-650 transition-colors"
             />
           </div>
@@ -563,7 +563,7 @@ export default function DailyAcademicGoal({ cognitive, biometric }: DailyAcademi
                 <button
                   type="button"
                   onClick={handleReset}
-                  title="Reset study sessions"
+                  title="Redefinir sessões de estudo"
                   className="flex items-center justify-center border border-slate-850 hover:bg-slate-850 text-slate-400 hover:text-slate-205 p-2 rounded-lg text-xs cursor-pointer transition-all"
                 >
                   <RotateCcw className="h-3.5 w-3.5" />
