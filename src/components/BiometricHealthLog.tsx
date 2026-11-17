@@ -772,7 +772,7 @@ export default function BiometricHealthLog() {
               </span>
             </h3>
             <p className="text-[9px] text-slate-400 uppercase tracking-wider font-semibold">
-              Advanced Neuro-Cardiovascular & Stress Analytics
+              Análise avançada neurocardiovascular e de estresse
             </p>
           </div>
         </div>
@@ -866,7 +866,7 @@ export default function BiometricHealthLog() {
                 : 'text-slate-500 hover:text-slate-300'
             }`}
           >
-            All Parameters
+            Todos os parâmetros
           </button>
           <button
             onClick={() => setActiveTimelineFilter('hr')}
@@ -981,7 +981,7 @@ export default function BiometricHealthLog() {
                 <span className="text-[7px] text-slate-500 font-mono uppercase font-bold">Estado de fluxo</span>
               </div>
               <div className="text-[7px] text-slate-400 font-sans leading-tight">
-                Points with calm heart rate & active mind
+                Pontos com frequência cardíaca tranquila e atividade cognitiva
               </div>
             </div>
 
@@ -997,7 +997,7 @@ export default function BiometricHealthLog() {
                 <span className="text-[7px] text-slate-500 font-mono uppercase font-bold">Sessões</span>
               </div>
               <div className="text-[7px] text-slate-400 font-sans leading-tight">
-                Risk parameters showing strain & tension
+                Indicadores simulados de sobrecarga e tensão
               </div>
             </div>
 
@@ -1193,7 +1193,7 @@ export default function BiometricHealthLog() {
               Weekly Circadian Autonomic Balance
             </h4>
             <p className="text-[10px] text-slate-400 leading-normal">
-              Continuous multi-parameter mapping processes heart-rate variability (HRV) and skin conductance logs to trace your neurological activation patterns over the 7-day period.
+              O acompanhamento de múltiplos parâmetros reúne registros simulados de VFC e GSR para apresentar tendências ao longo dos últimos sete dias.
             </p>
           </div>
 
@@ -1262,7 +1262,7 @@ export default function BiometricHealthLog() {
               <div className="flex items-center justify-between text-[9px] font-bold text-slate-200">
                 <span className="flex items-center gap-1.5 text-emerald-400">
                   <Flame className="h-3.5 w-3.5 text-emerald-400" />
-                  COGNITIVE EFFICIENCY SCORE
+                  ÍNDICE DE EFICIÊNCIA COGNITIVA
                 </span>
                 <span className="text-slate-400 font-mono">FLUXO ATIVO</span>
               </div>
@@ -1275,12 +1275,12 @@ export default function BiometricHealthLog() {
               <div className="flex items-center justify-between text-[9px] font-bold text-slate-200">
                 <span className="flex items-center gap-1.5 text-rose-400">
                   <ShieldAlert className="h-3.5 w-3.5 text-rose-400" />
-                  STRESS COMPLIANCE INDEX
+                  ÍNDICE DE REGULAÇÃO DO ESTRESSE
                 </span>
                 <span className="text-slate-400 font-mono">REGULAÇÃO AUTONÔMICA</span>
               </div>
               <p className="text-[9.5px] text-slate-400 leading-relaxed">
-                Your parasympathetic restorative recovery slots represent <span className="text-blue-400 font-mono font-bold">{statePercentages.rest}%</span>. Entretanto, picos de sobrecarga ocupam <span className="text-rose-400 font-mono font-bold">{statePercentages.stress}%</span> of your PM study sessions. Activating physical pacing and rhythmic diaphragmatic breathing offsets these stressors.
+                Os períodos simulados de recuperação representam <span className="text-blue-400 font-mono font-bold">{statePercentages.rest}%</span>. Entretanto, picos de sobrecarga ocupam <span className="text-rose-400 font-mono font-bold">{statePercentages.stress}%</span> das sessões de estudo à tarde. Pausas e exercícios respiratórios podem ajudar na organização da rotina.
               </p>
             </div>
           </div>
@@ -1300,25 +1300,25 @@ export default function BiometricHealthLog() {
           
           {activeDashboardTab === 'timeline' && (
             <p>
-              When cognitive loads surge during afternoon (PM) review runs, average Heart Rate elevates toward <span className="text-rose-400 font-bold font-mono">{stats.heartRate.max} BPM</span>, enquanto a VFC cai para <span className="text-emerald-400 font-bold font-mono">{stats.hrv.min} ms</span>. This demonstrates sympathetic branch dominance under active academic strain.
+              Durante revisões à tarde com maior carga cognitiva, a frequência cardíaca média simulada aproxima-se de <span className="text-rose-400 font-bold font-mono">{stats.heartRate.max} BPM</span>, enquanto a VFC cai para <span className="text-emerald-400 font-bold font-mono">{stats.hrv.min} ms</span>. No modelo, isso indica maior ativação autonômica.
             </p>
           )}
 
           {activeDashboardTab === 'scatter' && (
             <p>
-              The scatter distribution identifies high density in the <span className="text-emerald-400 font-bold">Faixa de concentração tranquila</span> (frequência cardíaca baixa e carga elevada). Entretanto, algumas tardes apresentam valores na faixa de <span className="text-rose-400 font-bold">Quadrante de sobrecarga de estresse</span>. We recommend pairing heavy learning runs with the **Coherence Breather** to sustain flow.
+              A distribuição dos pontos mostra maior concentração em <span className="text-emerald-400 font-bold">Faixa de concentração tranquila</span> (frequência cardíaca baixa e carga elevada). Entretanto, algumas tardes apresentam valores na faixa de <span className="text-rose-400 font-bold">Quadrante de sobrecarga de estresse</span>. Considere intercalar atividades exigentes com pausas e exercícios de respiração.
             </p>
           )}
 
           {activeDashboardTab === 'chronotype' && (
             <p>
-              Your peak intellectual output window occurs during the <span className="text-indigo-400 font-bold">Períodos da manhã</span> com potencial ideal de concentração de <span className="text-indigo-400 font-black font-mono">{chronotypeData[0].cognitiveLoad}%</span>, coupled with low physical stress. Schedule highly demanding conceptual subjects during AM, leaving EV for light revision.
+              O período de melhor desempenho simulado ocorre <span className="text-indigo-400 font-bold">Períodos da manhã</span> com potencial ideal de concentração de <span className="text-indigo-400 font-black font-mono">{chronotypeData[0].cognitiveLoad}%</span>, com menor estresse físico. Você pode reservar esse período para temas mais exigentes.
             </p>
           )}
 
           {activeDashboardTab === 'states' && (
             <p>
-              Your autonomic resilience shows high parasympathetic adaptability. To further diminish stress levels and stabilize skin conductance spikes (active average <span className="text-amber-400 font-mono font-bold">{stats.gsr.avg} µS</span>), perform 3 minutes of slow-pacing biofeedback breathing every 2 hours of study.
+              Os dados simulados mostram adaptação autonômica. Para organizar os períodos de descanso e estudo, observe a condutância da pele (média atual <span className="text-amber-400 font-mono font-bold">{stats.gsr.avg} µS</span>), perform 3 minutes of slow-pacing biofeedback breathing every 2 hours of study.
             </p>
           )}
         </div>
