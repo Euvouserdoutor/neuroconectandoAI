@@ -94,7 +94,7 @@ export default function CognitiveTrendAnalytics() {
             <h3 className="text-sm font-black text-slate-100 uppercase tracking-tight">Histórico cerebral e tendências</h3>
           </div>
           <p className="text-[11px] text-slate-400 mt-1 leading-relaxed">
-            Real-time biometric data-lake mapping. Aggregates live user interactions, biofeedback scores, and stress events.
+            Análise da telemetria biométrica simulada, reunindo interações, pontuações de biofeedback e eventos de estresse.
           </p>
         </div>
 
@@ -113,7 +113,7 @@ export default function CognitiveTrendAnalytics() {
           <BadgeInfo className="h-7 w-7 text-indigo-400 mx-auto animate-pulse" />
           <span className="text-xs font-bold text-slate-350 block">Nenhum dado de telemetria registrado na sessão</span>
           <p className="text-[10px] text-slate-500 max-w-sm mx-auto leading-relaxed">
-            Ask questions to the Adaptive Tutor, trigger Wellness Coaching routines, or play the Focus Calibration Assay to stream live data.
+            Faça perguntas ao tutor adaptativo, explore exercícios de bem-estar ou jogue o desafio de concentração para gerar dados de exemplo.
           </p>
         </div>
       ) : (
@@ -277,7 +277,7 @@ export default function CognitiveTrendAnalytics() {
                       Estresse: <strong className={log.cognitive_snapshot.stress === 'High' ? 'text-rose-400 font-bold' : 'text-slate-300'}>{log.cognitive_snapshot.stress}</strong>
                     </div>
                     <div>
-                      Attention: <strong className="text-slate-300">{log.cognitive_snapshot.attention}</strong>
+                      Atenção: <strong className="text-slate-300">{log.cognitive_snapshot.attention}</strong>
                     </div>
                     <div>
                       GSR: <strong className="text-sky-400">{log.biometrics_snapshot?.gsr || 2.4} µS</strong>
