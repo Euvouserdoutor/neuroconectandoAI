@@ -210,7 +210,7 @@ export default function WellnessCompanionSidebar({ cognitive, biometric }: Welln
         onClick={() => setIsOpen(true)}
         className={`fixed bottom-6 right-6 z-50 p-3 rounded-2xl flex items-center space-x-2 border transition-all cursor-pointer font-sans shadow-2xl ${stressColor}`}
         id="wellness-sidebar-toggle-trigger"
-        title="Open Wellness Companion Sidebar"
+        title="Abrir assistente de bem-estar"
       >
         <span className="relative flex h-3 w-3">
           {cognitive.stress === 'High' ? (
@@ -227,7 +227,7 @@ export default function WellnessCompanionSidebar({ cognitive, biometric }: Welln
         </span>
         <Heart className={`h-4.5 w-4.5 ${cognitive.stress === 'High' ? 'animate-bounce text-red-500' : 'text-indigo-400'}`} />
         <span className="text-xs font-black uppercase tracking-wider font-mono">
-          {cognitive.stress === 'High' ? 'STRESS HELPER' : 'SOMA COMPANION'}
+          {cognitive.stress === 'High' ? 'AJUDA PARA ESTRESSE' : 'ASSISTENTE SOMA'}
         </span>
       </button>
 
@@ -266,7 +266,7 @@ export default function WellnessCompanionSidebar({ cognitive, biometric }: Welln
                         Soma Coach
                         <span className="text-[10px] bg-indigo-950 text-indigo-400 font-mono px-1.5 py-0.5 rounded border border-indigo-900/30">Gemini</span>
                       </h3>
-                      <p className="text-[9.5px] text-slate-400 uppercase tracking-wider font-mono">Wellness Biofeedback Companion</p>
+                      <p className="text-[9.5px] text-slate-400 uppercase tracking-wider font-mono">Assistente de biofeedback e bem-estar</p>
                     </div>
                   </div>
 
@@ -274,7 +274,7 @@ export default function WellnessCompanionSidebar({ cognitive, biometric }: Welln
                   <button
                     onClick={() => setIsOpen(false)}
                     className="p-1.5 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-colors cursor-pointer"
-                    title="Close Sidebar"
+                    title="Fechar painel lateral"
                     type="button"
                   >
                     <X className="h-4 w-4" />
@@ -285,22 +285,22 @@ export default function WellnessCompanionSidebar({ cognitive, biometric }: Welln
                 <div className="bg-slate-950 p-2.5 rounded-xl border border-slate-850 grid grid-cols-3 gap-2 font-mono text-[9px]">
                   {/* Stress metric */}
                   <div className="flex flex-col items-center justify-center p-1.5 rounded-lg bg-slate-900/50 border border-slate-800/80">
-                    <span className="text-slate-500 uppercase font-black tracking-wider block mb-0.5">Stress (EEG)</span>
+                    <span className="text-slate-500 uppercase font-black tracking-wider block mb-0.5">Estresse (EEG)</span>
                     <div className="flex items-center gap-1">
                       {cognitive.stress === 'High' ? (
                         <>
                           <Activity className="h-3.5 w-3.5 text-red-500 animate-pulse" />
-                          <span className="text-red-400 font-extrabold font-mono text-[9.5px]">HIGH</span>
+                          <span className="text-red-400 font-extrabold font-mono text-[9.5px]">ALTO</span>
                         </>
                       ) : cognitive.stress === 'Moderate' ? (
                         <>
                           <Activity className="h-3.5 w-3.5 text-amber-500 animate-pulse" />
-                          <span className="text-amber-400 font-extrabold font-mono text-[9.5px]">MOD</span>
+                          <span className="text-amber-400 font-extrabold font-mono text-[9.5px]">MOD.</span>
                         </>
                       ) : (
                         <>
                           <Activity className="h-3.5 w-3.5 text-emerald-500 animate-pulse" />
-                          <span className="text-emerald-400 font-extrabold font-mono text-[9.5px]">LOW</span>
+                          <span className="text-emerald-400 font-extrabold font-mono text-[9.5px]">BAIXO</span>
                         </>
                       )}
                     </div>
@@ -308,7 +308,7 @@ export default function WellnessCompanionSidebar({ cognitive, biometric }: Welln
 
                   {/* Galvanic skin feedback */}
                   <div className="flex flex-col items-center justify-center p-1.5 rounded-lg bg-slate-900/50 border border-slate-800/80">
-                    <span className="text-slate-500 uppercase font-black tracking-wider block mb-0.5">Sweat (GSR)</span>
+                    <span className="text-slate-500 uppercase font-black tracking-wider block mb-0.5">Sudorese (GSR)</span>
                     <span className="text-slate-200 font-extrabold font-mono text-[9.5px]">
                       {biometric.gsr.toFixed(1)} µS
                     </span>
@@ -316,7 +316,7 @@ export default function WellnessCompanionSidebar({ cognitive, biometric }: Welln
 
                   {/* Cardiac rhythm state */}
                   <div className="flex flex-col items-center justify-center p-1.5 rounded-lg bg-slate-900/50 border border-slate-800/80">
-                    <span className="text-slate-500 uppercase font-black tracking-wider block mb-0.5">Heart Rate</span>
+                    <span className="text-slate-500 uppercase font-black tracking-wider block mb-0.5">Frequência cardíaca</span>
                     <span className="text-slate-200 font-extrabold font-mono text-[9.5px] flex items-center gap-0.5">
                       <Heart className="h-3 w-3 text-rose-500 animate-pulse shrink-0" />
                       {biometric.heartRate} bpm
@@ -348,7 +348,7 @@ export default function WellnessCompanionSidebar({ cognitive, biometric }: Welln
                           <div className="flex items-center justify-between gap-4 font-mono text-[8.5px] text-slate-500 mb-1">
                             <span className="font-bold flex items-center gap-1">
                               {!isUser && <Wind className="h-3 w-3 text-indigo-400" />}
-                              {isUser ? 'Alex Mercer' : 'Soma Wellness Companion'}
+                              {isUser ? 'Alex Mercer' : 'Assistente de bem-estar Soma'}
                             </span>
                             <span>{m.timestamp}</span>
                           </div>
@@ -372,7 +372,7 @@ export default function WellnessCompanionSidebar({ cognitive, biometric }: Welln
                       <div className="max-w-[85%] rounded-2xl p-3 bg-slate-900/40 border border-slate-850">
                         <div className="flex items-center space-x-2 text-indigo-400 text-[10px] font-mono font-bold font-sans">
                           <Wind className="h-3.5 w-3.5 animate-spin-slow text-indigo-400" />
-                          <span>Soma is synthesizing bio-relief exercises...</span>
+                          <span>Soma está preparando exercícios de relaxamento...</span>
                         </div>
                         <div className="flex space-x-1 mt-2.5 ml-1">
                           <span className="h-1.5 w-1.5 bg-indigo-500 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
@@ -391,7 +391,7 @@ export default function WellnessCompanionSidebar({ cognitive, biometric }: Welln
                 <div className="px-4 py-2 bg-red-950/20 border-t border-b border-red-900/40 text-[10px] text-red-300 flex items-center gap-2 font-mono" id="stress-indicator-coaching-box">
                   <TrendingDown className="h-4 w-4 text-red-500 animate-pulse shrink-0" />
                   <span>
-                    <strong>Cranial Stress Warning:</strong> Your EEG signals are currently highly hyperactive. We strongly recommend launching an on-demand breathing cycle below.
+                    <strong>Alerta de estresse:</strong> Your EEG signals are currently highly hyperactive. We strongly recommend launching an on-demand breathing cycle below.
                   </span>
                 </div>
               )}
@@ -408,7 +408,7 @@ export default function WellnessCompanionSidebar({ cognitive, biometric }: Welln
                     type="button"
                   >
                     <Wind className="h-3.5 w-3.5 text-indigo-400" />
-                    <span>Breathing Prompt</span>
+                    <span>Orientação de respiração</span>
                   </button>
                   <button
                     onClick={() => handleQuickAction('tip')}
@@ -416,7 +416,7 @@ export default function WellnessCompanionSidebar({ cognitive, biometric }: Welln
                     type="button"
                   >
                     <Heart className="h-3.5 w-3.5 text-emerald-400" />
-                    <span>Stress Tip</span>
+                    <span>Dica para aliviar o estresse</span>
                   </button>
                   <button
                     onClick={() => handleQuickAction('check')}
@@ -424,7 +424,7 @@ export default function WellnessCompanionSidebar({ cognitive, biometric }: Welln
                     type="button"
                   >
                     <Activity className="h-3.5 w-3.5 text-indigo-400 animate-pulse" />
-                    <span>State Sync</span>
+                    <span>Sincronização de estado</span>
                   </button>
                 </div>
               </div>
@@ -441,7 +441,7 @@ export default function WellnessCompanionSidebar({ cognitive, biometric }: Welln
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  placeholder={cognitive.stress === 'High' ? "Need help? Type here or use Quick Remedies..." : "Ask Soma for tips, posture updates, breathing checks..."}
+                  placeholder={cognitive.stress === 'High' ? "Precisa de ajuda? Digite aqui ou use as sugestões rápidas..." : "Peça dicas ao Soma sobre postura, respiração e bem-estar..."}
                   className="flex-1 bg-slate-900 border border-slate-850 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all font-sans"
                   disabled={isLoading}
                   id="wellness-sidebar-input-field"
@@ -455,7 +455,7 @@ export default function WellnessCompanionSidebar({ cognitive, biometric }: Welln
                       : 'bg-slate-900 text-slate-600 border border-slate-850/50 cursor-not-allowed'
                   }`}
                   id="wellness-sidebar-submit-btn"
-                  title="Send message"
+                  title="Enviar mensagem"
                 >
                   <Send className="h-4 w-4" />
                 </button>
