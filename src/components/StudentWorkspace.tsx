@@ -339,7 +339,7 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
               <h4 className="text-sm font-bold flex items-center gap-2">
                 {isHighStress ? 'Layout adaptativo com prioridade ao bem-estar' : isLowAttention ? 'Layout adaptativo de estímulo cognitivo' : 'Layout padrão de aprendizagem'}
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-950/50 text-slate-400 uppercase font-black">
-                  Cranial Adaptive Grid
+                  Painel cognitivo adaptativo
                 </span>
               </h4>
               <p className="text-xs text-slate-450 mt-1 leading-relaxed">
@@ -373,7 +373,7 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
         <DailyAcademicGoal cognitive={cognitive} biometric={biometric} />
       </div>
 
-      {/* 3. Sensory Signal Simulator */}
+      {/* 3. Simulador de sinais sensoriais */}
       <div className={`bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-2xl relative overflow-hidden ${layoutConfig.sensorControllerClass} transition-all duration-500`} id="sensor_controller">
         <div className="absolute top-0 right-0 p-3 text-emerald-500 opacity-20">
           <Activity className="h-20 w-20 animate-pulse" />
@@ -381,10 +381,10 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
         
         <h2 className="text-lg font-bold text-slate-100 flex items-center mb-1">
           <span className="h-2.5 w-2.5 bg-sky-500 rounded-full mr-2.5 animate-ping"></span>
-          Sensory Signal Simulator
+          Simulador de sinais sensoriais
         </h2>
         <p className="text-xs text-slate-400 mb-5">
-          Usuário: <strong className="text-sky-400">Alex Mercer</strong> (ID: Student-0046). Slide dials to mock student physical/brain signals.
+          Usuário: <strong className="text-sky-400">Alex Mercer</strong> (ID: Estudante-0046). Ajuste os controles para simular sinais físicos e cerebrais.
         </p>
 
         <div className="space-y-4">
@@ -392,7 +392,7 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
           <div>
             <div className="flex justify-between text-xs mb-1">
               <span className="text-slate-300 font-medium flex items-center">
-                <Brain className="h-3.5 w-3.5 text-blue-400 mr-1" /> Cognitive Attention
+                <Brain className="h-3.5 w-3.5 text-blue-400 mr-1" /> Atenção cognitiva
               </span>
               <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${
                 cognitive.attention === 'High' ? 'bg-emerald-950 text-emerald-400 border border-emerald-900' :
@@ -421,7 +421,7 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
           <div>
             <div className="flex justify-between text-xs mb-1">
               <span className="text-slate-300 font-medium flex items-center">
-                <Heart className="h-3.5 w-3.5 text-red-400 mr-1" /> Emotional Stress
+                <Heart className="h-3.5 w-3.5 text-red-400 mr-1" /> Estresse emocional
               </span>
               <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${
                 cognitive.stress === 'High' ? 'bg-red-950 text-red-400 border border-red-900 animate-pulse' :
@@ -450,7 +450,7 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
           <div>
             <div className="flex justify-between text-xs mb-1">
               <span className="text-slate-300 font-medium flex items-center">
-                <Compass className="h-3.5 w-3.5 text-yellow-400 mr-1" /> Mental Fatigue
+                <Compass className="h-3.5 w-3.5 text-yellow-400 mr-1" /> Fadiga mental
               </span>
               <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${
                 cognitive.fatigue === 'High' ? 'bg-rose-950 text-rose-400 border border-red-900' :
@@ -478,7 +478,7 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
           {/* Posture / Accelerometer Head Movement */}
           <div>
             <label className="block text-xs font-medium text-slate-300 mb-1">
-              Accelerometer Posture (MPU6050)
+              Postura pelo acelerômetro (MPU6050)
             </label>
             <select
               value={biometric.headMovement}
@@ -523,14 +523,14 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
         </div>
       </div>
 
-      {/* 4. Live EEG Signal Waves Card */}
+      {/* 4. Ondas de EEG em tempo real Card */}
       <div className={`bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-2xl relative ${layoutConfig.eegWavesClass} transition-all duration-500`} id="eeg_visualizer">
         <h2 className="text-lg font-bold text-slate-100 mb-1 flex items-center">
           <Activity className="h-4 w-4 text-emerald-400 mr-2" />
-          Live EEG Signal Waves
+          Ondas de EEG em tempo real
         </h2>
         <p className="text-xs text-slate-400 mb-4">
-          Continuous brain oscillations from frontal FP1-FP2 sensors.
+          Oscilações cerebrais simuladas dos sensores frontais FP1–FP2.
         </p>
 
         <div className="space-y-4">
@@ -586,15 +586,15 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
             <div className="flex justify-between items-center text-[11px]">
               <span className="font-bold text-pink-400 flex items-center gap-1.5">
                 <Heart className="h-3.5 w-3.5 text-pink-500 animate-pulse" />
-                Baseline Coherence Deviation
+                Desvio de coerência da referência
               </span>
               {Math.abs((biometric.movingAvg5s ?? biometric.heartRate) - (biometric.dailyBaseline ?? 72)) >= 8 ? (
                 <span className="px-2 py-0.5 rounded-full text-[9px] font-mono font-black bg-rose-950/60 text-rose-400 border border-rose-900/50 animate-pulse uppercase tracking-wider">
-                  ⚠️ Alert
+                  ⚠️ Alerta
                 </span>
               ) : (
                 <span className="px-2 py-0.5 rounded-full text-[9px] font-mono font-black bg-emerald-950/60 text-emerald-450 border border-emerald-900/55 uppercase tracking-wider">
-                  ✨ Calm
+                  ✨ Tranquilo
                 </span>
               )}
             </div>
@@ -814,19 +814,19 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
                     onClick={() => handleSendCoach("Estou com muita fadiga mental e meus olhos estão cansados.")}
                     className="text-[10px] bg-slate-900 border border-slate-800 text-slate-300 px-2 py-1 rounded hover:bg-slate-800 text-left cursor-pointer transition-colors"
                   >
-                    💤 Mindful Break
+                    💤 Pausa consciente
                   </button>
                   <button 
                     onClick={() => handleSendCoach("I can't focus on this quantum computing topic.")}
                     className="text-[10px] bg-slate-900 border border-slate-800 text-slate-300 px-2 py-1 rounded hover:bg-slate-800 text-left cursor-pointer transition-colors"
                   >
-                    🌀 Posture Reset
+                    🌀 Ajuste postural
                   </button>
                   <button 
                     onClick={() => handleSendCoach("Meu coração está acelerado e estou ansioso com a prova.")}
                     className="text-[10px] bg-slate-900 border border-slate-800 text-slate-300 px-2 py-1 rounded hover:bg-slate-800 text-left cursor-pointer transition-colors"
                   >
-                    ❤️ Exam Calming
+                    ❤️ Relaxamento para a prova
                   </button>
                 </div>
 
@@ -894,17 +894,17 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
         )}
       </div>
 
-      {/* 7. Adaptive Quiz Engine */}
+      {/* 7. Gerador de quizzes adaptativos */}
       <div className={`${layoutConfig.quizEngineClass} transition-all duration-500`}>
         <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-2xl">
           <div className="flex items-center justify-between mb-4 border-b border-slate-850 pb-3 flex-wrap gap-2">
             <div>
               <h3 className="font-bold text-slate-200 text-base flex items-center gap-2">
                 <Compass className="h-4 w-4 text-sky-400" />
-                Adaptive Quiz Engine
+                Gerador de quizzes adaptativos
               </h3>
               <p className="text-[11px] text-slate-400">
-                Self-evaluation generated dynamically by AI for your target focus level: <strong className="text-yellow-400">{cognitive.attention} Attention</strong>.
+                Autoavaliação gerada por IA conforme seu nível de concentração: <strong className="text-yellow-400">{cognitive.attention} Attention</strong>.
               </p>
             </div>
             
@@ -916,7 +916,7 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
               {isQuizLoading ? (
                 <>
                   <RefreshCw className="h-3.5 w-3.5 animate-spin" />
-                  Generating...
+                  Gerando...
                 </>
               ) : (
                 <>
@@ -1002,7 +1002,7 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
                   disabled={activeQuizStep === 0}
                   className="px-3.5 py-1.5 bg-slate-850 hover:bg-slate-800 border cursor-pointer border-slate-800 disabled:opacity-30 rounded text-slate-300 text-xs font-semibold"
                 >
-                  Previous
+                  Anterior
                 </button>
 
                 {activeQuizStep < quizQuestions.length - 1 ? (
@@ -1010,7 +1010,7 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
                     onClick={() => setActiveQuizStep(prev => prev + 1)}
                     className="px-3.5 py-1.5 bg-slate-850 hover:bg-slate-800 border cursor-pointer border-slate-800 rounded text-slate-300 text-xs font-semibold"
                   >
-                    Next Question
+                    Próxima questão
                   </button>
                 ) : (
                   !submittedQuiz ? (
@@ -1018,14 +1018,14 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
                       onClick={() => setSubmittedQuiz(true)}
                       className="px-4 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-slate-100 rounded text-xs font-bold cursor-pointer transition-colors"
                     >
-                      Submit Answers
+                      Enviar respostas
                     </button>
                   ) : (
                     <button
                       onClick={handleGenerateQuiz}
                       className="px-4 py-1.5 bg-sky-600 hover:bg-sky-500 text-slate-100 rounded text-xs font-bold cursor-pointer transition-colors"
                     >
-                      Retry New Adapted Quiz
+                      Gerar outro quiz adaptativo
                     </button>
                   )
                 )}
