@@ -64,7 +64,7 @@ export default function CloudAndVertex() {
           }`}
         >
           <Database className="h-3.5 w-3.5" />
-          <span>Firestore Schema</span>
+          <span>Estrutura do Firestore</span>
         </button>
         <button
           onClick={() => setActiveTab('vertex')}
@@ -75,7 +75,7 @@ export default function CloudAndVertex() {
           }`}
         >
           <Cpu className="h-3.5 w-3.5" />
-          <span>Vertex Tuning</span>
+          <span>Ajustes do Vertex</span>
         </button>
         <button
           onClick={() => setActiveTab('api')}
@@ -86,7 +86,7 @@ export default function CloudAndVertex() {
           }`}
         >
           <Sparkles className="h-3.5 w-3.5" />
-          <span>AI Emulator</span>
+          <span>Emulador de IA</span>
         </button>
       </div>
 
@@ -175,7 +175,7 @@ export default function CloudAndVertex() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="space-y-1.5">
                   <div className="flex justify-between text-[9px] text-slate-400 font-bold uppercase">
-                    <span>Temperature</span>
+                    <span>Temperatura</span>
                     <span className="font-mono text-indigo-400">{temperature}</span>
                   </div>
                   <input
@@ -194,7 +194,7 @@ export default function CloudAndVertex() {
 
                 <div className="space-y-1.5">
                   <div className="flex justify-between text-[9px] text-slate-400 font-bold uppercase">
-                    <span>Top-P (Nucleus)</span>
+                    <span>Top-P (amostragem por núcleo)</span>
                     <span className="font-mono text-indigo-400">{topP}</span>
                   </div>
                   <input
@@ -213,7 +213,7 @@ export default function CloudAndVertex() {
 
                 <div className="space-y-1.5">
                   <div className="flex justify-between text-[9px] text-slate-400 font-bold uppercase">
-                    <span>Max Output Tokens</span>
+                    <span>Máximo de tokens na resposta</span>
                     <span className="font-mono text-indigo-400">{maxTokens}</span>
                   </div>
                   <input
@@ -234,7 +234,7 @@ export default function CloudAndVertex() {
               <div className="p-3 bg-indigo-950/10 border border-indigo-900/40 rounded-lg flex items-start gap-2.5">
                 <ShieldCheck className="h-4 w-4 text-indigo-400 mt-0.5 flex-shrink-0" />
                 <div className="space-y-1">
-                  <h6 className="text-[9.5px] font-black text-slate-200 uppercase tracking-wider">Safety Filters Enforced</h6>
+                  <h6 className="text-[9.5px] font-black text-slate-200 uppercase tracking-wider">Filtros de segurança ativados</h6>
                   <p className="text-[8.5px] text-slate-400 leading-normal">
                     Hate Speech, Harassment, Dangerous Content, and Sexually Explicit parameters are mapped to high filters. Educational sandbox constraints actively reject unsolicited inputs.
                   </p>
@@ -268,7 +268,7 @@ export default function CloudAndVertex() {
                     className="px-3 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-xs text-white font-bold rounded-lg flex items-center gap-1 cursor-pointer disabled:opacity-50 transition-all"
                   >
                     <Send className="h-3 w-3" />
-                    <span>Run Query</span>
+                    <span>Executar consulta</span>
                   </button>
                 </div>
               </div>
@@ -276,7 +276,7 @@ export default function CloudAndVertex() {
               {/* Code output mock */}
               <div className="space-y-2">
                 <div className="flex justify-between items-center text-[8.5px] font-mono text-slate-500">
-                  <span>VERTEX CLOUD RESPONSE OUTPUT</span>
+                  <span>RESPOSTA DO VERTEX NA NUVEM</span>
                   {isQuerying && (
                     <span className="text-indigo-400 flex items-center gap-1">
                       <RefreshCw className="h-2.5 w-2.5 animate-spin" /> Querying API Model...
@@ -288,7 +288,7 @@ export default function CloudAndVertex() {
                   {responseOutput ? (
                     responseOutput
                   ) : (
-                    <span className="text-slate-600 italic">No request sent yet. Click 'Run Query' above to view simulated JSON telemetry output.</span>
+                    <span className="text-slate-600 italic">Nenhuma solicitação enviada. Clique em "Executar consulta" para visualizar uma resposta JSON simulada.</span>
                   )}
                 </div>
               </div>
