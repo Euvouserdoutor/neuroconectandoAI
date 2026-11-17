@@ -37,7 +37,7 @@ export default function WellnessCompanionSidebar({ cognitive, biometric }: Welln
     {
       id: 'welcome_msg_1',
       role: 'model',
-      text: "Hello! I am **Soma**, your G-powered **Wellness Companion**. I am synchronizing with your live EEG cranial and HRV biometric data. Feel free to type anything or ask for an immediate on-demand stress relief exercise!",
+      text: "Olá! Sou o **Soma**, seu assistente de bem-estar com IA. Posso ajudar a explorar os indicadores simulados de EEG e VFC, além de sugerir pausas e exercícios de relaxamento. Escreva sua pergunta!",
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     }
   ]);
@@ -171,14 +171,14 @@ export default function WellnessCompanionSidebar({ cognitive, biometric }: Welln
           timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
         }]);
       } else {
-        throw new Error(data.error || 'Invalid API response format');
+        throw new Error(data.error || 'Formato de resposta da API inválido');
       }
     } catch (err: any) {
       console.error(err);
       setMessages(prev => [...prev, {
         id: `msg_${Date.now()}_err`,
         role: 'model',
-        text: "My apologies, I experienced a minor synapse interruption while querying our Gemini engine. Please try sending and synapsing again.",
+        text: "Não foi possível consultar o Gemini agora. Tente enviar sua mensagem novamente.",
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       }]);
     } finally {
