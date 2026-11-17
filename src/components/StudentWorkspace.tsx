@@ -60,7 +60,7 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
   const [coachChat, setCoachChat] = useState<Array<{ role: 'user' | 'assistant'; text: string; directives?: string }>>([
     {
       role: 'assistant',
-      text: "Hi Alex, I am your Student Wellness Coach. I monitor your skin conductance (GSR), heart rate variability, and posture accelerometers. Feeling tense, tired, or lost focus? Click the quick check-ins or message me directly for a brain refresh!",
+      text: "Olá, Alex! Sou seu assistente de bem-estar nos estudos. Aqui você pode acompanhar dados simulados de condutância da pele, variabilidade da frequência cardíaca e postura. Como está se sentindo? Use as opções rápidas ou envie uma mensagem.",
     }
   ]);
   const [isCoachLoading, setIsCoachLoading] = useState(false);
@@ -238,7 +238,7 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
         throw new Error(data.error);
       }
     } catch (err) {
-      setCoachChat(prev => [...prev, { role: 'assistant', text: "Coach session limits reached. Focus hint: Roll your eyes upward for 5 seconds to instantly trigger alpha-wave synchronization!" }]);
+      setCoachChat(prev => [...prev, { role: 'assistant', text: "Não foi possível conectar ao orientador agora. Experimente uma pausa breve e um exercício de respiração confortável." }]);
     } finally {
       setIsCoachLoading(false);
     }
@@ -344,10 +344,10 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
               </h4>
               <p className="text-xs text-slate-450 mt-1 leading-relaxed">
                 {isHighStress 
-                  ? 'Your EEG telemetry indicates high stress. The dashboard has automatically rearranged to prioritize calming biofeedback breathers and audio soundscapes.' 
+                  ? 'A telemetria simulada indica estresse elevado. O painel priorizou exercícios de respiração e recursos sonoros.' 
                   : isLowAttention 
-                  ? 'Your EEG telemetry indicates low focus levels. The dashboard has rearranged to emphasize active gamified calibration and adaptive recall quiz testing.' 
-                  : 'Balanced cognitive telemetry. Normal study chats, adaptive mindmap learning tools, and daily targets are evenly distributed.'}
+                  ? 'A telemetria simulada indica baixa concentração. O painel destacou os jogos de atenção e os quizzes adaptativos.' 
+                  : 'Telemetria simulada equilibrada. As conversas de estudo, os mapas mentais e as metas diárias estão distribuídos no painel.'}
               </p>
             </div>
           </div>
@@ -811,7 +811,7 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
                 {/* Quick Biometrics Checkin Options */}
                 <div className="flex flex-wrap gap-1.5 mb-2.5">
                   <button 
-                    onClick={() => handleSendCoach("I feel high mental fatigue and my eyes burn.")}
+                    onClick={() => handleSendCoach("Estou com muita fadiga mental e meus olhos estão cansados.")}
                     className="text-[10px] bg-slate-900 border border-slate-800 text-slate-300 px-2 py-1 rounded hover:bg-slate-800 text-left cursor-pointer transition-colors"
                   >
                     💤 Mindful Break
@@ -823,7 +823,7 @@ export default function StudentWorkspace({ cognitive, setCognitive, biometric, s
                     🌀 Posture Reset
                   </button>
                   <button 
-                    onClick={() => handleSendCoach("My heart is pounding and I feel exam anxiety.")}
+                    onClick={() => handleSendCoach("Meu coração está acelerado e estou ansioso com a prova.")}
                     className="text-[10px] bg-slate-900 border border-slate-800 text-slate-300 px-2 py-1 rounded hover:bg-slate-800 text-left cursor-pointer transition-colors"
                   >
                     ❤️ Exam Calming
