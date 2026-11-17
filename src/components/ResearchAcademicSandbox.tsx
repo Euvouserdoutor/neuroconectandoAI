@@ -77,7 +77,7 @@ export default function ResearchAcademicSandbox({ cognitive, biometric }: Resear
             {/* Cognitive Load */}
             <div className="space-y-1.5">
               <div className="flex justify-between text-[10px] font-bold text-slate-400 uppercase">
-                <span>Cognitive Load Level</span>
+                <span>Nível de carga cognitiva</span>
                 <span className="font-mono text-indigo-400 font-black">{syntheticCognitiveLoad}%</span>
               </div>
               <input
@@ -89,15 +89,15 @@ export default function ResearchAcademicSandbox({ cognitive, biometric }: Resear
                 className="w-full h-1 bg-slate-900 rounded-lg cursor-pointer accent-indigo-500"
               />
               <div className="flex justify-between text-[7px] text-slate-500 font-mono uppercase">
-                <span>Relaxed State</span>
-                <span>Mental Strain Boundary</span>
+                <span>Estado relaxado</span>
+                <span>Limite de esforço mental</span>
               </div>
             </div>
 
             {/* Heart Rate */}
             <div className="space-y-1.5">
               <div className="flex justify-between text-[10px] font-bold text-slate-400 uppercase">
-                <span>Heart Rate (BPM)</span>
+                <span>Frequência cardíaca (bpm)</span>
                 <span className="font-mono text-rose-400 font-black">{syntheticHeartRate} BPM</span>
               </div>
               <input
@@ -109,15 +109,15 @@ export default function ResearchAcademicSandbox({ cognitive, biometric }: Resear
                 className="w-full h-1 bg-slate-900 rounded-lg cursor-pointer accent-rose-500"
               />
               <div className="flex justify-between text-[7px] text-slate-500 font-mono uppercase">
-                <span>Bradycardia / Resting</span>
-                <span>Hyper-arousal / Tachycardia</span>
+                <span>Bradicardia / repouso</span>
+                <span>Ativação elevada / taquicardia</span>
               </div>
             </div>
 
             {/* Galvanic Skin Response */}
             <div className="space-y-1.5">
               <div className="flex justify-between text-[10px] font-bold text-slate-400 uppercase">
-                <span>Galvanic Skin Response (GSR)</span>
+                <span>Resposta galvânica da pele (GSR)</span>
                 <span className="font-mono text-emerald-400 font-black">{syntheticGsr} µS</span>
               </div>
               <input
@@ -130,8 +130,8 @@ export default function ResearchAcademicSandbox({ cognitive, biometric }: Resear
                 className="w-full h-1 bg-slate-900 rounded-lg cursor-pointer accent-emerald-500"
               />
               <div className="flex justify-between text-[7px] text-slate-500 font-mono uppercase">
-                <span>Low Sweat conductance</span>
-                <span>High Sympathetic sweat spike</span>
+                <span>Baixa condutância da pele</span>
+                <span>Pico de sudorese associado à ativação simpática</span>
               </div>
             </div>
           </div>
@@ -151,7 +151,7 @@ export default function ResearchAcademicSandbox({ cognitive, biometric }: Resear
 
             <div className="grid grid-cols-2 gap-3 pt-2">
               <div className="p-3 bg-slate-900/60 rounded-lg border border-slate-850/60 flex flex-col justify-between h-20">
-                <span className="text-[9px] font-mono text-slate-500 uppercase font-bold">Simulated Fatigue Score</span>
+                <span className="text-[9px] font-mono text-slate-500 uppercase font-bold">Índice de fadiga simulado</span>
                 <div className="flex items-baseline gap-1">
                   <span className="text-2xl font-black text-indigo-400 font-sans tracking-tight">
                     {simulatedBurnoutIndex}
@@ -161,7 +161,7 @@ export default function ResearchAcademicSandbox({ cognitive, biometric }: Resear
               </div>
 
               <div className="p-3 bg-slate-900/60 rounded-lg border border-slate-850/60 flex flex-col justify-between h-20">
-                <span className="text-[9px] font-mono text-slate-500 uppercase font-bold">Vagal Tone Estimation</span>
+                <span className="text-[9px] font-mono text-slate-500 uppercase font-bold">Estimativa de tônus vagal</span>
                 <div className="flex items-baseline gap-1">
                   <span className={`text-2xl font-black font-sans tracking-tight ${simulatedBurnoutIndex > 65 ? 'text-rose-400' : 'text-emerald-400'}`}>
                     {Math.max(10, 100 - Math.round(simulatedBurnoutIndex * 0.9))}
@@ -175,7 +175,7 @@ export default function ResearchAcademicSandbox({ cognitive, biometric }: Resear
           <div className="p-3 bg-indigo-950/15 border border-indigo-900/40 rounded-lg space-y-1.5 select-none">
             <div className="flex items-center gap-1 text-[9px] font-extrabold text-indigo-400 uppercase tracking-wider">
               <Sparkles className="h-3 w-3 animate-spin" />
-              <span>Academic Observation Report</span>
+              <span>Relatório de observação acadêmica</span>
             </div>
             <p className="text-[8.5px] text-slate-400 leading-normal">
               Notice how elevating both Galvanic Skin Response (GSR) and Cognitive Load creates a positive nonlinear curve in the fatigue output, demonstrating the predictive power of multi-modal biosensing models compared to isolated Heart Rate telemetry.
