@@ -187,8 +187,8 @@ export default function WellnessRecommendations({
             <Wind className="h-3.5 w-3.5 text-indigo-400 animate-pulse" />
           </div>
           <div>
-            <h4 className="text-[10px] font-bold text-white uppercase tracking-wider">Neurological Calming Coach</h4>
-            <p className="text-[8px] text-indigo-300 font-mono">Sympathetic Nervous System Downregulation</p>
+            <h4 className="text-[10px] font-bold text-white uppercase tracking-wider">Orientador de relaxamento neurológico</h4>
+            <p className="text-[8px] text-indigo-300 font-mono">Regulação da atividade do sistema nervoso simpático</p>
           </div>
         </div>
         <span className="bg-red-500/15 text-red-400 border border-red-500/25 px-1.5 py-0.5 rounded text-[8px] font-bold tracking-wide uppercase font-mono animate-pulse">
@@ -199,7 +199,7 @@ export default function WellnessRecommendations({
       {!isPracticing && !isCompleted && (
         <>
           <p className="text-[9px] text-slate-400 leading-relaxed">
-            Evidence-based somatic pacing techniques to stimulate the <strong>Vagus Nerve</strong>, activate parasympathetic pathways, and rapidly lower heart rate variability strain.
+            Evidence-based somatic pacing techniques to stimulate the <strong>Nervo vago</strong>, activate parasympathetic pathways, and rapidly lower heart rate variability strain.
           </p>
 
           {/* Sorter Selector tabs */}
@@ -244,8 +244,8 @@ export default function WellnessRecommendations({
             {activePractice === 'box' && (
               <>
                 <div className="flex justify-between items-center text-slate-300">
-                  <span className="font-semibold text-white">Box Breathing (4-4-4-4 Cycle)</span>
-                  <span className="text-slate-500 font-mono">Duration: ~60s</span>
+                  <span className="font-semibold text-white">Respiração quadrada (ciclo 4-4-4-4)</span>
+                  <span className="text-slate-500 font-mono">Duração: ~60 s</span>
                 </div>
                 <p className="text-slate-400 leading-relaxed">
                   Used by elite tactical units to suppress hyper-arousal responses. 4s inhale, 4s hold, 4s exhale, 4s hold out. Repeat for 4 cycles to stabilize metabolic stress levels.
@@ -256,8 +256,8 @@ export default function WellnessRecommendations({
             {activePractice === '478' && (
               <>
                 <div className="flex justify-between items-center text-slate-300">
-                  <span className="font-semibold text-white">Somatic 4-7-8 Relaxing Breath</span>
-                  <span className="text-slate-500 font-mono">Duration: ~75s</span>
+                  <span className="font-semibold text-white">Respiração relaxante 4-7-8</span>
+                  <span className="text-slate-500 font-mono">Duração: ~75 s</span>
                 </div>
                 <p className="text-slate-400 leading-relaxed">
                   Developed by Dr. Andrew Weil. Acts as a natural nervous system tranquilizer. Inhale 4s, hold for 7s, exhale completely for 8s to calm cortisol spike loops.
@@ -268,8 +268,8 @@ export default function WellnessRecommendations({
             {activePractice === 'grounding' && (
               <>
                 <div className="flex justify-between items-center text-slate-300">
-                  <span className="font-semibold text-white">5-4-3-2-1 Sensory Grounding</span>
-                  <span className="text-slate-500 font-mono">Duration: Self-Paced</span>
+                  <span className="font-semibold text-white">Exercício sensorial 5-4-3-2-1</span>
+                  <span className="text-slate-500 font-mono">Duração: no seu ritmo</span>
                 </div>
                 <p className="text-slate-400 leading-relaxed">
                   A cognitive-behavioral practice to disrupt hyper-focused rumination. Progress through naming sights, tactile objects, sounds, scents, and tastes to recalibrate focus.
@@ -283,7 +283,7 @@ export default function WellnessRecommendations({
               className="w-full mt-2 bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-1.5 rounded-md flex items-center justify-center gap-1.5 transition-all text-[9.5px] uppercase cursor-pointer tracking-wider"
             >
               <Play className="h-3 w-3 fill-current" />
-              <span>Initiate Autonomic Regulation</span>
+              <span>Iniciar exercício de regulação</span>
             </button>
           </div>
         </>
@@ -327,7 +327,7 @@ export default function WellnessRecommendations({
                   {breathingStage === 'HoldOut' && 'Rest / Retain Out'}
                 </div>
                 <div className="text-2xl font-black font-mono text-white animate-pulse">
-                  {secondsLeft} <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">seconds</span>
+                  {secondsLeft} <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">segundos</span>
                 </div>
                 <div className="text-[9px] text-slate-500 font-mono tracking-wide">
                   Autonomous Cycle <strong className="text-indigo-400">{currentCycle}</strong> / {totalCyclesNeeded}
@@ -341,7 +341,7 @@ export default function WellnessRecommendations({
                 className="mx-auto flex items-center gap-1.5 text-[8.5px] font-bold text-slate-400 hover:text-white px-2.5 py-1 rounded bg-slate-900 border border-slate-800 transition-colors cursor-pointer"
               >
                 <Square className="h-2.5 w-2.5" />
-                <span>Abort Practice Session</span>
+                <span>Encerrar exercício</span>
               </button>
             </>
           ) : (
@@ -349,7 +349,7 @@ export default function WellnessRecommendations({
               {/* Cognitive 5-4-3-2-1 Grounding steps */}
               <div className="space-y-3.5 text-left py-1">
                 <div className="flex items-center justify-between">
-                  <span className="text-[9px] text-indigo-400 uppercase tracking-widest font-bold">Cognitive Sensory Calibrator</span>
+                  <span className="text-[9px] text-indigo-400 uppercase tracking-widest font-bold">Calibrador sensorial cognitivo</span>
                   <span className="text-[9px] text-slate-500 font-mono">Step {6 - groundingStep}/5</span>
                 </div>
 
@@ -405,7 +405,7 @@ export default function WellnessRecommendations({
           </div>
 
           <div className="space-y-1">
-            <h5 className="text-[10px] font-bold text-white uppercase tracking-wider">Homeostatic Balance Promoted</h5>
+            <h5 className="text-[10px] font-bold text-white uppercase tracking-wider">Equilíbrio estimulado</h5>
             <p className="text-[9px] text-emerald-400 leading-relaxed font-sans font-medium">
               Vagal tonic stimulation active. Systemic bio-signals have been updated back to optimal homeostasis thresholds.
             </p>
@@ -419,7 +419,7 @@ export default function WellnessRecommendations({
               className="px-4 py-1.5 bg-slate-950 border border-slate-800 hover:border-slate-750 text-slate-300 rounded-lg text-[9px] font-bold uppercase transition-all cursor-pointer inline-flex items-center gap-1.5"
             >
               <Smile className="h-3.5 w-3.5 text-emerald-400" />
-              <span>Return to Live Monitoring</span>
+              <span>Voltar ao monitoramento</span>
             </button>
           </div>
         </div>
