@@ -10,36 +10,36 @@ export default function SystemArchitecture() {
       title: "Biometric Sensor Array",
       description: "Direct analog & digital sensing interfaces capturing physiological telemetry at high frequencies.",
       specs: [
-        { name: "PPG Optical Sensor", value: "Green LED (525nm) with transimpedance amplifier, sampling at 100Hz" },
+        { name: "PPG Optical Sensor", value: "LED verde (525 nm) com amplificador de transimpedância, amostragem a 100 Hz" },
         { name: "GSR Electrodes", value: "Dual stainless steel contacts measuring skin conductance at 20Hz" },
-        { name: "ADC Resolution", value: "12-bit internal ADC on ESP32 (Vref @ 1.1V, low-noise calibration)" }
+        { name: "ADC Resolution", value: "Conversor analógico-digital de 12 bits do ESP32 (Vref de 1,1 V, baixo ruído)" }
       ]
     },
     dsp: {
       title: "Local Digital Signal Processing",
-      description: "On-chip digital filtration to clean noisy biometric signals before feature extraction.",
+      description: "Filtragem digital no próprio dispositivo para reduzir ruídos antes da extração de características.",
       specs: [
-        { name: "Motion Artifact Filter", value: "3-axis accelerometer feedback with adaptive recursive least squares (RLS)" },
-        { name: "PPG Bandpass", value: "Butterworth 2nd-order filter (cutoff 0.5Hz - 4.0Hz) to isolate heart pulses" },
-        { name: "PPI Detection", value: "Peak-to-Peak interval algorithm with dynamic thresholding for HRV ms calculation" }
+        { name: "Motion Artifact Filter", value: "Acelerômetro de três eixos com ajuste adaptativo por mínimos quadrados recursivos (RLS)" },
+        { name: "PPG Bandpass", value: "Filtro Butterworth de segunda ordem (0,5–4,0 Hz) para isolar pulsos cardíacos" },
+        { name: "PPI Detection", value: "Algoritmo de intervalos entre picos com limite dinâmico para calcular a VFC em ms" }
       ]
     },
     edge: {
       title: "ESP32 Embedded Compute Engine",
-      description: "Low-cost, high-performance offline processor running real-time state estimation.",
+      description: "Processador de baixo custo com estimativa local do estado em tempo real.",
       specs: [
         { name: "Core Architecture", value: "Tensilica Xtensa Dual-Core 32-bit LX6 Microprocessor @ 240 MHz" },
-        { name: "SRAM & Flash", value: "520 KB SRAM with 4 MB external SPI Flash memory" },
-        { name: "Power Management", value: "Deep sleep mode active under idle states (< 15µA current draw)" }
+        { name: "SRAM & Flash", value: "520 KB de SRAM e 4 MB de memória Flash SPI externa" },
+        { name: "Power Management", value: "Modo de baixo consumo durante inatividade (corrente inferior a 15 µA)" }
       ]
     },
     bridge: {
       title: "Secure Encrypted Telemetry Bridge",
-      description: "Zero-knowledge edge-to-cloud sync pipeline that respects strict privacy guardrails.",
+      description: "Sincronização entre dispositivo e nuvem projetada com controles de privacidade.",
       specs: [
-        { name: "Transmission protocol", value: "Bluetooth Low Energy (BLE) 4.2 with custom 128-bit AES telemetry payload" },
+        { name: "Transmission protocol", value: "Bluetooth Low Energy (BLE) 4.2 com telemetria protegida por AES de 128 bits" },
         { name: "Local Cache storage", value: "Cyclic ring buffer in ESP32 Partition Table (keeps last 24H logs offline)" },
-        { name: "Network Gateway", value: "Anonymous local proxy gateway; zero personal identifier fields are synced" }
+        { name: "Network Gateway", value: "Gateway de proxy local com transmissão sem identificadores pessoais" }
       ]
     }
   };
