@@ -60,7 +60,7 @@ export default function ModelAccuracyTable() {
   const [selectedChartType, setSelectedChartType] = useState<'bar' | 'radar'>('bar');
   const [isBenchmarking, setIsBenchmarking] = useState<boolean>(false);
   const [benchmarkLogs, setBenchmarkLogs] = useState<string[]>([
-    "Validation sandbox ready. Choose test parameters and trigger active benchmarking run to verify cognitive modeling precision."
+    "Ambiente de validação pronto. Escolha os parâmetros e execute o teste de referência para avaliar a precisão do modelo."
   ]);
   const [benchmarkRunCount, setBenchmarkRunCount] = useState<number>(0);
   const [activeDashboardTab, setActiveDashboardTab] = useState<'publication' | 'sandbox'>('publication');
@@ -79,8 +79,8 @@ export default function ModelAccuracyTable() {
       baseLatency: 8,
       noiseSensitivity: 'Low',
       scalability: 'O(N)',
-      securityScope: 'HIPAA Compliant / On-Chip',
-      description: 'The proposed multi-modal edge calibration model combining EEG headband, HRV, and GSR sensor feeds. Low-latency classification of attention and burnout.'
+      securityScope: 'Compatibilidade HIPAA / no dispositivo',
+      description: 'Modelo multimodal proposto que combina EEG, VFC e GSR no dispositivo para classificar indicadores de atenção e esgotamento.'
     },
     {
       id: 'gat',
@@ -94,8 +94,8 @@ export default function ModelAccuracyTable() {
       baseLatency: 12,
       noiseSensitivity: 'Low',
       scalability: 'O(N²)',
-      securityScope: 'HIPAA Compliant / On-Prem',
-      description: 'Learns anisotropic attention weights between students based on collaborative interactions and table proximity. Excellent for complex table clusters.'
+      securityScope: 'Compatibilidade HIPAA / local',
+      description: 'Aprende pesos de atenção anisotrópicos entre estudantes a partir de interações colaborativas e proximidade dos assentos.'
     },
     {
       id: 'gcn',
@@ -109,8 +109,8 @@ export default function ModelAccuracyTable() {
       baseLatency: 4,
       noiseSensitivity: 'Moderate',
       scalability: 'O(N log N)',
-      securityScope: 'On-Chip Execution (ESP32)',
-      description: 'Simulates isotropic diffusion using static degree-normalized neighborhood aggregation. Highly efficient for rapid large-scale inference.'
+      securityScope: 'Execução local (ESP32)',
+      description: 'Simula propagação isotrópica por agregação normalizada dos vizinhos, adequada para inferência em larga escala.'
     },
     {
       id: 'sage',
@@ -124,8 +124,8 @@ export default function ModelAccuracyTable() {
       baseLatency: 8,
       noiseSensitivity: 'Low',
       scalability: 'O(N)',
-      securityScope: 'On-Chip Execution (ESP32)',
-      description: 'Uses fixed neighbor sampling to construct inductive mini-batch subgraphs. Highly scalable to massive school-wide student rosters.'
+      securityScope: 'Execução local (ESP32)',
+      description: 'Usa amostragem fixa de vizinhos para criar subgrafos em minilotes, permitindo maior escalabilidade.'
     },
     {
       id: 'gemini',
@@ -140,7 +140,7 @@ export default function ModelAccuracyTable() {
       noiseSensitivity: 'Low',
       scalability: 'O(1)',
       securityScope: 'Encrypted Cloud API',
-      description: 'Evaluated server-side on cognitive wellness alignment. Proxies academic tutor answers and synthesizes personalized stress breaks.'
+      description: 'Avaliado no servidor para apoio educacional e bem-estar, com respostas de tutoria e sugestões personalizadas de pausas.'
     },
     {
       id: 'linear',
@@ -155,7 +155,7 @@ export default function ModelAccuracyTable() {
       noiseSensitivity: 'High',
       scalability: 'O(N)',
       securityScope: 'ESP32 Firmware Level',
-      description: 'Baseline shallow classifier based only on independent raw student bio-features (HRV, GSR) without factoring in team relational dependencies.'
+      description: 'Classificador de referência baseado em atributos biométricos isolados (VFC, GSR), sem relações entre estudantes.'
     }
   ];
 
