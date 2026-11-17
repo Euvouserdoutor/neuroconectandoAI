@@ -65,7 +65,7 @@ export default function DailyWellnessCheckin({ cognitive }: DailyWellnessCheckin
       setHistory(logs);
     } catch (err: any) {
       console.error(err);
-      setErrorMessage("Could not load historic logs. Using offline simulation backup.");
+      setErrorMessage("Não foi possível carregar o histórico. Usando dados locais de simulação.");
     } finally {
       setIsLoadingHistory(false);
     }
@@ -97,7 +97,7 @@ export default function DailyWellnessCheckin({ cognitive }: DailyWellnessCheckin
 
     try {
       await saveWellnessCheckIn(payload);
-      setSuccessMessage("Daily wellness check-in logged successfully!");
+      setSuccessMessage("Registro diário de bem-estar salvo com sucesso!");
       setNotes('');
       // Reload list
       await loadHistoryLogs();
@@ -141,8 +141,8 @@ export default function DailyWellnessCheckin({ cognitive }: DailyWellnessCheckin
                 <Heart className="h-5 w-5 animate-pulse" />
               </div>
               <div>
-                <h3 className="font-bold text-slate-100 text-sm">New Daily Wellness Check-in</h3>
-                <p className="text-[10.5px] text-slate-400">Self-report your somatic metrics to customize tutorial intensity.</p>
+                <h3 className="font-bold text-slate-100 text-sm">Novo registro diário de bem-estar</h3>
+                <p className="text-[10.5px] text-slate-400">Registre como você está se sentindo para personalizar as atividades.</p>
               </div>
             </div>
           </div>
@@ -216,9 +216,9 @@ export default function DailyWellnessCheckin({ cognitive }: DailyWellnessCheckin
                     className="w-full accent-indigo-500 bg-slate-800 rounded-lg appearance-none h-1.5 cursor-pointer"
                   />
                   <div className="flex justify-between text-[9px] text-slate-400 mt-2 font-mono">
-                    <span>4 hrs (Low)</span>
-                    <span>8 hrs (Optimal)</span>
-                    <span>12 hrs (Oversleep)</span>
+                    <span>4 h (baixo)</span>
+                    <span>8 h (ideal)</span>
+                    <span>12 h (sono prolongado)</span>
                   </div>
                 </div>
               </div>
@@ -259,7 +259,7 @@ export default function DailyWellnessCheckin({ cognitive }: DailyWellnessCheckin
               <textarea
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
-                placeholder="Log any study anxiety triggers or feeling details..."
+                placeholder="Descreva como você se sentiu durante os estudos..."
                 maxLength={400}
                 className="w-full h-16 bg-slate-950 text-xs text-slate-200 border border-slate-850 rounded-xl p-3 focus:outline-none focus:border-indigo-500 placeholder-slate-650 transition-colors resize-none leading-relaxed"
               />
@@ -267,7 +267,7 @@ export default function DailyWellnessCheckin({ cognitive }: DailyWellnessCheckin
 
             {/* Simulated Live System Info Tag */}
             <div className="p-2.5 bg-slate-955 border border-slate-850 rounded-lg flex justify-between items-center text-[10px] text-slate-400">
-              <span>Somatic State Snapshot:</span>
+              <span>Resumo do estado físico:</span>
               <span className="flex items-center space-x-1.5">
                 <span className="h-1.5 w-1.5 bg-sky-500 rounded-full animate-pulse" />
                 <span className="text-sky-305 font-bold">EEG Attention: {cognitive.attention}</span>
@@ -289,12 +289,12 @@ export default function DailyWellnessCheckin({ cognitive }: DailyWellnessCheckin
             {isSubmitting ? (
               <>
                 <div className="h-3 w-3 border-2 border-white/20 border-t-white rounded-full animate-spin"></div>
-                <span>Submitting...</span>
+                <span>Enviando...</span>
               </>
             ) : (
               <>
                 <Sparkles className="h-3.5 w-3.5" />
-                <span>Submit Wellness Check-in</span>
+                <span>Registrar bem-estar</span>
               </>
             )}
           </button>
@@ -306,7 +306,7 @@ export default function DailyWellnessCheckin({ cognitive }: DailyWellnessCheckin
         <div className="flex justify-between items-center border-b border-slate-850 pb-3 mb-4">
           <h4 className="text-sm font-bold text-slate-200 flex items-center space-x-1.5">
             <History className="h-4 w-4 text-sky-400" />
-            <span>Check-in Logs History</span>
+            <span>Histórico de registros</span>
           </h4>
           <span className="text-[9px] bg-slate-850 text-slate-400 px-2 py-0.5 rounded font-mono font-bold">
             {history.length} Saved
@@ -317,7 +317,7 @@ export default function DailyWellnessCheckin({ cognitive }: DailyWellnessCheckin
         <div className="flex-1 overflow-y-auto max-h-[365px] space-y-3 pr-1.5 scrollbar-thin scrollbar-thumb-slate-800">
           {isLoadingHistory ? (
             <div className="text-center py-10 text-xs text-slate-400 animate-pulse">
-              <p>Analyzing Firestore historical logs...</p>
+              <p>Consultando o histórico do Firestore...</p>
             </div>
           ) : history.length > 0 ? (
             history.map((log) => {
@@ -342,11 +342,11 @@ export default function DailyWellnessCheckin({ cognitive }: DailyWellnessCheckin
                   <div className="grid grid-cols-2 gap-2 text-[10px] mb-2 text-slate-300">
                     <div className="bg-slate-900/50 p-1.5 rounded border border-slate-850 flex items-center space-x-1">
                       <Clock className="h-3 w-3 text-sky-400" />
-                      <span>Duration: <strong>{log.sleepHours} hrs</strong></span>
+                      <span>Duração: <strong>{log.sleepHours} hrs</strong></span>
                     </div>
                     <div className="bg-slate-900/50 p-1.5 rounded border border-slate-850 flex items-center space-x-1">
                       <Moon className="h-3 w-3 text-indigo-400" />
-                      <span>Quality: <strong>{log.sleepQuality}</strong></span>
+                      <span>Qualidade: <strong>{log.sleepQuality}</strong></span>
                     </div>
                   </div>
 
@@ -358,7 +358,7 @@ export default function DailyWellnessCheckin({ cognitive }: DailyWellnessCheckin
 
                   {log.attentionSnapshot && (
                     <div className="mt-2 text-[9px] text-slate-450 flex justify-between items-center font-mono">
-                      <span>Wearer Bio Snapshot:</span>
+                      <span>Resumo biométrico do usuário:</span>
                       <span className="text-yellow-500">EEG Attention: {log.attentionSnapshot}</span>
                     </div>
                   )}
@@ -367,8 +367,8 @@ export default function DailyWellnessCheckin({ cognitive }: DailyWellnessCheckin
             })
           ) : (
             <div className="text-center py-10 bg-slate-950 rounded-lg border border-slate-850 text-slate-400 text-xs">
-              <p>No previous logs filed yet.</p>
-              <p className="text-[10px] text-slate-500 mt-1">Submit the check-in form to start tracking your daily bio-history!</p>
+              <p>Nenhum registro anterior.</p>
+              <p className="text-[10px] text-slate-500 mt-1">Envie o formulário para começar a acompanhar seu histórico de bem-estar.</p>
             </div>
           )}
         </div>
@@ -377,7 +377,7 @@ export default function DailyWellnessCheckin({ cognitive }: DailyWellnessCheckin
         {history.length > 0 && (
           <div className="mt-4 pt-3 border-t border-slate-850 text-[10px]">
             <div className="flex justify-between items-center text-slate-300 mb-1">
-              <span>Sleep Goal Progress (8h):</span>
+              <span>Progresso da meta de sono (8 h):</span>
               <span className="font-bold text-sky-400">
                 {Math.round((history.reduce((acc, curr) => acc + curr.sleepHours, 0) / history.length) / 8.0 * 100)}% Avg
               </span>
