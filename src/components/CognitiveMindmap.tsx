@@ -116,9 +116,9 @@ export default function CognitiveMindmap({ cognitive, setCognitive, biometric, s
       <div className="flex items-center justify-between border-b border-slate-800 pb-3">
         <div className="flex items-center space-x-2">
           <Network className="h-4.5 w-4.5 text-indigo-400 rotate-45" />
-          <h3 className="text-sm font-black text-slate-100 uppercase tracking-tight">AI Cognitive Lesson Planner</h3>
+          <h3 className="text-sm font-black text-slate-100 uppercase tracking-tight">Planejador de estudos com IA</h3>
         </div>
-        <span className="text-[9px] font-mono font-bold text-slate-500 uppercase tracking-wide">GEMINI 3.5 HYBRID MODEL</span>
+        <span className="text-[9px] font-mono font-bold text-slate-500 uppercase tracking-wide">MODELO HÍBRIDO GEMINI 3.5</span>
       </div>
 
       <p className="text-[11px] text-slate-400 leading-relaxed">
@@ -128,7 +128,7 @@ export default function CognitiveMindmap({ cognitive, setCognitive, biometric, s
       {/* Inputs controls */}
       <div className="space-y-3 bg-slate-950 p-4 rounded-xl border border-slate-850" id="mindmap_input_panels">
         <div className="space-y-2">
-          <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Choose Preset Focus Pathway:</label>
+          <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Escolha um tema sugerido:</label>
           <div className="flex flex-wrap gap-1.5">
             {PRESET_TOPICS.map(t => (
               <button
@@ -149,7 +149,7 @@ export default function CognitiveMindmap({ cognitive, setCognitive, biometric, s
         <div className="h-px bg-slate-900" />
 
         <div className="space-y-2">
-          <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Or Custom Construct a Target Concept:</label>
+          <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Ou informe um conceito personalizado:</label>
           <div className="flex gap-2">
             <input
               type="text"
@@ -174,7 +174,7 @@ export default function CognitiveMindmap({ cognitive, setCognitive, biometric, s
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5" id="mindmap_recharting_space">
           {/* Left Column: Interactive Cognitive Nodes Tree (Col Span 6) */}
           <div className="lg:col-span-6 space-y-3">
-            <span className="text-[9.5px] font-bold text-slate-500 uppercase tracking-wider block font-mono">Cognitive Map Nodes Hierarchy:</span>
+            <span className="text-[9.5px] font-bold text-slate-500 uppercase tracking-wider block font-mono">Hierarquia dos nós do mapa cognitivo:</span>
             
             <div className="space-y-2 text-left">
               {nodes.map(node => {
@@ -202,7 +202,7 @@ export default function CognitiveMindmap({ cognitive, setCognitive, biometric, s
                         <div>
                           <h4 className="text-[11px] font-bold text-slate-200 uppercase tracking-tight flex items-center gap-1">
                             {node.label}
-                            {isRoot && <span className="bg-indigo-900/40 text-[7.5px] font-mono px-1 py-0.1 border border-indigo-850 rounded text-indigo-400 uppercase font-black tracking-widest leading-none">Root</span>}
+                            {isRoot && <span className="bg-indigo-900/40 text-[7.5px] font-mono px-1 py-0.1 border border-indigo-850 rounded text-indigo-400 uppercase font-black tracking-widest leading-none">Raiz</span>}
                           </h4>
                           {node.parentId && (
                             <span className="text-[8.5px] text-slate-500 font-mono">Depends on parent: {node.parentId}</span>
@@ -226,7 +226,7 @@ export default function CognitiveMindmap({ cognitive, setCognitive, biometric, s
               {selectedNode ? (
                 <div className="space-y-4">
                   <div className="border-b border-slate-900 pb-2.5">
-                    <span className="text-[8.5px] uppercase font-bold text-slate-500 tracking-wider block font-mono">Selected Concept Details</span>
+                    <span className="text-[8.5px] uppercase font-bold text-slate-500 tracking-wider block font-mono">Detalhes do conceito selecionado</span>
                     <h3 className="text-sm font-black text-slate-200 mt-1 uppercase tracking-tight">{selectedNode.label}</h3>
                   </div>
 
@@ -289,7 +289,7 @@ export default function CognitiveMindmap({ cognitive, setCognitive, biometric, s
                   </div>
                 </div>
               ) : (
-                <div className="text-center py-10 text-slate-600 text-xs">Select a node from the cognitive map to inspect mnemonic cues.</div>
+                <div className="text-center py-10 text-slate-600 text-xs">Selecione um nó do mapa para consultar dicas de memorização.</div>
               )}
             </div>
           </div>
