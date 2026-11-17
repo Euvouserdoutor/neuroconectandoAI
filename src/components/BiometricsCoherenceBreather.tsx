@@ -145,7 +145,7 @@ export default function BiometricsCoherenceBreather({ cognitive, setCognitive, b
       </div>
 
       <p className="text-[11px] text-slate-400 leading-relaxed mb-5">
-        Slow down physical heart rate spikes and consolidate amygdaloid activation. Prompts a visual expand-and-contract cue paired with your headband HRV.
+        Acompanhe uma animação de expansão e contração para praticar a respiração em ritmo confortável. Os indicadores de VFC são simulados.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
@@ -191,7 +191,7 @@ export default function BiometricsCoherenceBreather({ cognitive, setCognitive, b
               </div>
             )}
             <p className="text-[9.5px] text-slate-500 font-medium">
-              Completing 3 full modules (150 seconds) purges stress states entirely. Finished: <strong className="text-indigo-400">{cyclesCompleted}/3 Modules</strong>
+              Conclua três ciclos (150 segundos) para praticar o exercício. Concluídos: <strong className="text-indigo-400">{cyclesCompleted}/3 Modules</strong>
             </p>
           </div>
         </div>
