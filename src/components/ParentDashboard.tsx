@@ -29,7 +29,7 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
         setWellnessLogs(logs);
         setDistressSignals(signals);
       } catch (err) {
-        console.error("Failed to load telemetry in Parent Dashboard", err);
+        console.error("Não foi possível carregar os dados no painel dos responsáveis", err);
       } finally {
         setIsLogsLoading(false);
         setIsDistressLoading(false);
@@ -65,9 +65,9 @@ export default function ParentDashboard({ cognitive, biometric }: ParentDashboar
   };
 
   const recentHomeActivities = [
-    { day: 'Thursday', subject: 'Machine Learning', state: 'Perfect attention', score: '95%' },
-    { day: 'Wednesday', subject: 'Quantum Physics', state: 'Restless posture resolved via 4-7-8 breathing', score: '88%' },
-    { day: 'Tuesday', subject: 'Neuroscience Basic', state: 'Drowsiness warning triggered at 3PM', score: '100%' },
+    { day: 'Thursday', subject: 'Aprendizado de máquina', state: 'Atenção excelente', score: '95%' },
+    { day: 'Wednesday', subject: 'Física quântica', state: 'Postura agitada acompanhada de exercício respiratório 4-7-8', score: '88%' },
+    { day: 'Tuesday', subject: 'Fundamentos de neurociência', state: 'Alerta de sonolência registrado às 15h', score: '100%' },
     { day: 'Monday', subject: 'Calculus', state: 'Highly Focused', score: '92%' }
   ];
 
